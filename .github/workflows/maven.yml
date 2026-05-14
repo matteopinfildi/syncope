@@ -1,0 +1,24 @@
+name: Apache Syncope CI - Modulo 2
+
+on:
+  push:
+    branches: [ "master", "main" ]
+
+jobs:
+  build:
+    runs-on: ubuntu-latest
+
+    steps:
+    - name: Checkout del codice
+      uses: actions/checkout@v4
+
+    - name: Setup Java JDK
+      uses: actions/setup-java@v4
+      with:
+        java-version: '21'   
+        distribution: 'temurin'
+        cache: maven
+     
+
+    - name: Compila il progetto (senza test nativi)
+      run: mvn clean compile -DskipTests
