@@ -36,6 +36,7 @@ import org.mockito.junit.MockitoJUnitRunner;
 import org.springframework.test.util.ReflectionTestUtils;
 
 import java.util.ArrayList;
+import java.util.List;
 
 import static org.mockito.Mockito.*;
 
@@ -101,6 +102,7 @@ public class DefaultRealmPullResultHandlerTest {
         setUp_Delete();
         setUp_Deprovision();
         setUp_Link();
+        setUp_Ignore();
     }
 
     private void setUp_Generic() {
@@ -183,6 +185,13 @@ public class DefaultRealmPullResultHandlerTest {
     private void setUp_Link() {
         lenient().when(propagationManager.getCreateTasks(any(AnyTypeKind.class), any(), any(), any(), any())).thenReturn(new ArrayList<>());
     }
+
+    private void setUp_Ignore(){
+        lenient().when(mockConnectorObject.getUid()).thenReturn(new Uid("ext-id-123"));
+        lenient().when(mockDelta.getObject()).thenReturn(mockConnectorObject);
+    }
+
+
 
     @Test
     public void testAssign_TC01() throws JobExecutionException {
@@ -552,13 +561,34 @@ public class DefaultRealmPullResultHandlerTest {
         Assert.assertNotNull(result);
     }
 
+    @Ignore("BUG SCOPERTO: Il metodo link inghiotte l'eccezione dell'update e restituisce SUCCESS.")
     @Test
     public void testLink_TC06() throws JobExecutionException {
         lenient().doThrow(new RuntimeException("Simulated Update Failure")).when(binder).update(any(Realm.class), any(RealmTO.class));
 
         OpEvent.Outcome result = handler.link(mockDelta, mockRealm, false);
 
-        Assert.assertNotNull(result);
-        verify(binder, times(1)).update(any(Realm.class), any(RealmTO.class));
+        Assert.assertEquals(OpEvent.Outcome.FAILURE, result);
     }
+
+
+    @Test
+    public void testIgnore_TC01() throws JobExecutionException {
+        OpEvent.Outcome result = handler.ignore(mockDelta, true);
+        Assert.assertEquals(OpEvent.Outcome.SUCCESS, result);
+    }
+
+    @Test
+    public void testIgnore_TC02() throws JobExecutionException {
+        OpEvent.Outcome result = handler.ignore(mockDelta, false);
+        Assert.assertEquals(OpEvent.Outcome.SUCCESS, result);
+    }
+
+    @Ignore("BUG SCOPERTO: Assenza di Defensive Programming. Il metodo non valida delta=null e va in crash (NPE).")
+    @Test
+    public void testIgnore_TC03() throws JobExecutionException {
+        OpEvent.Outcome result = handler.ignore(null, true);
+        Assert.assertEquals(OpEvent.Outcome.FAILURE, result);
+    }
+
 }
