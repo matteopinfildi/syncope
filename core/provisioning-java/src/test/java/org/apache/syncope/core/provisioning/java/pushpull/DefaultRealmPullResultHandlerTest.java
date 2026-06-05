@@ -36,7 +36,9 @@ import org.mockito.junit.MockitoJUnitRunner;
 import org.springframework.test.util.ReflectionTestUtils;
 
 import java.util.ArrayList;
+import java.util.Collections;
 import java.util.List;
+import java.util.Optional;
 
 import static org.mockito.Mockito.*;
 
@@ -92,6 +94,8 @@ public class DefaultRealmPullResultHandlerTest {
     private OIDCRPClientAppDAO oidcRPClientAppDAO;
     @Mock
     private SAML2SPClientAppDAO saml2SPClientAppDAO;
+    @Mock
+    private InboundMatcher inboundMatcher;
 
 
     @Before
@@ -103,6 +107,7 @@ public class DefaultRealmPullResultHandlerTest {
         setUp_Deprovision();
         setUp_Link();
         setUp_Ignore();
+        setUp_DoHandle();
     }
 
     private void setUp_Generic() {
@@ -122,6 +127,7 @@ public class DefaultRealmPullResultHandlerTest {
         ReflectionTestUtils.setField(handler, "notificationManager", notificationManager);
         ReflectionTestUtils.setField(handler, "auditManager", auditManager);
         ReflectionTestUtils.setField(handler, "securityProperties", securityProperties);
+        ReflectionTestUtils.setField(handler, "inboundMatcher", inboundMatcher);
 
         lenient().when(securityProperties.getAdminUser()).thenReturn("admin");
         lenient().when(profile.getTask()).thenReturn(pullTask);
@@ -191,6 +197,10 @@ public class DefaultRealmPullResultHandlerTest {
         lenient().when(mockDelta.getObject()).thenReturn(mockConnectorObject);
     }
 
+    private void setUp_DoHandle(){
+        lenient().when(profile.getTask().getMatchingRule()).thenReturn(org.apache.syncope.common.lib.types.MatchingRule.UPDATE);
+        lenient().when(profile.getTask().getUnmatchingRule()).thenReturn(org.apache.syncope.common.lib.types.UnmatchingRule.PROVISION);
+    }
 
 
     @Test
@@ -591,4 +601,55 @@ public class DefaultRealmPullResultHandlerTest {
         Assert.assertEquals(OpEvent.Outcome.FAILURE, result);
     }
 
+
+    @Test
+    public void testDoHandle_TC01() throws JobExecutionException {
+        lenient().when(inboundMatcher.match(any(), any()))
+                .thenReturn(java.util.Collections.singletonList(mockRealm));
+
+        OpEvent.Outcome result = handler.doHandle(mockDelta, mockOrgUnit);
+        Assert.assertEquals(OpEvent.Outcome.SUCCESS, result);
+    }
+
+    @Test
+    public void testDoHandle_TC02() throws JobExecutionException {
+        lenient().when(inboundMatcher.match(any(), any()))
+                .thenReturn(java.util.Collections.emptyList());
+
+        OpEvent.Outcome result = handler.doHandle(mockDelta, mockOrgUnit);
+        Assert.assertEquals(OpEvent.Outcome.SUCCESS, result);
+    }
+
+    @Ignore("BUG SCOPERTO: Il metodo non valida delta=null (NPE su getDeltaType).")
+    @Test
+    public void testDoHandle_TC03() throws JobExecutionException {
+        handler.doHandle(null, mockOrgUnit);
+    }
+
+    @Test
+    public void testDoHandle_TC0() throws JobExecutionException {
+        OpEvent.Outcome result = handler.doHandle(mockDelta, null);
+        Assert.assertEquals(OpEvent.Outcome.SUCCESS, result);
+    }
+
+
+    @Test
+    public void testHandle_TC01() throws JobExecutionException {
+        lenient().when(inboundMatcher.match(any(), any())).thenReturn(java.util.Collections.singletonList(mockRealm));
+        boolean result = handler.handle(mockDelta);
+
+        Assert.assertTrue(result);
+    }
+    @Ignore("BUG SCOPERTO: l'NPE si propaga e causa il crash del thread.")
+    @Test
+    public void testHandle_TC02() {
+
+        try {
+            boolean result = handler.handle(null);
+            Assert.assertFalse(result);
+
+        } catch (RuntimeException e) {
+            Assert.fail("Eccezione propagata: " + e.getClass().getSimpleName());
+        }
+    }
 }
