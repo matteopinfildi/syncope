@@ -32,15 +32,15 @@ under the License.
   <groupId>org.apache.syncope.core</groupId>
   <artifactId>syncope-core-provisioning-java</artifactId>
   <packaging>jar</packaging>
-  
+
   <properties>
     <rootpom.basedir>${basedir}/../..</rootpom.basedir>
   </properties>
 
   <dependencies>
-    <dependency> 
-      <groupId>jakarta.servlet</groupId> 
-      <artifactId>jakarta.servlet-api</artifactId> 
+    <dependency>
+      <groupId>jakarta.servlet</groupId>
+      <artifactId>jakarta.servlet-api</artifactId>
       <scope>provided</scope>
     </dependency>
 
@@ -75,7 +75,6 @@ under the License.
       <version>${project.version}</version>
     </dependency>
 
-    <!-- TEST -->
     <dependency>
       <groupId>com.github.ben-manes.caffeine</groupId>
       <artifactId>jcache</artifactId>
@@ -118,9 +117,23 @@ under the License.
       <artifactId>slf4j-simple</artifactId>
       <scope>test</scope>
     </dependency>
+
     <dependency>
-      <groupId>org.springframework.boot</groupId>
-      <artifactId>spring-boot-starter-test</artifactId>
+      <groupId>junit</groupId>
+      <artifactId>junit</artifactId>
+      <version>4.13.2</version>
+      <scope>test</scope>
+    </dependency>
+
+    <dependency>
+      <groupId>org.mockito</groupId>
+      <artifactId>mockito-core</artifactId>
+      <version>4.11.0</version>
+      <scope>test</scope>
+    </dependency>
+    <dependency>
+      <groupId>org.springframework</groupId>
+      <artifactId>spring-test</artifactId>
       <scope>test</scope>
     </dependency>
   </dependencies>
@@ -145,6 +158,7 @@ under the License.
       <plugin>
         <groupId>org.apache.maven.plugins</groupId>
         <artifactId>maven-surefire-plugin</artifactId>
+        <version>3.5.5</version>
         <configuration>
           <systemPropertyVariables>
             <syncope.conf.dir>${project.build.directory}/test-classes</syncope.conf.dir>
@@ -157,10 +171,53 @@ under the License.
 
       <plugin>
         <groupId>org.apache.maven.plugins</groupId>
+        <artifactId>maven-failsafe-plugin</artifactId>
+        <version>3.5.5</version>
+        <executions>
+          <execution>
+            <goals>
+              <goal>integration-test</goal>
+              <goal>verify</goal>
+            </goals>
+          </execution>
+        </executions>
+      </plugin>
+
+      <plugin>
+        <groupId>org.apache.maven.plugins</groupId>
         <artifactId>maven-checkstyle-plugin</artifactId>
       </plugin>
+
+      <plugin>
+        <groupId>org.apache.rat</groupId>
+        <artifactId>apache-rat-plugin</artifactId>
+        <configuration>
+          <skip>true</skip>
+        </configuration>
+      </plugin>
+
+      <plugin>
+        <groupId>org.pitest</groupId>
+        <artifactId>pitest-maven</artifactId>
+        <version>1.21.0</version>  <configuration>
+        <targetClasses>
+          <param>org.apache.syncope.core.provisioning.java.pushpull.DefaultRealmPullResultHandler</param>
+          <param>org.apache.syncope.core.provisioning.java.pushpull.DefaultRealmPullResultHandler</param>
+        </targetClasses>
+        <targetTests>
+          <param>org.apache.syncope.core.provisioning.java.pushpull.*</param>
+          <param>org.apache.syncope.core.provisioning.java.pushpull.*</param>
+        </targetTests>
+
+        <failWhenNoMutations>false</failWhenNoMutations>
+        <avoidCallsTo>
+          <avoidCallsTo>org.slf4j</avoidCallsTo>
+          <avoidCallsTo>java.util.logging</avoidCallsTo>
+        </avoidCallsTo>
+      </configuration>
+      </plugin>
     </plugins>
-    
+
     <resources>
       <resource>
         <directory>src/main/resources</directory>
