@@ -148,7 +148,7 @@ public class ResourceLogicBBTest {
         Assert.assertEquals("DB", result.getKey());
     }
 
-    @Test(expected = Exception.class) // capire se specificare l'eccezione
+    @Test(expected = NullPointerException.class) // capire se va bene
     public void testCreate_TC02() {
         /*
         TC02 - Creazione con input null
@@ -156,13 +156,13 @@ public class ResourceLogicBBTest {
         Category partition:
         A2 = ResourceTo nullo
 
-        Oracolo: Il metodo solleva un eccezione per gestire l'oggetto null
+        Oracolo: Il metodo solleva un NPE per gestire l'oggetto null
          */
 
         resourceLogic.create(null);
     }
 
-    @Test(expected = Exception.class) // capire se specificare l'eccezione
+    @Test(expected = SyncopeClientException.class)
     public void testCreate_TC03() {
         /*
         TC03 - Creazione con key vuota
@@ -171,7 +171,7 @@ public class ResourceLogicBBTest {
         A3 = ResourceTo con key vuota ""
         B1 = Connector esistente
 
-        Oracolo: Il metodo solleva un eccezione per gestire la key vuota
+        Oracolo: Il metodo solleva un SyncopeClientException per gestire la key vuota
          */
 
         ResourceTO resourceTO = new ResourceTO();
@@ -184,7 +184,7 @@ public class ResourceLogicBBTest {
         resourceLogic.create(resourceTO);
     }
 
-    @Test(expected = Exception.class)
+    @Test(expected = SyncopeClientException.class)
     public void testCreate_TC04() {
          /*
         TC04 - Creazione con key nulla
@@ -193,7 +193,7 @@ public class ResourceLogicBBTest {
         A4 = ResourceTo con key nulla
         B1 = Connector esistente
 
-        Oracolo: Il metodo solleva un eccezione per gestire la key null
+        Oracolo: Il metodo solleva un SyncopeClientException per gestire la key null
          */
 
         ResourceTO resourceTO = new ResourceTO();
