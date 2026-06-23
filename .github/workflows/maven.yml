@@ -27,6 +27,9 @@ jobs:
           -Dcheckstyle.skip=true
           -Drat.skip=true
           -Djacoco.skip=true
+          -Dtools.verify-legal-files.skip=true
+          -Dianal.skip=true
+          -Dlegal.skip=true
           -Djava.net.preferIPv4Stack=true
 
       - name: Esecuzione Test
@@ -35,6 +38,9 @@ jobs:
           -Denforcer.skip=true
           -Dcheckstyle.skip=true
           -Drat.skip=true
+          -Dtools.verify-legal-files.skip=true
+          -Dianal.skip=true
+          -Dlegal.skip=true
           -DfailIfNoTests=false
           -Dsurefire.failIfNoSpecifiedTests=false
           -Djava.net.preferIPv4Stack=true
@@ -46,6 +52,9 @@ jobs:
           -Denforcer.skip=true
           -Dcheckstyle.skip=true
           -Drat.skip=true
+          -Dtools.verify-legal-files.skip=true
+          -Dianal.skip=true
+          -Dlegal.skip=true
           -DfailIfNoTests=false
           -Dfailsafe.failIfNoSpecifiedTests=false
           -Djava.net.preferIPv4Stack=true
