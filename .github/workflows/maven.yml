@@ -19,18 +19,17 @@ jobs:
           distribution: 'oracle'
           cache: maven
 
-      - name:  Compilazione moduli specifici e dipendenze (Senza eseguire i test)
+      - name: Compilazione veloce
         run: >
-          mvn clean install
-          -DskipTests
+          mvn clean test-compile -B -T 1C
           -Denforcer.skip=true
           -Dcheckstyle.skip=true
           -Drat.skip=true
           -Djava.net.preferIPv4Stack=true
 
-      - name:  Esecuzione Test
+      - name: Esecuzione Test
         run: >
-          mvn test
+          mvn test -B -T 1C
           -Denforcer.skip=true
           -Dcheckstyle.skip=true
           -Drat.skip=true
@@ -40,7 +39,7 @@ jobs:
 
       - name: Esecuzione Integration Tests
         run: >
-          mvn verify
+          mvn verify -B
           -Denforcer.skip=true
           -Dcheckstyle.skip=true
           -Drat.skip=true
