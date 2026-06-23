@@ -9,17 +9,17 @@ jobs:
     runs-on: ubuntu-latest
 
     steps:
-      - name: Checkout repository
+      - name: 📥 Checkout repository
         uses: actions/checkout@v4
 
-      - name: Setup Java JDK 25
+      - name: ☕ Setup Java JDK 25
         uses: actions/setup-java@v4
         with:
           java-version: '25'
           distribution: 'oracle'
           cache: maven
 
-      - name: Compilazione e Installazione Cache (Batch Mode)
+      - name: Compilazione e Installazione
         run: >
           mvn clean install -B -T 1C
           -DskipTests
@@ -27,20 +27,18 @@ jobs:
           -Dcheckstyle.skip=true
           -Drat.skip=true
           -Djacoco.skip=true
-          -Dtools.verify-legal-files.skip=true
-          -Dianal.skip=true
-          -Dlegal.skip=true
+          -Dmaven.javadoc.skip=true
+          -Dstrict=false
           -Djava.net.preferIPv4Stack=true
 
-      - name: Esecuzione Test
+      - name: Esecuzione Test Unitari, LLM e Randoop
         run: >
           mvn test -B -T 1C
           -Denforcer.skip=true
           -Dcheckstyle.skip=true
           -Drat.skip=true
-          -Dtools.verify-legal-files.skip=true
-          -Dianal.skip=true
-          -Dlegal.skip=true
+          -Dmaven.javadoc.skip=true
+          -Dstrict=false
           -DfailIfNoTests=false
           -Dsurefire.failIfNoSpecifiedTests=false
           -Djava.net.preferIPv4Stack=true
@@ -52,9 +50,8 @@ jobs:
           -Denforcer.skip=true
           -Dcheckstyle.skip=true
           -Drat.skip=true
-          -Dtools.verify-legal-files.skip=true
-          -Dianal.skip=true
-          -Dlegal.skip=true
+          -Dmaven.javadoc.skip=true
+          -Dstrict=false
           -DfailIfNoTests=false
           -Dfailsafe.failIfNoSpecifiedTests=false
           -Djava.net.preferIPv4Stack=true
