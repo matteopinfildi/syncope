@@ -87,26 +87,21 @@ public class ResourceLogicBBTest {
     }
 
     private void setupValidSystemStateForSearch() {
-        // 1. AnyType esiste ("USER")
         AnyType mockAnyType = mock(AnyType.class);
         lenient().when(mockAnyType.getKey()).thenReturn("USER");
         lenient().doReturn(Optional.of(mockAnyType)).when(anyTypeDAO).findById("USER");
 
-        // 2. Risorsa esiste ("DB-HR")
         ExternalResource mockResource = mock(ExternalResource.class);
-        lenient().when(resourceDAO.authFind("DB-HR")).thenReturn(mockResource);
+        lenient().when(resourceDAO.authFind("Resource_DB")).thenReturn(mockResource);
 
-        // 3. Risorsa ha una Provision per l'AnyType ("USER")
         Provision mockProvision = mock(Provision.class);
         Mapping mockMapping = mock(Mapping.class);
 
-        // Reintegriamo le tue istruzioni originali!
         lenient().when(mockProvision.getMapping()).thenReturn(mockMapping);
         lenient().when(mockMapping.getItems()).thenReturn(java.util.Collections.emptyList());
         lenient().when(mockProvision.getObjectClass()).thenReturn("__ACCOUNT__");
         lenient().when(mockResource.getProvisionByAnyType("USER")).thenReturn(Optional.of(mockProvision));
 
-        // 4. Il ConnectorManager restituisce un connettore finto ma funzionante
         Connector mockConnector = mock(Connector.class);
         SearchResult mockSearchResult = mock(SearchResult.class);
         lenient().doReturn(mockSearchResult).when(mockConnector).search(any(), any(), any(), anyInt(), any(), any(), any());
@@ -123,19 +118,19 @@ public class ResourceLogicBBTest {
 
         Category partition:
         A1 = ResourceTo con dati validi
-        B1 = Connector esistente
-        C1 = Risorsa non esistente (null)
+        B1 = Key valida e non presente nel DB
+        C1 = Connector esistente
 
         Oracolo: Il metodo crea la risorsa correttamente e restituisce l'oggetto creato
          */
 
         ResourceTO resourceTO = new ResourceTO();
-        resourceTO.setKey("DB");
+        resourceTO.setKey("Resource_DB");
         resourceTO.setConnector("Conn-123");
 
         ConnInstance robustConn = createMockConnInstance();
         when(connInstanceDAO.authFind("Conn-123")).thenReturn(robustConn);
-        when(resourceDAO.authFind("DB")).thenReturn(null);
+        when(resourceDAO.authFind("Resource_DB")).thenReturn(null);
 
         ExternalResource mockResource = mock(ExternalResource.class);
         when(binder.create(resourceTO)).thenReturn(mockResource);
@@ -145,7 +140,7 @@ public class ResourceLogicBBTest {
         ResourceTO result = resourceLogic.create(resourceTO);
 
         Assert.assertNotNull(result);
-        Assert.assertEquals("DB", result.getKey());
+        Assert.assertEquals("Resource_DB", result.getKey());
     }
 
     @Test(expected = NullPointerException.class) // capire se va bene
@@ -168,8 +163,9 @@ public class ResourceLogicBBTest {
         TC03 - Creazione con key vuota
 
         Category partition:
-        A3 = ResourceTo con key vuota ""
-        B1 = Connector esistente
+        A1 = ResourceTo valido
+        B2 = Key vuota
+        C1 = Connector esistente
 
         Oracolo: Il metodo solleva un SyncopeClientException per gestire la key vuota
          */
@@ -190,8 +186,9 @@ public class ResourceLogicBBTest {
         TC04 - Creazione con key nulla
 
         Category partition:
-        A4 = ResourceTo con key nulla
-        B1 = Connector esistente
+        A1 = ResourceTo valido
+        B3 = Key null
+        C1 = Connector esistente
 
         Oracolo: Il metodo solleva un SyncopeClientException per gestire la key null
          */
@@ -213,13 +210,14 @@ public class ResourceLogicBBTest {
 
         Category partition:
         A1 = ResourceTo valido
-        B2 = Connettore non trovato
+        B1 = Key valida
+        C2 = Connettore non trovato
 
         Oracolo: Il metodo solleva SyncopeClientException.
          */
 
         ResourceTO resourceTO = new ResourceTO();
-        resourceTO.setKey("DB");
+        resourceTO.setKey("Resource_DB");
         resourceTO.setConnector("Conn-FANTASMA");
 
         when(connInstanceDAO.authFind("Conn-FANTASMA")).thenReturn(null);
@@ -234,13 +232,14 @@ public class ResourceLogicBBTest {
 
         Category partition:
         A1 = ResourceTo valido
-        B3 = Connettore null
+        B1 = Key valida
+        C3 = Connettore null
 
         Oracolo: Il metodo solleva SyncopeClientException.
          */
 
         ResourceTO resourceTO = new ResourceTO();
-        resourceTO.setKey("DB-Test");
+        resourceTO.setKey("Resource_DB");
         resourceTO.setConnector(null);
 
         when(connInstanceDAO.authFind(null)).thenReturn(null);
@@ -255,19 +254,19 @@ public class ResourceLogicBBTest {
 
         Category partition:
         A1 = ResourceTo valido
-        C2 = Risorda esistente
+        B2 = Key valida ma già esistente nel DB
 
         Oracolo: Il metodo solleva DuplicateException.
          */
         ResourceTO resourceTO = new ResourceTO();
-        resourceTO.setKey("DB-Duplicato");
+        resourceTO.setKey("Resource_DB_Duplicato");
         resourceTO.setConnector("Conn-123");
 
         ConnInstance robustConn = createMockConnInstance();
         when(connInstanceDAO.authFind("Conn-123")).thenReturn(robustConn);
 
         ExternalResource existingResource = mock(ExternalResource.class);
-        when(resourceDAO.authFind("DB-Duplicato")).thenReturn(existingResource);
+        when(resourceDAO.authFind("Resource_DB_Duplicato")).thenReturn(existingResource);
 
         resourceLogic.create(resourceTO);
     }
@@ -286,7 +285,7 @@ public class ResourceLogicBBTest {
         TC01 - Ricerca valida
 
         Category partition:
-        A1 = Risorsa esistente
+        A1 = Key valida
         B1 = AnyType esistente e mappato
         C1 = size valido
 
@@ -296,7 +295,7 @@ public class ResourceLogicBBTest {
         setupValidSystemStateForSearch();
         Filter filtro = FilterBuilder.equalTo(AttributeBuilder.build("username", "mario"));
 
-        Pair<SearchResult, List<ConnObject>> result = resourceLogic.searchConnObjects(filtro, Collections.emptySet(), "DB-HR", "USER", 10, null, Collections.emptyList());
+        Pair<SearchResult, List<ConnObject>> result = resourceLogic.searchConnObjects(filtro, Collections.emptySet(), "Resource_DB", "USER", 10, null, Collections.emptyList());
 
         Assert.assertNotNull(result);
         Assert.assertNotNull(result.getLeft());
@@ -309,16 +308,18 @@ public class ResourceLogicBBTest {
         TC02 - Risorsa non trovata
 
         Category partition:
-        A2 = Risorsa esistente
+        A2 = Key invalida
+        B1 = AnyType esistente e mappato
+        C1 = size valido
 
         Oracolo: NotFoundException
          */
 
         setupValidSystemStateForSearch();
-        when(resourceDAO.authFind("FANTASMA")).thenReturn(null);
+        when(resourceDAO.authFind("Resource_DB_Fantasma")).thenReturn(null);
 
         resourceLogic.searchConnObjects(
-                null, Collections.emptySet(), "FANTASMA", "USER", 10, null, Collections.emptyList());
+                null, Collections.emptySet(), "Resource_DB_Fantasma", "USER", 10, null, Collections.emptyList());
     }
 
     @Test(expected = NotFoundException.class)
@@ -327,8 +328,9 @@ public class ResourceLogicBBTest {
         TC03 - AnyType non mappato sulla risorsa
 
         Category partition:
-        A1 = Risorsa esistente
+        A1 = Key valida
         B2 = AnyType esistente ma NON mappato
+        C1 = size valido
 
         Oracolo: NotFoundException
          */
@@ -340,11 +342,11 @@ public class ResourceLogicBBTest {
         lenient().when(mockGroupType.getKey()).thenReturn(anyTypeKey);
         lenient().doReturn(Optional.of(mockGroupType)).when(anyTypeDAO).findById(anyTypeKey);
 
-        ExternalResource mockResource = resourceDAO.authFind("DB-HR");
+        ExternalResource mockResource = resourceDAO.authFind("Resource_DB");
         when(mockResource.getProvisionByAnyType(anyTypeKey)).thenReturn(Optional.empty());
 
         resourceLogic.searchConnObjects(
-                null, Collections.emptySet(), "DB-HR", anyTypeKey, 10, null, Collections.emptyList());
+                null, Collections.emptySet(), "Resource_DB", anyTypeKey, 10, null, Collections.emptyList());
     }
 
     @Test
@@ -353,7 +355,7 @@ public class ResourceLogicBBTest {
         TC04 - Pagina dimensione negativa
 
         Category partition:
-        A1 = Risorsa esistente
+        A1 = Key valida
         B1 = AnyType esistente e mappato
         C2 = size negativo
 
@@ -363,7 +365,7 @@ public class ResourceLogicBBTest {
         setupValidSystemStateForSearch();
 
         Pair<SearchResult, List<ConnObject>> result = resourceLogic.searchConnObjects(
-                null, Collections.emptySet(), "DB-HR", "USER", -1, null, Collections.emptyList());
+                null, Collections.emptySet(), "Resource_DB", "USER", -1, null, Collections.emptyList());
 
         Assert.assertNotNull(result);
         Assert.assertTrue(result.getRight().isEmpty());
@@ -375,7 +377,9 @@ public class ResourceLogicBBTest {
         TC05 - Nome risorsa vuoto
 
         Category partition:
-        A3 = Risorsa con nome vuoto ("")
+        A3 = Key vuota ("")
+        B1 = AnyType esistente e mappato
+        C1 = size valido
 
         Oracolo: NotFoundException
          */
@@ -393,7 +397,9 @@ public class ResourceLogicBBTest {
         TC06 - Nome risorsa nullo
 
         Category partition:
-        A4 = Risorsa con nome nullo
+        A4 = Key null
+        B1 = AnyType esistente e mappato
+        C1 = size valido
 
         Oracolo: NotFoundException
          */
@@ -410,7 +416,7 @@ public class ResourceLogicBBTest {
         TC07 - Size della pagina a 0
 
         Category partition:
-        A1 = Risorsa esistente
+        A1 = Key valida
         B1 = AnyType esistente e mappato
         C3 = size pari a 0
 
@@ -420,9 +426,49 @@ public class ResourceLogicBBTest {
         setupValidSystemStateForSearch();
 
         Pair<SearchResult, List<ConnObject>> result = resourceLogic.searchConnObjects(
-                null, Collections.emptySet(), "DB-HR", "USER", 0, null, Collections.emptyList());
+                null, Collections.emptySet(), "Resource_DB", "USER", 0, null, Collections.emptyList());
 
         Assert.assertNotNull(result);
         Assert.assertNotNull(result.getRight());
+    }
+
+    @Test(expected = NotFoundException.class)
+    public void testSearchConn_TC08() {
+        /*
+        TC08 - AnyTypeKey vuota
+
+        Category partition:
+        A1 = Key valida
+        B3 = AnyTypeKey stringa vuota
+        C1 = size valido
+
+        Oracolo: NotFoundException
+         */
+        setupValidSystemStateForSearch();
+
+        lenient().when(anyTypeDAO.findById("")).thenReturn(Optional.empty());
+
+        resourceLogic.searchConnObjects(
+                null, Collections.emptySet(), "Resource_DB", "", 10, null, Collections.emptyList());
+    }
+
+    @Test(expected = NotFoundException.class)
+    public void testSearchConn_TC09() {
+        /*
+        TC09 - AnyTypeKey nulla
+
+        Category partition:
+        A1 = Key valida
+        B4 = AnyTypeKey null
+        C1 = size valido
+
+        Oracolo: NotFoundException
+         */
+        setupValidSystemStateForSearch();
+
+        lenient().when(anyTypeDAO.findById(null)).thenReturn(Optional.empty());
+
+        resourceLogic.searchConnObjects(
+                null, Collections.emptySet(), "Resource_DB", null, 10, null, Collections.emptyList());
     }
 }
