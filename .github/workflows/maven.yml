@@ -1,4 +1,4 @@
-name: Apache Syncope CI - Modulo 2
+name: Apache Syncope CI - Build and Validation
 
 on:
   push:
@@ -9,15 +9,39 @@ jobs:
     runs-on: ubuntu-latest
 
     steps:
-    - name: Checkout del codice
-      uses: actions/checkout@v4
+      - name: Checkout repository
+        uses: actions/checkout@v4
 
-    - name: Setup Java JDK 25
-      uses: actions/setup-java@v4
-      with:
-        java-version: '25'
-        distribution: 'oracle'
-        cache: maven
+      - name: Setup Java JDK 25
+        uses: actions/setup-java@v4
+        with:
+          java-version: '25'
+          distribution: 'oracle'
+          cache: maven
 
-    - name: Compilazione Pura
-      run: mvn clean compile -Dmaven.test.skip=true -Denforcer.skip=true -Dcheckstyle.skip=true -Drat.skip=true
+      - name:  Compilazione moduli specifici e dipendenze (Senza eseguire i test)
+        run: >
+          mvn clean install
+          -pl core/logic,core/provisioning-java -am
+          -DskipTests
+          -Denforcer.skip=true
+          -Dcheckstyle.skip=true
+          -Drat.skip=true
+
+      - name:  Esecuzione Test
+        run: >
+          mvn test
+          -pl core/logic,core/provisioning-java
+          -Denforcer.skip=true
+          -Dcheckstyle.skip=true
+          -Drat.skip=true
+          -Dtest=ResourceLogicCFTest,ResourceLogicBBTest,ResourceLogicLLMFew2Test,ResourceLogicLLMFewTest,ResourceLogicLLMToTTest,ResourceLogicLLMToT2Test,ResourceLogicLLMZeroTest,ResourceLogicPITTest,ResourceLogicRandoopRunTest,ResourceLogicRandoopTest,DefaultRealmPullResultHandlerBBTest,DefaultRealmPullResultHandlerCFTest,DefaultRealmPullResultHandlerLLMFew1Test,DefaultRealmPullResultHandlerLLMFew2Test,DefaultRealmPullResultHandlerLLMToT1Test,DefaultRealmPullResultHandlerLLMToT2Test,DefaultRealmPullResultHandlerLLMZeroTest,DefaultRealmPullResultHandlerPITTest,DefaultRealmPullResultHandlerRandoopRunTest,DefaultRealmPullResultHandlerRandoopTest 
+
+      - name: Esecuzione Integration Tests
+        run: >
+          mvn verify
+          -pl core/logic
+          -Denforcer.skip=true
+          -Dcheckstyle.skip=true
+          -Drat.skip=true
+          -Dit.test=ResourceLogicITTest,DefaultRealmPullResultHandlerITTest
