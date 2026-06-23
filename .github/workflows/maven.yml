@@ -22,7 +22,6 @@ jobs:
       - name:  Compilazione moduli specifici e dipendenze (Senza eseguire i test)
         run: >
           mvn clean install
-          -pl :syncope-core-logic,:syncope-core-provisioning-jav
           -DskipTests
           -Denforcer.skip=true
           -Dcheckstyle.skip=true
@@ -31,7 +30,6 @@ jobs:
       - name:  Esecuzione Test
         run: >
           mvn test
-          -pl core/logic,core/provisioning-java
           -Denforcer.skip=true
           -Dcheckstyle.skip=true
           -Drat.skip=true
@@ -41,7 +39,6 @@ jobs:
       - name: Esecuzione Integration Tests
         run: >
           mvn verify
-          -pl :syncope-core-logic,:syncope-core-provisioning-java
           -Denforcer.skip=true
           -Dcheckstyle.skip=true
           -Drat.skip=true
