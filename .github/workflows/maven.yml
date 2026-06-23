@@ -8,44 +8,57 @@ jobs:
   build:
     runs-on: ubuntu-latest
 
+    env:
+      FORCE_JAVASCRIPT_ACTIONS_TO_NODE24: true
+
     steps:
-      - name:  Checkout repository
+      - name: Checkout repository
         uses: actions/checkout@v4
 
-      - name: Setup Java JDK 21
+      - name: Setup Java JDK 21 (LTS Stabile)
         uses: actions/setup-java@v4
         with:
-          java-version: '21'
           distribution: 'temurin'
+          java-version: '21'
           cache: maven
 
-      - name: Compilazione e Installazione
+      - name: Installazione moduli necessari
         run: >
-          mvn clean install -B -T 1C
+          mvn -B -pl :syncope-core-logic,:syncope-core-provisioning-java -am
           -DskipTests
           -Denforcer.skip=true
           -Dcheckstyle.skip=true
           -Drat.skip=true
+          -Djacoco.skip=true
+          -Dmaven.javadoc.skip=true
+          -Dstrict=false
           -Djava.net.preferIPv4Stack=true
+          install
 
-      - name: Esecuzione Test
+      - name: Esecuzione Test Unitari e LLM
         run: >
-          mvn test -B -T 1C
+          mvn -B -pl :syncope-core-logic,:syncope-core-provisioning-java
           -Denforcer.skip=true
           -Dcheckstyle.skip=true
           -Drat.skip=true
-          -DfailIfNoTests=false
-          -Dsurefire.failIfNoSpecifiedTests=false
+          -Dmaven.javadoc.skip=true
+          -Dstrict=false
           -Djava.net.preferIPv4Stack=true
+          -DfailIfNoTests=false
           -Dtest=ResourceLogicCFTest,ResourceLogicBBTest,ResourceLogicLLMFew2Test,ResourceLogicLLMFewTest,ResourceLogicLLMToTTest,ResourceLogicLLMToT2Test,ResourceLogicLLMZeroTest,ResourceLogicPITTest,ResourceLogicRandoopRunTest,ResourceLogicRandoopTest,DefaultRealmPullResultHandlerBBTest,DefaultRealmPullResultHandlerCFTest,DefaultRealmPullResultHandlerLLMFew1Test,DefaultRealmPullResultHandlerLLMFew2Test,DefaultRealmPullResultHandlerLLMToT1Test,DefaultRealmPullResultHandlerLLMToT2Test,DefaultRealmPullResultHandlerLLMZeroTest,DefaultRealmPullResultHandlerPITTest,DefaultRealmPullResultHandlerRandoopRunTest,DefaultRealmPullResultHandlerRandoopTest
+          test
 
       - name: Esecuzione Integration Tests
         run: >
-          mvn verify -B
+          mvn -B -pl :syncope-core-logic,:syncope-core-provisioning-java
           -Denforcer.skip=true
           -Dcheckstyle.skip=true
           -Drat.skip=true
-          -DfailIfNoTests=false
-          -Dfailsafe.failIfNoSpecifiedTests=false
+          -Dmaven.javadoc.skip=true
+          -Dstrict=false
           -Djava.net.preferIPv4Stack=true
+          -DfailIfNoTests=false
           -Dit.test=ResourceLogicITTest,DefaultRealmPullResultHandlerITTest
+          test-compile
+          failsafe:integration-test
+          failsafe:verify
