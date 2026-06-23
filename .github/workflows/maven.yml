@@ -9,14 +9,14 @@ jobs:
     runs-on: ubuntu-latest
 
     steps:
-      - name: 📥 Checkout repository
+      - name:  Checkout repository
         uses: actions/checkout@v4
 
-      - name: ☕ Setup Java JDK 25
+      - name: Setup Java JDK 21
         uses: actions/setup-java@v4
         with:
-          java-version: '25'
-          distribution: 'oracle'
+          java-version: '21'
+          distribution: 'temurin'
           cache: maven
 
       - name: Compilazione e Installazione
@@ -26,19 +26,14 @@ jobs:
           -Denforcer.skip=true
           -Dcheckstyle.skip=true
           -Drat.skip=true
-          -Djacoco.skip=true
-          -Dmaven.javadoc.skip=true
-          -Dstrict=false
           -Djava.net.preferIPv4Stack=true
 
-      - name: Esecuzione Test Unitari, LLM e Randoop
+      - name: Esecuzione Test
         run: >
           mvn test -B -T 1C
           -Denforcer.skip=true
           -Dcheckstyle.skip=true
           -Drat.skip=true
-          -Dmaven.javadoc.skip=true
-          -Dstrict=false
           -DfailIfNoTests=false
           -Dsurefire.failIfNoSpecifiedTests=false
           -Djava.net.preferIPv4Stack=true
@@ -50,8 +45,6 @@ jobs:
           -Denforcer.skip=true
           -Dcheckstyle.skip=true
           -Drat.skip=true
-          -Dmaven.javadoc.skip=true
-          -Dstrict=false
           -DfailIfNoTests=false
           -Dfailsafe.failIfNoSpecifiedTests=false
           -Djava.net.preferIPv4Stack=true
