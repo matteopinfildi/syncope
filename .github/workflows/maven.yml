@@ -19,12 +19,14 @@ jobs:
           distribution: 'oracle'
           cache: maven
 
-      - name: Compilazione veloce (Solo classi, No UI/Docker)
+      - name: Compilazione e Installazione Cache (Batch Mode)
         run: >
-          mvn clean test-compile -B -T 1C
+          mvn clean install -B -T 1C
+          -DskipTests
           -Denforcer.skip=true
           -Dcheckstyle.skip=true
           -Drat.skip=true
+          -Djacoco.skip=true
           -Djava.net.preferIPv4Stack=true
 
       - name: Esecuzione Test
@@ -38,7 +40,7 @@ jobs:
           -Djava.net.preferIPv4Stack=true
           -Dtest=ResourceLogicCFTest,ResourceLogicBBTest,ResourceLogicLLMFew2Test,ResourceLogicLLMFewTest,ResourceLogicLLMToTTest,ResourceLogicLLMToT2Test,ResourceLogicLLMZeroTest,ResourceLogicPITTest,ResourceLogicRandoopRunTest,ResourceLogicRandoopTest,DefaultRealmPullResultHandlerBBTest,DefaultRealmPullResultHandlerCFTest,DefaultRealmPullResultHandlerLLMFew1Test,DefaultRealmPullResultHandlerLLMFew2Test,DefaultRealmPullResultHandlerLLMToT1Test,DefaultRealmPullResultHandlerLLMToT2Test,DefaultRealmPullResultHandlerLLMZeroTest,DefaultRealmPullResultHandlerPITTest,DefaultRealmPullResultHandlerRandoopRunTest,DefaultRealmPullResultHandlerRandoopTest
 
-      - name:  Esecuzione Integration Tests
+      - name: Esecuzione Integration Tests
         run: >
           mvn verify -B
           -Denforcer.skip=true
