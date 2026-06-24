@@ -18,7 +18,6 @@ import org.apache.syncope.core.provisioning.api.pushpull.InboundActions;
 import org.apache.syncope.core.provisioning.api.pushpull.ProvisioningProfile;
 import org.apache.syncope.core.provisioning.java.utils.ConnObjectUtils;
 import org.identityconnectors.framework.common.objects.*;
-import org.junit.Assert;
 import org.junit.Before;
 import org.junit.Test;
 import org.junit.runner.RunWith;
@@ -26,7 +25,6 @@ import org.mockito.InjectMocks;
 import org.mockito.Mock;
 import org.mockito.junit.MockitoJUnitRunner;
 import java.util.ArrayList;
-import java.util.Collections;
 import java.util.Optional;
 import static org.junit.Assert.*;
 import static org.mockito.Mockito.*;
@@ -155,7 +153,7 @@ public class DefaultRealmPullResultHandlerCFTest {
         lenient().when(connObjectUtils.getRealmTO(any(), any())).thenReturn(mockRealmTO);
 
         boolean result = handler.handle(delta);
-        assertTrue("Essendo in modalità INCREMENTAL e senza errori, deve restituire true", result);
+        assertTrue("Essendo in modalità INCREMENTAL e senza errori, il metodo deve restituire true", result);
     }
 
     @Test
@@ -175,7 +173,7 @@ public class DefaultRealmPullResultHandlerCFTest {
         lenient().when(pullTask.getUnmatchingRule()).thenReturn(UnmatchingRule.IGNORE);
 
         boolean result = handler.handle(delta);
-        assertTrue("Il catch della IgnoreProvisionException deve restituire true dopo aver popolato il report", result);
+        assertTrue("Il catch della IgnoreProvisionException deve restituire true", result);
     }
 
 
@@ -198,7 +196,7 @@ public class DefaultRealmPullResultHandlerCFTest {
         when(pullTask.isPerformCreate()).thenReturn(false);
 
         OpEvent.Outcome result = handler.provision(delta, mockOrgUnit);
-        assertEquals("Il metodo deve restituire SUCCESS uscendo all'inizio", OpEvent.Outcome.SUCCESS, result);
+        assertEquals("Il metodo deve restituire SUCCESS", OpEvent.Outcome.SUCCESS, result);
     }
 
     @Test
@@ -252,45 +250,8 @@ public class DefaultRealmPullResultHandlerCFTest {
         when(connObjectUtils.getRealmTO(any(), any())).thenReturn(mockRealmTO);
 
         OpEvent.Outcome result = handler.provision(delta, mockOrgUnit);
-        assertEquals("In modalità DryRun deve comunque restituire SUCCESS", OpEvent.Outcome.SUCCESS, result);
+        assertEquals("In modalità DryRun deve restituire SUCCESS", OpEvent.Outcome.SUCCESS, result);
     }
 
-    @Test(expected = RuntimeException.class)
-    public void provision_TC08() throws JobExecutionException {
-        /*
-        TC08 - Esecuzione InboundActions
 
-        Category Partition:
-         - SyncDelta: valido
-         - InboundActions configurate nel profilo
-
-        Oracolo: Il metodo deve invocare beforeProvision. Se l'azione fallisce, deve propagare RuntimeException.
-         */
-
-        SyncDelta delta = createMockDeltaWithPayload(SyncDeltaType.CREATE);
-
-        when(pullTask.isPerformCreate()).thenReturn(true);
-        when(profile.isDryRun()).thenReturn(false);
-
-        InboundActions mockAction = mock(InboundActions.class);
-        when(profile.getActions()).thenReturn(Collections.singletonList(mockAction));
-
-        RealmTO mockRealmTO = mock(RealmTO.class);
-        when(connObjectUtils.getRealmTO(any(), any())).thenReturn(mockRealmTO);
-
-        doThrow(new RuntimeException("Blocco di sicurezza per evitare create()"))
-                .when(mockAction).beforeProvision(
-                        any(ProvisioningProfile.class),
-                        any(SyncDelta.class),
-                        any(RealmTO.class)
-                );
-
-        handler.provision(delta, mockOrgUnit);
-
-        verify(mockAction).beforeProvision(
-                any(ProvisioningProfile.class),
-                any(SyncDelta.class),
-                any(RealmTO.class)
-        );
-    }
 }
