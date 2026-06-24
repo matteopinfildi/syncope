@@ -24,20 +24,19 @@ public class ResourceLogicPITTest {
     private ResourceLogic logic;
 
     @Test(expected = NotFoundException.class)
-    public void testSearchConnObjects_RealmAnyType_ResourceNotFound() {
+    public void testSearchConnObjects_TC11() {
         /*
-     Obiettivo: Uccidere il mutante NO_COVERAGE (Riga 378).
+     Obiettivo: Uccidere il mutante alla riga 378.
 
      Category Partition:
-      - anyTypeKey = REALM_ANYTYPE.
-      - resourceKey: non nullo e non vuoto ("risorsa-fantasma").
-      - Ricerca della risorsa su DB fallita.
+      A2 = Key invalida
+      B4 = REALM_ANYTYPE
 
-      Oracolo:il metodo deve lanciare una NotFoundException interrompendo l'esecuzione.
+      Oracolo: NotFoundException
       */
 
         String anyTypeKey = SyncopeConstants.REALM_ANYTYPE;
-        String key = "risorsa-fantasma";
+        String key = "Resource_DB_Fantasma";
 
         when(resourceDAO.findById(key)).thenReturn(Optional.empty());
 
