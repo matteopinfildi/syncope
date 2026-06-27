@@ -1,0 +1,12 @@
+@Test
+public void testDoHandle_CreateUnmatched_Assigns() throws JobExecutionException {
+    when(delta.getDeltaType()).thenReturn(SyncDeltaType.CREATE);
+    when(inboundMatcher.match(any(), any())).thenReturn(Collections.emptyList());
+    when(task.getUnmatchingRule()).thenReturn(UnmatchingRule.ASSIGN);
+    when(task.isPerformCreate()).thenReturn(false); // Quick branch exit inside assign
+
+    OpEvent.Outcome outcome = handler.doHandle(delta, orgUnit);
+
+    assertEquals(OpEvent.Outcome.SUCCESS, outcome);
+    verify(task, times(1)).getUnmatchingRule();
+}
