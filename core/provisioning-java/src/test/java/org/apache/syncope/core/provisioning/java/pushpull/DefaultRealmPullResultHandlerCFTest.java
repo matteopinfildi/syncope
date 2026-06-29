@@ -94,7 +94,7 @@ public class DefaultRealmPullResultHandlerCFTest {
     // handle
 
     @Test
-    public void handle_TC05() {
+    public void testHandle_TC05() {
         /*
         TC05 - Gestione OrgUnit mancante
 
@@ -114,7 +114,7 @@ public class DefaultRealmPullResultHandlerCFTest {
     }
 
     @Test
-    public void handle_TC06() throws Exception {
+    public void testHandle_TC06() throws Exception {
         /*
         TC06 - Richiesta di interruzione
 
@@ -134,7 +134,7 @@ public class DefaultRealmPullResultHandlerCFTest {
     }
 
     @Test
-    public void handle_TC07() throws Exception {
+    public void testHandle_TC07() throws Exception {
         /*
         TC07 - Elaborazione INCREMENTAL avvenuta con successo
 
@@ -157,7 +157,7 @@ public class DefaultRealmPullResultHandlerCFTest {
     }
 
     @Test
-    public void handle_TC08() {
+    public void testHandle_TC08() {
         /*
         TC08 - Eccezione di business gestita
 
@@ -180,7 +180,7 @@ public class DefaultRealmPullResultHandlerCFTest {
     // provision
 
     @Test
-    public void provision_TC05() throws JobExecutionException {
+    public void testProvision_TC05() throws JobExecutionException {
         /*
         TC05 - Provisioning disabilitato
 
@@ -200,7 +200,7 @@ public class DefaultRealmPullResultHandlerCFTest {
     }
 
     @Test
-    public void provision_TC06() throws JobExecutionException {
+    public void testProvision_TC06() throws JobExecutionException {
         /*
         TC06 - Calcolo ricorsivo del path
 
@@ -230,7 +230,7 @@ public class DefaultRealmPullResultHandlerCFTest {
     }
 
     @Test
-    public void provision_TC07() throws JobExecutionException {
+    public void testProvision_TC07() throws JobExecutionException {
         /*
         TC07 - Dry Run
 
