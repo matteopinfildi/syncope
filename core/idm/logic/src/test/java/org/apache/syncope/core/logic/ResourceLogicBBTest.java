@@ -128,8 +128,8 @@ public class ResourceLogicBBTest {
         resourceTO.setKey("Resource_DB");
         resourceTO.setConnector("Conn-123");
 
-        ConnInstance robustConn = createMockConnInstance();
-        when(connInstanceDAO.authFind("Conn-123")).thenReturn(robustConn);
+        ConnInstance conn = createMockConnInstance();
+        when(connInstanceDAO.authFind("Conn-123")).thenReturn(conn);
         when(resourceDAO.authFind("Resource_DB")).thenReturn(null);
 
         ExternalResource mockResource = mock(ExternalResource.class);
@@ -174,8 +174,8 @@ public class ResourceLogicBBTest {
         resourceTO.setKey("");
         resourceTO.setConnector("Conn-123");
 
-        ConnInstance robustConn = createMockConnInstance();
-        lenient().when(connInstanceDAO.authFind("Conn-123")).thenReturn(robustConn);
+        ConnInstance conn = createMockConnInstance();
+        lenient().when(connInstanceDAO.authFind("Conn-123")).thenReturn(conn);
 
         resourceLogic.create(resourceTO);
     }
@@ -197,8 +197,8 @@ public class ResourceLogicBBTest {
         resourceTO.setKey(null);
         resourceTO.setConnector("Conn-123");
 
-        ConnInstance robustConn = createMockConnInstance();
-        lenient().when(connInstanceDAO.authFind("Conn-123")).thenReturn(robustConn);
+        ConnInstance conn = createMockConnInstance();
+        lenient().when(connInstanceDAO.authFind("Conn-123")).thenReturn(conn);
 
         resourceLogic.create(resourceTO);
     }
@@ -262,8 +262,8 @@ public class ResourceLogicBBTest {
         resourceTO.setKey("Resource_DB_Duplicato");
         resourceTO.setConnector("Conn-123");
 
-        ConnInstance robustConn = createMockConnInstance();
-        when(connInstanceDAO.authFind("Conn-123")).thenReturn(robustConn);
+        ConnInstance conn = createMockConnInstance();
+        when(connInstanceDAO.authFind("Conn-123")).thenReturn(conn);
 
         ExternalResource existingResource = mock(ExternalResource.class);
         when(resourceDAO.authFind("Resource_DB_Duplicato")).thenReturn(existingResource);
