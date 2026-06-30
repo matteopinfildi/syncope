@@ -22,10 +22,13 @@ jobs:
           java-version: '25'
           cache: maven
 
-      - name: Installa EvoSuite  localmente
+      - name: Configurazione EvoSuite
         run: |
+          echo '<project><modelVersion>4.0.0</modelVersion><groupId>org.evosuite</groupId><artifactId>evosuite</artifactId><version>1.2.0</version><packaging>pom</packaging></project>' > dummy-parent.xml
+          mvn install:install-file -Dfile=dummy-parent.xml -DgroupId=org.evosuite -DartifactId=evosuite -Dversion=1.2.0 -Dpackaging=pom
+            
           wget https://github.com/EvoSuite/evosuite/releases/download/v1.2.0/evosuite-standalone-runtime-1.2.0.jar -O evosuite-runtime.jar
-          mvn install:install-file -Dfile=evosuite-runtime.jar -DgroupId=org.evosuite -DartifactId=evosuite-standalone-runtime -Dversion=1.2.0 -Dpackaging=jar
+          mvn install:install-file -Dfile=evosuite-runtime.jar -DgroupId=org.evosuite -DartifactId=evosuite-standalone-runtime -Dversion=1.2.0 -Dpackaging=jar -DgeneratePom=true
 
       - name: Build del progetto (senza test)
         run: >
