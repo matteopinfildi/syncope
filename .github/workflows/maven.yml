@@ -22,7 +22,12 @@ jobs:
           java-version: '25'
           cache: maven
 
-      - name: Installazione backend
+      - name: Installa EvoSuite  localmente
+        run: |
+          wget https://github.com/EvoSuite/evosuite/releases/download/v1.2.0/evosuite-standalone-runtime-1.2.0.jar -O evosuite-runtime.jar
+          mvn install:install-file -Dfile=evosuite-runtime.jar -DgroupId=org.evosuite -DartifactId=evosuite-standalone-runtime -Dversion=1.2.0 -Dpackaging=jar
+
+      - name: Build del progetto (senza test)
         run: >
           mvn clean install -B -T 1C
           -pl :syncope-core-idm-logic,:syncope-core-idrepo-logic,:syncope-core-provisioning-java -am
