@@ -46,7 +46,7 @@ jobs:
           -DfailIfNoTests=false
           -Dsurefire.failIfNoSpecifiedTests=false
           -Djava.net.preferIPv4Stack=true
-          -Dtest=ResourceLogicBBTest,ResourceLogicCFTest,ResourceLogicLLMFew2Test,ResourceLogicLLMFewTest,ResourceLogicLLMToTTest,ResourceLogicLLMToT2Test,ResourceLogicLLMZeroTest,ResourceLogicPITTest,ResourceLogicRandoopRunTest,ResourceLogicRandoopTest,DefaultRealmPullResultHandlerBBTest,DefaultRealmPullResultHandlerCFTest,DefaultRealmPullResultHandlerLLMFew1Test,DefaultRealmPullResultHandlerLLMFew2Test,DefaultRealmPullResultHandlerLLMToT1Test,DefaultRealmPullResultHandlerLLMToT2Test,DefaultRealmPullResultHandlerLLMZeroTest,DefaultRealmPullResultHandlerPITTest,DefaultRealmPullResultHandlerRandoopRunTest,DefaultRealmPullResultHandlerRandoopTest
+          -Dtest=ResourceLogicBBTest,ResourceLogicCFTest,ResourceLogicESTest,ResourceLogicLLMGTest,ResourceLogicLLMZeroTest,ResourceLogicPITTest,ResourceLogicRandoopRunTest,ResourceLogicRandoopTest,DefaultRealmPullResultHandlerBBTest,DefaultRealmPullResultHandlerCFTest,DefaultRealmPullResultHandlerLLMGTTest,DefaultRealmPullResultHandlerLLMZeroTest,DefaultRealmPullResultHandlerPITTest,DefaultRealmPullResultHandlerRandoopRunTest,DefaultRealmPullResultHandlerRandoopTest,DefaultRealmPullResultHandlerESTest
 
       - name: Esecuzione Integration Tests
         run: >
