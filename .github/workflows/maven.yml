@@ -33,7 +33,7 @@ jobs:
       - name: Build del progetto (senza test)
         run: >
           mvn clean install -B -T 1C
-          -pl :syncope-core-idm-logic,:syncope-core-idrepo-logic,:syncope-core-provisioning-java -am
+          -pl :syncope-core-idm-logic,:syncope-core-provisioning-java -am
           -DskipTests
           -Denforcer.skip=true
           -Dcheckstyle.skip=true
