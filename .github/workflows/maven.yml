@@ -42,7 +42,7 @@ jobs:
           -Dlegal.skip=true
           -Djava.net.preferIPv4Stack=true
 
-      - name: Esecuzione Test Unitari e LLM
+      - name: Esecuzione Test
         run: >
           mvn test -B -T 1C
           -pl :syncope-core-idm-logic,:syncope-core-idrepo-logic,:syncope-core-provisioning-java
