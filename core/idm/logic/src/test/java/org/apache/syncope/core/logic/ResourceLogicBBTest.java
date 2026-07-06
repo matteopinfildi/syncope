@@ -6,7 +6,6 @@ import org.apache.syncope.common.lib.to.ConnObject;
 import org.apache.syncope.common.lib.to.Mapping;
 import org.apache.syncope.common.lib.to.ResourceTO;
 import org.apache.syncope.common.lib.to.Provision;
-import org.apache.syncope.common.lib.types.AnyTypeKind;
 import org.apache.syncope.core.persistence.api.dao.*;
 import org.apache.syncope.core.persistence.api.entity.*;
 import org.apache.syncope.core.persistence.api.entity.ExternalResource;
@@ -16,16 +15,12 @@ import org.apache.syncope.core.provisioning.api.data.ConnInstanceDataBinder;
 import org.apache.syncope.core.provisioning.api.MappingManager;
 import org.apache.syncope.core.provisioning.api.ConnectorManager;
 import org.apache.syncope.core.provisioning.java.pushpull.OutboundMatcher;
-import org.identityconnectors.framework.common.objects.AttributeBuilder;
 import org.identityconnectors.framework.common.objects.SearchResult;
-import org.identityconnectors.framework.common.objects.filter.Filter;
-import org.identityconnectors.framework.common.objects.filter.FilterBuilder;
 
 import org.junit.Assert;
 import org.junit.Before;
 import org.junit.Test;
 import org.junit.runner.RunWith;
-import org.mockito.InjectMocks;
 import org.mockito.Mock;
 import org.mockito.junit.MockitoJUnitRunner;
 
@@ -58,26 +53,23 @@ public class ResourceLogicBBTest {
     @Mock
     private AnyUtilsFactory anyUtilsFactory;
 
-    @InjectMocks
     private ResourceLogic resourceLogic;
 
 
     @Before
     public void setUp() {
-        // Inizializzazione manuale dell'oggetto per fare l'override e rimuovere i security checks
         resourceLogic = new ResourceLogic(
                 resourceDAO, anyTypeDAO, connInstanceDAO, binder,
                 connInstanceDataBinder, outboundMatcher, mappingManager,
                 connectorManager, anyUtilsFactory) {
             @Override
             protected void securityChecks(final Set<String> effectiveRealms, final String realm, final String key) {
-                // Bypass della sicurezza per i test unitari
+                // controlli di sicurezza disabilitati
             }
         };
     }
 
-    // --- Metodi di Utility per configurare gli stati del sistema ---
-
+    // Metodo di supporto per creare un finto ConnInstance da passare ai test
     private ConnInstance createMockConnInstance() {
         ConnInstance mockConn = mock(ConnInstance.class);
         Realm mockRealm = mock(Realm.class);
@@ -98,8 +90,7 @@ public class ResourceLogicBBTest {
         Mapping mockMapping = mock(Mapping.class);
 
         lenient().when(mockProvision.getMapping()).thenReturn(mockMapping);
-        lenient().when(mockMapping.getItems()).thenReturn(java.util.Collections.emptyList());
-        lenient().when(mockProvision.getObjectClass()).thenReturn("__ACCOUNT__");
+        lenient().when(mockProvision.getObjectClass()).thenReturn("ACCOUNT");
         lenient().when(mockResource.getProvisionByAnyType("USER")).thenReturn(Optional.of(mockProvision));
 
         Connector mockConnector = mock(Connector.class);
@@ -139,11 +130,10 @@ public class ResourceLogicBBTest {
 
         ResourceTO result = resourceLogic.create(resourceTO);
 
-        Assert.assertNotNull(result);
         Assert.assertEquals("Resource_DB", result.getKey());
     }
 
-    @Test(expected = NullPointerException.class) // capire se va bene
+    @Test(expected = NullPointerException.class)
     public void testCreate_TC02() {
         /*
         TC02 - Creazione con input null
@@ -242,8 +232,6 @@ public class ResourceLogicBBTest {
         resourceTO.setKey("Resource_DB");
         resourceTO.setConnector(null);
 
-        when(connInstanceDAO.authFind(null)).thenReturn(null);
-
         resourceLogic.create(resourceTO);
     }
 
@@ -293,9 +281,8 @@ public class ResourceLogicBBTest {
          */
 
         setupValidSystemStateForSearch();
-        Filter filtro = FilterBuilder.equalTo(AttributeBuilder.build("username", "mario"));
 
-        Pair<SearchResult, List<ConnObject>> result = resourceLogic.searchConnObjects(filtro, Collections.emptySet(), "Resource_DB", "USER", 10, null, Collections.emptyList());
+        Pair<SearchResult, List<ConnObject>> result = resourceLogic.searchConnObjects(null, Collections.emptySet(), "Resource_DB", "USER", 10, null, Collections.emptyList());
 
         Assert.assertNotNull(result);
         Assert.assertNotNull(result.getLeft());
@@ -318,8 +305,7 @@ public class ResourceLogicBBTest {
         setupValidSystemStateForSearch();
         when(resourceDAO.authFind("Resource_DB_Fantasma")).thenReturn(null);
 
-        resourceLogic.searchConnObjects(
-                null, Collections.emptySet(), "Resource_DB_Fantasma", "USER", 10, null, Collections.emptyList());
+        resourceLogic.searchConnObjects(null, Collections.emptySet(), "Resource_DB_Fantasma", "USER", 10, null, Collections.emptyList());
     }
 
     @Test(expected = NotFoundException.class)
@@ -345,8 +331,7 @@ public class ResourceLogicBBTest {
         ExternalResource mockResource = resourceDAO.authFind("Resource_DB");
         when(mockResource.getProvisionByAnyType(anyTypeKey)).thenReturn(Optional.empty());
 
-        resourceLogic.searchConnObjects(
-                null, Collections.emptySet(), "Resource_DB", anyTypeKey, 10, null, Collections.emptyList());
+        resourceLogic.searchConnObjects(null, Collections.emptySet(), "Resource_DB", anyTypeKey, 10, null, Collections.emptyList());
     }
 
     @Test
@@ -364,8 +349,7 @@ public class ResourceLogicBBTest {
 
         setupValidSystemStateForSearch();
 
-        Pair<SearchResult, List<ConnObject>> result = resourceLogic.searchConnObjects(
-                null, Collections.emptySet(), "Resource_DB", "USER", -1, null, Collections.emptyList());
+        Pair<SearchResult, List<ConnObject>> result = resourceLogic.searchConnObjects(null, Collections.emptySet(), "Resource_DB", "USER", -1, null, Collections.emptyList());
 
         Assert.assertNotNull(result);
         Assert.assertTrue(result.getRight().isEmpty());
@@ -406,8 +390,7 @@ public class ResourceLogicBBTest {
 
         setupValidSystemStateForSearch();
 
-        resourceLogic.searchConnObjects(
-                null, Collections.emptySet(), null, "USER", 10, null, Collections.emptyList());
+        resourceLogic.searchConnObjects(null, Collections.emptySet(), null, "USER", 10, null, Collections.emptyList());
     }
 
     @Test
@@ -425,11 +408,10 @@ public class ResourceLogicBBTest {
 
         setupValidSystemStateForSearch();
 
-        Pair<SearchResult, List<ConnObject>> result = resourceLogic.searchConnObjects(
-                null, Collections.emptySet(), "Resource_DB", "USER", 0, null, Collections.emptyList());
+        Pair<SearchResult, List<ConnObject>> result = resourceLogic.searchConnObjects(null, Collections.emptySet(), "Resource_DB", "USER", 0, null, Collections.emptyList());
 
         Assert.assertNotNull(result);
-        Assert.assertNotNull(result.getRight());
+        Assert.assertTrue(result.getRight().isEmpty());
     }
 
     @Test(expected = NotFoundException.class)
@@ -448,8 +430,7 @@ public class ResourceLogicBBTest {
 
         lenient().when(anyTypeDAO.findById("")).thenReturn(Optional.empty());
 
-        resourceLogic.searchConnObjects(
-                null, Collections.emptySet(), "Resource_DB", "", 10, null, Collections.emptyList());
+        resourceLogic.searchConnObjects(null, Collections.emptySet(), "Resource_DB", "", 10, null, Collections.emptyList());
     }
 
     @Test(expected = NotFoundException.class)
@@ -468,7 +449,6 @@ public class ResourceLogicBBTest {
 
         lenient().when(anyTypeDAO.findById(null)).thenReturn(Optional.empty());
 
-        resourceLogic.searchConnObjects(
-                null, Collections.emptySet(), "Resource_DB", null, 10, null, Collections.emptyList());
+        resourceLogic.searchConnObjects(null, Collections.emptySet(), "Resource_DB", null, 10, null, Collections.emptyList());
     }
 }

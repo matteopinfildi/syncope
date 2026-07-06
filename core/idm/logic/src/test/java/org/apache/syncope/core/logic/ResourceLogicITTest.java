@@ -2,116 +2,76 @@ package org.apache.syncope.core.logic;
 
 import static org.junit.Assert.assertEquals;
 import static org.junit.Assert.assertNotNull;
-import static org.mockito.ArgumentMatchers.any;
-import static org.mockito.ArgumentMatchers.anyString;
+
 import static org.mockito.Mockito.*;
-import java.util.Collections;
-import java.util.Map;
-import java.util.Optional;
-import java.util.Set;
+
 import org.apache.syncope.common.lib.to.ResourceTO;
-import org.apache.syncope.core.persistence.api.dao.ConnInstanceDAO;
-import org.apache.syncope.core.persistence.api.dao.ExternalResourceDAO;
+import org.apache.syncope.core.persistence.api.dao.*;
 import org.apache.syncope.core.persistence.api.entity.ConnInstance;
+import org.apache.syncope.core.persistence.api.entity.EntityFactory;
 import org.apache.syncope.core.persistence.api.entity.ExternalResource;
-import org.apache.syncope.core.persistence.api.entity.Realm;
-import org.apache.syncope.core.provisioning.api.ConnectorManager;
-import org.apache.syncope.core.provisioning.api.data.ResourceDataBinder;
-import org.apache.syncope.core.spring.security.AuthContextUtils;
+import org.apache.syncope.core.provisioning.api.IntAttrNameParser;
+import org.apache.syncope.core.provisioning.api.jexl.JexlTools;
+import org.apache.syncope.core.provisioning.api.propagation.PropagationTaskExecutor;
+import org.apache.syncope.core.provisioning.java.data.ResourceDataBinderImpl;
 import org.junit.Test;
-import org.junit.runner.RunWith;
-import org.mockito.InjectMocks;
-import org.mockito.Mock;
-import org.mockito.MockedStatic;
-import org.mockito.junit.MockitoJUnitRunner;
 
-
-@RunWith(MockitoJUnitRunner.class)
 public class ResourceLogicITTest {
 
-    @Mock
-    private ExternalResourceDAO resourceDAO;
-    @Mock
-    private ResourceDataBinder binder;
-    @Mock
-    private ConnInstanceDAO connInstanceDAO;
-    @Mock
-    private ConnectorManager connectorManager;
-
-    @InjectMocks
-    private ResourceLogic resourceLogic;
-
-    /*
-     Integration test top-down con boundary mockato.
-
-     Componente reale sotto test: ResourceLogic.
-
-     Componenti mockati: ExternalResourceDAO, ResourceDataBinder, ConnInstanceDAO, ConnectorManager.
-
-      Oggetto reale osservato come risultato: ResourceTO.
-
-      La comunicazione verificata è:
-      - ResourceLogic -> Binder (Create)
-      - ResourceLogic -> ResourceDAO (Save)
-      - ResourceLogic -> ConnectorManager (Register)
-
-      Il risultato verificato tramite assert è: corretto popolamento del DTO di output e integrità del flusso.
-     */
-
     @Test
-    public void create_IT() {
+    public void testRead_IT() {
         /*
-         Category Partition:
-         A1 = ResourceTO con dati validi
-         B1 = Connettore esistente e autorizzato
-         C1 = Auth valido
+         Obiettivo: verificare l'integrazione tra ResourceLogic e l'implementazione reale di ResourceDataBinderImpl.
 
-          Oracolo:
-          Il risultato deve essere non nullo,
-          il ResourceTO restituito deve contenere la chiave corretta,
-          il flusso deve invocare correttamente binder, dao e connectorManager nel giusto ordine.
-         */
+         Oracolo: Il metodo read deve invocare correttamente il binder reale;
+         l'oggetto ResourceTO di output deve contenere la chiave e il connettore corretti.
+        */
 
-        Map<String, Set<String>> mockAuths = mock(Map.class);
-        doReturn(Collections.singleton("/")).when(mockAuths).get(any());
+        AnyTypeDAO mockAnyTypeDAO = mock(AnyTypeDAO.class);
+        ConnInstanceDAO mockConnInstanceDAO = mock(ConnInstanceDAO.class);
+        PolicyDAO mockPolicyDAO = mock(PolicyDAO.class);
+        AnyTypeClassDAO mockAnyTypeClassDAO = mock(AnyTypeClassDAO.class);
+        ImplementationDAO mockImplementationDAO = mock(ImplementationDAO.class);
+        PlainSchemaDAO mockPlainSchemaDAO = mock(PlainSchemaDAO.class);
+        EntityFactory mockEntityFactory = mock(EntityFactory.class);
+        IntAttrNameParser mockIntAttrNameParser = mock(IntAttrNameParser.class);
+        PropagationTaskExecutor mockPropagationTaskExecutor = mock(PropagationTaskExecutor.class);
+        JexlTools mockJexlTools = mock(JexlTools.class);
 
-        try (MockedStatic<AuthContextUtils> authUtils = mockStatic(AuthContextUtils.class)) {
-            authUtils.when(AuthContextUtils::getAuthorizations).thenReturn(mockAuths);
-            authUtils.when(AuthContextUtils::getUsername).thenReturn("admin");
+        ResourceDataBinderImpl realBinder = new ResourceDataBinderImpl(
+                mockAnyTypeDAO,
+                mockConnInstanceDAO,
+                mockPolicyDAO,
+                mockAnyTypeClassDAO,
+                mockImplementationDAO,
+                mockPlainSchemaDAO,
+                mockEntityFactory,
+                mockIntAttrNameParser,
+                mockPropagationTaskExecutor,
+                mockJexlTools
+        );
 
-            String resourceKey = "NewResource";
-            String connectorKey = "MyConnector";
+        ExternalResourceDAO mockResourceDAO = mock(ExternalResourceDAO.class);
 
-            ResourceTO inputTO = new ResourceTO();
-            inputTO.setKey(resourceKey);
-            inputTO.setConnector(connectorKey);
+        ResourceLogic resourceLogic = new ResourceLogic(
+                mockResourceDAO, null, null,
+                realBinder,
+                null, null, null, null, null
+        );
 
-            ResourceTO expectedTO = new ResourceTO();
-            expectedTO.setKey(resourceKey);
+        ExternalResource externalResource = mock(ExternalResource.class);
+        when(externalResource.getKey()).thenReturn("Resource_DB");
 
-            ExternalResource mockEntity = mock(ExternalResource.class);
-            ConnInstance mockConnInstance = mock(ConnInstance.class);
-            Realm mockRealm = mock(Realm.class);
+        ConnInstance mockConnInstance = mock(ConnInstance.class);
+        when(mockConnInstance.getKey()).thenReturn("Conn-123");
+        when(externalResource.getConnector()).thenReturn(mockConnInstance);
 
-            doReturn(mockRealm).when(mockConnInstance).getAdminRealm();
-            doReturn("/").when(mockRealm).getFullPath();
-            lenient().doReturn(Optional.of(mockConnInstance)).when(connInstanceDAO).findById(anyString());
-            doReturn(mockConnInstance).when(connInstanceDAO).authFind(anyString());
+        when(mockResourceDAO.authFind("Resource_DB")).thenReturn(externalResource);
 
-            doReturn(mockEntity).when(binder).create(any(ResourceTO.class));
-            doReturn(mockEntity).when(resourceDAO).save(any(ExternalResource.class));
-            doReturn(expectedTO).when(binder).getResourceTO(any(ExternalResource.class));
+        ResourceTO result = resourceLogic.read("Resource_DB");
 
-            ResourceTO result = resourceLogic.create(inputTO);
-
-            assertNotNull("Il ResourceTO restituito non deve essere nullo", result);
-            assertEquals("La chiave della risorsa creata deve coincidere con l'input", resourceKey, result.getKey());
-
-            verify(binder).create(inputTO);
-            verify(resourceDAO).save(mockEntity);
-            verify(connectorManager).registerConnector(mockEntity);
-            verify(binder).getResourceTO(mockEntity);
-        }
+        assertNotNull(result);
+        assertEquals("Resource_DB", result.getKey());
+        assertEquals("Conn-123", result.getConnector());
     }
 }
-

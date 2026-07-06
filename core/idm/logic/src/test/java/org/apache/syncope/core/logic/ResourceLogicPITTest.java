@@ -8,10 +8,8 @@ import org.junit.runner.RunWith;
 import org.mockito.InjectMocks;
 import org.mockito.Mock;
 import org.mockito.junit.MockitoJUnitRunner;
-
 import java.util.Optional;
-
-import static org.mockito.Mockito.when;
+import static org.mockito.Mockito.*;
 
 
 @RunWith(MockitoJUnitRunner.class)
@@ -26,13 +24,9 @@ public class ResourceLogicPITTest {
     @Test(expected = NotFoundException.class)
     public void testSearchConnObjects_TC11() {
         /*
-     Obiettivo: Uccidere il mutante alla riga 378.
+        Obiettivo: Uccidere il mutante alla riga 378.
 
-     Category Partition:
-      A2 = Key invalida
-      B4 = REALM_ANYTYPE
-
-      Oracolo: NotFoundException
+        Oracolo: Passando una chiave inesistente, deve essere lanciata una NotFoundException.
       */
 
         String anyTypeKey = SyncopeConstants.REALM_ANYTYPE;

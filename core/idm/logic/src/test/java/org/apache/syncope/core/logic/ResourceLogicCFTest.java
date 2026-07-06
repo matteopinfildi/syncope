@@ -2,6 +2,7 @@ package org.apache.syncope.core.logic;
 
 
 import org.apache.syncope.common.lib.SyncopeConstants;
+import org.apache.syncope.common.lib.to.ResourceTO;
 import org.apache.syncope.core.persistence.api.dao.*;
 import org.apache.syncope.core.persistence.api.entity.AnyUtilsFactory;
 import org.apache.syncope.core.persistence.api.entity.ExternalResource;
@@ -19,6 +20,9 @@ import org.mockito.junit.MockitoJUnitRunner;
 import java.util.Collections;
 import java.util.Optional;
 import java.util.Set;
+
+import static org.junit.Assert.assertEquals;
+import static org.junit.Assert.assertNotNull;
 import static org.mockito.Mockito.*;
 
 @RunWith(MockitoJUnitRunner.class)
@@ -54,7 +58,7 @@ public class ResourceLogicCFTest {
                 connectorManager, anyUtilsFactory) {
             @Override
             protected void securityChecks(final Set<String> effectiveRealms, final String realm, final String key) {
-                // Bypass della sicurezza per i test unitari di Control-Flow
+                // controlli di sicurezza disabilitati
             }
         };
     }
@@ -64,14 +68,8 @@ public class ResourceLogicCFTest {
     @Test(expected = NotFoundException.class)
     public void testSearchConn_TC010() {
         /*
-        Category partition:
-        A1 = Key valida
-        B4 = REALM_ANYTYPE
-        C1 = size valido
-
-
-         Oracolo: Il flusso deve essere interrotto per assenza di regole di provisioning --> NotFoundException
-         */
+        Oracolo: impostando l'OrgUnit nullo, deve essere lanciata una NotFoundException.
+        */
 
         String realmAnyType = SyncopeConstants.REALM_ANYTYPE;
         ExternalResource mockResource = mock(ExternalResource.class);
@@ -82,4 +80,36 @@ public class ResourceLogicCFTest {
         resourceLogic.searchConnObjects(null, Collections.emptySet(), "Resource_DB", realmAnyType, 10, null, Collections.emptyList());
     }
 
+    @Test
+    public void testRead_TC01() {
+        /*
+         Oracolo: se la risorsa viene trovata, il metodo deve restituire l'oggetto ResourceTO.
+         */
+
+        ExternalResource mockResource = mock(ExternalResource.class);
+        ResourceTO mockResourceTO = new ResourceTO();
+        mockResourceTO.setKey("Resource_DB");
+
+        when(resourceDAO.authFind("Resource_DB")).thenReturn(mockResource);
+        when(binder.getResourceTO(mockResource)).thenReturn(mockResourceTO);
+
+        ResourceTO result = resourceLogic.read("Resource_DB");
+
+        assertNotNull(result);
+        assertEquals("Resource_DB", result.getKey());
+
+        verify(resourceDAO).authFind("Resource_DB");
+        verify(binder).getResourceTO(mockResource);
+    }
+
+    @Test(expected = NotFoundException.class)
+    public void testRead_TC02() {
+        /*
+        Oracolo: se la risorsa non esiste, deve essere lanciata una NotFoundException
+         */
+
+        when(resourceDAO.authFind("Resource_FANTASMA")).thenReturn(null);
+
+        resourceLogic.read("Resource_FANTASMA");
+    }
 }
