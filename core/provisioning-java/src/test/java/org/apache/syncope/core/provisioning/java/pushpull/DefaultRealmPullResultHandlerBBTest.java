@@ -100,20 +100,18 @@ public class DefaultRealmPullResultHandlerBBTest {
         lenient().when(pullTask.getResource()).thenReturn(mockResource);
         lenient().when(mockResource.getOrgUnit()).thenReturn(mockOrgUnit);
 
-        lenient().when(pullTask.getMatchingRule()).thenReturn(org.apache.syncope.common.lib.types.MatchingRule.UPDATE);
-        lenient().when(pullTask.getUnmatchingRule()).thenReturn(org.apache.syncope.common.lib.types.UnmatchingRule.PROVISION);
     }
 
 
-    //  Metodo Utility per forgiare un SyncDelta su misura
+    // Metodo di supporto per creare un finto syncDelta da passare ai test
     private SyncDelta createMockDelta(SyncDeltaType type, boolean withPayload) {
         SyncDelta delta = mock(SyncDelta.class);
         lenient().when(delta.getDeltaType()).thenReturn(type);
-        lenient().when(delta.getUid()).thenReturn(new Uid("ext-id-123"));
+        lenient().when(delta.getUid()).thenReturn(new Uid("id-123"));
 
         if (withPayload) {
             ConnectorObject obj = mock(ConnectorObject.class);
-            lenient().when(obj.getUid()).thenReturn(new Uid("ext-id-123"));
+            lenient().when(obj.getUid()).thenReturn(new Uid("id-123"));
             lenient().when(delta.getObject()).thenReturn(obj);
         }
         return delta;
@@ -138,7 +136,7 @@ public class DefaultRealmPullResultHandlerBBTest {
 
         boolean result = handler.handle(delta);
 
-        Assert.assertTrue("L'handler dovrebbe processare con successo un evento CREATE", result);
+        Assert.assertTrue(result);
     }
 
     @Test
@@ -161,7 +159,7 @@ public class DefaultRealmPullResultHandlerBBTest {
 
         boolean result = handler.handle(delta);
 
-        Assert.assertTrue("L'handler dovrebbe processare con successo un evento DELETE", result);
+        Assert.assertTrue(result);
     }
 
     @Test(expected = NullPointerException.class)
@@ -215,8 +213,8 @@ public class DefaultRealmPullResultHandlerBBTest {
         SyncDelta delta = createMockDelta(SyncDeltaType.CREATE, true);
 
         RealmTO mockRealmTO = mock(RealmTO.class);
-        lenient().when(mockRealmTO.getKey()).thenReturn("finto-realmTO-key");
-        lenient().when(mockRealmTO.getFullPath()).thenReturn("/finto-path");
+        lenient().when(mockRealmTO.getKey()).thenReturn("realmTO-key");
+        lenient().when(mockRealmTO.getFullPath()).thenReturn("/path");
         lenient().when(connObjectUtils.getRealmTO(any(), any())).thenReturn(mockRealmTO);
 
         Realm savedRealm = mock(Realm.class);
@@ -225,7 +223,7 @@ public class DefaultRealmPullResultHandlerBBTest {
         lenient().when(binder.getRealmTO(any(), anyBoolean())).thenReturn(mockRealmTO);
 
         OpEvent.Outcome result = handler.provision(delta, mockOrgUnit);
-        Assert.assertNotNull("L'esito non deve essere nullo", result);
+        Assert.assertNotNull(result);
     }
 
     @Test(expected = NullPointerException.class)
@@ -294,7 +292,7 @@ public class DefaultRealmPullResultHandlerBBTest {
          */
 
         SyncDelta delta = createMockDelta(SyncDeltaType.CREATE, true);
-        when(connObjectUtils.getRealmTO(any(), any())).thenThrow(new RuntimeException("Simulated DB Error"));
+        when(connObjectUtils.getRealmTO(any(), any())).thenThrow(new RuntimeException("DB Error"));
 
         handler.provision(delta, mockOrgUnit);
     }

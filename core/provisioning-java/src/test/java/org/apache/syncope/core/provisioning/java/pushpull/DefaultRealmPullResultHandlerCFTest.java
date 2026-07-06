@@ -32,19 +32,30 @@ import static org.mockito.Mockito.*;
 @RunWith(MockitoJUnitRunner.class)
 public class DefaultRealmPullResultHandlerCFTest {
 
-    @Mock private RealmDAO realmDAO;
-    @Mock private RealmDataBinder binder;
-    @Mock private ConnObjectUtils connObjectUtils;
-    @Mock private InboundMatcher inboundMatcher;
-
-    @Mock private ProvisioningProfile<PullTask, InboundActions> profile;
-    @Mock private PullTask pullTask;
-    @Mock private ExternalResource mockResource;
-    @Mock private OrgUnit mockOrgUnit;
-    @Mock private Realm destinationRealm;
-    @Mock private NotificationManager notificationManager;
-    @Mock private AuditManager auditManager;
-    @Mock private Realm mockRealm;
+    @Mock
+    private RealmDAO realmDAO;
+    @Mock
+    private RealmDataBinder binder;
+    @Mock
+    private ConnObjectUtils connObjectUtils;
+    @Mock
+    private InboundMatcher inboundMatcher;
+    @Mock
+    private ProvisioningProfile<PullTask, InboundActions> profile;
+    @Mock
+    private PullTask pullTask;
+    @Mock
+    private ExternalResource mockResource;
+    @Mock
+    private OrgUnit mockOrgUnit;
+    @Mock
+    private Realm destinationRealm;
+    @Mock
+    private NotificationManager notificationManager;
+    @Mock
+    private AuditManager auditManager;
+    @Mock
+    private Realm mockRealm;
 
     @InjectMocks
     private DefaultRealmPullResultHandler handler;
@@ -61,31 +72,31 @@ public class DefaultRealmPullResultHandlerCFTest {
         lenient().when(pullTask.getDestinationRealm()).thenReturn(destinationRealm);
 
         lenient().when(destinationRealm.getFullPath()).thenReturn("/");
-        lenient().when(destinationRealm.getKey()).thenReturn("finto-key-dest");
+        lenient().when(destinationRealm.getKey()).thenReturn("key-dest");
         lenient().when(destinationRealm.getResources()).thenReturn(new ArrayList<>());
 
         lenient().doReturn(Optional.of(destinationRealm)).when(realmDAO).findById(anyString());
 
         lenient().when(binder.create(any(), any())).thenReturn(mockRealm);
-        lenient().when(mockRealm.getKey()).thenReturn("finto-key-mock");
+        lenient().when(mockRealm.getKey()).thenReturn("key-Realm");
         lenient().when(mockRealm.getResources()).thenReturn(new ArrayList<>());
 
         lenient().when(pullTask.getResource()).thenReturn(mockResource);
         lenient().when(mockResource.getOrgUnit()).thenReturn(mockOrgUnit);
 
-        lenient().when(mockOrgUnit.getObjectClass()).thenReturn("__REALM__");
+        lenient().when(mockOrgUnit.getObjectClass()).thenReturn("REALM");
     }
 
     private SyncDelta createMockDeltaWithPayload(SyncDeltaType type) {
         SyncDelta delta = mock(SyncDelta.class);
         lenient().when(delta.getDeltaType()).thenReturn(type);
-        lenient().when(delta.getUid()).thenReturn(new Uid("ext-id-123"));
+        lenient().when(delta.getUid()).thenReturn(new Uid("id-123"));
 
         ConnectorObject obj = mock(ConnectorObject.class);
-        lenient().when(obj.getUid()).thenReturn(new Uid("ext-id-123"));
+        lenient().when(obj.getUid()).thenReturn(new Uid("id-123"));
         lenient().when(obj.getObjectClass()).thenReturn(ObjectClass.ACCOUNT);
 
-        lenient().when(obj.getName()).thenReturn(new Name("finto-nome-realm"));
+        lenient().when(obj.getName()).thenReturn(new Name("nome-realm"));
 
         lenient().when(delta.getObject()).thenReturn(obj);
         return delta;
@@ -96,13 +107,7 @@ public class DefaultRealmPullResultHandlerCFTest {
     @Test
     public void testHandle_TC05() {
         /*
-        TC05 - Gestione OrgUnit mancante
-
-        Category Partition:
-         - SyncDelta: valido
-         - OrgUnit: null
-
-        Oracolo: JobExecutionException.
+        Oracolo: impostando l'OrgUnit nullo, il metodo deve terminare l'esecuzione restituendo false.
          */
 
         SyncDelta delta = createMockDeltaWithPayload(SyncDeltaType.CREATE);
@@ -110,39 +115,27 @@ public class DefaultRealmPullResultHandlerCFTest {
         when(mockResource.getOrgUnit()).thenReturn(null);
 
         boolean result = handler.handle(delta);
-        assertFalse("Il metodo deve restituire false quando viene catturata la JobExecutionException", result);
+        assertFalse(result);
     }
 
     @Test
     public void testHandle_TC06() throws Exception {
         /*
-        TC06 - Richiesta di interruzione
-
-        Category Partition:
-         - SyncDelta: valido
-         - flag stopRequested = true
-
-        Oracolo: Il metodo verifica lo stato di stopRequested e deve terminare immediatamente l'esecuzione restituendo false.
-         */
+        Oracolo: il flag stopRequested è impostato a true, il metodo deve interrompere il flusso restituendo false.
+        */
 
         SyncDelta delta = createMockDeltaWithPayload(SyncDeltaType.CREATE);
 
         FieldUtils.writeField(handler, "stopRequested", true, true);
 
         boolean result = handler.handle(delta);
-        assertFalse("Il metodo deve interrompersi e restituire false se è stato richiesto lo stop", result);
+        assertFalse(result);
     }
 
     @Test
-    public void testHandle_TC07() throws Exception {
+    public void testHandle_TC07() {
         /*
-        TC07 - Elaborazione INCREMENTAL avvenuta con successo
-
-        Category Partition:
-         - SyncDelta: valido
-         - PullMode = INCREMENTAL
-
-        Oracolo: Superati i check iniziali, il metodo deve tornare true poiché l'esito di doHandle è SUCCESS.
+        Oracolo: in modalità di pull INCREMENTAL, il metodo deve completare l'elaborazione con successo ritornando true.
          */
 
         SyncDelta delta = createMockDeltaWithPayload(SyncDeltaType.CREATE);
@@ -153,27 +146,21 @@ public class DefaultRealmPullResultHandlerCFTest {
         lenient().when(connObjectUtils.getRealmTO(any(), any())).thenReturn(mockRealmTO);
 
         boolean result = handler.handle(delta);
-        assertTrue("Essendo in modalità INCREMENTAL e senza errori, il metodo deve restituire true", result);
+        assertTrue(result);
     }
 
     @Test
     public void testHandle_TC08() {
         /*
-        TC08 - Eccezione di business gestita
-
-        Category Partition:
-         - SyncDelta: valido
-         - UnmatchingRule = IGNORE
-
-        Oracolo: La delega a doHandle solleva una IgnoreProvisionException. Il blocco catch dedicato la intercetta, crea un report di tipo IGNORE e ritorna true.
-         */
+       Oracolo: con UnmatchingRule.IGNORE, il metodo deve ritornare true.
+       */
 
         SyncDelta delta = createMockDeltaWithPayload(SyncDeltaType.CREATE);
 
         lenient().when(pullTask.getUnmatchingRule()).thenReturn(UnmatchingRule.IGNORE);
 
         boolean result = handler.handle(delta);
-        assertTrue("Il catch della IgnoreProvisionException deve restituire true", result);
+        assertTrue(result);
     }
 
 
@@ -182,13 +169,7 @@ public class DefaultRealmPullResultHandlerCFTest {
     @Test
     public void testProvision_TC05() throws JobExecutionException {
         /*
-        TC05 - Provisioning disabilitato
-
-        Category Partition:
-         - SyncDelta: valido
-         - isPerformCreate = false
-
-        Oracolo: Il metodo deve eseguire il return con successo.
+        Oracolo: con isPerformCreate impostato a false, il metodo deve ritronare SUCCESS senza eseguire alcuna operazione.
          */
 
         SyncDelta delta = createMockDeltaWithPayload(SyncDeltaType.CREATE);
@@ -196,18 +177,14 @@ public class DefaultRealmPullResultHandlerCFTest {
         when(pullTask.isPerformCreate()).thenReturn(false);
 
         OpEvent.Outcome result = handler.provision(delta, mockOrgUnit);
-        assertEquals("Il metodo deve restituire SUCCESS", OpEvent.Outcome.SUCCESS, result);
+        assertEquals(OpEvent.Outcome.SUCCESS, result);
     }
 
     @Test
     public void testProvision_TC06() throws JobExecutionException {
         /*
-        TC06 - Calcolo ricorsivo del path
-
-        Category Partition:
-         - RealmTO con fullPath e parent null
-
-        Oracolo: L'handler deve calcolare il path partendo dal parent della destinationRealm e settare il fullPath correttamente.
+        Oracolo: con fullPath e parent del RealmTO null,
+        l'handler deve calcolare il path basandosi sul parent del destinationRealm e aggiornare il RealmTO.
          */
 
         SyncDelta delta = createMockDeltaWithPayload(SyncDeltaType.CREATE);
@@ -224,21 +201,16 @@ public class DefaultRealmPullResultHandlerCFTest {
 
         when(profile.isDryRun()).thenReturn(true);
 
-        handler.provision(delta, mockOrgUnit);
+        OpEvent.Outcome result = handler.provision(delta, mockOrgUnit);
 
+        assertEquals(OpEvent.Outcome.SUCCESS, result);
         verify(mockRealmTO).setParent("/root");
     }
 
     @Test
     public void testProvision_TC07() throws JobExecutionException {
         /*
-        TC07 - Dry Run
-
-        Category Partition:
-         - SyncDelta: valido
-         - isDryRun = true
-
-        Oracolo: Il metodo esegue la validazione ma non scrive, ritornando SUCCESS senza persistenza.
+       Oracolo: in modalità Dry Run, il metodo deve ritornare SUCCESS.
          */
 
         SyncDelta delta = createMockDeltaWithPayload(SyncDeltaType.CREATE);
@@ -250,8 +222,6 @@ public class DefaultRealmPullResultHandlerCFTest {
         when(connObjectUtils.getRealmTO(any(), any())).thenReturn(mockRealmTO);
 
         OpEvent.Outcome result = handler.provision(delta, mockOrgUnit);
-        assertEquals("In modalità DryRun deve restituire SUCCESS", OpEvent.Outcome.SUCCESS, result);
+        assertEquals(OpEvent.Outcome.SUCCESS, result);
     }
-
-
 }
