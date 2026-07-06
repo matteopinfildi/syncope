@@ -25,7 +25,7 @@ public class ErrorTest0 {
         if (debug)
             System.out.format("%n%s%n", "ErrorTest0.test1");
         org.apache.syncope.core.provisioning.java.pushpull.DefaultRealmPullResultHandler defaultRealmPullResultHandler0 = new org.apache.syncope.core.provisioning.java.pushpull.DefaultRealmPullResultHandler();
-        org.identityconnectors.framework.common.objects.SyncDelta syncDelta1 = org.apache.syncope.core.provisioning.java.pushpull.RandoopHelperHandler.getGodModeDelta();
+        org.identityconnectors.framework.common.objects.SyncDelta syncDelta1 = org.apache.syncope.core.provisioning.java.pushpull.RandoopHelperHandler.getHelperDeltaRandoop();
         // during test generation this statement threw an exception of type java.lang.NullPointerException in error
         boolean boolean2 = defaultRealmPullResultHandler0.handle(syncDelta1);
     }
@@ -37,8 +37,8 @@ public class ErrorTest0 {
         org.apache.syncope.core.provisioning.java.pushpull.DefaultRealmPullResultHandler defaultRealmPullResultHandler0 = new org.apache.syncope.core.provisioning.java.pushpull.DefaultRealmPullResultHandler();
         defaultRealmPullResultHandler0.stop();
         defaultRealmPullResultHandler0.stop();
-        org.apache.syncope.core.provisioning.java.pushpull.DefaultRealmPullResultHandler defaultRealmPullResultHandler3 = org.apache.syncope.core.provisioning.java.pushpull.RandoopHelperHandler.getGodModeHandler();
-        org.identityconnectors.framework.common.objects.SyncDelta syncDelta4 = org.apache.syncope.core.provisioning.java.pushpull.RandoopHelperHandler.getGodModeDelta();
+        org.apache.syncope.core.provisioning.java.pushpull.DefaultRealmPullResultHandler defaultRealmPullResultHandler3 = org.apache.syncope.core.provisioning.java.pushpull.RandoopHelperHandler.getHelperHandlerRandoop();
+        org.identityconnectors.framework.common.objects.SyncDelta syncDelta4 = org.apache.syncope.core.provisioning.java.pushpull.RandoopHelperHandler.getHelperDeltaRandoop();
         boolean boolean5 = defaultRealmPullResultHandler3.handle(syncDelta4);
         // during test generation this statement threw an exception of type java.lang.NullPointerException in error
         boolean boolean6 = defaultRealmPullResultHandler0.handle(syncDelta4);
@@ -50,8 +50,8 @@ public class ErrorTest0 {
             System.out.format("%n%s%n", "ErrorTest0.test3");
         org.apache.syncope.core.provisioning.java.pushpull.DefaultRealmPullResultHandler defaultRealmPullResultHandler0 = new org.apache.syncope.core.provisioning.java.pushpull.DefaultRealmPullResultHandler();
         defaultRealmPullResultHandler0.stop();
-        org.apache.syncope.core.provisioning.java.pushpull.DefaultRealmPullResultHandler defaultRealmPullResultHandler2 = org.apache.syncope.core.provisioning.java.pushpull.RandoopHelperHandler.getGodModeHandler();
-        org.identityconnectors.framework.common.objects.SyncDelta syncDelta3 = org.apache.syncope.core.provisioning.java.pushpull.RandoopHelperHandler.getGodModeDelta();
+        org.apache.syncope.core.provisioning.java.pushpull.DefaultRealmPullResultHandler defaultRealmPullResultHandler2 = org.apache.syncope.core.provisioning.java.pushpull.RandoopHelperHandler.getHelperHandlerRandoop();
+        org.identityconnectors.framework.common.objects.SyncDelta syncDelta3 = org.apache.syncope.core.provisioning.java.pushpull.RandoopHelperHandler.getHelperDeltaRandoop();
         boolean boolean4 = defaultRealmPullResultHandler2.handle(syncDelta3);
         // during test generation this statement threw an exception of type java.lang.NullPointerException in error
         boolean boolean5 = defaultRealmPullResultHandler0.handle(syncDelta3);
@@ -66,7 +66,7 @@ public class ErrorTest0 {
         defaultRealmPullResultHandler0.stop();
         defaultRealmPullResultHandler0.stop();
         defaultRealmPullResultHandler0.stop();
-        org.identityconnectors.framework.common.objects.SyncDelta syncDelta5 = org.apache.syncope.core.provisioning.java.pushpull.RandoopHelperHandler.getGodModeDelta();
+        org.identityconnectors.framework.common.objects.SyncDelta syncDelta5 = org.apache.syncope.core.provisioning.java.pushpull.RandoopHelperHandler.getHelperDeltaRandoop();
         // during test generation this statement threw an exception of type java.lang.NullPointerException in error
         boolean boolean6 = defaultRealmPullResultHandler0.handle(syncDelta5);
     }
@@ -79,8 +79,8 @@ public class ErrorTest0 {
         defaultRealmPullResultHandler0.stop();
         defaultRealmPullResultHandler0.stop();
         defaultRealmPullResultHandler0.stop();
-        org.apache.syncope.core.provisioning.java.pushpull.DefaultRealmPullResultHandler defaultRealmPullResultHandler4 = org.apache.syncope.core.provisioning.java.pushpull.RandoopHelperHandler.getGodModeHandler();
-        org.identityconnectors.framework.common.objects.SyncDelta syncDelta5 = org.apache.syncope.core.provisioning.java.pushpull.RandoopHelperHandler.getGodModeDelta();
+        org.apache.syncope.core.provisioning.java.pushpull.DefaultRealmPullResultHandler defaultRealmPullResultHandler4 = org.apache.syncope.core.provisioning.java.pushpull.RandoopHelperHandler.getHelperHandlerRandoop();
+        org.identityconnectors.framework.common.objects.SyncDelta syncDelta5 = org.apache.syncope.core.provisioning.java.pushpull.RandoopHelperHandler.getHelperDeltaRandoop();
         boolean boolean6 = defaultRealmPullResultHandler4.handle(syncDelta5);
         // during test generation this statement threw an exception of type java.lang.NullPointerException in error
         boolean boolean7 = defaultRealmPullResultHandler0.handle(syncDelta5);
@@ -92,7 +92,7 @@ public class ErrorTest0 {
             System.out.format("%n%s%n", "ErrorTest0.test6");
         org.apache.syncope.core.provisioning.java.pushpull.DefaultRealmPullResultHandler defaultRealmPullResultHandler0 = new org.apache.syncope.core.provisioning.java.pushpull.DefaultRealmPullResultHandler();
         defaultRealmPullResultHandler0.stop();
-        org.identityconnectors.framework.common.objects.SyncDelta syncDelta2 = org.apache.syncope.core.provisioning.java.pushpull.RandoopHelperHandler.getGodModeDelta();
+        org.identityconnectors.framework.common.objects.SyncDelta syncDelta2 = org.apache.syncope.core.provisioning.java.pushpull.RandoopHelperHandler.getHelperDeltaRandoop();
         // during test generation this statement threw an exception of type java.lang.NullPointerException in error
         boolean boolean3 = defaultRealmPullResultHandler0.handle(syncDelta2);
     }
@@ -108,7 +108,7 @@ public class ErrorTest0 {
         defaultRealmPullResultHandler0.stop();
         defaultRealmPullResultHandler0.stop();
         defaultRealmPullResultHandler0.stop();
-        org.identityconnectors.framework.common.objects.SyncDelta syncDelta7 = org.apache.syncope.core.provisioning.java.pushpull.RandoopHelperHandler.getGodModeDelta();
+        org.identityconnectors.framework.common.objects.SyncDelta syncDelta7 = org.apache.syncope.core.provisioning.java.pushpull.RandoopHelperHandler.getHelperDeltaRandoop();
         // during test generation this statement threw an exception of type java.lang.NullPointerException in error
         boolean boolean8 = defaultRealmPullResultHandler0.handle(syncDelta7);
     }
@@ -119,12 +119,12 @@ public class ErrorTest0 {
             System.out.format("%n%s%n", "ErrorTest0.test8");
         org.apache.syncope.core.provisioning.java.pushpull.DefaultRealmPullResultHandler defaultRealmPullResultHandler0 = new org.apache.syncope.core.provisioning.java.pushpull.DefaultRealmPullResultHandler();
         defaultRealmPullResultHandler0.stop();
-        org.apache.syncope.core.provisioning.java.pushpull.DefaultRealmPullResultHandler defaultRealmPullResultHandler2 = org.apache.syncope.core.provisioning.java.pushpull.RandoopHelperHandler.getGodModeHandler();
-        org.identityconnectors.framework.common.objects.SyncDelta syncDelta3 = org.apache.syncope.core.provisioning.java.pushpull.RandoopHelperHandler.getGodModeDelta();
+        org.apache.syncope.core.provisioning.java.pushpull.DefaultRealmPullResultHandler defaultRealmPullResultHandler2 = org.apache.syncope.core.provisioning.java.pushpull.RandoopHelperHandler.getHelperHandlerRandoop();
+        org.identityconnectors.framework.common.objects.SyncDelta syncDelta3 = org.apache.syncope.core.provisioning.java.pushpull.RandoopHelperHandler.getHelperDeltaRandoop();
         boolean boolean4 = defaultRealmPullResultHandler2.handle(syncDelta3);
         defaultRealmPullResultHandler2.stop();
         defaultRealmPullResultHandler2.stop();
-        org.identityconnectors.framework.common.objects.SyncDelta syncDelta7 = org.apache.syncope.core.provisioning.java.pushpull.RandoopHelperHandler.getGodModeDelta();
+        org.identityconnectors.framework.common.objects.SyncDelta syncDelta7 = org.apache.syncope.core.provisioning.java.pushpull.RandoopHelperHandler.getHelperDeltaRandoop();
         boolean boolean8 = defaultRealmPullResultHandler2.handle(syncDelta7);
         // during test generation this statement threw an exception of type java.lang.NullPointerException in error
         boolean boolean9 = defaultRealmPullResultHandler0.handle(syncDelta7);
@@ -139,11 +139,11 @@ public class ErrorTest0 {
         defaultRealmPullResultHandler0.stop();
         defaultRealmPullResultHandler0.stop();
         defaultRealmPullResultHandler0.stop();
-        org.apache.syncope.core.provisioning.java.pushpull.DefaultRealmPullResultHandler defaultRealmPullResultHandler5 = org.apache.syncope.core.provisioning.java.pushpull.RandoopHelperHandler.getGodModeHandler();
-        org.identityconnectors.framework.common.objects.SyncDelta syncDelta6 = org.apache.syncope.core.provisioning.java.pushpull.RandoopHelperHandler.getGodModeDelta();
+        org.apache.syncope.core.provisioning.java.pushpull.DefaultRealmPullResultHandler defaultRealmPullResultHandler5 = org.apache.syncope.core.provisioning.java.pushpull.RandoopHelperHandler.getHelperHandlerRandoop();
+        org.identityconnectors.framework.common.objects.SyncDelta syncDelta6 = org.apache.syncope.core.provisioning.java.pushpull.RandoopHelperHandler.getHelperDeltaRandoop();
         boolean boolean7 = defaultRealmPullResultHandler5.handle(syncDelta6);
-        org.apache.syncope.core.provisioning.java.pushpull.DefaultRealmPullResultHandler defaultRealmPullResultHandler8 = org.apache.syncope.core.provisioning.java.pushpull.RandoopHelperHandler.getGodModeHandler();
-        org.identityconnectors.framework.common.objects.SyncDelta syncDelta9 = org.apache.syncope.core.provisioning.java.pushpull.RandoopHelperHandler.getGodModeDelta();
+        org.apache.syncope.core.provisioning.java.pushpull.DefaultRealmPullResultHandler defaultRealmPullResultHandler8 = org.apache.syncope.core.provisioning.java.pushpull.RandoopHelperHandler.getHelperHandlerRandoop();
+        org.identityconnectors.framework.common.objects.SyncDelta syncDelta9 = org.apache.syncope.core.provisioning.java.pushpull.RandoopHelperHandler.getHelperDeltaRandoop();
         boolean boolean10 = defaultRealmPullResultHandler8.handle(syncDelta9);
         boolean boolean11 = defaultRealmPullResultHandler5.handle(syncDelta9);
         // during test generation this statement threw an exception of type java.lang.NullPointerException in error

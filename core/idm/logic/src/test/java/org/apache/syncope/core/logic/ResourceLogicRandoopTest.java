@@ -305,7 +305,7 @@ public class ResourceLogicRandoopTest {
     public void test012() throws Throwable {
         if (debug)
             System.out.format("%n%s%n", "RegressionTest0.test012");
-        org.apache.syncope.common.lib.to.ResourceTO resourceTO0 = org.apache.syncope.core.logic.RandoopHelper.getValidResourceTO();
+        org.apache.syncope.common.lib.to.ResourceTO resourceTO0 = org.apache.syncope.core.logic.RandoopHelperLogic.getValidResourceTO();
         java.lang.Class<?> wildcardClass1 = resourceTO0.getClass();
         org.junit.Assert.assertNotNull(resourceTO0);
         org.junit.Assert.assertNotNull(wildcardClass1);
@@ -326,9 +326,9 @@ public class ResourceLogicRandoopTest {
         org.apache.syncope.core.persistence.api.entity.AnyUtilsFactory anyUtilsFactory8 = null;
         org.apache.syncope.core.logic.ResourceLogic resourceLogic9 = new org.apache.syncope.core.logic.ResourceLogic(externalResourceDAO0, anyTypeDAO1, connInstanceDAO2, resourceDataBinder3, connInstanceDataBinder4, outboundMatcher5, mappingManager6, connectorManager7, anyUtilsFactory8);
         java.lang.reflect.Method method10 = null;
-        org.apache.syncope.common.lib.to.ResourceTO resourceTO13 = org.apache.syncope.core.logic.RandoopHelper.getValidResourceTO();
+        org.apache.syncope.common.lib.to.ResourceTO resourceTO13 = org.apache.syncope.core.logic.RandoopHelperLogic.getValidResourceTO();
         java.lang.Class<?> wildcardClass14 = resourceTO13.getClass();
-        org.apache.syncope.common.lib.to.ResourceTO resourceTO16 = org.apache.syncope.core.logic.RandoopHelper.getValidResourceTO();
+        org.apache.syncope.common.lib.to.ResourceTO resourceTO16 = org.apache.syncope.core.logic.RandoopHelperLogic.getValidResourceTO();
         java.lang.Object[] objArray18 = new java.lang.Object[] { (byte) 100, ' ', resourceTO13, (-1L), resourceTO16, 100.0d };
         // The following exception was thrown during execution in test generation
         try {
@@ -357,7 +357,7 @@ public class ResourceLogicRandoopTest {
         org.apache.syncope.core.provisioning.api.ConnectorManager connectorManager7 = null;
         org.apache.syncope.core.persistence.api.entity.AnyUtilsFactory anyUtilsFactory8 = null;
         org.apache.syncope.core.logic.ResourceLogic resourceLogic9 = new org.apache.syncope.core.logic.ResourceLogic(externalResourceDAO0, anyTypeDAO1, connInstanceDAO2, resourceDataBinder3, connInstanceDataBinder4, outboundMatcher5, mappingManager6, connectorManager7, anyUtilsFactory8);
-        org.apache.syncope.common.lib.to.ResourceTO resourceTO10 = org.apache.syncope.core.logic.RandoopHelper.getValidResourceTO();
+        org.apache.syncope.common.lib.to.ResourceTO resourceTO10 = org.apache.syncope.core.logic.RandoopHelperLogic.getValidResourceTO();
         // The following exception was thrown during execution in test generation
         try {
             org.apache.syncope.common.lib.to.ResourceTO resourceTO11 = resourceLogic9.create(resourceTO10);
@@ -468,7 +468,7 @@ public class ResourceLogicRandoopTest {
         org.apache.syncope.core.provisioning.api.ConnectorManager connectorManager7 = null;
         org.apache.syncope.core.persistence.api.entity.AnyUtilsFactory anyUtilsFactory8 = null;
         org.apache.syncope.core.logic.ResourceLogic resourceLogic9 = new org.apache.syncope.core.logic.ResourceLogic(externalResourceDAO0, anyTypeDAO1, connInstanceDAO2, resourceDataBinder3, connInstanceDataBinder4, outboundMatcher5, mappingManager6, connectorManager7, anyUtilsFactory8);
-        org.apache.syncope.common.lib.to.ResourceTO resourceTO10 = org.apache.syncope.core.logic.RandoopHelper.getValidResourceTO();
+        org.apache.syncope.common.lib.to.ResourceTO resourceTO10 = org.apache.syncope.core.logic.RandoopHelperLogic.getValidResourceTO();
         // The following exception was thrown during execution in test generation
         try {
             resourceLogic9.check(resourceTO10);
@@ -604,7 +604,7 @@ public class ResourceLogicRandoopTest {
     public void test025() throws Throwable {
         if (debug)
             System.out.format("%n%s%n", "RegressionTest0.test025");
-        org.apache.syncope.core.logic.ResourceLogic resourceLogic0 = org.apache.syncope.core.logic.RandoopHelper.getConfiguredResourceLogic();
+        org.apache.syncope.core.logic.ResourceLogic resourceLogic0 = org.apache.syncope.core.logic.RandoopHelperLogic.getHelperResourceLogicRandoop();
         // The following exception was thrown during execution in test generation
         try {
             java.lang.String str4 = resourceLogic0.getConnObjectKeyValue("hi!", "hi!", "hi!");
@@ -680,8 +680,8 @@ public class ResourceLogicRandoopTest {
     public void test028() throws Throwable {
         if (debug)
             System.out.format("%n%s%n", "RegressionTest0.test028");
-        org.apache.syncope.core.logic.ResourceLogic resourceLogic0 = org.apache.syncope.core.logic.RandoopHelper.getConfiguredResourceLogic();
-        org.apache.syncope.common.lib.to.ResourceTO resourceTO1 = org.apache.syncope.core.logic.RandoopHelper.getValidResourceTO();
+        org.apache.syncope.core.logic.ResourceLogic resourceLogic0 = org.apache.syncope.core.logic.RandoopHelperLogic.getHelperResourceLogicRandoop();
+        org.apache.syncope.common.lib.to.ResourceTO resourceTO1 = org.apache.syncope.core.logic.RandoopHelperLogic.getValidResourceTO();
         // The following exception was thrown during execution in test generation
         try {
             org.apache.syncope.common.lib.to.ResourceTO resourceTO2 = resourceLogic0.create(resourceTO1);
@@ -697,7 +697,7 @@ public class ResourceLogicRandoopTest {
     public void test029() throws Throwable {
         if (debug)
             System.out.format("%n%s%n", "RegressionTest0.test029");
-        org.apache.syncope.core.logic.ResourceLogic resourceLogic0 = org.apache.syncope.core.logic.RandoopHelper.getConfiguredResourceLogic();
+        org.apache.syncope.core.logic.ResourceLogic resourceLogic0 = org.apache.syncope.core.logic.RandoopHelperLogic.getHelperResourceLogicRandoop();
         // The following exception was thrown during execution in test generation
         try {
             java.lang.String str4 = resourceLogic0.getConnObjectKeyValue("", "", "hi!");
@@ -735,7 +735,7 @@ public class ResourceLogicRandoopTest {
     public void test031() throws Throwable {
         if (debug)
             System.out.format("%n%s%n", "RegressionTest0.test031");
-        org.apache.syncope.core.logic.ResourceLogic resourceLogic0 = org.apache.syncope.core.logic.RandoopHelper.getConfiguredResourceLogic();
+        org.apache.syncope.core.logic.ResourceLogic resourceLogic0 = org.apache.syncope.core.logic.RandoopHelperLogic.getHelperResourceLogicRandoop();
         org.identityconnectors.framework.common.objects.filter.Filter filter1 = null;
         java.lang.String[] strArray3 = new java.lang.String[] { "" };
         java.util.LinkedHashSet<java.lang.String> strSet4 = new java.util.LinkedHashSet<java.lang.String>();
@@ -763,7 +763,7 @@ public class ResourceLogicRandoopTest {
     public void test032() throws Throwable {
         if (debug)
             System.out.format("%n%s%n", "RegressionTest0.test032");
-        org.apache.syncope.core.logic.ResourceLogic resourceLogic0 = org.apache.syncope.core.logic.RandoopHelper.getConfiguredResourceLogic();
+        org.apache.syncope.core.logic.ResourceLogic resourceLogic0 = org.apache.syncope.core.logic.RandoopHelperLogic.getHelperResourceLogicRandoop();
         // The following exception was thrown during execution in test generation
         try {
             org.apache.syncope.common.lib.to.ConnObject connObject4 = resourceLogic0.readConnObjectByConnObjectKeyValue("", "hi!", "hi!");
@@ -778,7 +778,7 @@ public class ResourceLogicRandoopTest {
     public void test033() throws Throwable {
         if (debug)
             System.out.format("%n%s%n", "RegressionTest0.test033");
-        org.apache.syncope.core.logic.ResourceLogic resourceLogic0 = org.apache.syncope.core.logic.RandoopHelper.getConfiguredResourceLogic();
+        org.apache.syncope.core.logic.ResourceLogic resourceLogic0 = org.apache.syncope.core.logic.RandoopHelperLogic.getHelperResourceLogicRandoop();
         // The following exception was thrown during execution in test generation
         try {
             resourceLogic0.setLatestSyncToken("", "hi!");
@@ -826,7 +826,7 @@ public class ResourceLogicRandoopTest {
         org.apache.syncope.core.provisioning.api.ConnectorManager connectorManager7 = null;
         org.apache.syncope.core.persistence.api.entity.AnyUtilsFactory anyUtilsFactory8 = null;
         org.apache.syncope.core.logic.ResourceLogic resourceLogic9 = new org.apache.syncope.core.logic.ResourceLogic(externalResourceDAO0, anyTypeDAO1, connInstanceDAO2, resourceDataBinder3, connInstanceDataBinder4, outboundMatcher5, mappingManager6, connectorManager7, anyUtilsFactory8);
-        org.apache.syncope.common.lib.to.ResourceTO resourceTO10 = org.apache.syncope.core.logic.RandoopHelper.getValidResourceTO();
+        org.apache.syncope.common.lib.to.ResourceTO resourceTO10 = org.apache.syncope.core.logic.RandoopHelperLogic.getValidResourceTO();
         // The following exception was thrown during execution in test generation
         try {
             org.apache.syncope.common.lib.to.ResourceTO resourceTO11 = resourceLogic9.update(resourceTO10);
@@ -841,7 +841,7 @@ public class ResourceLogicRandoopTest {
     public void test036() throws Throwable {
         if (debug)
             System.out.format("%n%s%n", "RegressionTest0.test036");
-        org.apache.syncope.core.logic.ResourceLogic resourceLogic0 = org.apache.syncope.core.logic.RandoopHelper.getConfiguredResourceLogic();
+        org.apache.syncope.core.logic.ResourceLogic resourceLogic0 = org.apache.syncope.core.logic.RandoopHelperLogic.getHelperResourceLogicRandoop();
         org.identityconnectors.framework.common.objects.filter.Filter filter1 = null;
         java.lang.String[] strArray4 = new java.lang.String[] { "hi!", "hi!" };
         java.util.LinkedHashSet<java.lang.String> strSet5 = new java.util.LinkedHashSet<java.lang.String>();
@@ -869,7 +869,7 @@ public class ResourceLogicRandoopTest {
     public void test037() throws Throwable {
         if (debug)
             System.out.format("%n%s%n", "RegressionTest0.test037");
-        org.apache.syncope.core.logic.ResourceLogic resourceLogic0 = org.apache.syncope.core.logic.RandoopHelper.getConfiguredResourceLogic();
+        org.apache.syncope.core.logic.ResourceLogic resourceLogic0 = org.apache.syncope.core.logic.RandoopHelperLogic.getHelperResourceLogicRandoop();
         // The following exception was thrown during execution in test generation
         try {
             org.apache.syncope.common.lib.to.ConnObject connObject4 = resourceLogic0.readConnObjectByConnObjectKeyValue("hi!", "hi!", "");
@@ -884,8 +884,8 @@ public class ResourceLogicRandoopTest {
     public void test038() throws Throwable {
         if (debug)
             System.out.format("%n%s%n", "RegressionTest0.test038");
-        org.apache.syncope.core.logic.ResourceLogic resourceLogic0 = org.apache.syncope.core.logic.RandoopHelper.getConfiguredResourceLogic();
-        org.apache.syncope.common.lib.to.ResourceTO resourceTO1 = org.apache.syncope.core.logic.RandoopHelper.getValidResourceTO();
+        org.apache.syncope.core.logic.ResourceLogic resourceLogic0 = org.apache.syncope.core.logic.RandoopHelperLogic.getHelperResourceLogicRandoop();
+        org.apache.syncope.common.lib.to.ResourceTO resourceTO1 = org.apache.syncope.core.logic.RandoopHelperLogic.getValidResourceTO();
         // The following exception was thrown during execution in test generation
         try {
             resourceLogic0.check(resourceTO1);
@@ -937,7 +937,7 @@ public class ResourceLogicRandoopTest {
     public void test040() throws Throwable {
         if (debug)
             System.out.format("%n%s%n", "RegressionTest0.test040");
-        org.apache.syncope.core.logic.ResourceLogic resourceLogic0 = org.apache.syncope.core.logic.RandoopHelper.getConfiguredResourceLogic();
+        org.apache.syncope.core.logic.ResourceLogic resourceLogic0 = org.apache.syncope.core.logic.RandoopHelperLogic.getHelperResourceLogicRandoop();
         org.identityconnectors.framework.common.objects.filter.Filter filter1 = null;
         java.lang.String[] strArray4 = new java.lang.String[] { "hi!", "hi!" };
         java.util.LinkedHashSet<java.lang.String> strSet5 = new java.util.LinkedHashSet<java.lang.String>();
@@ -965,7 +965,7 @@ public class ResourceLogicRandoopTest {
     public void test041() throws Throwable {
         if (debug)
             System.out.format("%n%s%n", "RegressionTest0.test041");
-        org.apache.syncope.core.logic.ResourceLogic resourceLogic0 = org.apache.syncope.core.logic.RandoopHelper.getConfiguredResourceLogic();
+        org.apache.syncope.core.logic.ResourceLogic resourceLogic0 = org.apache.syncope.core.logic.RandoopHelperLogic.getHelperResourceLogicRandoop();
         // The following exception was thrown during execution in test generation
         try {
             org.apache.syncope.common.lib.to.ConnObject connObject4 = resourceLogic0.readConnObjectByAnyKey("", "", "hi!");
@@ -980,7 +980,7 @@ public class ResourceLogicRandoopTest {
     public void test042() throws Throwable {
         if (debug)
             System.out.format("%n%s%n", "RegressionTest0.test042");
-        org.apache.syncope.core.logic.ResourceLogic resourceLogic0 = org.apache.syncope.core.logic.RandoopHelper.getConfiguredResourceLogic();
+        org.apache.syncope.core.logic.ResourceLogic resourceLogic0 = org.apache.syncope.core.logic.RandoopHelperLogic.getHelperResourceLogicRandoop();
         // The following exception was thrown during execution in test generation
         try {
             java.lang.String str4 = resourceLogic0.getConnObjectKeyValue("hi!", "", "hi!");
@@ -995,7 +995,7 @@ public class ResourceLogicRandoopTest {
     public void test043() throws Throwable {
         if (debug)
             System.out.format("%n%s%n", "RegressionTest0.test043");
-        org.apache.syncope.core.logic.ResourceLogic resourceLogic0 = org.apache.syncope.core.logic.RandoopHelper.getConfiguredResourceLogic();
+        org.apache.syncope.core.logic.ResourceLogic resourceLogic0 = org.apache.syncope.core.logic.RandoopHelperLogic.getHelperResourceLogicRandoop();
         // The following exception was thrown during execution in test generation
         try {
             org.apache.syncope.common.lib.to.ResourceTO resourceTO2 = resourceLogic0.read("");
@@ -1033,7 +1033,7 @@ public class ResourceLogicRandoopTest {
     public void test045() throws Throwable {
         if (debug)
             System.out.format("%n%s%n", "RegressionTest0.test045");
-        org.apache.syncope.core.logic.ResourceLogic resourceLogic0 = org.apache.syncope.core.logic.RandoopHelper.getConfiguredResourceLogic();
+        org.apache.syncope.core.logic.ResourceLogic resourceLogic0 = org.apache.syncope.core.logic.RandoopHelperLogic.getHelperResourceLogicRandoop();
         // The following exception was thrown during execution in test generation
         try {
             resourceLogic0.removeSyncToken("hi!", "");
@@ -1048,9 +1048,9 @@ public class ResourceLogicRandoopTest {
     public void test046() throws Throwable {
         if (debug)
             System.out.format("%n%s%n", "RegressionTest0.test046");
-        org.apache.syncope.core.logic.ResourceLogic resourceLogic0 = org.apache.syncope.core.logic.RandoopHelper.getConfiguredResourceLogic();
+        org.apache.syncope.core.logic.ResourceLogic resourceLogic0 = org.apache.syncope.core.logic.RandoopHelperLogic.getHelperResourceLogicRandoop();
         java.util.List<org.apache.syncope.common.lib.to.ResourceTO> resourceTOList1 = resourceLogic0.list();
-        org.apache.syncope.common.lib.to.ResourceTO resourceTO2 = org.apache.syncope.core.logic.RandoopHelper.getValidResourceTO();
+        org.apache.syncope.common.lib.to.ResourceTO resourceTO2 = org.apache.syncope.core.logic.RandoopHelperLogic.getValidResourceTO();
         // The following exception was thrown during execution in test generation
         try {
             resourceLogic0.check(resourceTO2);
@@ -1067,9 +1067,9 @@ public class ResourceLogicRandoopTest {
     public void test047() throws Throwable {
         if (debug)
             System.out.format("%n%s%n", "RegressionTest0.test047");
-        org.apache.syncope.core.logic.ResourceLogic resourceLogic0 = org.apache.syncope.core.logic.RandoopHelper.getConfiguredResourceLogic();
+        org.apache.syncope.core.logic.ResourceLogic resourceLogic0 = org.apache.syncope.core.logic.RandoopHelperLogic.getHelperResourceLogicRandoop();
         java.util.List<org.apache.syncope.common.lib.to.ResourceTO> resourceTOList1 = resourceLogic0.list();
-        org.apache.syncope.common.lib.to.ResourceTO resourceTO2 = org.apache.syncope.core.logic.RandoopHelper.getValidResourceTO();
+        org.apache.syncope.common.lib.to.ResourceTO resourceTO2 = org.apache.syncope.core.logic.RandoopHelperLogic.getValidResourceTO();
         // The following exception was thrown during execution in test generation
         try {
             org.apache.syncope.common.lib.to.ResourceTO resourceTO3 = resourceLogic0.update(resourceTO2);
@@ -1086,7 +1086,7 @@ public class ResourceLogicRandoopTest {
     public void test048() throws Throwable {
         if (debug)
             System.out.format("%n%s%n", "RegressionTest0.test048");
-        org.apache.syncope.core.logic.ResourceLogic resourceLogic0 = org.apache.syncope.core.logic.RandoopHelper.getConfiguredResourceLogic();
+        org.apache.syncope.core.logic.ResourceLogic resourceLogic0 = org.apache.syncope.core.logic.RandoopHelperLogic.getHelperResourceLogicRandoop();
         java.util.List<org.apache.syncope.common.lib.to.ResourceTO> resourceTOList1 = resourceLogic0.list();
         // The following exception was thrown during execution in test generation
         try {
@@ -1126,7 +1126,7 @@ public class ResourceLogicRandoopTest {
     public void test050() throws Throwable {
         if (debug)
             System.out.format("%n%s%n", "RegressionTest0.test050");
-        org.apache.syncope.core.logic.ResourceLogic resourceLogic0 = org.apache.syncope.core.logic.RandoopHelper.getConfiguredResourceLogic();
+        org.apache.syncope.core.logic.ResourceLogic resourceLogic0 = org.apache.syncope.core.logic.RandoopHelperLogic.getHelperResourceLogicRandoop();
         java.util.List<org.apache.syncope.common.lib.to.ResourceTO> resourceTOList1 = resourceLogic0.list();
         // The following exception was thrown during execution in test generation
         try {
@@ -1143,7 +1143,7 @@ public class ResourceLogicRandoopTest {
     public void test051() throws Throwable {
         if (debug)
             System.out.format("%n%s%n", "RegressionTest0.test051");
-        org.apache.syncope.core.logic.ResourceLogic resourceLogic0 = org.apache.syncope.core.logic.RandoopHelper.getConfiguredResourceLogic();
+        org.apache.syncope.core.logic.ResourceLogic resourceLogic0 = org.apache.syncope.core.logic.RandoopHelperLogic.getHelperResourceLogicRandoop();
         java.util.List<org.apache.syncope.common.lib.to.ResourceTO> resourceTOList1 = resourceLogic0.list();
         // The following exception was thrown during execution in test generation
         try {
@@ -1160,7 +1160,7 @@ public class ResourceLogicRandoopTest {
     public void test052() throws Throwable {
         if (debug)
             System.out.format("%n%s%n", "RegressionTest0.test052");
-        org.apache.syncope.core.logic.ResourceLogic resourceLogic0 = org.apache.syncope.core.logic.RandoopHelper.getConfiguredResourceLogic();
+        org.apache.syncope.core.logic.ResourceLogic resourceLogic0 = org.apache.syncope.core.logic.RandoopHelperLogic.getHelperResourceLogicRandoop();
         java.util.List<org.apache.syncope.common.lib.to.ResourceTO> resourceTOList1 = resourceLogic0.list();
         // The following exception was thrown during execution in test generation
         try {
@@ -1177,7 +1177,7 @@ public class ResourceLogicRandoopTest {
     public void test053() throws Throwable {
         if (debug)
             System.out.format("%n%s%n", "RegressionTest0.test053");
-        org.apache.syncope.core.logic.ResourceLogic resourceLogic0 = org.apache.syncope.core.logic.RandoopHelper.getConfiguredResourceLogic();
+        org.apache.syncope.core.logic.ResourceLogic resourceLogic0 = org.apache.syncope.core.logic.RandoopHelperLogic.getHelperResourceLogicRandoop();
         org.identityconnectors.framework.common.objects.filter.Filter filter1 = null;
         java.lang.String[] strArray4 = new java.lang.String[] { "", "" };
         java.util.LinkedHashSet<java.lang.String> strSet5 = new java.util.LinkedHashSet<java.lang.String>();
@@ -1205,7 +1205,7 @@ public class ResourceLogicRandoopTest {
     public void test054() throws Throwable {
         if (debug)
             System.out.format("%n%s%n", "RegressionTest0.test054");
-        org.apache.syncope.core.logic.ResourceLogic resourceLogic0 = org.apache.syncope.core.logic.RandoopHelper.getConfiguredResourceLogic();
+        org.apache.syncope.core.logic.ResourceLogic resourceLogic0 = org.apache.syncope.core.logic.RandoopHelperLogic.getHelperResourceLogicRandoop();
         java.util.List<org.apache.syncope.common.lib.to.ResourceTO> resourceTOList1 = resourceLogic0.list();
         java.lang.reflect.Method method2 = null;
         java.lang.Object[] objArray4 = new java.lang.Object[] { (-1.0d) };
@@ -1227,7 +1227,7 @@ public class ResourceLogicRandoopTest {
     public void test055() throws Throwable {
         if (debug)
             System.out.format("%n%s%n", "RegressionTest0.test055");
-        org.apache.syncope.core.logic.ResourceLogic resourceLogic0 = org.apache.syncope.core.logic.RandoopHelper.getConfiguredResourceLogic();
+        org.apache.syncope.core.logic.ResourceLogic resourceLogic0 = org.apache.syncope.core.logic.RandoopHelperLogic.getHelperResourceLogicRandoop();
         java.util.List<org.apache.syncope.common.lib.to.ResourceTO> resourceTOList1 = resourceLogic0.list();
         // The following exception was thrown during execution in test generation
         try {
@@ -1244,7 +1244,7 @@ public class ResourceLogicRandoopTest {
     public void test056() throws Throwable {
         if (debug)
             System.out.format("%n%s%n", "RegressionTest0.test056");
-        org.apache.syncope.core.logic.ResourceLogic resourceLogic0 = org.apache.syncope.core.logic.RandoopHelper.getConfiguredResourceLogic();
+        org.apache.syncope.core.logic.ResourceLogic resourceLogic0 = org.apache.syncope.core.logic.RandoopHelperLogic.getHelperResourceLogicRandoop();
         java.util.List<org.apache.syncope.common.lib.to.ResourceTO> resourceTOList1 = resourceLogic0.list();
         // The following exception was thrown during execution in test generation
         try {
@@ -1261,7 +1261,7 @@ public class ResourceLogicRandoopTest {
     public void test057() throws Throwable {
         if (debug)
             System.out.format("%n%s%n", "RegressionTest0.test057");
-        org.apache.syncope.core.logic.ResourceLogic resourceLogic0 = org.apache.syncope.core.logic.RandoopHelper.getConfiguredResourceLogic();
+        org.apache.syncope.core.logic.ResourceLogic resourceLogic0 = org.apache.syncope.core.logic.RandoopHelperLogic.getHelperResourceLogicRandoop();
         java.util.List<org.apache.syncope.common.lib.to.ResourceTO> resourceTOList1 = resourceLogic0.list();
         // The following exception was thrown during execution in test generation
         try {
@@ -1278,8 +1278,8 @@ public class ResourceLogicRandoopTest {
     public void test058() throws Throwable {
         if (debug)
             System.out.format("%n%s%n", "RegressionTest0.test058");
-        org.apache.syncope.core.logic.ResourceLogic resourceLogic0 = org.apache.syncope.core.logic.RandoopHelper.getConfiguredResourceLogic();
-        org.apache.syncope.common.lib.to.ResourceTO resourceTO1 = org.apache.syncope.core.logic.RandoopHelper.getValidResourceTO();
+        org.apache.syncope.core.logic.ResourceLogic resourceLogic0 = org.apache.syncope.core.logic.RandoopHelperLogic.getHelperResourceLogicRandoop();
+        org.apache.syncope.common.lib.to.ResourceTO resourceTO1 = org.apache.syncope.core.logic.RandoopHelperLogic.getValidResourceTO();
         // The following exception was thrown during execution in test generation
         try {
             org.apache.syncope.common.lib.to.ResourceTO resourceTO2 = resourceLogic0.update(resourceTO1);
@@ -1295,9 +1295,9 @@ public class ResourceLogicRandoopTest {
     public void test059() throws Throwable {
         if (debug)
             System.out.format("%n%s%n", "RegressionTest0.test059");
-        org.apache.syncope.core.logic.ResourceLogic resourceLogic0 = org.apache.syncope.core.logic.RandoopHelper.getConfiguredResourceLogic();
+        org.apache.syncope.core.logic.ResourceLogic resourceLogic0 = org.apache.syncope.core.logic.RandoopHelperLogic.getHelperResourceLogicRandoop();
         java.util.List<org.apache.syncope.common.lib.to.ResourceTO> resourceTOList1 = resourceLogic0.list();
-        org.apache.syncope.common.lib.to.ResourceTO resourceTO2 = org.apache.syncope.core.logic.RandoopHelper.getValidResourceTO();
+        org.apache.syncope.common.lib.to.ResourceTO resourceTO2 = org.apache.syncope.core.logic.RandoopHelperLogic.getValidResourceTO();
         // The following exception was thrown during execution in test generation
         try {
             org.apache.syncope.common.lib.to.ResourceTO resourceTO3 = resourceLogic0.create(resourceTO2);
@@ -1314,7 +1314,7 @@ public class ResourceLogicRandoopTest {
     public void test060() throws Throwable {
         if (debug)
             System.out.format("%n%s%n", "RegressionTest0.test060");
-        org.apache.syncope.core.logic.ResourceLogic resourceLogic0 = org.apache.syncope.core.logic.RandoopHelper.getConfiguredResourceLogic();
+        org.apache.syncope.core.logic.ResourceLogic resourceLogic0 = org.apache.syncope.core.logic.RandoopHelperLogic.getHelperResourceLogicRandoop();
         java.util.List<org.apache.syncope.common.lib.to.ResourceTO> resourceTOList1 = resourceLogic0.list();
         // The following exception was thrown during execution in test generation
         try {
@@ -1331,7 +1331,7 @@ public class ResourceLogicRandoopTest {
     public void test061() throws Throwable {
         if (debug)
             System.out.format("%n%s%n", "RegressionTest0.test061");
-        org.apache.syncope.core.logic.ResourceLogic resourceLogic0 = org.apache.syncope.core.logic.RandoopHelper.getConfiguredResourceLogic();
+        org.apache.syncope.core.logic.ResourceLogic resourceLogic0 = org.apache.syncope.core.logic.RandoopHelperLogic.getHelperResourceLogicRandoop();
         org.identityconnectors.framework.common.objects.filter.Filter filter1 = null;
         java.lang.String[] strArray4 = new java.lang.String[] { "", "" };
         java.util.LinkedHashSet<java.lang.String> strSet5 = new java.util.LinkedHashSet<java.lang.String>();
@@ -1382,7 +1382,7 @@ public class ResourceLogicRandoopTest {
     public void test063() throws Throwable {
         if (debug)
             System.out.format("%n%s%n", "RegressionTest0.test063");
-        org.apache.syncope.core.logic.ResourceLogic resourceLogic0 = org.apache.syncope.core.logic.RandoopHelper.getConfiguredResourceLogic();
+        org.apache.syncope.core.logic.ResourceLogic resourceLogic0 = org.apache.syncope.core.logic.RandoopHelperLogic.getHelperResourceLogicRandoop();
         java.util.List<org.apache.syncope.common.lib.to.ResourceTO> resourceTOList1 = resourceLogic0.list();
         org.identityconnectors.framework.common.objects.filter.Filter filter2 = null;
         java.lang.String[] strArray5 = new java.lang.String[] { "hi!", "hi!" };
@@ -1412,7 +1412,7 @@ public class ResourceLogicRandoopTest {
     public void test064() throws Throwable {
         if (debug)
             System.out.format("%n%s%n", "RegressionTest0.test064");
-        org.apache.syncope.core.logic.ResourceLogic resourceLogic0 = org.apache.syncope.core.logic.RandoopHelper.getConfiguredResourceLogic();
+        org.apache.syncope.core.logic.ResourceLogic resourceLogic0 = org.apache.syncope.core.logic.RandoopHelperLogic.getHelperResourceLogicRandoop();
         // The following exception was thrown during execution in test generation
         try {
             java.lang.String str4 = resourceLogic0.getConnObjectKeyValue("", "", "");
@@ -1427,7 +1427,7 @@ public class ResourceLogicRandoopTest {
     public void test065() throws Throwable {
         if (debug)
             System.out.format("%n%s%n", "RegressionTest0.test065");
-        org.apache.syncope.core.logic.ResourceLogic resourceLogic0 = org.apache.syncope.core.logic.RandoopHelper.getConfiguredResourceLogic();
+        org.apache.syncope.core.logic.ResourceLogic resourceLogic0 = org.apache.syncope.core.logic.RandoopHelperLogic.getHelperResourceLogicRandoop();
         java.util.List<org.apache.syncope.common.lib.to.ResourceTO> resourceTOList1 = resourceLogic0.list();
         java.lang.reflect.Method method2 = null;
         java.lang.Object[] objArray3 = new java.lang.Object[] {};
@@ -1448,7 +1448,7 @@ public class ResourceLogicRandoopTest {
     public void test066() throws Throwable {
         if (debug)
             System.out.format("%n%s%n", "RegressionTest0.test066");
-        org.apache.syncope.core.logic.ResourceLogic resourceLogic0 = org.apache.syncope.core.logic.RandoopHelper.getConfiguredResourceLogic();
+        org.apache.syncope.core.logic.ResourceLogic resourceLogic0 = org.apache.syncope.core.logic.RandoopHelperLogic.getHelperResourceLogicRandoop();
         java.util.List<org.apache.syncope.common.lib.to.ResourceTO> resourceTOList1 = resourceLogic0.list();
         // The following exception was thrown during execution in test generation
         try {
@@ -1488,7 +1488,7 @@ public class ResourceLogicRandoopTest {
     public void test068() throws Throwable {
         if (debug)
             System.out.format("%n%s%n", "RegressionTest0.test068");
-        org.apache.syncope.core.logic.ResourceLogic resourceLogic0 = org.apache.syncope.core.logic.RandoopHelper.getConfiguredResourceLogic();
+        org.apache.syncope.core.logic.ResourceLogic resourceLogic0 = org.apache.syncope.core.logic.RandoopHelperLogic.getHelperResourceLogicRandoop();
         java.util.List<org.apache.syncope.common.lib.to.ResourceTO> resourceTOList1 = resourceLogic0.list();
         java.lang.reflect.Method method2 = null;
         java.lang.Object[] objArray7 = new java.lang.Object[] { (short) 0, '4', (-1L), 1 };
@@ -1510,7 +1510,7 @@ public class ResourceLogicRandoopTest {
     public void test069() throws Throwable {
         if (debug)
             System.out.format("%n%s%n", "RegressionTest0.test069");
-        org.apache.syncope.core.logic.ResourceLogic resourceLogic0 = org.apache.syncope.core.logic.RandoopHelper.getConfiguredResourceLogic();
+        org.apache.syncope.core.logic.ResourceLogic resourceLogic0 = org.apache.syncope.core.logic.RandoopHelperLogic.getHelperResourceLogicRandoop();
         java.util.List<org.apache.syncope.common.lib.to.ResourceTO> resourceTOList1 = resourceLogic0.list();
         // The following exception was thrown during execution in test generation
         try {
@@ -1527,7 +1527,7 @@ public class ResourceLogicRandoopTest {
     public void test070() throws Throwable {
         if (debug)
             System.out.format("%n%s%n", "RegressionTest0.test070");
-        org.apache.syncope.core.logic.ResourceLogic resourceLogic0 = org.apache.syncope.core.logic.RandoopHelper.getConfiguredResourceLogic();
+        org.apache.syncope.core.logic.ResourceLogic resourceLogic0 = org.apache.syncope.core.logic.RandoopHelperLogic.getHelperResourceLogicRandoop();
         java.lang.reflect.Method method1 = null;
         java.lang.Object[] objArray4 = new java.lang.Object[] { 100, (short) -1 };
         // The following exception was thrown during execution in test generation
@@ -1547,7 +1547,7 @@ public class ResourceLogicRandoopTest {
     public void test071() throws Throwable {
         if (debug)
             System.out.format("%n%s%n", "RegressionTest0.test071");
-        org.apache.syncope.core.logic.ResourceLogic resourceLogic0 = org.apache.syncope.core.logic.RandoopHelper.getConfiguredResourceLogic();
+        org.apache.syncope.core.logic.ResourceLogic resourceLogic0 = org.apache.syncope.core.logic.RandoopHelperLogic.getHelperResourceLogicRandoop();
         java.lang.Class<?> wildcardClass1 = resourceLogic0.getClass();
         org.junit.Assert.assertNotNull(resourceLogic0);
         org.junit.Assert.assertNotNull(wildcardClass1);
@@ -1557,7 +1557,7 @@ public class ResourceLogicRandoopTest {
     public void test072() throws Throwable {
         if (debug)
             System.out.format("%n%s%n", "RegressionTest0.test072");
-        org.apache.syncope.core.logic.ResourceLogic resourceLogic0 = org.apache.syncope.core.logic.RandoopHelper.getConfiguredResourceLogic();
+        org.apache.syncope.core.logic.ResourceLogic resourceLogic0 = org.apache.syncope.core.logic.RandoopHelperLogic.getHelperResourceLogicRandoop();
         java.util.List<org.apache.syncope.common.lib.to.ResourceTO> resourceTOList1 = resourceLogic0.list();
         org.identityconnectors.framework.common.objects.filter.Filter filter2 = null;
         java.lang.String[] strArray4 = new java.lang.String[] { "" };
@@ -1587,7 +1587,7 @@ public class ResourceLogicRandoopTest {
     public void test073() throws Throwable {
         if (debug)
             System.out.format("%n%s%n", "RegressionTest0.test073");
-        org.apache.syncope.core.logic.ResourceLogic resourceLogic0 = org.apache.syncope.core.logic.RandoopHelper.getConfiguredResourceLogic();
+        org.apache.syncope.core.logic.ResourceLogic resourceLogic0 = org.apache.syncope.core.logic.RandoopHelperLogic.getHelperResourceLogicRandoop();
         java.lang.reflect.Method method1 = null;
         java.lang.Object[] objArray3 = new java.lang.Object[] { ' ' };
         // The following exception was thrown during execution in test generation
@@ -1607,7 +1607,7 @@ public class ResourceLogicRandoopTest {
     public void test074() throws Throwable {
         if (debug)
             System.out.format("%n%s%n", "RegressionTest0.test074");
-        org.apache.syncope.core.logic.ResourceLogic resourceLogic0 = org.apache.syncope.core.logic.RandoopHelper.getConfiguredResourceLogic();
+        org.apache.syncope.core.logic.ResourceLogic resourceLogic0 = org.apache.syncope.core.logic.RandoopHelperLogic.getHelperResourceLogicRandoop();
         java.util.List<org.apache.syncope.common.lib.to.ResourceTO> resourceTOList1 = resourceLogic0.list();
         org.identityconnectors.framework.common.objects.filter.Filter filter2 = null;
         java.lang.String[] strArray5 = new java.lang.String[] { "", "" };
@@ -1632,7 +1632,7 @@ public class ResourceLogicRandoopTest {
     public void test075() throws Throwable {
         if (debug)
             System.out.format("%n%s%n", "RegressionTest0.test075");
-        org.apache.syncope.core.logic.ResourceLogic resourceLogic0 = org.apache.syncope.core.logic.RandoopHelper.getConfiguredResourceLogic();
+        org.apache.syncope.core.logic.ResourceLogic resourceLogic0 = org.apache.syncope.core.logic.RandoopHelperLogic.getHelperResourceLogicRandoop();
         java.util.List<org.apache.syncope.common.lib.to.ResourceTO> resourceTOList1 = resourceLogic0.list();
         // The following exception was thrown during execution in test generation
         try {
@@ -1649,10 +1649,10 @@ public class ResourceLogicRandoopTest {
     public void test076() throws Throwable {
         if (debug)
             System.out.format("%n%s%n", "RegressionTest0.test076");
-        org.apache.syncope.core.logic.ResourceLogic resourceLogic0 = org.apache.syncope.core.logic.RandoopHelper.getConfiguredResourceLogic();
+        org.apache.syncope.core.logic.ResourceLogic resourceLogic0 = org.apache.syncope.core.logic.RandoopHelperLogic.getHelperResourceLogicRandoop();
         java.util.List<org.apache.syncope.common.lib.to.ResourceTO> resourceTOList1 = resourceLogic0.list();
         java.lang.reflect.Method method2 = null;
-        org.apache.syncope.core.logic.ResourceLogic resourceLogic3 = org.apache.syncope.core.logic.RandoopHelper.getConfiguredResourceLogic();
+        org.apache.syncope.core.logic.ResourceLogic resourceLogic3 = org.apache.syncope.core.logic.RandoopHelperLogic.getHelperResourceLogicRandoop();
         java.util.List<org.apache.syncope.common.lib.to.ResourceTO> resourceTOList4 = resourceLogic3.list();
         java.lang.Object[] objArray6 = new java.lang.Object[] { resourceLogic3, 100.0f };
         // The following exception was thrown during execution in test generation
@@ -1673,7 +1673,7 @@ public class ResourceLogicRandoopTest {
     public void test077() throws Throwable {
         if (debug)
             System.out.format("%n%s%n", "RegressionTest0.test077");
-        org.apache.syncope.core.logic.ResourceLogic resourceLogic0 = org.apache.syncope.core.logic.RandoopHelper.getConfiguredResourceLogic();
+        org.apache.syncope.core.logic.ResourceLogic resourceLogic0 = org.apache.syncope.core.logic.RandoopHelperLogic.getHelperResourceLogicRandoop();
         java.util.List<org.apache.syncope.common.lib.to.ResourceTO> resourceTOList1 = resourceLogic0.list();
         // The following exception was thrown during execution in test generation
         try {
@@ -1713,7 +1713,7 @@ public class ResourceLogicRandoopTest {
     public void test079() throws Throwable {
         if (debug)
             System.out.format("%n%s%n", "RegressionTest0.test079");
-        org.apache.syncope.core.logic.ResourceLogic resourceLogic0 = org.apache.syncope.core.logic.RandoopHelper.getConfiguredResourceLogic();
+        org.apache.syncope.core.logic.ResourceLogic resourceLogic0 = org.apache.syncope.core.logic.RandoopHelperLogic.getHelperResourceLogicRandoop();
         java.util.List<org.apache.syncope.common.lib.to.ResourceTO> resourceTOList1 = resourceLogic0.list();
         java.lang.Class<?> wildcardClass2 = resourceLogic0.getClass();
         org.junit.Assert.assertNotNull(resourceLogic0);
@@ -1725,7 +1725,7 @@ public class ResourceLogicRandoopTest {
     public void test080() throws Throwable {
         if (debug)
             System.out.format("%n%s%n", "RegressionTest0.test080");
-        org.apache.syncope.core.logic.ResourceLogic resourceLogic0 = org.apache.syncope.core.logic.RandoopHelper.getConfiguredResourceLogic();
+        org.apache.syncope.core.logic.ResourceLogic resourceLogic0 = org.apache.syncope.core.logic.RandoopHelperLogic.getHelperResourceLogicRandoop();
         // The following exception was thrown during execution in test generation
         try {
             resourceLogic0.removeSyncToken("", "hi!");
@@ -1740,7 +1740,7 @@ public class ResourceLogicRandoopTest {
     public void test081() throws Throwable {
         if (debug)
             System.out.format("%n%s%n", "RegressionTest0.test081");
-        org.apache.syncope.core.logic.ResourceLogic resourceLogic0 = org.apache.syncope.core.logic.RandoopHelper.getConfiguredResourceLogic();
+        org.apache.syncope.core.logic.ResourceLogic resourceLogic0 = org.apache.syncope.core.logic.RandoopHelperLogic.getHelperResourceLogicRandoop();
         // The following exception was thrown during execution in test generation
         try {
             java.lang.String str4 = resourceLogic0.getConnObjectKeyValue("", "hi!", "");
@@ -1755,9 +1755,9 @@ public class ResourceLogicRandoopTest {
     public void test082() throws Throwable {
         if (debug)
             System.out.format("%n%s%n", "RegressionTest0.test082");
-        org.apache.syncope.core.logic.ResourceLogic resourceLogic0 = org.apache.syncope.core.logic.RandoopHelper.getConfiguredResourceLogic();
+        org.apache.syncope.core.logic.ResourceLogic resourceLogic0 = org.apache.syncope.core.logic.RandoopHelperLogic.getHelperResourceLogicRandoop();
         java.lang.reflect.Method method1 = null;
-        org.apache.syncope.common.lib.to.ResourceTO resourceTO2 = org.apache.syncope.core.logic.RandoopHelper.getValidResourceTO();
+        org.apache.syncope.common.lib.to.ResourceTO resourceTO2 = org.apache.syncope.core.logic.RandoopHelperLogic.getValidResourceTO();
         java.lang.Class<?> wildcardClass3 = resourceTO2.getClass();
         java.lang.Object[] objArray7 = new java.lang.Object[] { resourceTO2, 10L, '4', (-1L) };
         // The following exception was thrown during execution in test generation
@@ -1777,7 +1777,7 @@ public class ResourceLogicRandoopTest {
     public void test083() throws Throwable {
         if (debug)
             System.out.format("%n%s%n", "RegressionTest0.test083");
-        org.apache.syncope.core.logic.ResourceLogic resourceLogic0 = org.apache.syncope.core.logic.RandoopHelper.getConfiguredResourceLogic();
+        org.apache.syncope.core.logic.ResourceLogic resourceLogic0 = org.apache.syncope.core.logic.RandoopHelperLogic.getHelperResourceLogicRandoop();
         // The following exception was thrown during execution in test generation
         try {
             org.apache.syncope.common.lib.to.ConnObject connObject4 = resourceLogic0.readConnObjectByAnyKey("", "hi!", "");
@@ -1792,7 +1792,7 @@ public class ResourceLogicRandoopTest {
     public void test084() throws Throwable {
         if (debug)
             System.out.format("%n%s%n", "RegressionTest0.test084");
-        org.apache.syncope.core.logic.ResourceLogic resourceLogic0 = org.apache.syncope.core.logic.RandoopHelper.getConfiguredResourceLogic();
+        org.apache.syncope.core.logic.ResourceLogic resourceLogic0 = org.apache.syncope.core.logic.RandoopHelperLogic.getHelperResourceLogicRandoop();
         // The following exception was thrown during execution in test generation
         try {
             org.apache.syncope.common.lib.to.ConnObject connObject4 = resourceLogic0.readConnObjectByConnObjectKeyValue("", "", "");
@@ -1807,7 +1807,7 @@ public class ResourceLogicRandoopTest {
     public void test085() throws Throwable {
         if (debug)
             System.out.format("%n%s%n", "RegressionTest0.test085");
-        org.apache.syncope.core.logic.ResourceLogic resourceLogic0 = org.apache.syncope.core.logic.RandoopHelper.getConfiguredResourceLogic();
+        org.apache.syncope.core.logic.ResourceLogic resourceLogic0 = org.apache.syncope.core.logic.RandoopHelperLogic.getHelperResourceLogicRandoop();
         java.util.List<org.apache.syncope.common.lib.to.ResourceTO> resourceTOList1 = resourceLogic0.list();
         java.lang.reflect.Method method2 = null;
         java.lang.Object[] objArray7 = new java.lang.Object[] { (byte) 0, (short) 1, (-1L), 1 };
@@ -1829,7 +1829,7 @@ public class ResourceLogicRandoopTest {
     public void test086() throws Throwable {
         if (debug)
             System.out.format("%n%s%n", "RegressionTest0.test086");
-        org.apache.syncope.core.logic.ResourceLogic resourceLogic0 = org.apache.syncope.core.logic.RandoopHelper.getConfiguredResourceLogic();
+        org.apache.syncope.core.logic.ResourceLogic resourceLogic0 = org.apache.syncope.core.logic.RandoopHelperLogic.getHelperResourceLogicRandoop();
         java.util.List<org.apache.syncope.common.lib.to.ResourceTO> resourceTOList1 = resourceLogic0.list();
         java.lang.Class<?> wildcardClass2 = resourceTOList1.getClass();
         org.junit.Assert.assertNotNull(resourceLogic0);
@@ -1887,7 +1887,7 @@ public class ResourceLogicRandoopTest {
     public void test089() throws Throwable {
         if (debug)
             System.out.format("%n%s%n", "RegressionTest0.test089");
-        org.apache.syncope.core.logic.ResourceLogic resourceLogic0 = org.apache.syncope.core.logic.RandoopHelper.getConfiguredResourceLogic();
+        org.apache.syncope.core.logic.ResourceLogic resourceLogic0 = org.apache.syncope.core.logic.RandoopHelperLogic.getHelperResourceLogicRandoop();
         // The following exception was thrown during execution in test generation
         try {
             java.lang.String str4 = resourceLogic0.getConnObjectKeyValue("", "hi!", "hi!");
@@ -1902,7 +1902,7 @@ public class ResourceLogicRandoopTest {
     public void test090() throws Throwable {
         if (debug)
             System.out.format("%n%s%n", "RegressionTest0.test090");
-        org.apache.syncope.core.logic.ResourceLogic resourceLogic0 = org.apache.syncope.core.logic.RandoopHelper.getConfiguredResourceLogic();
+        org.apache.syncope.core.logic.ResourceLogic resourceLogic0 = org.apache.syncope.core.logic.RandoopHelperLogic.getHelperResourceLogicRandoop();
         // The following exception was thrown during execution in test generation
         try {
             org.apache.syncope.common.lib.to.ResourceTO resourceTO2 = resourceLogic0.delete("");
@@ -1917,7 +1917,7 @@ public class ResourceLogicRandoopTest {
     public void test091() throws Throwable {
         if (debug)
             System.out.format("%n%s%n", "RegressionTest0.test091");
-        org.apache.syncope.core.logic.ResourceLogic resourceLogic0 = org.apache.syncope.core.logic.RandoopHelper.getConfiguredResourceLogic();
+        org.apache.syncope.core.logic.ResourceLogic resourceLogic0 = org.apache.syncope.core.logic.RandoopHelperLogic.getHelperResourceLogicRandoop();
         java.util.List<org.apache.syncope.common.lib.to.ResourceTO> resourceTOList1 = resourceLogic0.list();
         java.util.List<org.apache.syncope.common.lib.to.ResourceTO> resourceTOList2 = resourceLogic0.list();
         // The following exception was thrown during execution in test generation
@@ -1936,7 +1936,7 @@ public class ResourceLogicRandoopTest {
     public void test092() throws Throwable {
         if (debug)
             System.out.format("%n%s%n", "RegressionTest0.test092");
-        org.apache.syncope.core.logic.ResourceLogic resourceLogic0 = org.apache.syncope.core.logic.RandoopHelper.getConfiguredResourceLogic();
+        org.apache.syncope.core.logic.ResourceLogic resourceLogic0 = org.apache.syncope.core.logic.RandoopHelperLogic.getHelperResourceLogicRandoop();
         java.util.List<org.apache.syncope.common.lib.to.ResourceTO> resourceTOList1 = resourceLogic0.list();
         java.util.List<org.apache.syncope.common.lib.to.ResourceTO> resourceTOList2 = resourceLogic0.list();
         // The following exception was thrown during execution in test generation
@@ -2007,7 +2007,7 @@ public class ResourceLogicRandoopTest {
     public void test095() throws Throwable {
         if (debug)
             System.out.format("%n%s%n", "RegressionTest0.test095");
-        org.apache.syncope.core.logic.ResourceLogic resourceLogic0 = org.apache.syncope.core.logic.RandoopHelper.getConfiguredResourceLogic();
+        org.apache.syncope.core.logic.ResourceLogic resourceLogic0 = org.apache.syncope.core.logic.RandoopHelperLogic.getHelperResourceLogicRandoop();
         java.util.List<org.apache.syncope.common.lib.to.ResourceTO> resourceTOList1 = resourceLogic0.list();
         java.util.List<org.apache.syncope.common.lib.to.ResourceTO> resourceTOList2 = resourceLogic0.list();
         // The following exception was thrown during execution in test generation
@@ -2026,7 +2026,7 @@ public class ResourceLogicRandoopTest {
     public void test096() throws Throwable {
         if (debug)
             System.out.format("%n%s%n", "RegressionTest0.test096");
-        org.apache.syncope.core.logic.ResourceLogic resourceLogic0 = org.apache.syncope.core.logic.RandoopHelper.getConfiguredResourceLogic();
+        org.apache.syncope.core.logic.ResourceLogic resourceLogic0 = org.apache.syncope.core.logic.RandoopHelperLogic.getHelperResourceLogicRandoop();
         java.util.List<org.apache.syncope.common.lib.to.ResourceTO> resourceTOList1 = resourceLogic0.list();
         // The following exception was thrown during execution in test generation
         try {
@@ -2043,7 +2043,7 @@ public class ResourceLogicRandoopTest {
     public void test097() throws Throwable {
         if (debug)
             System.out.format("%n%s%n", "RegressionTest0.test097");
-        org.apache.syncope.core.logic.ResourceLogic resourceLogic0 = org.apache.syncope.core.logic.RandoopHelper.getConfiguredResourceLogic();
+        org.apache.syncope.core.logic.ResourceLogic resourceLogic0 = org.apache.syncope.core.logic.RandoopHelperLogic.getHelperResourceLogicRandoop();
         java.util.List<org.apache.syncope.common.lib.to.ResourceTO> resourceTOList1 = resourceLogic0.list();
         java.util.List<org.apache.syncope.common.lib.to.ResourceTO> resourceTOList2 = resourceLogic0.list();
         // The following exception was thrown during execution in test generation
@@ -2062,7 +2062,7 @@ public class ResourceLogicRandoopTest {
     public void test098() throws Throwable {
         if (debug)
             System.out.format("%n%s%n", "RegressionTest0.test098");
-        org.apache.syncope.core.logic.ResourceLogic resourceLogic0 = org.apache.syncope.core.logic.RandoopHelper.getConfiguredResourceLogic();
+        org.apache.syncope.core.logic.ResourceLogic resourceLogic0 = org.apache.syncope.core.logic.RandoopHelperLogic.getHelperResourceLogicRandoop();
         // The following exception was thrown during execution in test generation
         try {
             org.apache.syncope.common.lib.to.ConnObject connObject4 = resourceLogic0.readConnObjectByConnObjectKeyValue("", "hi!", "");
@@ -2077,7 +2077,7 @@ public class ResourceLogicRandoopTest {
     public void test099() throws Throwable {
         if (debug)
             System.out.format("%n%s%n", "RegressionTest0.test099");
-        org.apache.syncope.core.logic.ResourceLogic resourceLogic0 = org.apache.syncope.core.logic.RandoopHelper.getConfiguredResourceLogic();
+        org.apache.syncope.core.logic.ResourceLogic resourceLogic0 = org.apache.syncope.core.logic.RandoopHelperLogic.getHelperResourceLogicRandoop();
         // The following exception was thrown during execution in test generation
         try {
             org.apache.syncope.common.lib.to.ConnObject connObject4 = resourceLogic0.readConnObjectByAnyKey("", "", "");
@@ -2092,8 +2092,8 @@ public class ResourceLogicRandoopTest {
     public void test100() throws Throwable {
         if (debug)
             System.out.format("%n%s%n", "RegressionTest0.test100");
-        org.apache.syncope.core.logic.RandoopHelper randoopHelper0 = new org.apache.syncope.core.logic.RandoopHelper();
-        java.lang.Class<?> wildcardClass1 = randoopHelper0.getClass();
+        org.apache.syncope.core.logic.RandoopHelperLogic RandoopHelperLogic0 = new org.apache.syncope.core.logic.RandoopHelperLogic();
+        java.lang.Class<?> wildcardClass1 = RandoopHelperLogic0.getClass();
         org.junit.Assert.assertNotNull(wildcardClass1);
     }
 
@@ -2101,7 +2101,7 @@ public class ResourceLogicRandoopTest {
     public void test101() throws Throwable {
         if (debug)
             System.out.format("%n%s%n", "RegressionTest0.test101");
-        org.apache.syncope.core.logic.ResourceLogic resourceLogic0 = org.apache.syncope.core.logic.RandoopHelper.getConfiguredResourceLogic();
+        org.apache.syncope.core.logic.ResourceLogic resourceLogic0 = org.apache.syncope.core.logic.RandoopHelperLogic.getHelperResourceLogicRandoop();
         // The following exception was thrown during execution in test generation
         try {
             resourceLogic0.removeSyncToken("hi!", "hi!");
@@ -2116,7 +2116,7 @@ public class ResourceLogicRandoopTest {
     public void test102() throws Throwable {
         if (debug)
             System.out.format("%n%s%n", "RegressionTest0.test102");
-        org.apache.syncope.core.logic.ResourceLogic resourceLogic0 = org.apache.syncope.core.logic.RandoopHelper.getConfiguredResourceLogic();
+        org.apache.syncope.core.logic.ResourceLogic resourceLogic0 = org.apache.syncope.core.logic.RandoopHelperLogic.getHelperResourceLogicRandoop();
         java.util.List<org.apache.syncope.common.lib.to.ResourceTO> resourceTOList1 = resourceLogic0.list();
         java.util.List<org.apache.syncope.common.lib.to.ResourceTO> resourceTOList2 = resourceLogic0.list();
         // The following exception was thrown during execution in test generation
@@ -2158,7 +2158,7 @@ public class ResourceLogicRandoopTest {
     public void test104() throws Throwable {
         if (debug)
             System.out.format("%n%s%n", "RegressionTest0.test104");
-        org.apache.syncope.core.logic.ResourceLogic resourceLogic0 = org.apache.syncope.core.logic.RandoopHelper.getConfiguredResourceLogic();
+        org.apache.syncope.core.logic.ResourceLogic resourceLogic0 = org.apache.syncope.core.logic.RandoopHelperLogic.getHelperResourceLogicRandoop();
         java.util.List<org.apache.syncope.common.lib.to.ResourceTO> resourceTOList1 = resourceLogic0.list();
         java.util.List<org.apache.syncope.common.lib.to.ResourceTO> resourceTOList2 = resourceLogic0.list();
         // The following exception was thrown during execution in test generation
@@ -2177,10 +2177,10 @@ public class ResourceLogicRandoopTest {
     public void test105() throws Throwable {
         if (debug)
             System.out.format("%n%s%n", "RegressionTest0.test105");
-        org.apache.syncope.core.logic.ResourceLogic resourceLogic0 = org.apache.syncope.core.logic.RandoopHelper.getConfiguredResourceLogic();
+        org.apache.syncope.core.logic.ResourceLogic resourceLogic0 = org.apache.syncope.core.logic.RandoopHelperLogic.getHelperResourceLogicRandoop();
         java.util.List<org.apache.syncope.common.lib.to.ResourceTO> resourceTOList1 = resourceLogic0.list();
         java.util.List<org.apache.syncope.common.lib.to.ResourceTO> resourceTOList2 = resourceLogic0.list();
-        org.apache.syncope.common.lib.to.ResourceTO resourceTO3 = org.apache.syncope.core.logic.RandoopHelper.getValidResourceTO();
+        org.apache.syncope.common.lib.to.ResourceTO resourceTO3 = org.apache.syncope.core.logic.RandoopHelperLogic.getValidResourceTO();
         // The following exception was thrown during execution in test generation
         try {
             org.apache.syncope.common.lib.to.ResourceTO resourceTO4 = resourceLogic0.update(resourceTO3);
@@ -2198,7 +2198,7 @@ public class ResourceLogicRandoopTest {
     public void test106() throws Throwable {
         if (debug)
             System.out.format("%n%s%n", "RegressionTest0.test106");
-        org.apache.syncope.core.logic.ResourceLogic resourceLogic0 = org.apache.syncope.core.logic.RandoopHelper.getConfiguredResourceLogic();
+        org.apache.syncope.core.logic.ResourceLogic resourceLogic0 = org.apache.syncope.core.logic.RandoopHelperLogic.getHelperResourceLogicRandoop();
         java.util.List<org.apache.syncope.common.lib.to.ResourceTO> resourceTOList1 = resourceLogic0.list();
         java.util.List<org.apache.syncope.common.lib.to.ResourceTO> resourceTOList2 = resourceLogic0.list();
         java.lang.reflect.Method method3 = null;
@@ -2222,11 +2222,11 @@ public class ResourceLogicRandoopTest {
     public void test107() throws Throwable {
         if (debug)
             System.out.format("%n%s%n", "RegressionTest0.test107");
-        org.apache.syncope.core.logic.ResourceLogic resourceLogic0 = org.apache.syncope.core.logic.RandoopHelper.getConfiguredResourceLogic();
+        org.apache.syncope.core.logic.ResourceLogic resourceLogic0 = org.apache.syncope.core.logic.RandoopHelperLogic.getHelperResourceLogicRandoop();
         java.util.List<org.apache.syncope.common.lib.to.ResourceTO> resourceTOList1 = resourceLogic0.list();
         java.util.List<org.apache.syncope.common.lib.to.ResourceTO> resourceTOList2 = resourceLogic0.list();
         java.lang.reflect.Method method3 = null;
-        org.apache.syncope.core.logic.ResourceLogic resourceLogic4 = org.apache.syncope.core.logic.RandoopHelper.getConfiguredResourceLogic();
+        org.apache.syncope.core.logic.ResourceLogic resourceLogic4 = org.apache.syncope.core.logic.RandoopHelperLogic.getHelperResourceLogicRandoop();
         java.util.List<org.apache.syncope.common.lib.to.ResourceTO> resourceTOList5 = resourceLogic4.list();
         java.lang.Class<?> wildcardClass6 = resourceTOList5.getClass();
         java.lang.Object[] objArray8 = new java.lang.Object[] { wildcardClass6, (-1.0f) };
@@ -2252,7 +2252,7 @@ public class ResourceLogicRandoopTest {
     public void test108() throws Throwable {
         if (debug)
             System.out.format("%n%s%n", "RegressionTest0.test108");
-        org.apache.syncope.core.logic.ResourceLogic resourceLogic0 = org.apache.syncope.core.logic.RandoopHelper.getConfiguredResourceLogic();
+        org.apache.syncope.core.logic.ResourceLogic resourceLogic0 = org.apache.syncope.core.logic.RandoopHelperLogic.getHelperResourceLogicRandoop();
         java.util.List<org.apache.syncope.common.lib.to.ResourceTO> resourceTOList1 = resourceLogic0.list();
         java.util.List<org.apache.syncope.common.lib.to.ResourceTO> resourceTOList2 = resourceLogic0.list();
         // The following exception was thrown during execution in test generation
@@ -2271,7 +2271,7 @@ public class ResourceLogicRandoopTest {
     public void test109() throws Throwable {
         if (debug)
             System.out.format("%n%s%n", "RegressionTest0.test109");
-        org.apache.syncope.core.logic.ResourceLogic resourceLogic0 = org.apache.syncope.core.logic.RandoopHelper.getConfiguredResourceLogic();
+        org.apache.syncope.core.logic.ResourceLogic resourceLogic0 = org.apache.syncope.core.logic.RandoopHelperLogic.getHelperResourceLogicRandoop();
         java.util.List<org.apache.syncope.common.lib.to.ResourceTO> resourceTOList1 = resourceLogic0.list();
         // The following exception was thrown during execution in test generation
         try {
@@ -2288,7 +2288,7 @@ public class ResourceLogicRandoopTest {
     public void test110() throws Throwable {
         if (debug)
             System.out.format("%n%s%n", "RegressionTest0.test110");
-        org.apache.syncope.core.logic.ResourceLogic resourceLogic0 = org.apache.syncope.core.logic.RandoopHelper.getConfiguredResourceLogic();
+        org.apache.syncope.core.logic.ResourceLogic resourceLogic0 = org.apache.syncope.core.logic.RandoopHelperLogic.getHelperResourceLogicRandoop();
         // The following exception was thrown during execution in test generation
         try {
             resourceLogic0.setLatestSyncToken("hi!", "");
@@ -2326,7 +2326,7 @@ public class ResourceLogicRandoopTest {
     public void test112() throws Throwable {
         if (debug)
             System.out.format("%n%s%n", "RegressionTest0.test112");
-        org.apache.syncope.core.logic.ResourceLogic resourceLogic0 = org.apache.syncope.core.logic.RandoopHelper.getConfiguredResourceLogic();
+        org.apache.syncope.core.logic.ResourceLogic resourceLogic0 = org.apache.syncope.core.logic.RandoopHelperLogic.getHelperResourceLogicRandoop();
         java.util.List<org.apache.syncope.common.lib.to.ResourceTO> resourceTOList1 = resourceLogic0.list();
         org.identityconnectors.framework.common.objects.filter.Filter filter2 = null;
         java.lang.String[] strArray5 = new java.lang.String[] { "hi!", "" };
@@ -2356,7 +2356,7 @@ public class ResourceLogicRandoopTest {
     public void test113() throws Throwable {
         if (debug)
             System.out.format("%n%s%n", "RegressionTest0.test113");
-        org.apache.syncope.core.logic.ResourceLogic resourceLogic0 = org.apache.syncope.core.logic.RandoopHelper.getConfiguredResourceLogic();
+        org.apache.syncope.core.logic.ResourceLogic resourceLogic0 = org.apache.syncope.core.logic.RandoopHelperLogic.getHelperResourceLogicRandoop();
         // The following exception was thrown during execution in test generation
         try {
             resourceLogic0.setLatestSyncToken("", "");
@@ -2394,10 +2394,10 @@ public class ResourceLogicRandoopTest {
     public void test115() throws Throwable {
         if (debug)
             System.out.format("%n%s%n", "RegressionTest0.test115");
-        org.apache.syncope.core.logic.ResourceLogic resourceLogic0 = org.apache.syncope.core.logic.RandoopHelper.getConfiguredResourceLogic();
+        org.apache.syncope.core.logic.ResourceLogic resourceLogic0 = org.apache.syncope.core.logic.RandoopHelperLogic.getHelperResourceLogicRandoop();
         java.util.List<org.apache.syncope.common.lib.to.ResourceTO> resourceTOList1 = resourceLogic0.list();
         java.util.List<org.apache.syncope.common.lib.to.ResourceTO> resourceTOList2 = resourceLogic0.list();
-        org.apache.syncope.common.lib.to.ResourceTO resourceTO3 = org.apache.syncope.core.logic.RandoopHelper.getValidResourceTO();
+        org.apache.syncope.common.lib.to.ResourceTO resourceTO3 = org.apache.syncope.core.logic.RandoopHelperLogic.getValidResourceTO();
         // The following exception was thrown during execution in test generation
         try {
             org.apache.syncope.common.lib.to.ResourceTO resourceTO4 = resourceLogic0.create(resourceTO3);
@@ -2415,7 +2415,7 @@ public class ResourceLogicRandoopTest {
     public void test116() throws Throwable {
         if (debug)
             System.out.format("%n%s%n", "RegressionTest0.test116");
-        org.apache.syncope.core.logic.ResourceLogic resourceLogic0 = org.apache.syncope.core.logic.RandoopHelper.getConfiguredResourceLogic();
+        org.apache.syncope.core.logic.ResourceLogic resourceLogic0 = org.apache.syncope.core.logic.RandoopHelperLogic.getHelperResourceLogicRandoop();
         java.util.List<org.apache.syncope.common.lib.to.ResourceTO> resourceTOList1 = resourceLogic0.list();
         // The following exception was thrown during execution in test generation
         try {
@@ -2432,7 +2432,7 @@ public class ResourceLogicRandoopTest {
     public void test117() throws Throwable {
         if (debug)
             System.out.format("%n%s%n", "RegressionTest0.test117");
-        org.apache.syncope.core.logic.ResourceLogic resourceLogic0 = org.apache.syncope.core.logic.RandoopHelper.getConfiguredResourceLogic();
+        org.apache.syncope.core.logic.ResourceLogic resourceLogic0 = org.apache.syncope.core.logic.RandoopHelperLogic.getHelperResourceLogicRandoop();
         // The following exception was thrown during execution in test generation
         try {
             org.apache.syncope.common.lib.to.ConnObject connObject4 = resourceLogic0.readConnObjectByAnyKey("hi!", "hi!", "hi!");
@@ -2447,7 +2447,7 @@ public class ResourceLogicRandoopTest {
     public void test118() throws Throwable {
         if (debug)
             System.out.format("%n%s%n", "RegressionTest0.test118");
-        org.apache.syncope.core.logic.ResourceLogic resourceLogic0 = org.apache.syncope.core.logic.RandoopHelper.getConfiguredResourceLogic();
+        org.apache.syncope.core.logic.ResourceLogic resourceLogic0 = org.apache.syncope.core.logic.RandoopHelperLogic.getHelperResourceLogicRandoop();
         java.util.List<org.apache.syncope.common.lib.to.ResourceTO> resourceTOList1 = resourceLogic0.list();
         java.util.List<org.apache.syncope.common.lib.to.ResourceTO> resourceTOList2 = resourceLogic0.list();
         // The following exception was thrown during execution in test generation
@@ -2489,7 +2489,7 @@ public class ResourceLogicRandoopTest {
     public void test120() throws Throwable {
         if (debug)
             System.out.format("%n%s%n", "RegressionTest0.test120");
-        org.apache.syncope.core.logic.ResourceLogic resourceLogic0 = org.apache.syncope.core.logic.RandoopHelper.getConfiguredResourceLogic();
+        org.apache.syncope.core.logic.ResourceLogic resourceLogic0 = org.apache.syncope.core.logic.RandoopHelperLogic.getHelperResourceLogicRandoop();
         org.identityconnectors.framework.common.objects.filter.Filter filter1 = null;
         java.lang.String[] strArray4 = new java.lang.String[] { "", "hi!" };
         java.util.LinkedHashSet<java.lang.String> strSet5 = new java.util.LinkedHashSet<java.lang.String>();
@@ -2517,7 +2517,7 @@ public class ResourceLogicRandoopTest {
     public void test121() throws Throwable {
         if (debug)
             System.out.format("%n%s%n", "RegressionTest0.test121");
-        org.apache.syncope.core.logic.ResourceLogic resourceLogic0 = org.apache.syncope.core.logic.RandoopHelper.getConfiguredResourceLogic();
+        org.apache.syncope.core.logic.ResourceLogic resourceLogic0 = org.apache.syncope.core.logic.RandoopHelperLogic.getHelperResourceLogicRandoop();
         java.util.List<org.apache.syncope.common.lib.to.ResourceTO> resourceTOList1 = resourceLogic0.list();
         java.util.List<org.apache.syncope.common.lib.to.ResourceTO> resourceTOList2 = resourceLogic0.list();
         // The following exception was thrown during execution in test generation
@@ -2536,7 +2536,7 @@ public class ResourceLogicRandoopTest {
     public void test122() throws Throwable {
         if (debug)
             System.out.format("%n%s%n", "RegressionTest0.test122");
-        org.apache.syncope.core.logic.ResourceLogic resourceLogic0 = org.apache.syncope.core.logic.RandoopHelper.getConfiguredResourceLogic();
+        org.apache.syncope.core.logic.ResourceLogic resourceLogic0 = org.apache.syncope.core.logic.RandoopHelperLogic.getHelperResourceLogicRandoop();
         java.util.List<org.apache.syncope.common.lib.to.ResourceTO> resourceTOList1 = resourceLogic0.list();
         java.util.List<org.apache.syncope.common.lib.to.ResourceTO> resourceTOList2 = resourceLogic0.list();
         // The following exception was thrown during execution in test generation
@@ -2582,7 +2582,7 @@ public class ResourceLogicRandoopTest {
     public void test124() throws Throwable {
         if (debug)
             System.out.format("%n%s%n", "RegressionTest0.test124");
-        org.apache.syncope.core.logic.ResourceLogic resourceLogic0 = org.apache.syncope.core.logic.RandoopHelper.getConfiguredResourceLogic();
+        org.apache.syncope.core.logic.ResourceLogic resourceLogic0 = org.apache.syncope.core.logic.RandoopHelperLogic.getHelperResourceLogicRandoop();
         java.util.List<org.apache.syncope.common.lib.to.ResourceTO> resourceTOList1 = resourceLogic0.list();
         org.identityconnectors.framework.common.objects.filter.Filter filter2 = null;
         java.lang.String[] strArray5 = new java.lang.String[] { "", "" };
@@ -2612,7 +2612,7 @@ public class ResourceLogicRandoopTest {
     public void test125() throws Throwable {
         if (debug)
             System.out.format("%n%s%n", "RegressionTest0.test125");
-        org.apache.syncope.core.logic.ResourceLogic resourceLogic0 = org.apache.syncope.core.logic.RandoopHelper.getConfiguredResourceLogic();
+        org.apache.syncope.core.logic.ResourceLogic resourceLogic0 = org.apache.syncope.core.logic.RandoopHelperLogic.getHelperResourceLogicRandoop();
         java.util.List<org.apache.syncope.common.lib.to.ResourceTO> resourceTOList1 = resourceLogic0.list();
         // The following exception was thrown during execution in test generation
         try {
@@ -2629,7 +2629,7 @@ public class ResourceLogicRandoopTest {
     public void test126() throws Throwable {
         if (debug)
             System.out.format("%n%s%n", "RegressionTest0.test126");
-        org.apache.syncope.core.logic.ResourceLogic resourceLogic0 = org.apache.syncope.core.logic.RandoopHelper.getConfiguredResourceLogic();
+        org.apache.syncope.core.logic.ResourceLogic resourceLogic0 = org.apache.syncope.core.logic.RandoopHelperLogic.getHelperResourceLogicRandoop();
         java.util.List<org.apache.syncope.common.lib.to.ResourceTO> resourceTOList1 = resourceLogic0.list();
         java.util.List<org.apache.syncope.common.lib.to.ResourceTO> resourceTOList2 = resourceLogic0.list();
         // The following exception was thrown during execution in test generation
@@ -2648,7 +2648,7 @@ public class ResourceLogicRandoopTest {
     public void test127() throws Throwable {
         if (debug)
             System.out.format("%n%s%n", "RegressionTest0.test127");
-        org.apache.syncope.core.logic.ResourceLogic resourceLogic0 = org.apache.syncope.core.logic.RandoopHelper.getConfiguredResourceLogic();
+        org.apache.syncope.core.logic.ResourceLogic resourceLogic0 = org.apache.syncope.core.logic.RandoopHelperLogic.getHelperResourceLogicRandoop();
         java.util.List<org.apache.syncope.common.lib.to.ResourceTO> resourceTOList1 = resourceLogic0.list();
         // The following exception was thrown during execution in test generation
         try {
@@ -2688,7 +2688,7 @@ public class ResourceLogicRandoopTest {
     public void test129() throws Throwable {
         if (debug)
             System.out.format("%n%s%n", "RegressionTest0.test129");
-        org.apache.syncope.core.logic.ResourceLogic resourceLogic0 = org.apache.syncope.core.logic.RandoopHelper.getConfiguredResourceLogic();
+        org.apache.syncope.core.logic.ResourceLogic resourceLogic0 = org.apache.syncope.core.logic.RandoopHelperLogic.getHelperResourceLogicRandoop();
         java.util.List<org.apache.syncope.common.lib.to.ResourceTO> resourceTOList1 = resourceLogic0.list();
         org.identityconnectors.framework.common.objects.filter.Filter filter2 = null;
         java.lang.String[] strArray4 = new java.lang.String[] { "hi!" };
@@ -2718,12 +2718,12 @@ public class ResourceLogicRandoopTest {
     public void test130() throws Throwable {
         if (debug)
             System.out.format("%n%s%n", "RegressionTest0.test130");
-        org.apache.syncope.core.logic.ResourceLogic resourceLogic0 = org.apache.syncope.core.logic.RandoopHelper.getConfiguredResourceLogic();
+        org.apache.syncope.core.logic.ResourceLogic resourceLogic0 = org.apache.syncope.core.logic.RandoopHelperLogic.getHelperResourceLogicRandoop();
         java.lang.reflect.Method method1 = null;
-        org.apache.syncope.core.logic.ResourceLogic resourceLogic2 = org.apache.syncope.core.logic.RandoopHelper.getConfiguredResourceLogic();
+        org.apache.syncope.core.logic.ResourceLogic resourceLogic2 = org.apache.syncope.core.logic.RandoopHelperLogic.getHelperResourceLogicRandoop();
         java.util.List<org.apache.syncope.common.lib.to.ResourceTO> resourceTOList3 = resourceLogic2.list();
-        org.apache.syncope.common.lib.to.ResourceTO resourceTO4 = org.apache.syncope.core.logic.RandoopHelper.getValidResourceTO();
-        org.apache.syncope.core.logic.ResourceLogic resourceLogic5 = org.apache.syncope.core.logic.RandoopHelper.getConfiguredResourceLogic();
+        org.apache.syncope.common.lib.to.ResourceTO resourceTO4 = org.apache.syncope.core.logic.RandoopHelperLogic.getValidResourceTO();
+        org.apache.syncope.core.logic.ResourceLogic resourceLogic5 = org.apache.syncope.core.logic.RandoopHelperLogic.getHelperResourceLogicRandoop();
         java.util.List<org.apache.syncope.common.lib.to.ResourceTO> resourceTOList6 = resourceLogic5.list();
         java.lang.Object[] objArray10 = new java.lang.Object[] { resourceLogic2, resourceTO4, resourceTOList6, "hi!", 100.0f, (-1.0f) };
         // The following exception was thrown during execution in test generation
@@ -2746,7 +2746,7 @@ public class ResourceLogicRandoopTest {
     public void test131() throws Throwable {
         if (debug)
             System.out.format("%n%s%n", "RegressionTest0.test131");
-        org.apache.syncope.core.logic.ResourceLogic resourceLogic0 = org.apache.syncope.core.logic.RandoopHelper.getConfiguredResourceLogic();
+        org.apache.syncope.core.logic.ResourceLogic resourceLogic0 = org.apache.syncope.core.logic.RandoopHelperLogic.getHelperResourceLogicRandoop();
         java.util.List<org.apache.syncope.common.lib.to.ResourceTO> resourceTOList1 = resourceLogic0.list();
         java.lang.reflect.Method method2 = null;
         java.lang.Object[] objArray3 = null;
@@ -2765,7 +2765,7 @@ public class ResourceLogicRandoopTest {
     public void test132() throws Throwable {
         if (debug)
             System.out.format("%n%s%n", "RegressionTest0.test132");
-        org.apache.syncope.core.logic.ResourceLogic resourceLogic0 = org.apache.syncope.core.logic.RandoopHelper.getConfiguredResourceLogic();
+        org.apache.syncope.core.logic.ResourceLogic resourceLogic0 = org.apache.syncope.core.logic.RandoopHelperLogic.getHelperResourceLogicRandoop();
         // The following exception was thrown during execution in test generation
         try {
             resourceLogic0.removeSyncToken("", "");
@@ -2780,7 +2780,7 @@ public class ResourceLogicRandoopTest {
     public void test133() throws Throwable {
         if (debug)
             System.out.format("%n%s%n", "RegressionTest0.test133");
-        org.apache.syncope.core.logic.ResourceLogic resourceLogic0 = org.apache.syncope.core.logic.RandoopHelper.getConfiguredResourceLogic();
+        org.apache.syncope.core.logic.ResourceLogic resourceLogic0 = org.apache.syncope.core.logic.RandoopHelperLogic.getHelperResourceLogicRandoop();
         java.util.List<org.apache.syncope.common.lib.to.ResourceTO> resourceTOList1 = resourceLogic0.list();
         java.util.List<org.apache.syncope.common.lib.to.ResourceTO> resourceTOList2 = resourceLogic0.list();
         // The following exception was thrown during execution in test generation
@@ -2822,7 +2822,7 @@ public class ResourceLogicRandoopTest {
     public void test135() throws Throwable {
         if (debug)
             System.out.format("%n%s%n", "RegressionTest0.test135");
-        org.apache.syncope.core.logic.ResourceLogic resourceLogic0 = org.apache.syncope.core.logic.RandoopHelper.getConfiguredResourceLogic();
+        org.apache.syncope.core.logic.ResourceLogic resourceLogic0 = org.apache.syncope.core.logic.RandoopHelperLogic.getHelperResourceLogicRandoop();
         java.util.List<org.apache.syncope.common.lib.to.ResourceTO> resourceTOList1 = resourceLogic0.list();
         java.util.List<org.apache.syncope.common.lib.to.ResourceTO> resourceTOList2 = resourceLogic0.list();
         org.identityconnectors.framework.common.objects.filter.Filter filter3 = null;
@@ -2854,7 +2854,7 @@ public class ResourceLogicRandoopTest {
     public void test136() throws Throwable {
         if (debug)
             System.out.format("%n%s%n", "RegressionTest0.test136");
-        org.apache.syncope.core.logic.ResourceLogic resourceLogic0 = org.apache.syncope.core.logic.RandoopHelper.getConfiguredResourceLogic();
+        org.apache.syncope.core.logic.ResourceLogic resourceLogic0 = org.apache.syncope.core.logic.RandoopHelperLogic.getHelperResourceLogicRandoop();
         java.util.List<org.apache.syncope.common.lib.to.ResourceTO> resourceTOList1 = resourceLogic0.list();
         java.lang.reflect.Method method2 = null;
         java.lang.Object obj3 = new java.lang.Object();
@@ -2877,10 +2877,10 @@ public class ResourceLogicRandoopTest {
     public void test137() throws Throwable {
         if (debug)
             System.out.format("%n%s%n", "RegressionTest0.test137");
-        org.apache.syncope.core.logic.ResourceLogic resourceLogic0 = org.apache.syncope.core.logic.RandoopHelper.getConfiguredResourceLogic();
+        org.apache.syncope.core.logic.ResourceLogic resourceLogic0 = org.apache.syncope.core.logic.RandoopHelperLogic.getHelperResourceLogicRandoop();
         java.util.List<org.apache.syncope.common.lib.to.ResourceTO> resourceTOList1 = resourceLogic0.list();
         java.lang.reflect.Method method2 = null;
-        org.apache.syncope.common.lib.to.ResourceTO resourceTO3 = org.apache.syncope.core.logic.RandoopHelper.getValidResourceTO();
+        org.apache.syncope.common.lib.to.ResourceTO resourceTO3 = org.apache.syncope.core.logic.RandoopHelperLogic.getValidResourceTO();
         java.lang.Class<?> wildcardClass4 = resourceTO3.getClass();
         java.lang.Object obj9 = new java.lang.Object();
         java.lang.Object[] objArray10 = new java.lang.Object[] { resourceTO3, 10, "hi!", '4', '4', obj9 };
@@ -2902,7 +2902,7 @@ public class ResourceLogicRandoopTest {
     public void test138() throws Throwable {
         if (debug)
             System.out.format("%n%s%n", "RegressionTest0.test138");
-        org.apache.syncope.core.logic.ResourceLogic resourceLogic0 = org.apache.syncope.core.logic.RandoopHelper.getConfiguredResourceLogic();
+        org.apache.syncope.core.logic.ResourceLogic resourceLogic0 = org.apache.syncope.core.logic.RandoopHelperLogic.getHelperResourceLogicRandoop();
         java.util.List<org.apache.syncope.common.lib.to.ResourceTO> resourceTOList1 = resourceLogic0.list();
         java.util.List<org.apache.syncope.common.lib.to.ResourceTO> resourceTOList2 = resourceLogic0.list();
         org.identityconnectors.framework.common.objects.filter.Filter filter3 = null;
@@ -2934,7 +2934,7 @@ public class ResourceLogicRandoopTest {
     public void test139() throws Throwable {
         if (debug)
             System.out.format("%n%s%n", "RegressionTest0.test139");
-        org.apache.syncope.core.logic.ResourceLogic resourceLogic0 = org.apache.syncope.core.logic.RandoopHelper.getConfiguredResourceLogic();
+        org.apache.syncope.core.logic.ResourceLogic resourceLogic0 = org.apache.syncope.core.logic.RandoopHelperLogic.getHelperResourceLogicRandoop();
         java.util.List<org.apache.syncope.common.lib.to.ResourceTO> resourceTOList1 = resourceLogic0.list();
         java.util.List<org.apache.syncope.common.lib.to.ResourceTO> resourceTOList2 = resourceLogic0.list();
         java.util.List<org.apache.syncope.common.lib.to.ResourceTO> resourceTOList3 = resourceLogic0.list();
@@ -2955,7 +2955,7 @@ public class ResourceLogicRandoopTest {
     public void test140() throws Throwable {
         if (debug)
             System.out.format("%n%s%n", "RegressionTest0.test140");
-        org.apache.syncope.core.logic.ResourceLogic resourceLogic0 = org.apache.syncope.core.logic.RandoopHelper.getConfiguredResourceLogic();
+        org.apache.syncope.core.logic.ResourceLogic resourceLogic0 = org.apache.syncope.core.logic.RandoopHelperLogic.getHelperResourceLogicRandoop();
         java.util.List<org.apache.syncope.common.lib.to.ResourceTO> resourceTOList1 = resourceLogic0.list();
         java.util.List<org.apache.syncope.common.lib.to.ResourceTO> resourceTOList2 = resourceLogic0.list();
         java.util.List<org.apache.syncope.common.lib.to.ResourceTO> resourceTOList3 = resourceLogic0.list();
@@ -2976,7 +2976,7 @@ public class ResourceLogicRandoopTest {
     public void test141() throws Throwable {
         if (debug)
             System.out.format("%n%s%n", "RegressionTest0.test141");
-        org.apache.syncope.core.logic.ResourceLogic resourceLogic0 = org.apache.syncope.core.logic.RandoopHelper.getConfiguredResourceLogic();
+        org.apache.syncope.core.logic.ResourceLogic resourceLogic0 = org.apache.syncope.core.logic.RandoopHelperLogic.getHelperResourceLogicRandoop();
         java.util.List<org.apache.syncope.common.lib.to.ResourceTO> resourceTOList1 = resourceLogic0.list();
         java.util.List<org.apache.syncope.common.lib.to.ResourceTO> resourceTOList2 = resourceLogic0.list();
         // The following exception was thrown during execution in test generation
@@ -3018,7 +3018,7 @@ public class ResourceLogicRandoopTest {
     public void test143() throws Throwable {
         if (debug)
             System.out.format("%n%s%n", "RegressionTest0.test143");
-        org.apache.syncope.core.logic.ResourceLogic resourceLogic0 = org.apache.syncope.core.logic.RandoopHelper.getConfiguredResourceLogic();
+        org.apache.syncope.core.logic.ResourceLogic resourceLogic0 = org.apache.syncope.core.logic.RandoopHelperLogic.getHelperResourceLogicRandoop();
         // The following exception was thrown during execution in test generation
         try {
             org.apache.syncope.common.lib.to.ConnObject connObject4 = resourceLogic0.readConnObjectByConnObjectKeyValue("hi!", "", "hi!");
@@ -3033,11 +3033,11 @@ public class ResourceLogicRandoopTest {
     public void test144() throws Throwable {
         if (debug)
             System.out.format("%n%s%n", "RegressionTest0.test144");
-        org.apache.syncope.core.logic.ResourceLogic resourceLogic0 = org.apache.syncope.core.logic.RandoopHelper.getConfiguredResourceLogic();
+        org.apache.syncope.core.logic.ResourceLogic resourceLogic0 = org.apache.syncope.core.logic.RandoopHelperLogic.getHelperResourceLogicRandoop();
         java.util.List<org.apache.syncope.common.lib.to.ResourceTO> resourceTOList1 = resourceLogic0.list();
         java.util.List<org.apache.syncope.common.lib.to.ResourceTO> resourceTOList2 = resourceLogic0.list();
         java.util.List<org.apache.syncope.common.lib.to.ResourceTO> resourceTOList3 = resourceLogic0.list();
-        org.apache.syncope.common.lib.to.ResourceTO resourceTO4 = org.apache.syncope.core.logic.RandoopHelper.getValidResourceTO();
+        org.apache.syncope.common.lib.to.ResourceTO resourceTO4 = org.apache.syncope.core.logic.RandoopHelperLogic.getValidResourceTO();
         // The following exception was thrown during execution in test generation
         try {
             org.apache.syncope.common.lib.to.ResourceTO resourceTO5 = resourceLogic0.update(resourceTO4);
@@ -3056,7 +3056,7 @@ public class ResourceLogicRandoopTest {
     public void test145() throws Throwable {
         if (debug)
             System.out.format("%n%s%n", "RegressionTest0.test145");
-        org.apache.syncope.core.logic.ResourceLogic resourceLogic0 = org.apache.syncope.core.logic.RandoopHelper.getConfiguredResourceLogic();
+        org.apache.syncope.core.logic.ResourceLogic resourceLogic0 = org.apache.syncope.core.logic.RandoopHelperLogic.getHelperResourceLogicRandoop();
         java.util.List<org.apache.syncope.common.lib.to.ResourceTO> resourceTOList1 = resourceLogic0.list();
         java.util.List<org.apache.syncope.common.lib.to.ResourceTO> resourceTOList2 = resourceLogic0.list();
         java.util.List<org.apache.syncope.common.lib.to.ResourceTO> resourceTOList3 = resourceLogic0.list();
@@ -3077,7 +3077,7 @@ public class ResourceLogicRandoopTest {
     public void test146() throws Throwable {
         if (debug)
             System.out.format("%n%s%n", "RegressionTest0.test146");
-        org.apache.syncope.core.logic.ResourceLogic resourceLogic0 = org.apache.syncope.core.logic.RandoopHelper.getConfiguredResourceLogic();
+        org.apache.syncope.core.logic.ResourceLogic resourceLogic0 = org.apache.syncope.core.logic.RandoopHelperLogic.getHelperResourceLogicRandoop();
         java.util.List<org.apache.syncope.common.lib.to.ResourceTO> resourceTOList1 = resourceLogic0.list();
         java.util.List<org.apache.syncope.common.lib.to.ResourceTO> resourceTOList2 = resourceLogic0.list();
         java.lang.Class<?> wildcardClass3 = resourceLogic0.getClass();
@@ -3091,7 +3091,7 @@ public class ResourceLogicRandoopTest {
     public void test147() throws Throwable {
         if (debug)
             System.out.format("%n%s%n", "RegressionTest0.test147");
-        org.apache.syncope.core.logic.ResourceLogic resourceLogic0 = org.apache.syncope.core.logic.RandoopHelper.getConfiguredResourceLogic();
+        org.apache.syncope.core.logic.ResourceLogic resourceLogic0 = org.apache.syncope.core.logic.RandoopHelperLogic.getHelperResourceLogicRandoop();
         java.util.List<org.apache.syncope.common.lib.to.ResourceTO> resourceTOList1 = resourceLogic0.list();
         // The following exception was thrown during execution in test generation
         try {
@@ -3108,7 +3108,7 @@ public class ResourceLogicRandoopTest {
     public void test148() throws Throwable {
         if (debug)
             System.out.format("%n%s%n", "RegressionTest0.test148");
-        org.apache.syncope.core.logic.ResourceLogic resourceLogic0 = org.apache.syncope.core.logic.RandoopHelper.getConfiguredResourceLogic();
+        org.apache.syncope.core.logic.ResourceLogic resourceLogic0 = org.apache.syncope.core.logic.RandoopHelperLogic.getHelperResourceLogicRandoop();
         java.util.List<org.apache.syncope.common.lib.to.ResourceTO> resourceTOList1 = resourceLogic0.list();
         java.util.List<org.apache.syncope.common.lib.to.ResourceTO> resourceTOList2 = resourceLogic0.list();
         java.util.List<org.apache.syncope.common.lib.to.ResourceTO> resourceTOList3 = resourceLogic0.list();
@@ -3152,7 +3152,7 @@ public class ResourceLogicRandoopTest {
     public void test150() throws Throwable {
         if (debug)
             System.out.format("%n%s%n", "RegressionTest0.test150");
-        org.apache.syncope.core.logic.ResourceLogic resourceLogic0 = org.apache.syncope.core.logic.RandoopHelper.getConfiguredResourceLogic();
+        org.apache.syncope.core.logic.ResourceLogic resourceLogic0 = org.apache.syncope.core.logic.RandoopHelperLogic.getHelperResourceLogicRandoop();
         java.util.List<org.apache.syncope.common.lib.to.ResourceTO> resourceTOList1 = resourceLogic0.list();
         java.util.List<org.apache.syncope.common.lib.to.ResourceTO> resourceTOList2 = resourceLogic0.list();
         java.lang.reflect.Method method3 = null;
@@ -3176,7 +3176,7 @@ public class ResourceLogicRandoopTest {
     public void test151() throws Throwable {
         if (debug)
             System.out.format("%n%s%n", "RegressionTest0.test151");
-        org.apache.syncope.core.logic.ResourceLogic resourceLogic0 = org.apache.syncope.core.logic.RandoopHelper.getConfiguredResourceLogic();
+        org.apache.syncope.core.logic.ResourceLogic resourceLogic0 = org.apache.syncope.core.logic.RandoopHelperLogic.getHelperResourceLogicRandoop();
         java.util.List<org.apache.syncope.common.lib.to.ResourceTO> resourceTOList1 = resourceLogic0.list();
         // The following exception was thrown during execution in test generation
         try {
@@ -3193,11 +3193,11 @@ public class ResourceLogicRandoopTest {
     public void test152() throws Throwable {
         if (debug)
             System.out.format("%n%s%n", "RegressionTest0.test152");
-        org.apache.syncope.core.logic.ResourceLogic resourceLogic0 = org.apache.syncope.core.logic.RandoopHelper.getConfiguredResourceLogic();
+        org.apache.syncope.core.logic.ResourceLogic resourceLogic0 = org.apache.syncope.core.logic.RandoopHelperLogic.getHelperResourceLogicRandoop();
         java.util.List<org.apache.syncope.common.lib.to.ResourceTO> resourceTOList1 = resourceLogic0.list();
         java.util.List<org.apache.syncope.common.lib.to.ResourceTO> resourceTOList2 = resourceLogic0.list();
         java.util.List<org.apache.syncope.common.lib.to.ResourceTO> resourceTOList3 = resourceLogic0.list();
-        org.apache.syncope.common.lib.to.ResourceTO resourceTO4 = org.apache.syncope.core.logic.RandoopHelper.getValidResourceTO();
+        org.apache.syncope.common.lib.to.ResourceTO resourceTO4 = org.apache.syncope.core.logic.RandoopHelperLogic.getValidResourceTO();
         // The following exception was thrown during execution in test generation
         try {
             resourceLogic0.check(resourceTO4);
@@ -3216,7 +3216,7 @@ public class ResourceLogicRandoopTest {
     public void test153() throws Throwable {
         if (debug)
             System.out.format("%n%s%n", "RegressionTest0.test153");
-        org.apache.syncope.core.logic.ResourceLogic resourceLogic0 = org.apache.syncope.core.logic.RandoopHelper.getConfiguredResourceLogic();
+        org.apache.syncope.core.logic.ResourceLogic resourceLogic0 = org.apache.syncope.core.logic.RandoopHelperLogic.getHelperResourceLogicRandoop();
         java.util.List<org.apache.syncope.common.lib.to.ResourceTO> resourceTOList1 = resourceLogic0.list();
         java.util.List<org.apache.syncope.common.lib.to.ResourceTO> resourceTOList2 = resourceLogic0.list();
         java.util.List<org.apache.syncope.common.lib.to.ResourceTO> resourceTOList3 = resourceLogic0.list();
@@ -3232,7 +3232,7 @@ public class ResourceLogicRandoopTest {
     public void test154() throws Throwable {
         if (debug)
             System.out.format("%n%s%n", "RegressionTest0.test154");
-        org.apache.syncope.core.logic.ResourceLogic resourceLogic0 = org.apache.syncope.core.logic.RandoopHelper.getConfiguredResourceLogic();
+        org.apache.syncope.core.logic.ResourceLogic resourceLogic0 = org.apache.syncope.core.logic.RandoopHelperLogic.getHelperResourceLogicRandoop();
         java.util.List<org.apache.syncope.common.lib.to.ResourceTO> resourceTOList1 = resourceLogic0.list();
         java.util.List<org.apache.syncope.common.lib.to.ResourceTO> resourceTOList2 = resourceLogic0.list();
         java.lang.reflect.Method method3 = null;
@@ -3255,7 +3255,7 @@ public class ResourceLogicRandoopTest {
     public void test155() throws Throwable {
         if (debug)
             System.out.format("%n%s%n", "RegressionTest0.test155");
-        org.apache.syncope.core.logic.ResourceLogic resourceLogic0 = org.apache.syncope.core.logic.RandoopHelper.getConfiguredResourceLogic();
+        org.apache.syncope.core.logic.ResourceLogic resourceLogic0 = org.apache.syncope.core.logic.RandoopHelperLogic.getHelperResourceLogicRandoop();
         // The following exception was thrown during execution in test generation
         try {
             org.apache.syncope.common.lib.to.ConnObject connObject4 = resourceLogic0.readConnObjectByAnyKey("hi!", "", "");
@@ -3270,7 +3270,7 @@ public class ResourceLogicRandoopTest {
     public void test156() throws Throwable {
         if (debug)
             System.out.format("%n%s%n", "RegressionTest0.test156");
-        org.apache.syncope.core.logic.ResourceLogic resourceLogic0 = org.apache.syncope.core.logic.RandoopHelper.getConfiguredResourceLogic();
+        org.apache.syncope.core.logic.ResourceLogic resourceLogic0 = org.apache.syncope.core.logic.RandoopHelperLogic.getHelperResourceLogicRandoop();
         java.util.List<org.apache.syncope.common.lib.to.ResourceTO> resourceTOList1 = resourceLogic0.list();
         java.util.List<org.apache.syncope.common.lib.to.ResourceTO> resourceTOList2 = resourceLogic0.list();
         java.util.List<org.apache.syncope.common.lib.to.ResourceTO> resourceTOList3 = resourceLogic0.list();
@@ -3291,7 +3291,7 @@ public class ResourceLogicRandoopTest {
     public void test157() throws Throwable {
         if (debug)
             System.out.format("%n%s%n", "RegressionTest0.test157");
-        org.apache.syncope.core.logic.ResourceLogic resourceLogic0 = org.apache.syncope.core.logic.RandoopHelper.getConfiguredResourceLogic();
+        org.apache.syncope.core.logic.ResourceLogic resourceLogic0 = org.apache.syncope.core.logic.RandoopHelperLogic.getHelperResourceLogicRandoop();
         java.util.List<org.apache.syncope.common.lib.to.ResourceTO> resourceTOList1 = resourceLogic0.list();
         java.util.List<org.apache.syncope.common.lib.to.ResourceTO> resourceTOList2 = resourceLogic0.list();
         java.lang.Class<?> wildcardClass3 = resourceTOList2.getClass();
@@ -3305,7 +3305,7 @@ public class ResourceLogicRandoopTest {
     public void test158() throws Throwable {
         if (debug)
             System.out.format("%n%s%n", "RegressionTest0.test158");
-        org.apache.syncope.core.logic.ResourceLogic resourceLogic0 = org.apache.syncope.core.logic.RandoopHelper.getConfiguredResourceLogic();
+        org.apache.syncope.core.logic.ResourceLogic resourceLogic0 = org.apache.syncope.core.logic.RandoopHelperLogic.getHelperResourceLogicRandoop();
         org.identityconnectors.framework.common.objects.filter.Filter filter1 = null;
         java.lang.String[] strArray3 = new java.lang.String[] { "" };
         java.util.LinkedHashSet<java.lang.String> strSet4 = new java.util.LinkedHashSet<java.lang.String>();
@@ -3333,7 +3333,7 @@ public class ResourceLogicRandoopTest {
     public void test159() throws Throwable {
         if (debug)
             System.out.format("%n%s%n", "RegressionTest0.test159");
-        org.apache.syncope.core.logic.ResourceLogic resourceLogic0 = org.apache.syncope.core.logic.RandoopHelper.getConfiguredResourceLogic();
+        org.apache.syncope.core.logic.ResourceLogic resourceLogic0 = org.apache.syncope.core.logic.RandoopHelperLogic.getHelperResourceLogicRandoop();
         java.util.List<org.apache.syncope.common.lib.to.ResourceTO> resourceTOList1 = resourceLogic0.list();
         java.util.List<org.apache.syncope.common.lib.to.ResourceTO> resourceTOList2 = resourceLogic0.list();
         java.util.List<org.apache.syncope.common.lib.to.ResourceTO> resourceTOList3 = resourceLogic0.list();
@@ -3359,7 +3359,7 @@ public class ResourceLogicRandoopTest {
     public void test160() throws Throwable {
         if (debug)
             System.out.format("%n%s%n", "RegressionTest0.test160");
-        org.apache.syncope.core.logic.ResourceLogic resourceLogic0 = org.apache.syncope.core.logic.RandoopHelper.getConfiguredResourceLogic();
+        org.apache.syncope.core.logic.ResourceLogic resourceLogic0 = org.apache.syncope.core.logic.RandoopHelperLogic.getHelperResourceLogicRandoop();
         java.lang.reflect.Method method1 = null;
         java.lang.Object obj4 = new java.lang.Object();
         java.lang.Object[] objArray6 = new java.lang.Object[] { 100L, 1.0d, obj4, '#' };
@@ -3378,7 +3378,7 @@ public class ResourceLogicRandoopTest {
     public void test161() throws Throwable {
         if (debug)
             System.out.format("%n%s%n", "RegressionTest0.test161");
-        org.apache.syncope.core.logic.ResourceLogic resourceLogic0 = org.apache.syncope.core.logic.RandoopHelper.getConfiguredResourceLogic();
+        org.apache.syncope.core.logic.ResourceLogic resourceLogic0 = org.apache.syncope.core.logic.RandoopHelperLogic.getHelperResourceLogicRandoop();
         java.util.List<org.apache.syncope.common.lib.to.ResourceTO> resourceTOList1 = resourceLogic0.list();
         java.util.List<org.apache.syncope.common.lib.to.ResourceTO> resourceTOList2 = resourceLogic0.list();
         java.util.List<org.apache.syncope.common.lib.to.ResourceTO> resourceTOList3 = resourceLogic0.list();
@@ -3412,7 +3412,7 @@ public class ResourceLogicRandoopTest {
     public void test162() throws Throwable {
         if (debug)
             System.out.format("%n%s%n", "RegressionTest0.test162");
-        org.apache.syncope.core.logic.ResourceLogic resourceLogic0 = org.apache.syncope.core.logic.RandoopHelper.getConfiguredResourceLogic();
+        org.apache.syncope.core.logic.ResourceLogic resourceLogic0 = org.apache.syncope.core.logic.RandoopHelperLogic.getHelperResourceLogicRandoop();
         java.util.List<org.apache.syncope.common.lib.to.ResourceTO> resourceTOList1 = resourceLogic0.list();
         java.util.List<org.apache.syncope.common.lib.to.ResourceTO> resourceTOList2 = resourceLogic0.list();
         java.util.List<org.apache.syncope.common.lib.to.ResourceTO> resourceTOList3 = resourceLogic0.list();
@@ -3433,7 +3433,7 @@ public class ResourceLogicRandoopTest {
     public void test163() throws Throwable {
         if (debug)
             System.out.format("%n%s%n", "RegressionTest0.test163");
-        org.apache.syncope.core.logic.ResourceLogic resourceLogic0 = org.apache.syncope.core.logic.RandoopHelper.getConfiguredResourceLogic();
+        org.apache.syncope.core.logic.ResourceLogic resourceLogic0 = org.apache.syncope.core.logic.RandoopHelperLogic.getHelperResourceLogicRandoop();
         java.util.List<org.apache.syncope.common.lib.to.ResourceTO> resourceTOList1 = resourceLogic0.list();
         java.util.List<org.apache.syncope.common.lib.to.ResourceTO> resourceTOList2 = resourceLogic0.list();
         // The following exception was thrown during execution in test generation
@@ -3452,7 +3452,7 @@ public class ResourceLogicRandoopTest {
     public void test164() throws Throwable {
         if (debug)
             System.out.format("%n%s%n", "RegressionTest0.test164");
-        org.apache.syncope.core.logic.ResourceLogic resourceLogic0 = org.apache.syncope.core.logic.RandoopHelper.getConfiguredResourceLogic();
+        org.apache.syncope.core.logic.ResourceLogic resourceLogic0 = org.apache.syncope.core.logic.RandoopHelperLogic.getHelperResourceLogicRandoop();
         java.util.List<org.apache.syncope.common.lib.to.ResourceTO> resourceTOList1 = resourceLogic0.list();
         java.util.List<org.apache.syncope.common.lib.to.ResourceTO> resourceTOList2 = resourceLogic0.list();
         java.util.List<org.apache.syncope.common.lib.to.ResourceTO> resourceTOList3 = resourceLogic0.list();
@@ -3473,7 +3473,7 @@ public class ResourceLogicRandoopTest {
     public void test165() throws Throwable {
         if (debug)
             System.out.format("%n%s%n", "RegressionTest0.test165");
-        org.apache.syncope.core.logic.ResourceLogic resourceLogic0 = org.apache.syncope.core.logic.RandoopHelper.getConfiguredResourceLogic();
+        org.apache.syncope.core.logic.ResourceLogic resourceLogic0 = org.apache.syncope.core.logic.RandoopHelperLogic.getHelperResourceLogicRandoop();
         java.util.List<org.apache.syncope.common.lib.to.ResourceTO> resourceTOList1 = resourceLogic0.list();
         java.util.List<org.apache.syncope.common.lib.to.ResourceTO> resourceTOList2 = resourceLogic0.list();
         org.identityconnectors.framework.common.objects.filter.Filter filter3 = null;
@@ -3505,7 +3505,7 @@ public class ResourceLogicRandoopTest {
     public void test166() throws Throwable {
         if (debug)
             System.out.format("%n%s%n", "RegressionTest0.test166");
-        org.apache.syncope.core.logic.ResourceLogic resourceLogic0 = org.apache.syncope.core.logic.RandoopHelper.getConfiguredResourceLogic();
+        org.apache.syncope.core.logic.ResourceLogic resourceLogic0 = org.apache.syncope.core.logic.RandoopHelperLogic.getHelperResourceLogicRandoop();
         java.util.List<org.apache.syncope.common.lib.to.ResourceTO> resourceTOList1 = resourceLogic0.list();
         java.util.List<org.apache.syncope.common.lib.to.ResourceTO> resourceTOList2 = resourceLogic0.list();
         java.util.List<org.apache.syncope.common.lib.to.ResourceTO> resourceTOList3 = resourceLogic0.list();
@@ -3528,7 +3528,7 @@ public class ResourceLogicRandoopTest {
     public void test167() throws Throwable {
         if (debug)
             System.out.format("%n%s%n", "RegressionTest0.test167");
-        org.apache.syncope.core.logic.ResourceLogic resourceLogic0 = org.apache.syncope.core.logic.RandoopHelper.getConfiguredResourceLogic();
+        org.apache.syncope.core.logic.ResourceLogic resourceLogic0 = org.apache.syncope.core.logic.RandoopHelperLogic.getHelperResourceLogicRandoop();
         java.util.List<org.apache.syncope.common.lib.to.ResourceTO> resourceTOList1 = resourceLogic0.list();
         java.util.List<org.apache.syncope.common.lib.to.ResourceTO> resourceTOList2 = resourceLogic0.list();
         java.util.List<org.apache.syncope.common.lib.to.ResourceTO> resourceTOList3 = resourceLogic0.list();
@@ -3549,7 +3549,7 @@ public class ResourceLogicRandoopTest {
     public void test168() throws Throwable {
         if (debug)
             System.out.format("%n%s%n", "RegressionTest0.test168");
-        org.apache.syncope.core.logic.ResourceLogic resourceLogic0 = org.apache.syncope.core.logic.RandoopHelper.getConfiguredResourceLogic();
+        org.apache.syncope.core.logic.ResourceLogic resourceLogic0 = org.apache.syncope.core.logic.RandoopHelperLogic.getHelperResourceLogicRandoop();
         java.util.List<org.apache.syncope.common.lib.to.ResourceTO> resourceTOList1 = resourceLogic0.list();
         // The following exception was thrown during execution in test generation
         try {
@@ -3566,7 +3566,7 @@ public class ResourceLogicRandoopTest {
     public void test169() throws Throwable {
         if (debug)
             System.out.format("%n%s%n", "RegressionTest0.test169");
-        org.apache.syncope.core.logic.ResourceLogic resourceLogic0 = org.apache.syncope.core.logic.RandoopHelper.getConfiguredResourceLogic();
+        org.apache.syncope.core.logic.ResourceLogic resourceLogic0 = org.apache.syncope.core.logic.RandoopHelperLogic.getHelperResourceLogicRandoop();
         java.util.List<org.apache.syncope.common.lib.to.ResourceTO> resourceTOList1 = resourceLogic0.list();
         java.util.List<org.apache.syncope.common.lib.to.ResourceTO> resourceTOList2 = resourceLogic0.list();
         java.util.List<org.apache.syncope.common.lib.to.ResourceTO> resourceTOList3 = resourceLogic0.list();
@@ -3598,7 +3598,7 @@ public class ResourceLogicRandoopTest {
         org.apache.syncope.core.persistence.api.entity.AnyUtilsFactory anyUtilsFactory8 = null;
         org.apache.syncope.core.logic.ResourceLogic resourceLogic9 = new org.apache.syncope.core.logic.ResourceLogic(externalResourceDAO0, anyTypeDAO1, connInstanceDAO2, resourceDataBinder3, connInstanceDataBinder4, outboundMatcher5, mappingManager6, connectorManager7, anyUtilsFactory8);
         java.lang.reflect.Method method10 = null;
-        org.apache.syncope.core.logic.ResourceLogic resourceLogic11 = org.apache.syncope.core.logic.RandoopHelper.getConfiguredResourceLogic();
+        org.apache.syncope.core.logic.ResourceLogic resourceLogic11 = org.apache.syncope.core.logic.RandoopHelperLogic.getHelperResourceLogicRandoop();
         java.util.List<org.apache.syncope.common.lib.to.ResourceTO> resourceTOList12 = resourceLogic11.list();
         java.util.List<org.apache.syncope.common.lib.to.ResourceTO> resourceTOList13 = resourceLogic11.list();
         java.util.List<org.apache.syncope.common.lib.to.ResourceTO> resourceTOList14 = resourceLogic11.list();
@@ -3621,7 +3621,7 @@ public class ResourceLogicRandoopTest {
     public void test171() throws Throwable {
         if (debug)
             System.out.format("%n%s%n", "RegressionTest0.test171");
-        org.apache.syncope.core.logic.ResourceLogic resourceLogic0 = org.apache.syncope.core.logic.RandoopHelper.getConfiguredResourceLogic();
+        org.apache.syncope.core.logic.ResourceLogic resourceLogic0 = org.apache.syncope.core.logic.RandoopHelperLogic.getHelperResourceLogicRandoop();
         java.util.List<org.apache.syncope.common.lib.to.ResourceTO> resourceTOList1 = resourceLogic0.list();
         java.util.List<org.apache.syncope.common.lib.to.ResourceTO> resourceTOList2 = resourceLogic0.list();
         java.util.List<org.apache.syncope.common.lib.to.ResourceTO> resourceTOList3 = resourceLogic0.list();
@@ -3655,7 +3655,7 @@ public class ResourceLogicRandoopTest {
     public void test172() throws Throwable {
         if (debug)
             System.out.format("%n%s%n", "RegressionTest0.test172");
-        org.apache.syncope.core.logic.ResourceLogic resourceLogic0 = org.apache.syncope.core.logic.RandoopHelper.getConfiguredResourceLogic();
+        org.apache.syncope.core.logic.ResourceLogic resourceLogic0 = org.apache.syncope.core.logic.RandoopHelperLogic.getHelperResourceLogicRandoop();
         java.util.List<org.apache.syncope.common.lib.to.ResourceTO> resourceTOList1 = resourceLogic0.list();
         java.util.List<org.apache.syncope.common.lib.to.ResourceTO> resourceTOList2 = resourceLogic0.list();
         java.util.List<org.apache.syncope.common.lib.to.ResourceTO> resourceTOList3 = resourceLogic0.list();
@@ -3675,7 +3675,7 @@ public class ResourceLogicRandoopTest {
     public void test173() throws Throwable {
         if (debug)
             System.out.format("%n%s%n", "RegressionTest0.test173");
-        org.apache.syncope.core.logic.ResourceLogic resourceLogic0 = org.apache.syncope.core.logic.RandoopHelper.getConfiguredResourceLogic();
+        org.apache.syncope.core.logic.ResourceLogic resourceLogic0 = org.apache.syncope.core.logic.RandoopHelperLogic.getHelperResourceLogicRandoop();
         java.util.List<org.apache.syncope.common.lib.to.ResourceTO> resourceTOList1 = resourceLogic0.list();
         java.util.List<org.apache.syncope.common.lib.to.ResourceTO> resourceTOList2 = resourceLogic0.list();
         // The following exception was thrown during execution in test generation
@@ -3694,7 +3694,7 @@ public class ResourceLogicRandoopTest {
     public void test174() throws Throwable {
         if (debug)
             System.out.format("%n%s%n", "RegressionTest0.test174");
-        org.apache.syncope.core.logic.ResourceLogic resourceLogic0 = org.apache.syncope.core.logic.RandoopHelper.getConfiguredResourceLogic();
+        org.apache.syncope.core.logic.ResourceLogic resourceLogic0 = org.apache.syncope.core.logic.RandoopHelperLogic.getHelperResourceLogicRandoop();
         java.util.List<org.apache.syncope.common.lib.to.ResourceTO> resourceTOList1 = resourceLogic0.list();
         java.util.List<org.apache.syncope.common.lib.to.ResourceTO> resourceTOList2 = resourceLogic0.list();
         java.util.List<org.apache.syncope.common.lib.to.ResourceTO> resourceTOList3 = resourceLogic0.list();
@@ -3715,7 +3715,7 @@ public class ResourceLogicRandoopTest {
     public void test175() throws Throwable {
         if (debug)
             System.out.format("%n%s%n", "RegressionTest0.test175");
-        org.apache.syncope.core.logic.ResourceLogic resourceLogic0 = org.apache.syncope.core.logic.RandoopHelper.getConfiguredResourceLogic();
+        org.apache.syncope.core.logic.ResourceLogic resourceLogic0 = org.apache.syncope.core.logic.RandoopHelperLogic.getHelperResourceLogicRandoop();
         java.util.List<org.apache.syncope.common.lib.to.ResourceTO> resourceTOList1 = resourceLogic0.list();
         org.apache.syncope.common.lib.to.ResourceTO resourceTO2 = null;
         // The following exception was thrown during execution in test generation
@@ -3733,7 +3733,7 @@ public class ResourceLogicRandoopTest {
     public void test176() throws Throwable {
         if (debug)
             System.out.format("%n%s%n", "RegressionTest0.test176");
-        org.apache.syncope.core.logic.ResourceLogic resourceLogic0 = org.apache.syncope.core.logic.RandoopHelper.getConfiguredResourceLogic();
+        org.apache.syncope.core.logic.ResourceLogic resourceLogic0 = org.apache.syncope.core.logic.RandoopHelperLogic.getHelperResourceLogicRandoop();
         java.util.List<org.apache.syncope.common.lib.to.ResourceTO> resourceTOList1 = resourceLogic0.list();
         java.util.List<org.apache.syncope.common.lib.to.ResourceTO> resourceTOList2 = resourceLogic0.list();
         java.util.List<org.apache.syncope.common.lib.to.ResourceTO> resourceTOList3 = resourceLogic0.list();
@@ -3756,7 +3756,7 @@ public class ResourceLogicRandoopTest {
     public void test177() throws Throwable {
         if (debug)
             System.out.format("%n%s%n", "RegressionTest0.test177");
-        org.apache.syncope.core.logic.ResourceLogic resourceLogic0 = org.apache.syncope.core.logic.RandoopHelper.getConfiguredResourceLogic();
+        org.apache.syncope.core.logic.ResourceLogic resourceLogic0 = org.apache.syncope.core.logic.RandoopHelperLogic.getHelperResourceLogicRandoop();
         java.util.List<org.apache.syncope.common.lib.to.ResourceTO> resourceTOList1 = resourceLogic0.list();
         java.util.List<org.apache.syncope.common.lib.to.ResourceTO> resourceTOList2 = resourceLogic0.list();
         java.util.List<org.apache.syncope.common.lib.to.ResourceTO> resourceTOList3 = resourceLogic0.list();
@@ -3777,7 +3777,7 @@ public class ResourceLogicRandoopTest {
     public void test178() throws Throwable {
         if (debug)
             System.out.format("%n%s%n", "RegressionTest0.test178");
-        org.apache.syncope.core.logic.ResourceLogic resourceLogic0 = org.apache.syncope.core.logic.RandoopHelper.getConfiguredResourceLogic();
+        org.apache.syncope.core.logic.ResourceLogic resourceLogic0 = org.apache.syncope.core.logic.RandoopHelperLogic.getHelperResourceLogicRandoop();
         java.util.List<org.apache.syncope.common.lib.to.ResourceTO> resourceTOList1 = resourceLogic0.list();
         java.util.List<org.apache.syncope.common.lib.to.ResourceTO> resourceTOList2 = resourceLogic0.list();
         java.util.List<org.apache.syncope.common.lib.to.ResourceTO> resourceTOList3 = resourceLogic0.list();
@@ -3798,12 +3798,12 @@ public class ResourceLogicRandoopTest {
     public void test179() throws Throwable {
         if (debug)
             System.out.format("%n%s%n", "RegressionTest0.test179");
-        org.apache.syncope.core.logic.ResourceLogic resourceLogic0 = org.apache.syncope.core.logic.RandoopHelper.getConfiguredResourceLogic();
+        org.apache.syncope.core.logic.ResourceLogic resourceLogic0 = org.apache.syncope.core.logic.RandoopHelperLogic.getHelperResourceLogicRandoop();
         java.util.List<org.apache.syncope.common.lib.to.ResourceTO> resourceTOList1 = resourceLogic0.list();
         java.util.List<org.apache.syncope.common.lib.to.ResourceTO> resourceTOList2 = resourceLogic0.list();
         java.util.List<org.apache.syncope.common.lib.to.ResourceTO> resourceTOList3 = resourceLogic0.list();
         java.util.List<org.apache.syncope.common.lib.to.ResourceTO> resourceTOList4 = resourceLogic0.list();
-        org.apache.syncope.common.lib.to.ResourceTO resourceTO5 = org.apache.syncope.core.logic.RandoopHelper.getValidResourceTO();
+        org.apache.syncope.common.lib.to.ResourceTO resourceTO5 = org.apache.syncope.core.logic.RandoopHelperLogic.getValidResourceTO();
         // The following exception was thrown during execution in test generation
         try {
             org.apache.syncope.common.lib.to.ResourceTO resourceTO6 = resourceLogic0.create(resourceTO5);
@@ -3823,11 +3823,11 @@ public class ResourceLogicRandoopTest {
     public void test180() throws Throwable {
         if (debug)
             System.out.format("%n%s%n", "RegressionTest0.test180");
-        org.apache.syncope.core.logic.ResourceLogic resourceLogic0 = org.apache.syncope.core.logic.RandoopHelper.getConfiguredResourceLogic();
+        org.apache.syncope.core.logic.ResourceLogic resourceLogic0 = org.apache.syncope.core.logic.RandoopHelperLogic.getHelperResourceLogicRandoop();
         java.util.List<org.apache.syncope.common.lib.to.ResourceTO> resourceTOList1 = resourceLogic0.list();
         java.util.List<org.apache.syncope.common.lib.to.ResourceTO> resourceTOList2 = resourceLogic0.list();
         java.lang.reflect.Method method3 = null;
-        org.apache.syncope.core.logic.ResourceLogic resourceLogic4 = org.apache.syncope.core.logic.RandoopHelper.getConfiguredResourceLogic();
+        org.apache.syncope.core.logic.ResourceLogic resourceLogic4 = org.apache.syncope.core.logic.RandoopHelperLogic.getHelperResourceLogicRandoop();
         java.util.List<org.apache.syncope.common.lib.to.ResourceTO> resourceTOList5 = resourceLogic4.list();
         java.lang.Class<?> wildcardClass6 = resourceTOList5.getClass();
         java.lang.Object[] objArray8 = new java.lang.Object[] { resourceTOList5, 100.0f };
@@ -3853,7 +3853,7 @@ public class ResourceLogicRandoopTest {
     public void test181() throws Throwable {
         if (debug)
             System.out.format("%n%s%n", "RegressionTest0.test181");
-        org.apache.syncope.core.logic.ResourceLogic resourceLogic0 = org.apache.syncope.core.logic.RandoopHelper.getConfiguredResourceLogic();
+        org.apache.syncope.core.logic.ResourceLogic resourceLogic0 = org.apache.syncope.core.logic.RandoopHelperLogic.getHelperResourceLogicRandoop();
         java.util.List<org.apache.syncope.common.lib.to.ResourceTO> resourceTOList1 = resourceLogic0.list();
         java.util.List<org.apache.syncope.common.lib.to.ResourceTO> resourceTOList2 = resourceLogic0.list();
         java.util.List<org.apache.syncope.common.lib.to.ResourceTO> resourceTOList3 = resourceLogic0.list();
@@ -3876,7 +3876,7 @@ public class ResourceLogicRandoopTest {
     public void test182() throws Throwable {
         if (debug)
             System.out.format("%n%s%n", "RegressionTest0.test182");
-        org.apache.syncope.core.logic.ResourceLogic resourceLogic0 = org.apache.syncope.core.logic.RandoopHelper.getConfiguredResourceLogic();
+        org.apache.syncope.core.logic.ResourceLogic resourceLogic0 = org.apache.syncope.core.logic.RandoopHelperLogic.getHelperResourceLogicRandoop();
         java.util.List<org.apache.syncope.common.lib.to.ResourceTO> resourceTOList1 = resourceLogic0.list();
         java.util.List<org.apache.syncope.common.lib.to.ResourceTO> resourceTOList2 = resourceLogic0.list();
         java.util.List<org.apache.syncope.common.lib.to.ResourceTO> resourceTOList3 = resourceLogic0.list();
@@ -3906,7 +3906,7 @@ public class ResourceLogicRandoopTest {
     public void test183() throws Throwable {
         if (debug)
             System.out.format("%n%s%n", "RegressionTest0.test183");
-        org.apache.syncope.core.logic.ResourceLogic resourceLogic0 = org.apache.syncope.core.logic.RandoopHelper.getConfiguredResourceLogic();
+        org.apache.syncope.core.logic.ResourceLogic resourceLogic0 = org.apache.syncope.core.logic.RandoopHelperLogic.getHelperResourceLogicRandoop();
         java.util.List<org.apache.syncope.common.lib.to.ResourceTO> resourceTOList1 = resourceLogic0.list();
         java.util.List<org.apache.syncope.common.lib.to.ResourceTO> resourceTOList2 = resourceLogic0.list();
         java.util.List<org.apache.syncope.common.lib.to.ResourceTO> resourceTOList3 = resourceLogic0.list();
@@ -3931,11 +3931,11 @@ public class ResourceLogicRandoopTest {
     public void test184() throws Throwable {
         if (debug)
             System.out.format("%n%s%n", "RegressionTest0.test184");
-        org.apache.syncope.core.logic.ResourceLogic resourceLogic0 = org.apache.syncope.core.logic.RandoopHelper.getConfiguredResourceLogic();
+        org.apache.syncope.core.logic.ResourceLogic resourceLogic0 = org.apache.syncope.core.logic.RandoopHelperLogic.getHelperResourceLogicRandoop();
         java.util.List<org.apache.syncope.common.lib.to.ResourceTO> resourceTOList1 = resourceLogic0.list();
         java.util.List<org.apache.syncope.common.lib.to.ResourceTO> resourceTOList2 = resourceLogic0.list();
         java.util.List<org.apache.syncope.common.lib.to.ResourceTO> resourceTOList3 = resourceLogic0.list();
-        org.apache.syncope.common.lib.to.ResourceTO resourceTO4 = org.apache.syncope.core.logic.RandoopHelper.getValidResourceTO();
+        org.apache.syncope.common.lib.to.ResourceTO resourceTO4 = org.apache.syncope.core.logic.RandoopHelperLogic.getValidResourceTO();
         // The following exception was thrown during execution in test generation
         try {
             org.apache.syncope.common.lib.to.ResourceTO resourceTO5 = resourceLogic0.create(resourceTO4);
@@ -3954,12 +3954,12 @@ public class ResourceLogicRandoopTest {
     public void test185() throws Throwable {
         if (debug)
             System.out.format("%n%s%n", "RegressionTest0.test185");
-        org.apache.syncope.core.logic.ResourceLogic resourceLogic0 = org.apache.syncope.core.logic.RandoopHelper.getConfiguredResourceLogic();
+        org.apache.syncope.core.logic.ResourceLogic resourceLogic0 = org.apache.syncope.core.logic.RandoopHelperLogic.getHelperResourceLogicRandoop();
         java.util.List<org.apache.syncope.common.lib.to.ResourceTO> resourceTOList1 = resourceLogic0.list();
         java.util.List<org.apache.syncope.common.lib.to.ResourceTO> resourceTOList2 = resourceLogic0.list();
         java.util.List<org.apache.syncope.common.lib.to.ResourceTO> resourceTOList3 = resourceLogic0.list();
         java.util.List<org.apache.syncope.common.lib.to.ResourceTO> resourceTOList4 = resourceLogic0.list();
-        org.apache.syncope.common.lib.to.ResourceTO resourceTO5 = org.apache.syncope.core.logic.RandoopHelper.getValidResourceTO();
+        org.apache.syncope.common.lib.to.ResourceTO resourceTO5 = org.apache.syncope.core.logic.RandoopHelperLogic.getValidResourceTO();
         // The following exception was thrown during execution in test generation
         try {
             org.apache.syncope.common.lib.to.ResourceTO resourceTO6 = resourceLogic0.update(resourceTO5);
@@ -3979,13 +3979,13 @@ public class ResourceLogicRandoopTest {
     public void test186() throws Throwable {
         if (debug)
             System.out.format("%n%s%n", "RegressionTest0.test186");
-        org.apache.syncope.core.logic.ResourceLogic resourceLogic0 = org.apache.syncope.core.logic.RandoopHelper.getConfiguredResourceLogic();
+        org.apache.syncope.core.logic.ResourceLogic resourceLogic0 = org.apache.syncope.core.logic.RandoopHelperLogic.getHelperResourceLogicRandoop();
         java.util.List<org.apache.syncope.common.lib.to.ResourceTO> resourceTOList1 = resourceLogic0.list();
         java.util.List<org.apache.syncope.common.lib.to.ResourceTO> resourceTOList2 = resourceLogic0.list();
         java.util.List<org.apache.syncope.common.lib.to.ResourceTO> resourceTOList3 = resourceLogic0.list();
         java.util.List<org.apache.syncope.common.lib.to.ResourceTO> resourceTOList4 = resourceLogic0.list();
         java.util.List<org.apache.syncope.common.lib.to.ResourceTO> resourceTOList5 = resourceLogic0.list();
-        org.apache.syncope.common.lib.to.ResourceTO resourceTO6 = org.apache.syncope.core.logic.RandoopHelper.getValidResourceTO();
+        org.apache.syncope.common.lib.to.ResourceTO resourceTO6 = org.apache.syncope.core.logic.RandoopHelperLogic.getValidResourceTO();
         // The following exception was thrown during execution in test generation
         try {
             org.apache.syncope.common.lib.to.ResourceTO resourceTO7 = resourceLogic0.create(resourceTO6);
@@ -4006,7 +4006,7 @@ public class ResourceLogicRandoopTest {
     public void test187() throws Throwable {
         if (debug)
             System.out.format("%n%s%n", "RegressionTest0.test187");
-        org.apache.syncope.core.logic.ResourceLogic resourceLogic0 = org.apache.syncope.core.logic.RandoopHelper.getConfiguredResourceLogic();
+        org.apache.syncope.core.logic.ResourceLogic resourceLogic0 = org.apache.syncope.core.logic.RandoopHelperLogic.getHelperResourceLogicRandoop();
         org.identityconnectors.framework.common.objects.filter.Filter filter1 = null;
         java.lang.String[] strArray4 = new java.lang.String[] { "", "hi!" };
         java.util.LinkedHashSet<java.lang.String> strSet5 = new java.util.LinkedHashSet<java.lang.String>();
@@ -4034,7 +4034,7 @@ public class ResourceLogicRandoopTest {
     public void test188() throws Throwable {
         if (debug)
             System.out.format("%n%s%n", "RegressionTest0.test188");
-        org.apache.syncope.core.logic.ResourceLogic resourceLogic0 = org.apache.syncope.core.logic.RandoopHelper.getConfiguredResourceLogic();
+        org.apache.syncope.core.logic.ResourceLogic resourceLogic0 = org.apache.syncope.core.logic.RandoopHelperLogic.getHelperResourceLogicRandoop();
         java.util.List<org.apache.syncope.common.lib.to.ResourceTO> resourceTOList1 = resourceLogic0.list();
         java.util.List<org.apache.syncope.common.lib.to.ResourceTO> resourceTOList2 = resourceLogic0.list();
         java.util.List<org.apache.syncope.common.lib.to.ResourceTO> resourceTOList3 = resourceLogic0.list();
@@ -4065,7 +4065,7 @@ public class ResourceLogicRandoopTest {
     public void test189() throws Throwable {
         if (debug)
             System.out.format("%n%s%n", "RegressionTest0.test189");
-        org.apache.syncope.core.logic.ResourceLogic resourceLogic0 = org.apache.syncope.core.logic.RandoopHelper.getConfiguredResourceLogic();
+        org.apache.syncope.core.logic.ResourceLogic resourceLogic0 = org.apache.syncope.core.logic.RandoopHelperLogic.getHelperResourceLogicRandoop();
         java.lang.reflect.Method method1 = null;
         java.lang.Object[] objArray5 = new java.lang.Object[] { 0.0f, 10.0d, (-1.0d) };
         // The following exception was thrown during execution in test generation
@@ -4085,7 +4085,7 @@ public class ResourceLogicRandoopTest {
     public void test190() throws Throwable {
         if (debug)
             System.out.format("%n%s%n", "RegressionTest0.test190");
-        org.apache.syncope.core.logic.ResourceLogic resourceLogic0 = org.apache.syncope.core.logic.RandoopHelper.getConfiguredResourceLogic();
+        org.apache.syncope.core.logic.ResourceLogic resourceLogic0 = org.apache.syncope.core.logic.RandoopHelperLogic.getHelperResourceLogicRandoop();
         org.identityconnectors.framework.common.objects.filter.Filter filter1 = null;
         java.lang.String[] strArray4 = new java.lang.String[] { "hi!", "hi!" };
         java.util.LinkedHashSet<java.lang.String> strSet5 = new java.util.LinkedHashSet<java.lang.String>();
@@ -4113,7 +4113,7 @@ public class ResourceLogicRandoopTest {
     public void test191() throws Throwable {
         if (debug)
             System.out.format("%n%s%n", "RegressionTest0.test191");
-        org.apache.syncope.core.logic.ResourceLogic resourceLogic0 = org.apache.syncope.core.logic.RandoopHelper.getConfiguredResourceLogic();
+        org.apache.syncope.core.logic.ResourceLogic resourceLogic0 = org.apache.syncope.core.logic.RandoopHelperLogic.getHelperResourceLogicRandoop();
         java.util.List<org.apache.syncope.common.lib.to.ResourceTO> resourceTOList1 = resourceLogic0.list();
         java.util.List<org.apache.syncope.common.lib.to.ResourceTO> resourceTOList2 = resourceLogic0.list();
         // The following exception was thrown during execution in test generation
@@ -4132,7 +4132,7 @@ public class ResourceLogicRandoopTest {
     public void test192() throws Throwable {
         if (debug)
             System.out.format("%n%s%n", "RegressionTest0.test192");
-        org.apache.syncope.core.logic.ResourceLogic resourceLogic0 = org.apache.syncope.core.logic.RandoopHelper.getConfiguredResourceLogic();
+        org.apache.syncope.core.logic.ResourceLogic resourceLogic0 = org.apache.syncope.core.logic.RandoopHelperLogic.getHelperResourceLogicRandoop();
         java.util.List<org.apache.syncope.common.lib.to.ResourceTO> resourceTOList1 = resourceLogic0.list();
         java.util.List<org.apache.syncope.common.lib.to.ResourceTO> resourceTOList2 = resourceLogic0.list();
         java.util.List<org.apache.syncope.common.lib.to.ResourceTO> resourceTOList3 = resourceLogic0.list();
@@ -4155,7 +4155,7 @@ public class ResourceLogicRandoopTest {
     public void test193() throws Throwable {
         if (debug)
             System.out.format("%n%s%n", "RegressionTest0.test193");
-        org.apache.syncope.core.logic.ResourceLogic resourceLogic0 = org.apache.syncope.core.logic.RandoopHelper.getConfiguredResourceLogic();
+        org.apache.syncope.core.logic.ResourceLogic resourceLogic0 = org.apache.syncope.core.logic.RandoopHelperLogic.getHelperResourceLogicRandoop();
         java.util.List<org.apache.syncope.common.lib.to.ResourceTO> resourceTOList1 = resourceLogic0.list();
         java.util.List<org.apache.syncope.common.lib.to.ResourceTO> resourceTOList2 = resourceLogic0.list();
         // The following exception was thrown during execution in test generation
@@ -4174,7 +4174,7 @@ public class ResourceLogicRandoopTest {
     public void test194() throws Throwable {
         if (debug)
             System.out.format("%n%s%n", "RegressionTest0.test194");
-        org.apache.syncope.core.logic.ResourceLogic resourceLogic0 = org.apache.syncope.core.logic.RandoopHelper.getConfiguredResourceLogic();
+        org.apache.syncope.core.logic.ResourceLogic resourceLogic0 = org.apache.syncope.core.logic.RandoopHelperLogic.getHelperResourceLogicRandoop();
         java.util.List<org.apache.syncope.common.lib.to.ResourceTO> resourceTOList1 = resourceLogic0.list();
         java.util.List<org.apache.syncope.common.lib.to.ResourceTO> resourceTOList2 = resourceLogic0.list();
         java.util.List<org.apache.syncope.common.lib.to.ResourceTO> resourceTOList3 = resourceLogic0.list();
@@ -4195,12 +4195,12 @@ public class ResourceLogicRandoopTest {
     public void test195() throws Throwable {
         if (debug)
             System.out.format("%n%s%n", "RegressionTest0.test195");
-        org.apache.syncope.core.logic.ResourceLogic resourceLogic0 = org.apache.syncope.core.logic.RandoopHelper.getConfiguredResourceLogic();
+        org.apache.syncope.core.logic.ResourceLogic resourceLogic0 = org.apache.syncope.core.logic.RandoopHelperLogic.getHelperResourceLogicRandoop();
         java.util.List<org.apache.syncope.common.lib.to.ResourceTO> resourceTOList1 = resourceLogic0.list();
         java.util.List<org.apache.syncope.common.lib.to.ResourceTO> resourceTOList2 = resourceLogic0.list();
         java.util.List<org.apache.syncope.common.lib.to.ResourceTO> resourceTOList3 = resourceLogic0.list();
         java.util.List<org.apache.syncope.common.lib.to.ResourceTO> resourceTOList4 = resourceLogic0.list();
-        org.apache.syncope.common.lib.to.ResourceTO resourceTO5 = org.apache.syncope.core.logic.RandoopHelper.getValidResourceTO();
+        org.apache.syncope.common.lib.to.ResourceTO resourceTO5 = org.apache.syncope.core.logic.RandoopHelperLogic.getValidResourceTO();
         // The following exception was thrown during execution in test generation
         try {
             resourceLogic0.check(resourceTO5);
@@ -4220,7 +4220,7 @@ public class ResourceLogicRandoopTest {
     public void test196() throws Throwable {
         if (debug)
             System.out.format("%n%s%n", "RegressionTest0.test196");
-        org.apache.syncope.core.logic.ResourceLogic resourceLogic0 = org.apache.syncope.core.logic.RandoopHelper.getConfiguredResourceLogic();
+        org.apache.syncope.core.logic.ResourceLogic resourceLogic0 = org.apache.syncope.core.logic.RandoopHelperLogic.getHelperResourceLogicRandoop();
         java.util.List<org.apache.syncope.common.lib.to.ResourceTO> resourceTOList1 = resourceLogic0.list();
         java.util.List<org.apache.syncope.common.lib.to.ResourceTO> resourceTOList2 = resourceLogic0.list();
         java.util.List<org.apache.syncope.common.lib.to.ResourceTO> resourceTOList3 = resourceLogic0.list();
@@ -4241,7 +4241,7 @@ public class ResourceLogicRandoopTest {
     public void test197() throws Throwable {
         if (debug)
             System.out.format("%n%s%n", "RegressionTest0.test197");
-        org.apache.syncope.core.logic.ResourceLogic resourceLogic0 = org.apache.syncope.core.logic.RandoopHelper.getConfiguredResourceLogic();
+        org.apache.syncope.core.logic.ResourceLogic resourceLogic0 = org.apache.syncope.core.logic.RandoopHelperLogic.getHelperResourceLogicRandoop();
         java.util.List<org.apache.syncope.common.lib.to.ResourceTO> resourceTOList1 = resourceLogic0.list();
         java.util.List<org.apache.syncope.common.lib.to.ResourceTO> resourceTOList2 = resourceLogic0.list();
         java.util.List<org.apache.syncope.common.lib.to.ResourceTO> resourceTOList3 = resourceLogic0.list();
@@ -4262,7 +4262,7 @@ public class ResourceLogicRandoopTest {
     public void test198() throws Throwable {
         if (debug)
             System.out.format("%n%s%n", "RegressionTest0.test198");
-        org.apache.syncope.core.logic.ResourceLogic resourceLogic0 = org.apache.syncope.core.logic.RandoopHelper.getConfiguredResourceLogic();
+        org.apache.syncope.core.logic.ResourceLogic resourceLogic0 = org.apache.syncope.core.logic.RandoopHelperLogic.getHelperResourceLogicRandoop();
         java.lang.reflect.Method method1 = null;
         java.lang.Object[] objArray2 = new java.lang.Object[] {};
         // The following exception was thrown during execution in test generation
@@ -4281,7 +4281,7 @@ public class ResourceLogicRandoopTest {
     public void test199() throws Throwable {
         if (debug)
             System.out.format("%n%s%n", "RegressionTest0.test199");
-        org.apache.syncope.core.logic.ResourceLogic resourceLogic0 = org.apache.syncope.core.logic.RandoopHelper.getConfiguredResourceLogic();
+        org.apache.syncope.core.logic.ResourceLogic resourceLogic0 = org.apache.syncope.core.logic.RandoopHelperLogic.getHelperResourceLogicRandoop();
         java.util.List<org.apache.syncope.common.lib.to.ResourceTO> resourceTOList1 = resourceLogic0.list();
         java.util.List<org.apache.syncope.common.lib.to.ResourceTO> resourceTOList2 = resourceLogic0.list();
         java.util.List<org.apache.syncope.common.lib.to.ResourceTO> resourceTOList3 = resourceLogic0.list();
@@ -4315,7 +4315,7 @@ public class ResourceLogicRandoopTest {
     public void test200() throws Throwable {
         if (debug)
             System.out.format("%n%s%n", "RegressionTest0.test200");
-        org.apache.syncope.core.logic.ResourceLogic resourceLogic0 = org.apache.syncope.core.logic.RandoopHelper.getConfiguredResourceLogic();
+        org.apache.syncope.core.logic.ResourceLogic resourceLogic0 = org.apache.syncope.core.logic.RandoopHelperLogic.getHelperResourceLogicRandoop();
         java.util.List<org.apache.syncope.common.lib.to.ResourceTO> resourceTOList1 = resourceLogic0.list();
         java.util.List<org.apache.syncope.common.lib.to.ResourceTO> resourceTOList2 = resourceLogic0.list();
         java.util.List<org.apache.syncope.common.lib.to.ResourceTO> resourceTOList3 = resourceLogic0.list();
@@ -4338,7 +4338,7 @@ public class ResourceLogicRandoopTest {
     public void test201() throws Throwable {
         if (debug)
             System.out.format("%n%s%n", "RegressionTest0.test201");
-        org.apache.syncope.core.logic.ResourceLogic resourceLogic0 = org.apache.syncope.core.logic.RandoopHelper.getConfiguredResourceLogic();
+        org.apache.syncope.core.logic.ResourceLogic resourceLogic0 = org.apache.syncope.core.logic.RandoopHelperLogic.getHelperResourceLogicRandoop();
         java.util.List<org.apache.syncope.common.lib.to.ResourceTO> resourceTOList1 = resourceLogic0.list();
         java.util.List<org.apache.syncope.common.lib.to.ResourceTO> resourceTOList2 = resourceLogic0.list();
         java.util.List<org.apache.syncope.common.lib.to.ResourceTO> resourceTOList3 = resourceLogic0.list();
@@ -4361,7 +4361,7 @@ public class ResourceLogicRandoopTest {
     public void test202() throws Throwable {
         if (debug)
             System.out.format("%n%s%n", "RegressionTest0.test202");
-        org.apache.syncope.core.logic.ResourceLogic resourceLogic0 = org.apache.syncope.core.logic.RandoopHelper.getConfiguredResourceLogic();
+        org.apache.syncope.core.logic.ResourceLogic resourceLogic0 = org.apache.syncope.core.logic.RandoopHelperLogic.getHelperResourceLogicRandoop();
         java.util.List<org.apache.syncope.common.lib.to.ResourceTO> resourceTOList1 = resourceLogic0.list();
         java.util.List<org.apache.syncope.common.lib.to.ResourceTO> resourceTOList2 = resourceLogic0.list();
         java.util.List<org.apache.syncope.common.lib.to.ResourceTO> resourceTOList3 = resourceLogic0.list();
@@ -4386,7 +4386,7 @@ public class ResourceLogicRandoopTest {
     public void test203() throws Throwable {
         if (debug)
             System.out.format("%n%s%n", "RegressionTest0.test203");
-        org.apache.syncope.core.logic.ResourceLogic resourceLogic0 = org.apache.syncope.core.logic.RandoopHelper.getConfiguredResourceLogic();
+        org.apache.syncope.core.logic.ResourceLogic resourceLogic0 = org.apache.syncope.core.logic.RandoopHelperLogic.getHelperResourceLogicRandoop();
         java.lang.reflect.Method method1 = null;
         org.apache.syncope.core.persistence.api.dao.ExternalResourceDAO externalResourceDAO3 = null;
         org.apache.syncope.core.persistence.api.dao.AnyTypeDAO anyTypeDAO4 = null;
@@ -4417,7 +4417,7 @@ public class ResourceLogicRandoopTest {
     public void test204() throws Throwable {
         if (debug)
             System.out.format("%n%s%n", "RegressionTest0.test204");
-        org.apache.syncope.core.logic.ResourceLogic resourceLogic0 = org.apache.syncope.core.logic.RandoopHelper.getConfiguredResourceLogic();
+        org.apache.syncope.core.logic.ResourceLogic resourceLogic0 = org.apache.syncope.core.logic.RandoopHelperLogic.getHelperResourceLogicRandoop();
         java.util.List<org.apache.syncope.common.lib.to.ResourceTO> resourceTOList1 = resourceLogic0.list();
         // The following exception was thrown during execution in test generation
         try {
@@ -4434,7 +4434,7 @@ public class ResourceLogicRandoopTest {
     public void test205() throws Throwable {
         if (debug)
             System.out.format("%n%s%n", "RegressionTest0.test205");
-        org.apache.syncope.core.logic.ResourceLogic resourceLogic0 = org.apache.syncope.core.logic.RandoopHelper.getConfiguredResourceLogic();
+        org.apache.syncope.core.logic.ResourceLogic resourceLogic0 = org.apache.syncope.core.logic.RandoopHelperLogic.getHelperResourceLogicRandoop();
         java.util.List<org.apache.syncope.common.lib.to.ResourceTO> resourceTOList1 = resourceLogic0.list();
         java.util.List<org.apache.syncope.common.lib.to.ResourceTO> resourceTOList2 = resourceLogic0.list();
         java.util.List<org.apache.syncope.common.lib.to.ResourceTO> resourceTOList3 = resourceLogic0.list();
@@ -4457,7 +4457,7 @@ public class ResourceLogicRandoopTest {
     public void test206() throws Throwable {
         if (debug)
             System.out.format("%n%s%n", "RegressionTest0.test206");
-        org.apache.syncope.core.logic.ResourceLogic resourceLogic0 = org.apache.syncope.core.logic.RandoopHelper.getConfiguredResourceLogic();
+        org.apache.syncope.core.logic.ResourceLogic resourceLogic0 = org.apache.syncope.core.logic.RandoopHelperLogic.getHelperResourceLogicRandoop();
         java.util.List<org.apache.syncope.common.lib.to.ResourceTO> resourceTOList1 = resourceLogic0.list();
         java.util.List<org.apache.syncope.common.lib.to.ResourceTO> resourceTOList2 = resourceLogic0.list();
         java.util.List<org.apache.syncope.common.lib.to.ResourceTO> resourceTOList3 = resourceLogic0.list();
@@ -4482,7 +4482,7 @@ public class ResourceLogicRandoopTest {
     public void test207() throws Throwable {
         if (debug)
             System.out.format("%n%s%n", "RegressionTest0.test207");
-        org.apache.syncope.core.logic.ResourceLogic resourceLogic0 = org.apache.syncope.core.logic.RandoopHelper.getConfiguredResourceLogic();
+        org.apache.syncope.core.logic.ResourceLogic resourceLogic0 = org.apache.syncope.core.logic.RandoopHelperLogic.getHelperResourceLogicRandoop();
         java.util.List<org.apache.syncope.common.lib.to.ResourceTO> resourceTOList1 = resourceLogic0.list();
         java.util.List<org.apache.syncope.common.lib.to.ResourceTO> resourceTOList2 = resourceLogic0.list();
         java.util.List<org.apache.syncope.common.lib.to.ResourceTO> resourceTOList3 = resourceLogic0.list();
@@ -4498,7 +4498,7 @@ public class ResourceLogicRandoopTest {
     public void test208() throws Throwable {
         if (debug)
             System.out.format("%n%s%n", "RegressionTest0.test208");
-        org.apache.syncope.core.logic.ResourceLogic resourceLogic0 = org.apache.syncope.core.logic.RandoopHelper.getConfiguredResourceLogic();
+        org.apache.syncope.core.logic.ResourceLogic resourceLogic0 = org.apache.syncope.core.logic.RandoopHelperLogic.getHelperResourceLogicRandoop();
         java.util.List<org.apache.syncope.common.lib.to.ResourceTO> resourceTOList1 = resourceLogic0.list();
         java.util.List<org.apache.syncope.common.lib.to.ResourceTO> resourceTOList2 = resourceLogic0.list();
         java.util.List<org.apache.syncope.common.lib.to.ResourceTO> resourceTOList3 = resourceLogic0.list();
@@ -4523,7 +4523,7 @@ public class ResourceLogicRandoopTest {
     public void test209() throws Throwable {
         if (debug)
             System.out.format("%n%s%n", "RegressionTest0.test209");
-        org.apache.syncope.core.logic.ResourceLogic resourceLogic0 = org.apache.syncope.core.logic.RandoopHelper.getConfiguredResourceLogic();
+        org.apache.syncope.core.logic.ResourceLogic resourceLogic0 = org.apache.syncope.core.logic.RandoopHelperLogic.getHelperResourceLogicRandoop();
         java.util.List<org.apache.syncope.common.lib.to.ResourceTO> resourceTOList1 = resourceLogic0.list();
         java.util.List<org.apache.syncope.common.lib.to.ResourceTO> resourceTOList2 = resourceLogic0.list();
         java.util.List<org.apache.syncope.common.lib.to.ResourceTO> resourceTOList3 = resourceLogic0.list();
@@ -4548,7 +4548,7 @@ public class ResourceLogicRandoopTest {
     public void test210() throws Throwable {
         if (debug)
             System.out.format("%n%s%n", "RegressionTest0.test210");
-        org.apache.syncope.core.logic.ResourceLogic resourceLogic0 = org.apache.syncope.core.logic.RandoopHelper.getConfiguredResourceLogic();
+        org.apache.syncope.core.logic.ResourceLogic resourceLogic0 = org.apache.syncope.core.logic.RandoopHelperLogic.getHelperResourceLogicRandoop();
         java.util.List<org.apache.syncope.common.lib.to.ResourceTO> resourceTOList1 = resourceLogic0.list();
         java.util.List<org.apache.syncope.common.lib.to.ResourceTO> resourceTOList2 = resourceLogic0.list();
         java.util.List<org.apache.syncope.common.lib.to.ResourceTO> resourceTOList3 = resourceLogic0.list();
@@ -4584,7 +4584,7 @@ public class ResourceLogicRandoopTest {
     public void test211() throws Throwable {
         if (debug)
             System.out.format("%n%s%n", "RegressionTest0.test211");
-        org.apache.syncope.core.logic.ResourceLogic resourceLogic0 = org.apache.syncope.core.logic.RandoopHelper.getConfiguredResourceLogic();
+        org.apache.syncope.core.logic.ResourceLogic resourceLogic0 = org.apache.syncope.core.logic.RandoopHelperLogic.getHelperResourceLogicRandoop();
         java.util.List<org.apache.syncope.common.lib.to.ResourceTO> resourceTOList1 = resourceLogic0.list();
         java.util.List<org.apache.syncope.common.lib.to.ResourceTO> resourceTOList2 = resourceLogic0.list();
         java.util.List<org.apache.syncope.common.lib.to.ResourceTO> resourceTOList3 = resourceLogic0.list();
@@ -4607,13 +4607,13 @@ public class ResourceLogicRandoopTest {
     public void test212() throws Throwable {
         if (debug)
             System.out.format("%n%s%n", "RegressionTest0.test212");
-        org.apache.syncope.core.logic.ResourceLogic resourceLogic0 = org.apache.syncope.core.logic.RandoopHelper.getConfiguredResourceLogic();
+        org.apache.syncope.core.logic.ResourceLogic resourceLogic0 = org.apache.syncope.core.logic.RandoopHelperLogic.getHelperResourceLogicRandoop();
         java.util.List<org.apache.syncope.common.lib.to.ResourceTO> resourceTOList1 = resourceLogic0.list();
         java.util.List<org.apache.syncope.common.lib.to.ResourceTO> resourceTOList2 = resourceLogic0.list();
         java.util.List<org.apache.syncope.common.lib.to.ResourceTO> resourceTOList3 = resourceLogic0.list();
         java.util.List<org.apache.syncope.common.lib.to.ResourceTO> resourceTOList4 = resourceLogic0.list();
         java.util.List<org.apache.syncope.common.lib.to.ResourceTO> resourceTOList5 = resourceLogic0.list();
-        org.apache.syncope.common.lib.to.ResourceTO resourceTO6 = org.apache.syncope.core.logic.RandoopHelper.getValidResourceTO();
+        org.apache.syncope.common.lib.to.ResourceTO resourceTO6 = org.apache.syncope.core.logic.RandoopHelperLogic.getValidResourceTO();
         // The following exception was thrown during execution in test generation
         try {
             resourceLogic0.check(resourceTO6);
@@ -4634,21 +4634,21 @@ public class ResourceLogicRandoopTest {
     public void test213() throws Throwable {
         if (debug)
             System.out.format("%n%s%n", "RegressionTest0.test213");
-        org.apache.syncope.core.logic.ResourceLogic resourceLogic0 = org.apache.syncope.core.logic.RandoopHelper.getConfiguredResourceLogic();
+        org.apache.syncope.core.logic.ResourceLogic resourceLogic0 = org.apache.syncope.core.logic.RandoopHelperLogic.getHelperResourceLogicRandoop();
         java.util.List<org.apache.syncope.common.lib.to.ResourceTO> resourceTOList1 = resourceLogic0.list();
         java.util.List<org.apache.syncope.common.lib.to.ResourceTO> resourceTOList2 = resourceLogic0.list();
         java.util.List<org.apache.syncope.common.lib.to.ResourceTO> resourceTOList3 = resourceLogic0.list();
         java.util.List<org.apache.syncope.common.lib.to.ResourceTO> resourceTOList4 = resourceLogic0.list();
         java.util.List<org.apache.syncope.common.lib.to.ResourceTO> resourceTOList5 = resourceLogic0.list();
         java.lang.reflect.Method method6 = null;
-        org.apache.syncope.core.logic.RandoopHelper randoopHelper9 = new org.apache.syncope.core.logic.RandoopHelper();
-        org.apache.syncope.core.logic.ResourceLogic resourceLogic11 = org.apache.syncope.core.logic.RandoopHelper.getConfiguredResourceLogic();
+        org.apache.syncope.core.logic.RandoopHelperLogic RandoopHelperLogic9 = new org.apache.syncope.core.logic.RandoopHelperLogic();
+        org.apache.syncope.core.logic.ResourceLogic resourceLogic11 = org.apache.syncope.core.logic.RandoopHelperLogic.getHelperResourceLogicRandoop();
         java.util.List<org.apache.syncope.common.lib.to.ResourceTO> resourceTOList12 = resourceLogic11.list();
         java.util.List<org.apache.syncope.common.lib.to.ResourceTO> resourceTOList13 = resourceLogic11.list();
         java.util.List<org.apache.syncope.common.lib.to.ResourceTO> resourceTOList14 = resourceLogic11.list();
         java.util.List<org.apache.syncope.common.lib.to.ResourceTO> resourceTOList15 = resourceLogic11.list();
         java.util.List<org.apache.syncope.common.lib.to.ResourceTO> resourceTOList16 = resourceLogic11.list();
-        java.lang.Object[] objArray17 = new java.lang.Object[] { 0.0f, "", randoopHelper9, 1.0d, resourceLogic11 };
+        java.lang.Object[] objArray17 = new java.lang.Object[] { 0.0f, "", RandoopHelperLogic9, 1.0d, resourceLogic11 };
         // The following exception was thrown during execution in test generation
         try {
             org.apache.syncope.common.lib.to.ResourceTO resourceTO18 = resourceLogic0.resolveBeanReference(method6, objArray17);
@@ -4675,7 +4675,7 @@ public class ResourceLogicRandoopTest {
     public void test214() throws Throwable {
         if (debug)
             System.out.format("%n%s%n", "RegressionTest0.test214");
-        org.apache.syncope.core.logic.ResourceLogic resourceLogic0 = org.apache.syncope.core.logic.RandoopHelper.getConfiguredResourceLogic();
+        org.apache.syncope.core.logic.ResourceLogic resourceLogic0 = org.apache.syncope.core.logic.RandoopHelperLogic.getHelperResourceLogicRandoop();
         java.util.List<org.apache.syncope.common.lib.to.ResourceTO> resourceTOList1 = resourceLogic0.list();
         java.util.List<org.apache.syncope.common.lib.to.ResourceTO> resourceTOList2 = resourceLogic0.list();
         java.util.List<org.apache.syncope.common.lib.to.ResourceTO> resourceTOList3 = resourceLogic0.list();
@@ -4696,7 +4696,7 @@ public class ResourceLogicRandoopTest {
     public void test215() throws Throwable {
         if (debug)
             System.out.format("%n%s%n", "RegressionTest0.test215");
-        org.apache.syncope.core.logic.ResourceLogic resourceLogic0 = org.apache.syncope.core.logic.RandoopHelper.getConfiguredResourceLogic();
+        org.apache.syncope.core.logic.ResourceLogic resourceLogic0 = org.apache.syncope.core.logic.RandoopHelperLogic.getHelperResourceLogicRandoop();
         java.util.List<org.apache.syncope.common.lib.to.ResourceTO> resourceTOList1 = resourceLogic0.list();
         java.util.List<org.apache.syncope.common.lib.to.ResourceTO> resourceTOList2 = resourceLogic0.list();
         java.util.List<org.apache.syncope.common.lib.to.ResourceTO> resourceTOList3 = resourceLogic0.list();
@@ -4713,13 +4713,13 @@ public class ResourceLogicRandoopTest {
         org.apache.syncope.core.provisioning.api.ConnectorManager connectorManager14 = null;
         org.apache.syncope.core.persistence.api.entity.AnyUtilsFactory anyUtilsFactory15 = null;
         org.apache.syncope.core.logic.ResourceLogic resourceLogic16 = new org.apache.syncope.core.logic.ResourceLogic(externalResourceDAO7, anyTypeDAO8, connInstanceDAO9, resourceDataBinder10, connInstanceDataBinder11, outboundMatcher12, mappingManager13, connectorManager14, anyUtilsFactory15);
-        org.apache.syncope.core.logic.ResourceLogic resourceLogic18 = org.apache.syncope.core.logic.RandoopHelper.getConfiguredResourceLogic();
+        org.apache.syncope.core.logic.ResourceLogic resourceLogic18 = org.apache.syncope.core.logic.RandoopHelperLogic.getHelperResourceLogicRandoop();
         java.util.List<org.apache.syncope.common.lib.to.ResourceTO> resourceTOList19 = resourceLogic18.list();
         java.util.List<org.apache.syncope.common.lib.to.ResourceTO> resourceTOList20 = resourceLogic18.list();
         java.util.List<org.apache.syncope.common.lib.to.ResourceTO> resourceTOList21 = resourceLogic18.list();
         java.util.List<org.apache.syncope.common.lib.to.ResourceTO> resourceTOList22 = resourceLogic18.list();
         java.util.List<org.apache.syncope.common.lib.to.ResourceTO> resourceTOList23 = resourceLogic18.list();
-        org.apache.syncope.core.logic.ResourceLogic resourceLogic24 = org.apache.syncope.core.logic.RandoopHelper.getConfiguredResourceLogic();
+        org.apache.syncope.core.logic.ResourceLogic resourceLogic24 = org.apache.syncope.core.logic.RandoopHelperLogic.getHelperResourceLogicRandoop();
         java.util.List<org.apache.syncope.common.lib.to.ResourceTO> resourceTOList25 = resourceLogic24.list();
         java.util.List<org.apache.syncope.common.lib.to.ResourceTO> resourceTOList26 = resourceLogic24.list();
         java.lang.Class<?> wildcardClass27 = resourceLogic24.getClass();
@@ -4754,7 +4754,7 @@ public class ResourceLogicRandoopTest {
     public void test216() throws Throwable {
         if (debug)
             System.out.format("%n%s%n", "RegressionTest0.test216");
-        org.apache.syncope.core.logic.ResourceLogic resourceLogic0 = org.apache.syncope.core.logic.RandoopHelper.getConfiguredResourceLogic();
+        org.apache.syncope.core.logic.ResourceLogic resourceLogic0 = org.apache.syncope.core.logic.RandoopHelperLogic.getHelperResourceLogicRandoop();
         java.util.List<org.apache.syncope.common.lib.to.ResourceTO> resourceTOList1 = resourceLogic0.list();
         java.util.List<org.apache.syncope.common.lib.to.ResourceTO> resourceTOList2 = resourceLogic0.list();
         java.util.List<org.apache.syncope.common.lib.to.ResourceTO> resourceTOList3 = resourceLogic0.list();
@@ -4779,11 +4779,11 @@ public class ResourceLogicRandoopTest {
     public void test217() throws Throwable {
         if (debug)
             System.out.format("%n%s%n", "RegressionTest0.test217");
-        org.apache.syncope.core.logic.ResourceLogic resourceLogic0 = org.apache.syncope.core.logic.RandoopHelper.getConfiguredResourceLogic();
+        org.apache.syncope.core.logic.ResourceLogic resourceLogic0 = org.apache.syncope.core.logic.RandoopHelperLogic.getHelperResourceLogicRandoop();
         java.lang.reflect.Method method1 = null;
-        org.apache.syncope.core.logic.ResourceLogic resourceLogic2 = org.apache.syncope.core.logic.RandoopHelper.getConfiguredResourceLogic();
+        org.apache.syncope.core.logic.ResourceLogic resourceLogic2 = org.apache.syncope.core.logic.RandoopHelperLogic.getHelperResourceLogicRandoop();
         java.lang.Class<?> wildcardClass3 = resourceLogic2.getClass();
-        org.apache.syncope.core.logic.ResourceLogic resourceLogic4 = org.apache.syncope.core.logic.RandoopHelper.getConfiguredResourceLogic();
+        org.apache.syncope.core.logic.ResourceLogic resourceLogic4 = org.apache.syncope.core.logic.RandoopHelperLogic.getHelperResourceLogicRandoop();
         java.util.List<org.apache.syncope.common.lib.to.ResourceTO> resourceTOList5 = resourceLogic4.list();
         java.util.List<org.apache.syncope.common.lib.to.ResourceTO> resourceTOList6 = resourceLogic4.list();
         java.util.List<org.apache.syncope.common.lib.to.ResourceTO> resourceTOList7 = resourceLogic4.list();
@@ -4811,7 +4811,7 @@ public class ResourceLogicRandoopTest {
     public void test218() throws Throwable {
         if (debug)
             System.out.format("%n%s%n", "RegressionTest0.test218");
-        org.apache.syncope.core.logic.ResourceLogic resourceLogic0 = org.apache.syncope.core.logic.RandoopHelper.getConfiguredResourceLogic();
+        org.apache.syncope.core.logic.ResourceLogic resourceLogic0 = org.apache.syncope.core.logic.RandoopHelperLogic.getHelperResourceLogicRandoop();
         java.util.List<org.apache.syncope.common.lib.to.ResourceTO> resourceTOList1 = resourceLogic0.list();
         java.util.List<org.apache.syncope.common.lib.to.ResourceTO> resourceTOList2 = resourceLogic0.list();
         java.util.List<org.apache.syncope.common.lib.to.ResourceTO> resourceTOList3 = resourceLogic0.list();
@@ -4836,7 +4836,7 @@ public class ResourceLogicRandoopTest {
     public void test219() throws Throwable {
         if (debug)
             System.out.format("%n%s%n", "RegressionTest0.test219");
-        org.apache.syncope.core.logic.ResourceLogic resourceLogic0 = org.apache.syncope.core.logic.RandoopHelper.getConfiguredResourceLogic();
+        org.apache.syncope.core.logic.ResourceLogic resourceLogic0 = org.apache.syncope.core.logic.RandoopHelperLogic.getHelperResourceLogicRandoop();
         java.util.List<org.apache.syncope.common.lib.to.ResourceTO> resourceTOList1 = resourceLogic0.list();
         java.util.List<org.apache.syncope.common.lib.to.ResourceTO> resourceTOList2 = resourceLogic0.list();
         // The following exception was thrown during execution in test generation
@@ -4855,7 +4855,7 @@ public class ResourceLogicRandoopTest {
     public void test220() throws Throwable {
         if (debug)
             System.out.format("%n%s%n", "RegressionTest0.test220");
-        org.apache.syncope.core.logic.ResourceLogic resourceLogic0 = org.apache.syncope.core.logic.RandoopHelper.getConfiguredResourceLogic();
+        org.apache.syncope.core.logic.ResourceLogic resourceLogic0 = org.apache.syncope.core.logic.RandoopHelperLogic.getHelperResourceLogicRandoop();
         java.util.List<org.apache.syncope.common.lib.to.ResourceTO> resourceTOList1 = resourceLogic0.list();
         java.util.List<org.apache.syncope.common.lib.to.ResourceTO> resourceTOList2 = resourceLogic0.list();
         java.util.List<org.apache.syncope.common.lib.to.ResourceTO> resourceTOList3 = resourceLogic0.list();
@@ -4878,7 +4878,7 @@ public class ResourceLogicRandoopTest {
     public void test221() throws Throwable {
         if (debug)
             System.out.format("%n%s%n", "RegressionTest0.test221");
-        org.apache.syncope.core.logic.ResourceLogic resourceLogic0 = org.apache.syncope.core.logic.RandoopHelper.getConfiguredResourceLogic();
+        org.apache.syncope.core.logic.ResourceLogic resourceLogic0 = org.apache.syncope.core.logic.RandoopHelperLogic.getHelperResourceLogicRandoop();
         java.util.List<org.apache.syncope.common.lib.to.ResourceTO> resourceTOList1 = resourceLogic0.list();
         java.util.List<org.apache.syncope.common.lib.to.ResourceTO> resourceTOList2 = resourceLogic0.list();
         java.util.List<org.apache.syncope.common.lib.to.ResourceTO> resourceTOList3 = resourceLogic0.list();
@@ -4886,10 +4886,10 @@ public class ResourceLogicRandoopTest {
         java.util.List<org.apache.syncope.common.lib.to.ResourceTO> resourceTOList5 = resourceLogic0.list();
         java.util.List<org.apache.syncope.common.lib.to.ResourceTO> resourceTOList6 = resourceLogic0.list();
         java.lang.reflect.Method method7 = null;
-        org.apache.syncope.core.logic.ResourceLogic resourceLogic11 = org.apache.syncope.core.logic.RandoopHelper.getConfiguredResourceLogic();
+        org.apache.syncope.core.logic.ResourceLogic resourceLogic11 = org.apache.syncope.core.logic.RandoopHelperLogic.getHelperResourceLogicRandoop();
         java.util.List<org.apache.syncope.common.lib.to.ResourceTO> resourceTOList12 = resourceLogic11.list();
         java.util.List<org.apache.syncope.common.lib.to.ResourceTO> resourceTOList13 = resourceLogic11.list();
-        org.apache.syncope.core.logic.ResourceLogic resourceLogic15 = org.apache.syncope.core.logic.RandoopHelper.getConfiguredResourceLogic();
+        org.apache.syncope.core.logic.ResourceLogic resourceLogic15 = org.apache.syncope.core.logic.RandoopHelperLogic.getHelperResourceLogicRandoop();
         java.util.List<org.apache.syncope.common.lib.to.ResourceTO> resourceTOList16 = resourceLogic15.list();
         java.util.List<org.apache.syncope.common.lib.to.ResourceTO> resourceTOList17 = resourceLogic15.list();
         java.util.List<org.apache.syncope.common.lib.to.ResourceTO> resourceTOList18 = resourceLogic15.list();
@@ -4924,7 +4924,7 @@ public class ResourceLogicRandoopTest {
     public void test222() throws Throwable {
         if (debug)
             System.out.format("%n%s%n", "RegressionTest0.test222");
-        org.apache.syncope.core.logic.ResourceLogic resourceLogic0 = org.apache.syncope.core.logic.RandoopHelper.getConfiguredResourceLogic();
+        org.apache.syncope.core.logic.ResourceLogic resourceLogic0 = org.apache.syncope.core.logic.RandoopHelperLogic.getHelperResourceLogicRandoop();
         java.util.List<org.apache.syncope.common.lib.to.ResourceTO> resourceTOList1 = resourceLogic0.list();
         java.util.List<org.apache.syncope.common.lib.to.ResourceTO> resourceTOList2 = resourceLogic0.list();
         // The following exception was thrown during execution in test generation
@@ -4943,7 +4943,7 @@ public class ResourceLogicRandoopTest {
     public void test223() throws Throwable {
         if (debug)
             System.out.format("%n%s%n", "RegressionTest0.test223");
-        org.apache.syncope.core.logic.ResourceLogic resourceLogic0 = org.apache.syncope.core.logic.RandoopHelper.getConfiguredResourceLogic();
+        org.apache.syncope.core.logic.ResourceLogic resourceLogic0 = org.apache.syncope.core.logic.RandoopHelperLogic.getHelperResourceLogicRandoop();
         java.util.List<org.apache.syncope.common.lib.to.ResourceTO> resourceTOList1 = resourceLogic0.list();
         java.util.List<org.apache.syncope.common.lib.to.ResourceTO> resourceTOList2 = resourceLogic0.list();
         java.util.List<org.apache.syncope.common.lib.to.ResourceTO> resourceTOList3 = resourceLogic0.list();
@@ -4966,7 +4966,7 @@ public class ResourceLogicRandoopTest {
     public void test224() throws Throwable {
         if (debug)
             System.out.format("%n%s%n", "RegressionTest0.test224");
-        org.apache.syncope.core.logic.ResourceLogic resourceLogic0 = org.apache.syncope.core.logic.RandoopHelper.getConfiguredResourceLogic();
+        org.apache.syncope.core.logic.ResourceLogic resourceLogic0 = org.apache.syncope.core.logic.RandoopHelperLogic.getHelperResourceLogicRandoop();
         java.util.List<org.apache.syncope.common.lib.to.ResourceTO> resourceTOList1 = resourceLogic0.list();
         java.util.List<org.apache.syncope.common.lib.to.ResourceTO> resourceTOList2 = resourceLogic0.list();
         java.util.List<org.apache.syncope.common.lib.to.ResourceTO> resourceTOList3 = resourceLogic0.list();
@@ -4989,7 +4989,7 @@ public class ResourceLogicRandoopTest {
     public void test225() throws Throwable {
         if (debug)
             System.out.format("%n%s%n", "RegressionTest0.test225");
-        org.apache.syncope.core.logic.ResourceLogic resourceLogic0 = org.apache.syncope.core.logic.RandoopHelper.getConfiguredResourceLogic();
+        org.apache.syncope.core.logic.ResourceLogic resourceLogic0 = org.apache.syncope.core.logic.RandoopHelperLogic.getHelperResourceLogicRandoop();
         java.util.List<org.apache.syncope.common.lib.to.ResourceTO> resourceTOList1 = resourceLogic0.list();
         java.util.List<org.apache.syncope.common.lib.to.ResourceTO> resourceTOList2 = resourceLogic0.list();
         java.util.List<org.apache.syncope.common.lib.to.ResourceTO> resourceTOList3 = resourceLogic0.list();
@@ -5039,7 +5039,7 @@ public class ResourceLogicRandoopTest {
     public void test227() throws Throwable {
         if (debug)
             System.out.format("%n%s%n", "RegressionTest0.test227");
-        org.apache.syncope.core.logic.ResourceLogic resourceLogic0 = org.apache.syncope.core.logic.RandoopHelper.getConfiguredResourceLogic();
+        org.apache.syncope.core.logic.ResourceLogic resourceLogic0 = org.apache.syncope.core.logic.RandoopHelperLogic.getHelperResourceLogicRandoop();
         java.util.List<org.apache.syncope.common.lib.to.ResourceTO> resourceTOList1 = resourceLogic0.list();
         java.util.List<org.apache.syncope.common.lib.to.ResourceTO> resourceTOList2 = resourceLogic0.list();
         java.util.List<org.apache.syncope.common.lib.to.ResourceTO> resourceTOList3 = resourceLogic0.list();
@@ -5062,7 +5062,7 @@ public class ResourceLogicRandoopTest {
     public void test228() throws Throwable {
         if (debug)
             System.out.format("%n%s%n", "RegressionTest0.test228");
-        org.apache.syncope.core.logic.ResourceLogic resourceLogic0 = org.apache.syncope.core.logic.RandoopHelper.getConfiguredResourceLogic();
+        org.apache.syncope.core.logic.ResourceLogic resourceLogic0 = org.apache.syncope.core.logic.RandoopHelperLogic.getHelperResourceLogicRandoop();
         java.util.List<org.apache.syncope.common.lib.to.ResourceTO> resourceTOList1 = resourceLogic0.list();
         // The following exception was thrown during execution in test generation
         try {
@@ -5079,7 +5079,7 @@ public class ResourceLogicRandoopTest {
     public void test229() throws Throwable {
         if (debug)
             System.out.format("%n%s%n", "RegressionTest0.test229");
-        org.apache.syncope.core.logic.ResourceLogic resourceLogic0 = org.apache.syncope.core.logic.RandoopHelper.getConfiguredResourceLogic();
+        org.apache.syncope.core.logic.ResourceLogic resourceLogic0 = org.apache.syncope.core.logic.RandoopHelperLogic.getHelperResourceLogicRandoop();
         java.util.List<org.apache.syncope.common.lib.to.ResourceTO> resourceTOList1 = resourceLogic0.list();
         java.util.List<org.apache.syncope.common.lib.to.ResourceTO> resourceTOList2 = resourceLogic0.list();
         java.util.List<org.apache.syncope.common.lib.to.ResourceTO> resourceTOList3 = resourceLogic0.list();
@@ -5115,7 +5115,7 @@ public class ResourceLogicRandoopTest {
     public void test230() throws Throwable {
         if (debug)
             System.out.format("%n%s%n", "RegressionTest0.test230");
-        org.apache.syncope.core.logic.ResourceLogic resourceLogic0 = org.apache.syncope.core.logic.RandoopHelper.getConfiguredResourceLogic();
+        org.apache.syncope.core.logic.ResourceLogic resourceLogic0 = org.apache.syncope.core.logic.RandoopHelperLogic.getHelperResourceLogicRandoop();
         java.util.List<org.apache.syncope.common.lib.to.ResourceTO> resourceTOList1 = resourceLogic0.list();
         java.util.List<org.apache.syncope.common.lib.to.ResourceTO> resourceTOList2 = resourceLogic0.list();
         java.util.List<org.apache.syncope.common.lib.to.ResourceTO> resourceTOList3 = resourceLogic0.list();
@@ -5138,7 +5138,7 @@ public class ResourceLogicRandoopTest {
     public void test231() throws Throwable {
         if (debug)
             System.out.format("%n%s%n", "RegressionTest0.test231");
-        org.apache.syncope.core.logic.ResourceLogic resourceLogic0 = org.apache.syncope.core.logic.RandoopHelper.getConfiguredResourceLogic();
+        org.apache.syncope.core.logic.ResourceLogic resourceLogic0 = org.apache.syncope.core.logic.RandoopHelperLogic.getHelperResourceLogicRandoop();
         java.util.List<org.apache.syncope.common.lib.to.ResourceTO> resourceTOList1 = resourceLogic0.list();
         java.util.List<org.apache.syncope.common.lib.to.ResourceTO> resourceTOList2 = resourceLogic0.list();
         java.util.List<org.apache.syncope.common.lib.to.ResourceTO> resourceTOList3 = resourceLogic0.list();
@@ -5165,7 +5165,7 @@ public class ResourceLogicRandoopTest {
     public void test232() throws Throwable {
         if (debug)
             System.out.format("%n%s%n", "RegressionTest0.test232");
-        org.apache.syncope.core.logic.ResourceLogic resourceLogic0 = org.apache.syncope.core.logic.RandoopHelper.getConfiguredResourceLogic();
+        org.apache.syncope.core.logic.ResourceLogic resourceLogic0 = org.apache.syncope.core.logic.RandoopHelperLogic.getHelperResourceLogicRandoop();
         java.util.List<org.apache.syncope.common.lib.to.ResourceTO> resourceTOList1 = resourceLogic0.list();
         java.util.List<org.apache.syncope.common.lib.to.ResourceTO> resourceTOList2 = resourceLogic0.list();
         java.util.List<org.apache.syncope.common.lib.to.ResourceTO> resourceTOList3 = resourceLogic0.list();
@@ -5201,13 +5201,13 @@ public class ResourceLogicRandoopTest {
     public void test233() throws Throwable {
         if (debug)
             System.out.format("%n%s%n", "RegressionTest0.test233");
-        org.apache.syncope.core.logic.ResourceLogic resourceLogic0 = org.apache.syncope.core.logic.RandoopHelper.getConfiguredResourceLogic();
+        org.apache.syncope.core.logic.ResourceLogic resourceLogic0 = org.apache.syncope.core.logic.RandoopHelperLogic.getHelperResourceLogicRandoop();
         java.util.List<org.apache.syncope.common.lib.to.ResourceTO> resourceTOList1 = resourceLogic0.list();
         java.util.List<org.apache.syncope.common.lib.to.ResourceTO> resourceTOList2 = resourceLogic0.list();
         java.util.List<org.apache.syncope.common.lib.to.ResourceTO> resourceTOList3 = resourceLogic0.list();
         java.util.List<org.apache.syncope.common.lib.to.ResourceTO> resourceTOList4 = resourceLogic0.list();
         java.util.List<org.apache.syncope.common.lib.to.ResourceTO> resourceTOList5 = resourceLogic0.list();
-        org.apache.syncope.common.lib.to.ResourceTO resourceTO6 = org.apache.syncope.core.logic.RandoopHelper.getValidResourceTO();
+        org.apache.syncope.common.lib.to.ResourceTO resourceTO6 = org.apache.syncope.core.logic.RandoopHelperLogic.getValidResourceTO();
         // The following exception was thrown during execution in test generation
         try {
             org.apache.syncope.common.lib.to.ResourceTO resourceTO7 = resourceLogic0.update(resourceTO6);
@@ -5228,7 +5228,7 @@ public class ResourceLogicRandoopTest {
     public void test234() throws Throwable {
         if (debug)
             System.out.format("%n%s%n", "RegressionTest0.test234");
-        org.apache.syncope.core.logic.ResourceLogic resourceLogic0 = org.apache.syncope.core.logic.RandoopHelper.getConfiguredResourceLogic();
+        org.apache.syncope.core.logic.ResourceLogic resourceLogic0 = org.apache.syncope.core.logic.RandoopHelperLogic.getHelperResourceLogicRandoop();
         java.util.List<org.apache.syncope.common.lib.to.ResourceTO> resourceTOList1 = resourceLogic0.list();
         java.util.List<org.apache.syncope.common.lib.to.ResourceTO> resourceTOList2 = resourceLogic0.list();
         org.identityconnectors.framework.common.objects.filter.Filter filter3 = null;
@@ -5260,7 +5260,7 @@ public class ResourceLogicRandoopTest {
     public void test235() throws Throwable {
         if (debug)
             System.out.format("%n%s%n", "RegressionTest0.test235");
-        org.apache.syncope.core.logic.ResourceLogic resourceLogic0 = org.apache.syncope.core.logic.RandoopHelper.getConfiguredResourceLogic();
+        org.apache.syncope.core.logic.ResourceLogic resourceLogic0 = org.apache.syncope.core.logic.RandoopHelperLogic.getHelperResourceLogicRandoop();
         java.util.List<org.apache.syncope.common.lib.to.ResourceTO> resourceTOList1 = resourceLogic0.list();
         java.util.List<org.apache.syncope.common.lib.to.ResourceTO> resourceTOList2 = resourceLogic0.list();
         java.util.List<org.apache.syncope.common.lib.to.ResourceTO> resourceTOList3 = resourceLogic0.list();
@@ -5289,7 +5289,7 @@ public class ResourceLogicRandoopTest {
     public void test236() throws Throwable {
         if (debug)
             System.out.format("%n%s%n", "RegressionTest0.test236");
-        org.apache.syncope.core.logic.ResourceLogic resourceLogic0 = org.apache.syncope.core.logic.RandoopHelper.getConfiguredResourceLogic();
+        org.apache.syncope.core.logic.ResourceLogic resourceLogic0 = org.apache.syncope.core.logic.RandoopHelperLogic.getHelperResourceLogicRandoop();
         java.util.List<org.apache.syncope.common.lib.to.ResourceTO> resourceTOList1 = resourceLogic0.list();
         java.util.List<org.apache.syncope.common.lib.to.ResourceTO> resourceTOList2 = resourceLogic0.list();
         java.util.List<org.apache.syncope.common.lib.to.ResourceTO> resourceTOList3 = resourceLogic0.list();
@@ -5318,7 +5318,7 @@ public class ResourceLogicRandoopTest {
     public void test237() throws Throwable {
         if (debug)
             System.out.format("%n%s%n", "RegressionTest0.test237");
-        org.apache.syncope.core.logic.ResourceLogic resourceLogic0 = org.apache.syncope.core.logic.RandoopHelper.getConfiguredResourceLogic();
+        org.apache.syncope.core.logic.ResourceLogic resourceLogic0 = org.apache.syncope.core.logic.RandoopHelperLogic.getHelperResourceLogicRandoop();
         java.util.List<org.apache.syncope.common.lib.to.ResourceTO> resourceTOList1 = resourceLogic0.list();
         java.util.List<org.apache.syncope.common.lib.to.ResourceTO> resourceTOList2 = resourceLogic0.list();
         java.util.List<org.apache.syncope.common.lib.to.ResourceTO> resourceTOList3 = resourceLogic0.list();
@@ -5326,7 +5326,7 @@ public class ResourceLogicRandoopTest {
         java.util.List<org.apache.syncope.common.lib.to.ResourceTO> resourceTOList5 = resourceLogic0.list();
         java.util.List<org.apache.syncope.common.lib.to.ResourceTO> resourceTOList6 = resourceLogic0.list();
         java.util.List<org.apache.syncope.common.lib.to.ResourceTO> resourceTOList7 = resourceLogic0.list();
-        org.apache.syncope.common.lib.to.ResourceTO resourceTO8 = org.apache.syncope.core.logic.RandoopHelper.getValidResourceTO();
+        org.apache.syncope.common.lib.to.ResourceTO resourceTO8 = org.apache.syncope.core.logic.RandoopHelperLogic.getValidResourceTO();
         // The following exception was thrown during execution in test generation
         try {
             org.apache.syncope.common.lib.to.ResourceTO resourceTO9 = resourceLogic0.update(resourceTO8);
@@ -5349,7 +5349,7 @@ public class ResourceLogicRandoopTest {
     public void test238() throws Throwable {
         if (debug)
             System.out.format("%n%s%n", "RegressionTest0.test238");
-        org.apache.syncope.core.logic.ResourceLogic resourceLogic0 = org.apache.syncope.core.logic.RandoopHelper.getConfiguredResourceLogic();
+        org.apache.syncope.core.logic.ResourceLogic resourceLogic0 = org.apache.syncope.core.logic.RandoopHelperLogic.getHelperResourceLogicRandoop();
         java.util.List<org.apache.syncope.common.lib.to.ResourceTO> resourceTOList1 = resourceLogic0.list();
         java.util.List<org.apache.syncope.common.lib.to.ResourceTO> resourceTOList2 = resourceLogic0.list();
         java.util.List<org.apache.syncope.common.lib.to.ResourceTO> resourceTOList3 = resourceLogic0.list();
@@ -5374,7 +5374,7 @@ public class ResourceLogicRandoopTest {
     public void test239() throws Throwable {
         if (debug)
             System.out.format("%n%s%n", "RegressionTest0.test239");
-        org.apache.syncope.core.logic.ResourceLogic resourceLogic0 = org.apache.syncope.core.logic.RandoopHelper.getConfiguredResourceLogic();
+        org.apache.syncope.core.logic.ResourceLogic resourceLogic0 = org.apache.syncope.core.logic.RandoopHelperLogic.getHelperResourceLogicRandoop();
         java.util.List<org.apache.syncope.common.lib.to.ResourceTO> resourceTOList1 = resourceLogic0.list();
         java.util.List<org.apache.syncope.common.lib.to.ResourceTO> resourceTOList2 = resourceLogic0.list();
         java.util.List<org.apache.syncope.common.lib.to.ResourceTO> resourceTOList3 = resourceLogic0.list();
@@ -5399,7 +5399,7 @@ public class ResourceLogicRandoopTest {
     public void test240() throws Throwable {
         if (debug)
             System.out.format("%n%s%n", "RegressionTest0.test240");
-        org.apache.syncope.core.logic.ResourceLogic resourceLogic0 = org.apache.syncope.core.logic.RandoopHelper.getConfiguredResourceLogic();
+        org.apache.syncope.core.logic.ResourceLogic resourceLogic0 = org.apache.syncope.core.logic.RandoopHelperLogic.getHelperResourceLogicRandoop();
         java.util.List<org.apache.syncope.common.lib.to.ResourceTO> resourceTOList1 = resourceLogic0.list();
         java.util.List<org.apache.syncope.common.lib.to.ResourceTO> resourceTOList2 = resourceLogic0.list();
         java.util.List<org.apache.syncope.common.lib.to.ResourceTO> resourceTOList3 = resourceLogic0.list();
@@ -5424,14 +5424,14 @@ public class ResourceLogicRandoopTest {
     public void test241() throws Throwable {
         if (debug)
             System.out.format("%n%s%n", "RegressionTest0.test241");
-        org.apache.syncope.core.logic.ResourceLogic resourceLogic0 = org.apache.syncope.core.logic.RandoopHelper.getConfiguredResourceLogic();
+        org.apache.syncope.core.logic.ResourceLogic resourceLogic0 = org.apache.syncope.core.logic.RandoopHelperLogic.getHelperResourceLogicRandoop();
         java.util.List<org.apache.syncope.common.lib.to.ResourceTO> resourceTOList1 = resourceLogic0.list();
         java.util.List<org.apache.syncope.common.lib.to.ResourceTO> resourceTOList2 = resourceLogic0.list();
         java.util.List<org.apache.syncope.common.lib.to.ResourceTO> resourceTOList3 = resourceLogic0.list();
         java.util.List<org.apache.syncope.common.lib.to.ResourceTO> resourceTOList4 = resourceLogic0.list();
         java.util.List<org.apache.syncope.common.lib.to.ResourceTO> resourceTOList5 = resourceLogic0.list();
         java.lang.reflect.Method method6 = null;
-        org.apache.syncope.core.logic.ResourceLogic resourceLogic7 = org.apache.syncope.core.logic.RandoopHelper.getConfiguredResourceLogic();
+        org.apache.syncope.core.logic.ResourceLogic resourceLogic7 = org.apache.syncope.core.logic.RandoopHelperLogic.getHelperResourceLogicRandoop();
         java.util.List<org.apache.syncope.common.lib.to.ResourceTO> resourceTOList8 = resourceLogic7.list();
         java.util.List<org.apache.syncope.common.lib.to.ResourceTO> resourceTOList9 = resourceLogic7.list();
         java.lang.Class<?> wildcardClass10 = resourceLogic7.getClass();
@@ -5462,7 +5462,7 @@ public class ResourceLogicRandoopTest {
     public void test242() throws Throwable {
         if (debug)
             System.out.format("%n%s%n", "RegressionTest0.test242");
-        org.apache.syncope.core.logic.ResourceLogic resourceLogic0 = org.apache.syncope.core.logic.RandoopHelper.getConfiguredResourceLogic();
+        org.apache.syncope.core.logic.ResourceLogic resourceLogic0 = org.apache.syncope.core.logic.RandoopHelperLogic.getHelperResourceLogicRandoop();
         java.util.List<org.apache.syncope.common.lib.to.ResourceTO> resourceTOList1 = resourceLogic0.list();
         java.util.List<org.apache.syncope.common.lib.to.ResourceTO> resourceTOList2 = resourceLogic0.list();
         java.util.List<org.apache.syncope.common.lib.to.ResourceTO> resourceTOList3 = resourceLogic0.list();
@@ -5491,7 +5491,7 @@ public class ResourceLogicRandoopTest {
     public void test243() throws Throwable {
         if (debug)
             System.out.format("%n%s%n", "RegressionTest0.test243");
-        org.apache.syncope.core.logic.ResourceLogic resourceLogic0 = org.apache.syncope.core.logic.RandoopHelper.getConfiguredResourceLogic();
+        org.apache.syncope.core.logic.ResourceLogic resourceLogic0 = org.apache.syncope.core.logic.RandoopHelperLogic.getHelperResourceLogicRandoop();
         java.util.List<org.apache.syncope.common.lib.to.ResourceTO> resourceTOList1 = resourceLogic0.list();
         java.util.List<org.apache.syncope.common.lib.to.ResourceTO> resourceTOList2 = resourceLogic0.list();
         java.util.List<org.apache.syncope.common.lib.to.ResourceTO> resourceTOList3 = resourceLogic0.list();
@@ -5516,7 +5516,7 @@ public class ResourceLogicRandoopTest {
     public void test244() throws Throwable {
         if (debug)
             System.out.format("%n%s%n", "RegressionTest0.test244");
-        org.apache.syncope.core.logic.ResourceLogic resourceLogic0 = org.apache.syncope.core.logic.RandoopHelper.getConfiguredResourceLogic();
+        org.apache.syncope.core.logic.ResourceLogic resourceLogic0 = org.apache.syncope.core.logic.RandoopHelperLogic.getHelperResourceLogicRandoop();
         java.util.List<org.apache.syncope.common.lib.to.ResourceTO> resourceTOList1 = resourceLogic0.list();
         java.util.List<org.apache.syncope.common.lib.to.ResourceTO> resourceTOList2 = resourceLogic0.list();
         java.util.List<org.apache.syncope.common.lib.to.ResourceTO> resourceTOList3 = resourceLogic0.list();
@@ -5552,7 +5552,7 @@ public class ResourceLogicRandoopTest {
     public void test245() throws Throwable {
         if (debug)
             System.out.format("%n%s%n", "RegressionTest0.test245");
-        org.apache.syncope.core.logic.ResourceLogic resourceLogic0 = org.apache.syncope.core.logic.RandoopHelper.getConfiguredResourceLogic();
+        org.apache.syncope.core.logic.ResourceLogic resourceLogic0 = org.apache.syncope.core.logic.RandoopHelperLogic.getHelperResourceLogicRandoop();
         java.util.List<org.apache.syncope.common.lib.to.ResourceTO> resourceTOList1 = resourceLogic0.list();
         java.util.List<org.apache.syncope.common.lib.to.ResourceTO> resourceTOList2 = resourceLogic0.list();
         java.util.List<org.apache.syncope.common.lib.to.ResourceTO> resourceTOList3 = resourceLogic0.list();
@@ -5581,7 +5581,7 @@ public class ResourceLogicRandoopTest {
     public void test246() throws Throwable {
         if (debug)
             System.out.format("%n%s%n", "RegressionTest0.test246");
-        org.apache.syncope.core.logic.ResourceLogic resourceLogic0 = org.apache.syncope.core.logic.RandoopHelper.getConfiguredResourceLogic();
+        org.apache.syncope.core.logic.ResourceLogic resourceLogic0 = org.apache.syncope.core.logic.RandoopHelperLogic.getHelperResourceLogicRandoop();
         java.util.List<org.apache.syncope.common.lib.to.ResourceTO> resourceTOList1 = resourceLogic0.list();
         java.util.List<org.apache.syncope.common.lib.to.ResourceTO> resourceTOList2 = resourceLogic0.list();
         java.util.List<org.apache.syncope.common.lib.to.ResourceTO> resourceTOList3 = resourceLogic0.list();
@@ -5589,7 +5589,7 @@ public class ResourceLogicRandoopTest {
         java.util.List<org.apache.syncope.common.lib.to.ResourceTO> resourceTOList5 = resourceLogic0.list();
         java.util.List<org.apache.syncope.common.lib.to.ResourceTO> resourceTOList6 = resourceLogic0.list();
         java.util.List<org.apache.syncope.common.lib.to.ResourceTO> resourceTOList7 = resourceLogic0.list();
-        org.apache.syncope.common.lib.to.ResourceTO resourceTO8 = org.apache.syncope.core.logic.RandoopHelper.getValidResourceTO();
+        org.apache.syncope.common.lib.to.ResourceTO resourceTO8 = org.apache.syncope.core.logic.RandoopHelperLogic.getValidResourceTO();
         // The following exception was thrown during execution in test generation
         try {
             org.apache.syncope.common.lib.to.ResourceTO resourceTO9 = resourceLogic0.create(resourceTO8);
@@ -5612,7 +5612,7 @@ public class ResourceLogicRandoopTest {
     public void test247() throws Throwable {
         if (debug)
             System.out.format("%n%s%n", "RegressionTest0.test247");
-        org.apache.syncope.core.logic.ResourceLogic resourceLogic0 = org.apache.syncope.core.logic.RandoopHelper.getConfiguredResourceLogic();
+        org.apache.syncope.core.logic.ResourceLogic resourceLogic0 = org.apache.syncope.core.logic.RandoopHelperLogic.getHelperResourceLogicRandoop();
         java.util.List<org.apache.syncope.common.lib.to.ResourceTO> resourceTOList1 = resourceLogic0.list();
         java.util.List<org.apache.syncope.common.lib.to.ResourceTO> resourceTOList2 = resourceLogic0.list();
         // The following exception was thrown during execution in test generation
@@ -5631,7 +5631,7 @@ public class ResourceLogicRandoopTest {
     public void test248() throws Throwable {
         if (debug)
             System.out.format("%n%s%n", "RegressionTest0.test248");
-        org.apache.syncope.core.logic.ResourceLogic resourceLogic0 = org.apache.syncope.core.logic.RandoopHelper.getConfiguredResourceLogic();
+        org.apache.syncope.core.logic.ResourceLogic resourceLogic0 = org.apache.syncope.core.logic.RandoopHelperLogic.getHelperResourceLogicRandoop();
         java.util.List<org.apache.syncope.common.lib.to.ResourceTO> resourceTOList1 = resourceLogic0.list();
         java.util.List<org.apache.syncope.common.lib.to.ResourceTO> resourceTOList2 = resourceLogic0.list();
         java.util.List<org.apache.syncope.common.lib.to.ResourceTO> resourceTOList3 = resourceLogic0.list();
@@ -5669,7 +5669,7 @@ public class ResourceLogicRandoopTest {
     public void test249() throws Throwable {
         if (debug)
             System.out.format("%n%s%n", "RegressionTest0.test249");
-        org.apache.syncope.core.logic.ResourceLogic resourceLogic0 = org.apache.syncope.core.logic.RandoopHelper.getConfiguredResourceLogic();
+        org.apache.syncope.core.logic.ResourceLogic resourceLogic0 = org.apache.syncope.core.logic.RandoopHelperLogic.getHelperResourceLogicRandoop();
         java.util.List<org.apache.syncope.common.lib.to.ResourceTO> resourceTOList1 = resourceLogic0.list();
         java.util.List<org.apache.syncope.common.lib.to.ResourceTO> resourceTOList2 = resourceLogic0.list();
         java.util.List<org.apache.syncope.common.lib.to.ResourceTO> resourceTOList3 = resourceLogic0.list();
@@ -5698,7 +5698,7 @@ public class ResourceLogicRandoopTest {
     public void test250() throws Throwable {
         if (debug)
             System.out.format("%n%s%n", "RegressionTest0.test250");
-        org.apache.syncope.core.logic.ResourceLogic resourceLogic0 = org.apache.syncope.core.logic.RandoopHelper.getConfiguredResourceLogic();
+        org.apache.syncope.core.logic.ResourceLogic resourceLogic0 = org.apache.syncope.core.logic.RandoopHelperLogic.getHelperResourceLogicRandoop();
         java.util.List<org.apache.syncope.common.lib.to.ResourceTO> resourceTOList1 = resourceLogic0.list();
         java.util.List<org.apache.syncope.common.lib.to.ResourceTO> resourceTOList2 = resourceLogic0.list();
         java.util.List<org.apache.syncope.common.lib.to.ResourceTO> resourceTOList3 = resourceLogic0.list();
@@ -5721,7 +5721,7 @@ public class ResourceLogicRandoopTest {
     public void test251() throws Throwable {
         if (debug)
             System.out.format("%n%s%n", "RegressionTest0.test251");
-        org.apache.syncope.core.logic.ResourceLogic resourceLogic0 = org.apache.syncope.core.logic.RandoopHelper.getConfiguredResourceLogic();
+        org.apache.syncope.core.logic.ResourceLogic resourceLogic0 = org.apache.syncope.core.logic.RandoopHelperLogic.getHelperResourceLogicRandoop();
         java.lang.reflect.Method method1 = null;
         java.lang.Object[] objArray2 = null;
         // The following exception was thrown during execution in test generation
@@ -5738,7 +5738,7 @@ public class ResourceLogicRandoopTest {
     public void test252() throws Throwable {
         if (debug)
             System.out.format("%n%s%n", "RegressionTest0.test252");
-        org.apache.syncope.core.logic.ResourceLogic resourceLogic0 = org.apache.syncope.core.logic.RandoopHelper.getConfiguredResourceLogic();
+        org.apache.syncope.core.logic.ResourceLogic resourceLogic0 = org.apache.syncope.core.logic.RandoopHelperLogic.getHelperResourceLogicRandoop();
         java.util.List<org.apache.syncope.common.lib.to.ResourceTO> resourceTOList1 = resourceLogic0.list();
         java.util.List<org.apache.syncope.common.lib.to.ResourceTO> resourceTOList2 = resourceLogic0.list();
         java.util.List<org.apache.syncope.common.lib.to.ResourceTO> resourceTOList3 = resourceLogic0.list();
@@ -5756,14 +5756,14 @@ public class ResourceLogicRandoopTest {
     public void test253() throws Throwable {
         if (debug)
             System.out.format("%n%s%n", "RegressionTest0.test253");
-        org.apache.syncope.core.logic.ResourceLogic resourceLogic0 = org.apache.syncope.core.logic.RandoopHelper.getConfiguredResourceLogic();
+        org.apache.syncope.core.logic.ResourceLogic resourceLogic0 = org.apache.syncope.core.logic.RandoopHelperLogic.getHelperResourceLogicRandoop();
         java.util.List<org.apache.syncope.common.lib.to.ResourceTO> resourceTOList1 = resourceLogic0.list();
         java.util.List<org.apache.syncope.common.lib.to.ResourceTO> resourceTOList2 = resourceLogic0.list();
         java.util.List<org.apache.syncope.common.lib.to.ResourceTO> resourceTOList3 = resourceLogic0.list();
         java.util.List<org.apache.syncope.common.lib.to.ResourceTO> resourceTOList4 = resourceLogic0.list();
         java.util.List<org.apache.syncope.common.lib.to.ResourceTO> resourceTOList5 = resourceLogic0.list();
         java.util.List<org.apache.syncope.common.lib.to.ResourceTO> resourceTOList6 = resourceLogic0.list();
-        org.apache.syncope.common.lib.to.ResourceTO resourceTO7 = org.apache.syncope.core.logic.RandoopHelper.getValidResourceTO();
+        org.apache.syncope.common.lib.to.ResourceTO resourceTO7 = org.apache.syncope.core.logic.RandoopHelperLogic.getValidResourceTO();
         // The following exception was thrown during execution in test generation
         try {
             resourceLogic0.check(resourceTO7);
@@ -5785,7 +5785,7 @@ public class ResourceLogicRandoopTest {
     public void test254() throws Throwable {
         if (debug)
             System.out.format("%n%s%n", "RegressionTest0.test254");
-        org.apache.syncope.core.logic.ResourceLogic resourceLogic0 = org.apache.syncope.core.logic.RandoopHelper.getConfiguredResourceLogic();
+        org.apache.syncope.core.logic.ResourceLogic resourceLogic0 = org.apache.syncope.core.logic.RandoopHelperLogic.getHelperResourceLogicRandoop();
         java.util.List<org.apache.syncope.common.lib.to.ResourceTO> resourceTOList1 = resourceLogic0.list();
         java.util.List<org.apache.syncope.common.lib.to.ResourceTO> resourceTOList2 = resourceLogic0.list();
         java.util.List<org.apache.syncope.common.lib.to.ResourceTO> resourceTOList3 = resourceLogic0.list();
@@ -5808,7 +5808,7 @@ public class ResourceLogicRandoopTest {
     public void test255() throws Throwable {
         if (debug)
             System.out.format("%n%s%n", "RegressionTest0.test255");
-        org.apache.syncope.core.logic.ResourceLogic resourceLogic0 = org.apache.syncope.core.logic.RandoopHelper.getConfiguredResourceLogic();
+        org.apache.syncope.core.logic.ResourceLogic resourceLogic0 = org.apache.syncope.core.logic.RandoopHelperLogic.getHelperResourceLogicRandoop();
         java.util.List<org.apache.syncope.common.lib.to.ResourceTO> resourceTOList1 = resourceLogic0.list();
         java.util.List<org.apache.syncope.common.lib.to.ResourceTO> resourceTOList2 = resourceLogic0.list();
         java.util.List<org.apache.syncope.common.lib.to.ResourceTO> resourceTOList3 = resourceLogic0.list();
@@ -5831,7 +5831,7 @@ public class ResourceLogicRandoopTest {
     public void test256() throws Throwable {
         if (debug)
             System.out.format("%n%s%n", "RegressionTest0.test256");
-        org.apache.syncope.core.logic.ResourceLogic resourceLogic0 = org.apache.syncope.core.logic.RandoopHelper.getConfiguredResourceLogic();
+        org.apache.syncope.core.logic.ResourceLogic resourceLogic0 = org.apache.syncope.core.logic.RandoopHelperLogic.getHelperResourceLogicRandoop();
         java.util.List<org.apache.syncope.common.lib.to.ResourceTO> resourceTOList1 = resourceLogic0.list();
         java.util.List<org.apache.syncope.common.lib.to.ResourceTO> resourceTOList2 = resourceLogic0.list();
         java.util.List<org.apache.syncope.common.lib.to.ResourceTO> resourceTOList3 = resourceLogic0.list();
@@ -5858,7 +5858,7 @@ public class ResourceLogicRandoopTest {
     public void test257() throws Throwable {
         if (debug)
             System.out.format("%n%s%n", "RegressionTest0.test257");
-        org.apache.syncope.core.logic.ResourceLogic resourceLogic0 = org.apache.syncope.core.logic.RandoopHelper.getConfiguredResourceLogic();
+        org.apache.syncope.core.logic.ResourceLogic resourceLogic0 = org.apache.syncope.core.logic.RandoopHelperLogic.getHelperResourceLogicRandoop();
         java.util.List<org.apache.syncope.common.lib.to.ResourceTO> resourceTOList1 = resourceLogic0.list();
         java.util.List<org.apache.syncope.common.lib.to.ResourceTO> resourceTOList2 = resourceLogic0.list();
         java.util.List<org.apache.syncope.common.lib.to.ResourceTO> resourceTOList3 = resourceLogic0.list();
@@ -5879,7 +5879,7 @@ public class ResourceLogicRandoopTest {
     public void test258() throws Throwable {
         if (debug)
             System.out.format("%n%s%n", "RegressionTest0.test258");
-        org.apache.syncope.core.logic.ResourceLogic resourceLogic0 = org.apache.syncope.core.logic.RandoopHelper.getConfiguredResourceLogic();
+        org.apache.syncope.core.logic.ResourceLogic resourceLogic0 = org.apache.syncope.core.logic.RandoopHelperLogic.getHelperResourceLogicRandoop();
         java.util.List<org.apache.syncope.common.lib.to.ResourceTO> resourceTOList1 = resourceLogic0.list();
         org.identityconnectors.framework.common.objects.filter.Filter filter2 = null;
         java.lang.String[] strArray5 = new java.lang.String[] { "", "hi!" };
@@ -5920,12 +5920,12 @@ public class ResourceLogicRandoopTest {
         org.apache.syncope.core.persistence.api.entity.AnyUtilsFactory anyUtilsFactory8 = null;
         org.apache.syncope.core.logic.ResourceLogic resourceLogic9 = new org.apache.syncope.core.logic.ResourceLogic(externalResourceDAO0, anyTypeDAO1, connInstanceDAO2, resourceDataBinder3, connInstanceDataBinder4, outboundMatcher5, mappingManager6, connectorManager7, anyUtilsFactory8);
         java.lang.reflect.Method method10 = null;
-        org.apache.syncope.core.logic.RandoopHelper randoopHelper12 = new org.apache.syncope.core.logic.RandoopHelper();
-        org.apache.syncope.core.logic.ResourceLogic resourceLogic15 = org.apache.syncope.core.logic.RandoopHelper.getConfiguredResourceLogic();
+        org.apache.syncope.core.logic.RandoopHelperLogic RandoopHelperLogic12 = new org.apache.syncope.core.logic.RandoopHelperLogic();
+        org.apache.syncope.core.logic.ResourceLogic resourceLogic15 = org.apache.syncope.core.logic.RandoopHelperLogic.getHelperResourceLogicRandoop();
         java.util.List<org.apache.syncope.common.lib.to.ResourceTO> resourceTOList16 = resourceLogic15.list();
         java.util.List<org.apache.syncope.common.lib.to.ResourceTO> resourceTOList17 = resourceLogic15.list();
         java.lang.Class<?> wildcardClass18 = resourceTOList17.getClass();
-        java.lang.Object[] objArray19 = new java.lang.Object[] { 10, randoopHelper12, (byte) 100, 'a', wildcardClass18 };
+        java.lang.Object[] objArray19 = new java.lang.Object[] { 10, RandoopHelperLogic12, (byte) 100, 'a', wildcardClass18 };
         // The following exception was thrown during execution in test generation
         try {
             org.apache.syncope.common.lib.to.ResourceTO resourceTO20 = resourceLogic9.resolveBeanReference(method10, objArray19);
@@ -5944,7 +5944,7 @@ public class ResourceLogicRandoopTest {
     public void test260() throws Throwable {
         if (debug)
             System.out.format("%n%s%n", "RegressionTest0.test260");
-        org.apache.syncope.core.logic.ResourceLogic resourceLogic0 = org.apache.syncope.core.logic.RandoopHelper.getConfiguredResourceLogic();
+        org.apache.syncope.core.logic.ResourceLogic resourceLogic0 = org.apache.syncope.core.logic.RandoopHelperLogic.getHelperResourceLogicRandoop();
         java.util.List<org.apache.syncope.common.lib.to.ResourceTO> resourceTOList1 = resourceLogic0.list();
         java.util.List<org.apache.syncope.common.lib.to.ResourceTO> resourceTOList2 = resourceLogic0.list();
         java.util.List<org.apache.syncope.common.lib.to.ResourceTO> resourceTOList3 = resourceLogic0.list();
@@ -5967,7 +5967,7 @@ public class ResourceLogicRandoopTest {
     public void test261() throws Throwable {
         if (debug)
             System.out.format("%n%s%n", "RegressionTest0.test261");
-        org.apache.syncope.core.logic.ResourceLogic resourceLogic0 = org.apache.syncope.core.logic.RandoopHelper.getConfiguredResourceLogic();
+        org.apache.syncope.core.logic.ResourceLogic resourceLogic0 = org.apache.syncope.core.logic.RandoopHelperLogic.getHelperResourceLogicRandoop();
         java.util.List<org.apache.syncope.common.lib.to.ResourceTO> resourceTOList1 = resourceLogic0.list();
         java.util.List<org.apache.syncope.common.lib.to.ResourceTO> resourceTOList2 = resourceLogic0.list();
         java.util.List<org.apache.syncope.common.lib.to.ResourceTO> resourceTOList3 = resourceLogic0.list();
@@ -5994,9 +5994,9 @@ public class ResourceLogicRandoopTest {
     public void test262() throws Throwable {
         if (debug)
             System.out.format("%n%s%n", "RegressionTest0.test262");
-        org.apache.syncope.core.logic.ResourceLogic resourceLogic0 = org.apache.syncope.core.logic.RandoopHelper.getConfiguredResourceLogic();
+        org.apache.syncope.core.logic.ResourceLogic resourceLogic0 = org.apache.syncope.core.logic.RandoopHelperLogic.getHelperResourceLogicRandoop();
         java.lang.reflect.Method method1 = null;
-        org.apache.syncope.core.logic.ResourceLogic resourceLogic2 = org.apache.syncope.core.logic.RandoopHelper.getConfiguredResourceLogic();
+        org.apache.syncope.core.logic.ResourceLogic resourceLogic2 = org.apache.syncope.core.logic.RandoopHelperLogic.getHelperResourceLogicRandoop();
         java.util.List<org.apache.syncope.common.lib.to.ResourceTO> resourceTOList3 = resourceLogic2.list();
         java.util.List<org.apache.syncope.common.lib.to.ResourceTO> resourceTOList4 = resourceLogic2.list();
         java.util.List<org.apache.syncope.common.lib.to.ResourceTO> resourceTOList5 = resourceLogic2.list();
@@ -6022,7 +6022,7 @@ public class ResourceLogicRandoopTest {
     public void test263() throws Throwable {
         if (debug)
             System.out.format("%n%s%n", "RegressionTest0.test263");
-        org.apache.syncope.core.logic.ResourceLogic resourceLogic0 = org.apache.syncope.core.logic.RandoopHelper.getConfiguredResourceLogic();
+        org.apache.syncope.core.logic.ResourceLogic resourceLogic0 = org.apache.syncope.core.logic.RandoopHelperLogic.getHelperResourceLogicRandoop();
         java.util.List<org.apache.syncope.common.lib.to.ResourceTO> resourceTOList1 = resourceLogic0.list();
         java.util.List<org.apache.syncope.common.lib.to.ResourceTO> resourceTOList2 = resourceLogic0.list();
         java.util.List<org.apache.syncope.common.lib.to.ResourceTO> resourceTOList3 = resourceLogic0.list();
@@ -6049,7 +6049,7 @@ public class ResourceLogicRandoopTest {
     public void test264() throws Throwable {
         if (debug)
             System.out.format("%n%s%n", "RegressionTest0.test264");
-        org.apache.syncope.core.logic.ResourceLogic resourceLogic0 = org.apache.syncope.core.logic.RandoopHelper.getConfiguredResourceLogic();
+        org.apache.syncope.core.logic.ResourceLogic resourceLogic0 = org.apache.syncope.core.logic.RandoopHelperLogic.getHelperResourceLogicRandoop();
         java.util.List<org.apache.syncope.common.lib.to.ResourceTO> resourceTOList1 = resourceLogic0.list();
         java.util.List<org.apache.syncope.common.lib.to.ResourceTO> resourceTOList2 = resourceLogic0.list();
         java.util.List<org.apache.syncope.common.lib.to.ResourceTO> resourceTOList3 = resourceLogic0.list();
@@ -6076,7 +6076,7 @@ public class ResourceLogicRandoopTest {
     public void test265() throws Throwable {
         if (debug)
             System.out.format("%n%s%n", "RegressionTest0.test265");
-        org.apache.syncope.core.logic.ResourceLogic resourceLogic0 = org.apache.syncope.core.logic.RandoopHelper.getConfiguredResourceLogic();
+        org.apache.syncope.core.logic.ResourceLogic resourceLogic0 = org.apache.syncope.core.logic.RandoopHelperLogic.getHelperResourceLogicRandoop();
         java.util.List<org.apache.syncope.common.lib.to.ResourceTO> resourceTOList1 = resourceLogic0.list();
         java.util.List<org.apache.syncope.common.lib.to.ResourceTO> resourceTOList2 = resourceLogic0.list();
         java.util.List<org.apache.syncope.common.lib.to.ResourceTO> resourceTOList3 = resourceLogic0.list();
@@ -6100,7 +6100,7 @@ public class ResourceLogicRandoopTest {
     public void test266() throws Throwable {
         if (debug)
             System.out.format("%n%s%n", "RegressionTest0.test266");
-        org.apache.syncope.core.logic.ResourceLogic resourceLogic0 = org.apache.syncope.core.logic.RandoopHelper.getConfiguredResourceLogic();
+        org.apache.syncope.core.logic.ResourceLogic resourceLogic0 = org.apache.syncope.core.logic.RandoopHelperLogic.getHelperResourceLogicRandoop();
         java.util.List<org.apache.syncope.common.lib.to.ResourceTO> resourceTOList1 = resourceLogic0.list();
         java.util.List<org.apache.syncope.common.lib.to.ResourceTO> resourceTOList2 = resourceLogic0.list();
         java.util.List<org.apache.syncope.common.lib.to.ResourceTO> resourceTOList3 = resourceLogic0.list();
@@ -6147,7 +6147,7 @@ public class ResourceLogicRandoopTest {
         org.apache.syncope.core.persistence.api.entity.AnyUtilsFactory anyUtilsFactory8 = null;
         org.apache.syncope.core.logic.ResourceLogic resourceLogic9 = new org.apache.syncope.core.logic.ResourceLogic(externalResourceDAO0, anyTypeDAO1, connInstanceDAO2, resourceDataBinder3, connInstanceDataBinder4, outboundMatcher5, mappingManager6, connectorManager7, anyUtilsFactory8);
         java.lang.reflect.Method method10 = null;
-        org.apache.syncope.core.logic.ResourceLogic resourceLogic11 = org.apache.syncope.core.logic.RandoopHelper.getConfiguredResourceLogic();
+        org.apache.syncope.core.logic.ResourceLogic resourceLogic11 = org.apache.syncope.core.logic.RandoopHelperLogic.getHelperResourceLogicRandoop();
         java.util.List<org.apache.syncope.common.lib.to.ResourceTO> resourceTOList12 = resourceLogic11.list();
         java.util.List<org.apache.syncope.common.lib.to.ResourceTO> resourceTOList13 = resourceLogic11.list();
         java.util.List<org.apache.syncope.common.lib.to.ResourceTO> resourceTOList14 = resourceLogic11.list();
@@ -6172,7 +6172,7 @@ public class ResourceLogicRandoopTest {
     public void test268() throws Throwable {
         if (debug)
             System.out.format("%n%s%n", "RegressionTest0.test268");
-        org.apache.syncope.core.logic.ResourceLogic resourceLogic0 = org.apache.syncope.core.logic.RandoopHelper.getConfiguredResourceLogic();
+        org.apache.syncope.core.logic.ResourceLogic resourceLogic0 = org.apache.syncope.core.logic.RandoopHelperLogic.getHelperResourceLogicRandoop();
         java.util.List<org.apache.syncope.common.lib.to.ResourceTO> resourceTOList1 = resourceLogic0.list();
         // The following exception was thrown during execution in test generation
         try {
@@ -6189,7 +6189,7 @@ public class ResourceLogicRandoopTest {
     public void test269() throws Throwable {
         if (debug)
             System.out.format("%n%s%n", "RegressionTest0.test269");
-        org.apache.syncope.core.logic.ResourceLogic resourceLogic0 = org.apache.syncope.core.logic.RandoopHelper.getConfiguredResourceLogic();
+        org.apache.syncope.core.logic.ResourceLogic resourceLogic0 = org.apache.syncope.core.logic.RandoopHelperLogic.getHelperResourceLogicRandoop();
         java.util.List<org.apache.syncope.common.lib.to.ResourceTO> resourceTOList1 = resourceLogic0.list();
         java.util.List<org.apache.syncope.common.lib.to.ResourceTO> resourceTOList2 = resourceLogic0.list();
         java.util.List<org.apache.syncope.common.lib.to.ResourceTO> resourceTOList3 = resourceLogic0.list();
@@ -6227,7 +6227,7 @@ public class ResourceLogicRandoopTest {
     public void test270() throws Throwable {
         if (debug)
             System.out.format("%n%s%n", "RegressionTest0.test270");
-        org.apache.syncope.core.logic.ResourceLogic resourceLogic0 = org.apache.syncope.core.logic.RandoopHelper.getConfiguredResourceLogic();
+        org.apache.syncope.core.logic.ResourceLogic resourceLogic0 = org.apache.syncope.core.logic.RandoopHelperLogic.getHelperResourceLogicRandoop();
         java.util.List<org.apache.syncope.common.lib.to.ResourceTO> resourceTOList1 = resourceLogic0.list();
         org.identityconnectors.framework.common.objects.filter.Filter filter2 = null;
         java.lang.String[] strArray5 = new java.lang.String[] { "hi!", "hi!" };
@@ -6257,7 +6257,7 @@ public class ResourceLogicRandoopTest {
     public void test271() throws Throwable {
         if (debug)
             System.out.format("%n%s%n", "RegressionTest0.test271");
-        org.apache.syncope.core.logic.ResourceLogic resourceLogic0 = org.apache.syncope.core.logic.RandoopHelper.getConfiguredResourceLogic();
+        org.apache.syncope.core.logic.ResourceLogic resourceLogic0 = org.apache.syncope.core.logic.RandoopHelperLogic.getHelperResourceLogicRandoop();
         java.util.List<org.apache.syncope.common.lib.to.ResourceTO> resourceTOList1 = resourceLogic0.list();
         java.util.List<org.apache.syncope.common.lib.to.ResourceTO> resourceTOList2 = resourceLogic0.list();
         java.util.List<org.apache.syncope.common.lib.to.ResourceTO> resourceTOList3 = resourceLogic0.list();
@@ -6281,7 +6281,7 @@ public class ResourceLogicRandoopTest {
     public void test272() throws Throwable {
         if (debug)
             System.out.format("%n%s%n", "RegressionTest0.test272");
-        org.apache.syncope.core.logic.ResourceLogic resourceLogic0 = org.apache.syncope.core.logic.RandoopHelper.getConfiguredResourceLogic();
+        org.apache.syncope.core.logic.ResourceLogic resourceLogic0 = org.apache.syncope.core.logic.RandoopHelperLogic.getHelperResourceLogicRandoop();
         java.util.List<org.apache.syncope.common.lib.to.ResourceTO> resourceTOList1 = resourceLogic0.list();
         java.util.List<org.apache.syncope.common.lib.to.ResourceTO> resourceTOList2 = resourceLogic0.list();
         java.util.List<org.apache.syncope.common.lib.to.ResourceTO> resourceTOList3 = resourceLogic0.list();
@@ -6315,12 +6315,12 @@ public class ResourceLogicRandoopTest {
     public void test273() throws Throwable {
         if (debug)
             System.out.format("%n%s%n", "RegressionTest0.test273");
-        org.apache.syncope.core.logic.ResourceLogic resourceLogic0 = org.apache.syncope.core.logic.RandoopHelper.getConfiguredResourceLogic();
+        org.apache.syncope.core.logic.ResourceLogic resourceLogic0 = org.apache.syncope.core.logic.RandoopHelperLogic.getHelperResourceLogicRandoop();
         java.util.List<org.apache.syncope.common.lib.to.ResourceTO> resourceTOList1 = resourceLogic0.list();
         java.util.List<org.apache.syncope.common.lib.to.ResourceTO> resourceTOList2 = resourceLogic0.list();
         java.lang.reflect.Method method3 = null;
-        org.apache.syncope.core.logic.ResourceLogic resourceLogic4 = org.apache.syncope.core.logic.RandoopHelper.getConfiguredResourceLogic();
-        org.apache.syncope.core.logic.ResourceLogic resourceLogic5 = org.apache.syncope.core.logic.RandoopHelper.getConfiguredResourceLogic();
+        org.apache.syncope.core.logic.ResourceLogic resourceLogic4 = org.apache.syncope.core.logic.RandoopHelperLogic.getHelperResourceLogicRandoop();
+        org.apache.syncope.core.logic.ResourceLogic resourceLogic5 = org.apache.syncope.core.logic.RandoopHelperLogic.getHelperResourceLogicRandoop();
         java.util.List<org.apache.syncope.common.lib.to.ResourceTO> resourceTOList6 = resourceLogic5.list();
         java.util.List<org.apache.syncope.common.lib.to.ResourceTO> resourceTOList7 = resourceLogic5.list();
         java.util.List<org.apache.syncope.common.lib.to.ResourceTO> resourceTOList8 = resourceLogic5.list();
@@ -6353,7 +6353,7 @@ public class ResourceLogicRandoopTest {
     public void test274() throws Throwable {
         if (debug)
             System.out.format("%n%s%n", "RegressionTest0.test274");
-        org.apache.syncope.core.logic.ResourceLogic resourceLogic0 = org.apache.syncope.core.logic.RandoopHelper.getConfiguredResourceLogic();
+        org.apache.syncope.core.logic.ResourceLogic resourceLogic0 = org.apache.syncope.core.logic.RandoopHelperLogic.getHelperResourceLogicRandoop();
         java.util.List<org.apache.syncope.common.lib.to.ResourceTO> resourceTOList1 = resourceLogic0.list();
         // The following exception was thrown during execution in test generation
         try {
@@ -6370,7 +6370,7 @@ public class ResourceLogicRandoopTest {
     public void test275() throws Throwable {
         if (debug)
             System.out.format("%n%s%n", "RegressionTest0.test275");
-        org.apache.syncope.core.logic.ResourceLogic resourceLogic0 = org.apache.syncope.core.logic.RandoopHelper.getConfiguredResourceLogic();
+        org.apache.syncope.core.logic.ResourceLogic resourceLogic0 = org.apache.syncope.core.logic.RandoopHelperLogic.getHelperResourceLogicRandoop();
         java.util.List<org.apache.syncope.common.lib.to.ResourceTO> resourceTOList1 = resourceLogic0.list();
         java.util.List<org.apache.syncope.common.lib.to.ResourceTO> resourceTOList2 = resourceLogic0.list();
         java.util.List<org.apache.syncope.common.lib.to.ResourceTO> resourceTOList3 = resourceLogic0.list();
@@ -6405,7 +6405,7 @@ public class ResourceLogicRandoopTest {
     public void test276() throws Throwable {
         if (debug)
             System.out.format("%n%s%n", "RegressionTest0.test276");
-        org.apache.syncope.core.logic.ResourceLogic resourceLogic0 = org.apache.syncope.core.logic.RandoopHelper.getConfiguredResourceLogic();
+        org.apache.syncope.core.logic.ResourceLogic resourceLogic0 = org.apache.syncope.core.logic.RandoopHelperLogic.getHelperResourceLogicRandoop();
         java.util.List<org.apache.syncope.common.lib.to.ResourceTO> resourceTOList1 = resourceLogic0.list();
         // The following exception was thrown during execution in test generation
         try {
@@ -6422,7 +6422,7 @@ public class ResourceLogicRandoopTest {
     public void test277() throws Throwable {
         if (debug)
             System.out.format("%n%s%n", "RegressionTest0.test277");
-        org.apache.syncope.core.logic.ResourceLogic resourceLogic0 = org.apache.syncope.core.logic.RandoopHelper.getConfiguredResourceLogic();
+        org.apache.syncope.core.logic.ResourceLogic resourceLogic0 = org.apache.syncope.core.logic.RandoopHelperLogic.getHelperResourceLogicRandoop();
         java.util.List<org.apache.syncope.common.lib.to.ResourceTO> resourceTOList1 = resourceLogic0.list();
         java.util.List<org.apache.syncope.common.lib.to.ResourceTO> resourceTOList2 = resourceLogic0.list();
         java.util.List<org.apache.syncope.common.lib.to.ResourceTO> resourceTOList3 = resourceLogic0.list();
@@ -6449,7 +6449,7 @@ public class ResourceLogicRandoopTest {
     public void test278() throws Throwable {
         if (debug)
             System.out.format("%n%s%n", "RegressionTest0.test278");
-        org.apache.syncope.core.logic.ResourceLogic resourceLogic0 = org.apache.syncope.core.logic.RandoopHelper.getConfiguredResourceLogic();
+        org.apache.syncope.core.logic.ResourceLogic resourceLogic0 = org.apache.syncope.core.logic.RandoopHelperLogic.getHelperResourceLogicRandoop();
         java.util.List<org.apache.syncope.common.lib.to.ResourceTO> resourceTOList1 = resourceLogic0.list();
         java.util.List<org.apache.syncope.common.lib.to.ResourceTO> resourceTOList2 = resourceLogic0.list();
         java.util.List<org.apache.syncope.common.lib.to.ResourceTO> resourceTOList3 = resourceLogic0.list();
@@ -6470,7 +6470,7 @@ public class ResourceLogicRandoopTest {
     public void test279() throws Throwable {
         if (debug)
             System.out.format("%n%s%n", "RegressionTest0.test279");
-        org.apache.syncope.core.logic.ResourceLogic resourceLogic0 = org.apache.syncope.core.logic.RandoopHelper.getConfiguredResourceLogic();
+        org.apache.syncope.core.logic.ResourceLogic resourceLogic0 = org.apache.syncope.core.logic.RandoopHelperLogic.getHelperResourceLogicRandoop();
         java.util.List<org.apache.syncope.common.lib.to.ResourceTO> resourceTOList1 = resourceLogic0.list();
         java.util.List<org.apache.syncope.common.lib.to.ResourceTO> resourceTOList2 = resourceLogic0.list();
         java.util.List<org.apache.syncope.common.lib.to.ResourceTO> resourceTOList3 = resourceLogic0.list();
@@ -6493,7 +6493,7 @@ public class ResourceLogicRandoopTest {
     public void test280() throws Throwable {
         if (debug)
             System.out.format("%n%s%n", "RegressionTest0.test280");
-        org.apache.syncope.core.logic.ResourceLogic resourceLogic0 = org.apache.syncope.core.logic.RandoopHelper.getConfiguredResourceLogic();
+        org.apache.syncope.core.logic.ResourceLogic resourceLogic0 = org.apache.syncope.core.logic.RandoopHelperLogic.getHelperResourceLogicRandoop();
         java.util.List<org.apache.syncope.common.lib.to.ResourceTO> resourceTOList1 = resourceLogic0.list();
         java.util.List<org.apache.syncope.common.lib.to.ResourceTO> resourceTOList2 = resourceLogic0.list();
         java.util.List<org.apache.syncope.common.lib.to.ResourceTO> resourceTOList3 = resourceLogic0.list();
@@ -6518,7 +6518,7 @@ public class ResourceLogicRandoopTest {
     public void test281() throws Throwable {
         if (debug)
             System.out.format("%n%s%n", "RegressionTest0.test281");
-        org.apache.syncope.core.logic.ResourceLogic resourceLogic0 = org.apache.syncope.core.logic.RandoopHelper.getConfiguredResourceLogic();
+        org.apache.syncope.core.logic.ResourceLogic resourceLogic0 = org.apache.syncope.core.logic.RandoopHelperLogic.getHelperResourceLogicRandoop();
         java.util.List<org.apache.syncope.common.lib.to.ResourceTO> resourceTOList1 = resourceLogic0.list();
         org.identityconnectors.framework.common.objects.filter.Filter filter2 = null;
         java.lang.String[] strArray5 = new java.lang.String[] { "hi!", "" };
@@ -6572,22 +6572,22 @@ public class ResourceLogicRandoopTest {
     public void test283() throws Throwable {
         if (debug)
             System.out.format("%n%s%n", "RegressionTest0.test283");
-        org.apache.syncope.core.logic.ResourceLogic resourceLogic0 = org.apache.syncope.core.logic.RandoopHelper.getConfiguredResourceLogic();
+        org.apache.syncope.core.logic.ResourceLogic resourceLogic0 = org.apache.syncope.core.logic.RandoopHelperLogic.getHelperResourceLogicRandoop();
         java.util.List<org.apache.syncope.common.lib.to.ResourceTO> resourceTOList1 = resourceLogic0.list();
         java.util.List<org.apache.syncope.common.lib.to.ResourceTO> resourceTOList2 = resourceLogic0.list();
         java.util.List<org.apache.syncope.common.lib.to.ResourceTO> resourceTOList3 = resourceLogic0.list();
         java.util.List<org.apache.syncope.common.lib.to.ResourceTO> resourceTOList4 = resourceLogic0.list();
         java.util.List<org.apache.syncope.common.lib.to.ResourceTO> resourceTOList5 = resourceLogic0.list();
         java.lang.reflect.Method method6 = null;
-        org.apache.syncope.core.logic.ResourceLogic resourceLogic8 = org.apache.syncope.core.logic.RandoopHelper.getConfiguredResourceLogic();
+        org.apache.syncope.core.logic.ResourceLogic resourceLogic8 = org.apache.syncope.core.logic.RandoopHelperLogic.getHelperResourceLogicRandoop();
         java.util.List<org.apache.syncope.common.lib.to.ResourceTO> resourceTOList9 = resourceLogic8.list();
         java.util.List<org.apache.syncope.common.lib.to.ResourceTO> resourceTOList10 = resourceLogic8.list();
         java.util.List<org.apache.syncope.common.lib.to.ResourceTO> resourceTOList11 = resourceLogic8.list();
         java.util.List<org.apache.syncope.common.lib.to.ResourceTO> resourceTOList12 = resourceLogic8.list();
         java.util.List<org.apache.syncope.common.lib.to.ResourceTO> resourceTOList13 = resourceLogic8.list();
         java.lang.Class<?> wildcardClass14 = resourceLogic8.getClass();
-        org.apache.syncope.core.logic.RandoopHelper randoopHelper16 = new org.apache.syncope.core.logic.RandoopHelper();
-        java.lang.Object[] objArray18 = new java.lang.Object[] { "", resourceLogic8, (byte) -1, randoopHelper16, 1L };
+        org.apache.syncope.core.logic.RandoopHelperLogic RandoopHelperLogic16 = new org.apache.syncope.core.logic.RandoopHelperLogic();
+        java.lang.Object[] objArray18 = new java.lang.Object[] { "", resourceLogic8, (byte) -1, RandoopHelperLogic16, 1L };
         // The following exception was thrown during execution in test generation
         try {
             org.apache.syncope.common.lib.to.ResourceTO resourceTO19 = resourceLogic0.resolveBeanReference(method6, objArray18);
@@ -6615,7 +6615,7 @@ public class ResourceLogicRandoopTest {
     public void test284() throws Throwable {
         if (debug)
             System.out.format("%n%s%n", "RegressionTest0.test284");
-        org.apache.syncope.core.logic.ResourceLogic resourceLogic0 = org.apache.syncope.core.logic.RandoopHelper.getConfiguredResourceLogic();
+        org.apache.syncope.core.logic.ResourceLogic resourceLogic0 = org.apache.syncope.core.logic.RandoopHelperLogic.getHelperResourceLogicRandoop();
         java.util.List<org.apache.syncope.common.lib.to.ResourceTO> resourceTOList1 = resourceLogic0.list();
         java.util.List<org.apache.syncope.common.lib.to.ResourceTO> resourceTOList2 = resourceLogic0.list();
         java.util.List<org.apache.syncope.common.lib.to.ResourceTO> resourceTOList3 = resourceLogic0.list();
@@ -6644,7 +6644,7 @@ public class ResourceLogicRandoopTest {
     public void test285() throws Throwable {
         if (debug)
             System.out.format("%n%s%n", "RegressionTest0.test285");
-        org.apache.syncope.core.logic.ResourceLogic resourceLogic0 = org.apache.syncope.core.logic.RandoopHelper.getConfiguredResourceLogic();
+        org.apache.syncope.core.logic.ResourceLogic resourceLogic0 = org.apache.syncope.core.logic.RandoopHelperLogic.getHelperResourceLogicRandoop();
         java.util.List<org.apache.syncope.common.lib.to.ResourceTO> resourceTOList1 = resourceLogic0.list();
         java.util.List<org.apache.syncope.common.lib.to.ResourceTO> resourceTOList2 = resourceLogic0.list();
         java.util.List<org.apache.syncope.common.lib.to.ResourceTO> resourceTOList3 = resourceLogic0.list();
@@ -6671,7 +6671,7 @@ public class ResourceLogicRandoopTest {
     public void test286() throws Throwable {
         if (debug)
             System.out.format("%n%s%n", "RegressionTest0.test286");
-        org.apache.syncope.core.logic.ResourceLogic resourceLogic0 = org.apache.syncope.core.logic.RandoopHelper.getConfiguredResourceLogic();
+        org.apache.syncope.core.logic.ResourceLogic resourceLogic0 = org.apache.syncope.core.logic.RandoopHelperLogic.getHelperResourceLogicRandoop();
         java.util.List<org.apache.syncope.common.lib.to.ResourceTO> resourceTOList1 = resourceLogic0.list();
         java.util.List<org.apache.syncope.common.lib.to.ResourceTO> resourceTOList2 = resourceLogic0.list();
         java.util.List<org.apache.syncope.common.lib.to.ResourceTO> resourceTOList3 = resourceLogic0.list();
@@ -6696,7 +6696,7 @@ public class ResourceLogicRandoopTest {
     public void test287() throws Throwable {
         if (debug)
             System.out.format("%n%s%n", "RegressionTest0.test287");
-        org.apache.syncope.core.logic.ResourceLogic resourceLogic0 = org.apache.syncope.core.logic.RandoopHelper.getConfiguredResourceLogic();
+        org.apache.syncope.core.logic.ResourceLogic resourceLogic0 = org.apache.syncope.core.logic.RandoopHelperLogic.getHelperResourceLogicRandoop();
         java.util.List<org.apache.syncope.common.lib.to.ResourceTO> resourceTOList1 = resourceLogic0.list();
         java.util.List<org.apache.syncope.common.lib.to.ResourceTO> resourceTOList2 = resourceLogic0.list();
         java.util.List<org.apache.syncope.common.lib.to.ResourceTO> resourceTOList3 = resourceLogic0.list();
@@ -6729,7 +6729,7 @@ public class ResourceLogicRandoopTest {
     public void test288() throws Throwable {
         if (debug)
             System.out.format("%n%s%n", "RegressionTest0.test288");
-        org.apache.syncope.core.logic.ResourceLogic resourceLogic0 = org.apache.syncope.core.logic.RandoopHelper.getConfiguredResourceLogic();
+        org.apache.syncope.core.logic.ResourceLogic resourceLogic0 = org.apache.syncope.core.logic.RandoopHelperLogic.getHelperResourceLogicRandoop();
         java.util.List<org.apache.syncope.common.lib.to.ResourceTO> resourceTOList1 = resourceLogic0.list();
         java.util.List<org.apache.syncope.common.lib.to.ResourceTO> resourceTOList2 = resourceLogic0.list();
         org.identityconnectors.framework.common.objects.filter.Filter filter3 = null;
@@ -6761,7 +6761,7 @@ public class ResourceLogicRandoopTest {
     public void test289() throws Throwable {
         if (debug)
             System.out.format("%n%s%n", "RegressionTest0.test289");
-        org.apache.syncope.core.logic.ResourceLogic resourceLogic0 = org.apache.syncope.core.logic.RandoopHelper.getConfiguredResourceLogic();
+        org.apache.syncope.core.logic.ResourceLogic resourceLogic0 = org.apache.syncope.core.logic.RandoopHelperLogic.getHelperResourceLogicRandoop();
         java.util.List<org.apache.syncope.common.lib.to.ResourceTO> resourceTOList1 = resourceLogic0.list();
         java.util.List<org.apache.syncope.common.lib.to.ResourceTO> resourceTOList2 = resourceLogic0.list();
         // The following exception was thrown during execution in test generation
@@ -6780,7 +6780,7 @@ public class ResourceLogicRandoopTest {
     public void test290() throws Throwable {
         if (debug)
             System.out.format("%n%s%n", "RegressionTest0.test290");
-        org.apache.syncope.core.logic.ResourceLogic resourceLogic0 = org.apache.syncope.core.logic.RandoopHelper.getConfiguredResourceLogic();
+        org.apache.syncope.core.logic.ResourceLogic resourceLogic0 = org.apache.syncope.core.logic.RandoopHelperLogic.getHelperResourceLogicRandoop();
         java.lang.reflect.Method method1 = null;
         java.lang.Object[] objArray3 = new java.lang.Object[] { false };
         // The following exception was thrown during execution in test generation
@@ -6800,7 +6800,7 @@ public class ResourceLogicRandoopTest {
     public void test291() throws Throwable {
         if (debug)
             System.out.format("%n%s%n", "RegressionTest0.test291");
-        org.apache.syncope.core.logic.ResourceLogic resourceLogic0 = org.apache.syncope.core.logic.RandoopHelper.getConfiguredResourceLogic();
+        org.apache.syncope.core.logic.ResourceLogic resourceLogic0 = org.apache.syncope.core.logic.RandoopHelperLogic.getHelperResourceLogicRandoop();
         java.util.List<org.apache.syncope.common.lib.to.ResourceTO> resourceTOList1 = resourceLogic0.list();
         java.util.List<org.apache.syncope.common.lib.to.ResourceTO> resourceTOList2 = resourceLogic0.list();
         java.util.List<org.apache.syncope.common.lib.to.ResourceTO> resourceTOList3 = resourceLogic0.list();
@@ -6827,7 +6827,7 @@ public class ResourceLogicRandoopTest {
     public void test292() throws Throwable {
         if (debug)
             System.out.format("%n%s%n", "RegressionTest0.test292");
-        org.apache.syncope.core.logic.ResourceLogic resourceLogic0 = org.apache.syncope.core.logic.RandoopHelper.getConfiguredResourceLogic();
+        org.apache.syncope.core.logic.ResourceLogic resourceLogic0 = org.apache.syncope.core.logic.RandoopHelperLogic.getHelperResourceLogicRandoop();
         java.util.List<org.apache.syncope.common.lib.to.ResourceTO> resourceTOList1 = resourceLogic0.list();
         java.util.List<org.apache.syncope.common.lib.to.ResourceTO> resourceTOList2 = resourceLogic0.list();
         // The following exception was thrown during execution in test generation
@@ -6846,7 +6846,7 @@ public class ResourceLogicRandoopTest {
     public void test293() throws Throwable {
         if (debug)
             System.out.format("%n%s%n", "RegressionTest0.test293");
-        org.apache.syncope.core.logic.ResourceLogic resourceLogic0 = org.apache.syncope.core.logic.RandoopHelper.getConfiguredResourceLogic();
+        org.apache.syncope.core.logic.ResourceLogic resourceLogic0 = org.apache.syncope.core.logic.RandoopHelperLogic.getHelperResourceLogicRandoop();
         java.util.List<org.apache.syncope.common.lib.to.ResourceTO> resourceTOList1 = resourceLogic0.list();
         // The following exception was thrown during execution in test generation
         try {
@@ -6863,7 +6863,7 @@ public class ResourceLogicRandoopTest {
     public void test294() throws Throwable {
         if (debug)
             System.out.format("%n%s%n", "RegressionTest0.test294");
-        org.apache.syncope.core.logic.ResourceLogic resourceLogic0 = org.apache.syncope.core.logic.RandoopHelper.getConfiguredResourceLogic();
+        org.apache.syncope.core.logic.ResourceLogic resourceLogic0 = org.apache.syncope.core.logic.RandoopHelperLogic.getHelperResourceLogicRandoop();
         java.util.List<org.apache.syncope.common.lib.to.ResourceTO> resourceTOList1 = resourceLogic0.list();
         java.util.List<org.apache.syncope.common.lib.to.ResourceTO> resourceTOList2 = resourceLogic0.list();
         java.util.List<org.apache.syncope.common.lib.to.ResourceTO> resourceTOList3 = resourceLogic0.list();
@@ -6871,10 +6871,10 @@ public class ResourceLogicRandoopTest {
         java.util.List<org.apache.syncope.common.lib.to.ResourceTO> resourceTOList5 = resourceLogic0.list();
         java.util.List<org.apache.syncope.common.lib.to.ResourceTO> resourceTOList6 = resourceLogic0.list();
         java.lang.reflect.Method method7 = null;
-        org.apache.syncope.core.logic.RandoopHelper randoopHelper8 = new org.apache.syncope.core.logic.RandoopHelper();
-        java.lang.Class<?> wildcardClass9 = randoopHelper8.getClass();
-        org.apache.syncope.common.lib.to.ResourceTO resourceTO11 = org.apache.syncope.core.logic.RandoopHelper.getValidResourceTO();
-        org.apache.syncope.core.logic.ResourceLogic resourceLogic12 = org.apache.syncope.core.logic.RandoopHelper.getConfiguredResourceLogic();
+        org.apache.syncope.core.logic.RandoopHelperLogic RandoopHelperLogic8 = new org.apache.syncope.core.logic.RandoopHelperLogic();
+        java.lang.Class<?> wildcardClass9 = RandoopHelperLogic8.getClass();
+        org.apache.syncope.common.lib.to.ResourceTO resourceTO11 = org.apache.syncope.core.logic.RandoopHelperLogic.getValidResourceTO();
+        org.apache.syncope.core.logic.ResourceLogic resourceLogic12 = org.apache.syncope.core.logic.RandoopHelperLogic.getHelperResourceLogicRandoop();
         java.util.List<org.apache.syncope.common.lib.to.ResourceTO> resourceTOList13 = resourceLogic12.list();
         java.util.List<org.apache.syncope.common.lib.to.ResourceTO> resourceTOList14 = resourceLogic12.list();
         java.lang.Object[] objArray15 = new java.lang.Object[] { wildcardClass9, 1.0f, resourceTO11, resourceTOList14 };
@@ -6904,7 +6904,7 @@ public class ResourceLogicRandoopTest {
     public void test295() throws Throwable {
         if (debug)
             System.out.format("%n%s%n", "RegressionTest0.test295");
-        org.apache.syncope.core.logic.ResourceLogic resourceLogic0 = org.apache.syncope.core.logic.RandoopHelper.getConfiguredResourceLogic();
+        org.apache.syncope.core.logic.ResourceLogic resourceLogic0 = org.apache.syncope.core.logic.RandoopHelperLogic.getHelperResourceLogicRandoop();
         java.util.List<org.apache.syncope.common.lib.to.ResourceTO> resourceTOList1 = resourceLogic0.list();
         java.util.List<org.apache.syncope.common.lib.to.ResourceTO> resourceTOList2 = resourceLogic0.list();
         java.util.List<org.apache.syncope.common.lib.to.ResourceTO> resourceTOList3 = resourceLogic0.list();
@@ -6925,7 +6925,7 @@ public class ResourceLogicRandoopTest {
     public void test296() throws Throwable {
         if (debug)
             System.out.format("%n%s%n", "RegressionTest0.test296");
-        org.apache.syncope.core.logic.ResourceLogic resourceLogic0 = org.apache.syncope.core.logic.RandoopHelper.getConfiguredResourceLogic();
+        org.apache.syncope.core.logic.ResourceLogic resourceLogic0 = org.apache.syncope.core.logic.RandoopHelperLogic.getHelperResourceLogicRandoop();
         java.util.List<org.apache.syncope.common.lib.to.ResourceTO> resourceTOList1 = resourceLogic0.list();
         java.util.List<org.apache.syncope.common.lib.to.ResourceTO> resourceTOList2 = resourceLogic0.list();
         org.identityconnectors.framework.common.objects.filter.Filter filter3 = null;
@@ -6957,7 +6957,7 @@ public class ResourceLogicRandoopTest {
     public void test297() throws Throwable {
         if (debug)
             System.out.format("%n%s%n", "RegressionTest0.test297");
-        org.apache.syncope.core.logic.ResourceLogic resourceLogic0 = org.apache.syncope.core.logic.RandoopHelper.getConfiguredResourceLogic();
+        org.apache.syncope.core.logic.ResourceLogic resourceLogic0 = org.apache.syncope.core.logic.RandoopHelperLogic.getHelperResourceLogicRandoop();
         org.apache.syncope.common.lib.to.ResourceTO resourceTO1 = null;
         // The following exception was thrown during execution in test generation
         try {
@@ -6973,7 +6973,7 @@ public class ResourceLogicRandoopTest {
     public void test298() throws Throwable {
         if (debug)
             System.out.format("%n%s%n", "RegressionTest0.test298");
-        org.apache.syncope.core.logic.ResourceLogic resourceLogic0 = org.apache.syncope.core.logic.RandoopHelper.getConfiguredResourceLogic();
+        org.apache.syncope.core.logic.ResourceLogic resourceLogic0 = org.apache.syncope.core.logic.RandoopHelperLogic.getHelperResourceLogicRandoop();
         java.util.List<org.apache.syncope.common.lib.to.ResourceTO> resourceTOList1 = resourceLogic0.list();
         java.util.List<org.apache.syncope.common.lib.to.ResourceTO> resourceTOList2 = resourceLogic0.list();
         java.util.List<org.apache.syncope.common.lib.to.ResourceTO> resourceTOList3 = resourceLogic0.list();
@@ -7000,7 +7000,7 @@ public class ResourceLogicRandoopTest {
     public void test299() throws Throwable {
         if (debug)
             System.out.format("%n%s%n", "RegressionTest0.test299");
-        org.apache.syncope.core.logic.ResourceLogic resourceLogic0 = org.apache.syncope.core.logic.RandoopHelper.getConfiguredResourceLogic();
+        org.apache.syncope.core.logic.ResourceLogic resourceLogic0 = org.apache.syncope.core.logic.RandoopHelperLogic.getHelperResourceLogicRandoop();
         java.util.List<org.apache.syncope.common.lib.to.ResourceTO> resourceTOList1 = resourceLogic0.list();
         java.util.List<org.apache.syncope.common.lib.to.ResourceTO> resourceTOList2 = resourceLogic0.list();
         java.util.List<org.apache.syncope.common.lib.to.ResourceTO> resourceTOList3 = resourceLogic0.list();
@@ -7029,7 +7029,7 @@ public class ResourceLogicRandoopTest {
     public void test300() throws Throwable {
         if (debug)
             System.out.format("%n%s%n", "RegressionTest0.test300");
-        org.apache.syncope.core.logic.ResourceLogic resourceLogic0 = org.apache.syncope.core.logic.RandoopHelper.getConfiguredResourceLogic();
+        org.apache.syncope.core.logic.ResourceLogic resourceLogic0 = org.apache.syncope.core.logic.RandoopHelperLogic.getHelperResourceLogicRandoop();
         java.util.List<org.apache.syncope.common.lib.to.ResourceTO> resourceTOList1 = resourceLogic0.list();
         java.util.List<org.apache.syncope.common.lib.to.ResourceTO> resourceTOList2 = resourceLogic0.list();
         java.util.List<org.apache.syncope.common.lib.to.ResourceTO> resourceTOList3 = resourceLogic0.list();
@@ -7058,13 +7058,13 @@ public class ResourceLogicRandoopTest {
     public void test301() throws Throwable {
         if (debug)
             System.out.format("%n%s%n", "RegressionTest0.test301");
-        org.apache.syncope.core.logic.ResourceLogic resourceLogic0 = org.apache.syncope.core.logic.RandoopHelper.getConfiguredResourceLogic();
+        org.apache.syncope.core.logic.ResourceLogic resourceLogic0 = org.apache.syncope.core.logic.RandoopHelperLogic.getHelperResourceLogicRandoop();
         java.util.List<org.apache.syncope.common.lib.to.ResourceTO> resourceTOList1 = resourceLogic0.list();
         java.util.List<org.apache.syncope.common.lib.to.ResourceTO> resourceTOList2 = resourceLogic0.list();
         java.util.List<org.apache.syncope.common.lib.to.ResourceTO> resourceTOList3 = resourceLogic0.list();
         java.util.List<org.apache.syncope.common.lib.to.ResourceTO> resourceTOList4 = resourceLogic0.list();
         java.lang.reflect.Method method5 = null;
-        org.apache.syncope.core.logic.ResourceLogic resourceLogic7 = org.apache.syncope.core.logic.RandoopHelper.getConfiguredResourceLogic();
+        org.apache.syncope.core.logic.ResourceLogic resourceLogic7 = org.apache.syncope.core.logic.RandoopHelperLogic.getHelperResourceLogicRandoop();
         java.util.List<org.apache.syncope.common.lib.to.ResourceTO> resourceTOList8 = resourceLogic7.list();
         java.util.List<org.apache.syncope.common.lib.to.ResourceTO> resourceTOList9 = resourceLogic7.list();
         java.util.List<org.apache.syncope.common.lib.to.ResourceTO> resourceTOList10 = resourceLogic7.list();
@@ -7100,15 +7100,15 @@ public class ResourceLogicRandoopTest {
     public void test302() throws Throwable {
         if (debug)
             System.out.format("%n%s%n", "RegressionTest0.test302");
-        org.apache.syncope.core.logic.ResourceLogic resourceLogic0 = org.apache.syncope.core.logic.RandoopHelper.getConfiguredResourceLogic();
+        org.apache.syncope.core.logic.ResourceLogic resourceLogic0 = org.apache.syncope.core.logic.RandoopHelperLogic.getHelperResourceLogicRandoop();
         java.util.List<org.apache.syncope.common.lib.to.ResourceTO> resourceTOList1 = resourceLogic0.list();
         java.lang.reflect.Method method2 = null;
-        org.apache.syncope.core.logic.RandoopHelper randoopHelper3 = new org.apache.syncope.core.logic.RandoopHelper();
-        org.apache.syncope.core.logic.ResourceLogic resourceLogic4 = org.apache.syncope.core.logic.RandoopHelper.getConfiguredResourceLogic();
+        org.apache.syncope.core.logic.RandoopHelperLogic RandoopHelperLogic3 = new org.apache.syncope.core.logic.RandoopHelperLogic();
+        org.apache.syncope.core.logic.ResourceLogic resourceLogic4 = org.apache.syncope.core.logic.RandoopHelperLogic.getHelperResourceLogicRandoop();
         java.util.List<org.apache.syncope.common.lib.to.ResourceTO> resourceTOList5 = resourceLogic4.list();
         java.util.List<org.apache.syncope.common.lib.to.ResourceTO> resourceTOList6 = resourceLogic4.list();
         java.lang.Class<?> wildcardClass7 = resourceLogic4.getClass();
-        java.lang.Object[] objArray8 = new java.lang.Object[] { randoopHelper3, resourceLogic4 };
+        java.lang.Object[] objArray8 = new java.lang.Object[] { RandoopHelperLogic3, resourceLogic4 };
         // The following exception was thrown during execution in test generation
         try {
             org.apache.syncope.common.lib.to.ResourceTO resourceTO9 = resourceLogic0.resolveBeanReference(method2, objArray8);
@@ -7129,7 +7129,7 @@ public class ResourceLogicRandoopTest {
     public void test303() throws Throwable {
         if (debug)
             System.out.format("%n%s%n", "RegressionTest0.test303");
-        org.apache.syncope.core.logic.ResourceLogic resourceLogic0 = org.apache.syncope.core.logic.RandoopHelper.getConfiguredResourceLogic();
+        org.apache.syncope.core.logic.ResourceLogic resourceLogic0 = org.apache.syncope.core.logic.RandoopHelperLogic.getHelperResourceLogicRandoop();
         org.identityconnectors.framework.common.objects.filter.Filter filter1 = null;
         java.lang.String[] strArray4 = new java.lang.String[] { "hi!", "" };
         java.util.LinkedHashSet<java.lang.String> strSet5 = new java.util.LinkedHashSet<java.lang.String>();
@@ -7157,7 +7157,7 @@ public class ResourceLogicRandoopTest {
     public void test304() throws Throwable {
         if (debug)
             System.out.format("%n%s%n", "RegressionTest0.test304");
-        org.apache.syncope.core.logic.ResourceLogic resourceLogic0 = org.apache.syncope.core.logic.RandoopHelper.getConfiguredResourceLogic();
+        org.apache.syncope.core.logic.ResourceLogic resourceLogic0 = org.apache.syncope.core.logic.RandoopHelperLogic.getHelperResourceLogicRandoop();
         java.util.List<org.apache.syncope.common.lib.to.ResourceTO> resourceTOList1 = resourceLogic0.list();
         java.util.List<org.apache.syncope.common.lib.to.ResourceTO> resourceTOList2 = resourceLogic0.list();
         java.util.List<org.apache.syncope.common.lib.to.ResourceTO> resourceTOList3 = resourceLogic0.list();
@@ -7184,24 +7184,24 @@ public class ResourceLogicRandoopTest {
     public void test305() throws Throwable {
         if (debug)
             System.out.format("%n%s%n", "RegressionTest0.test305");
-        org.apache.syncope.core.logic.ResourceLogic resourceLogic0 = org.apache.syncope.core.logic.RandoopHelper.getConfiguredResourceLogic();
+        org.apache.syncope.core.logic.ResourceLogic resourceLogic0 = org.apache.syncope.core.logic.RandoopHelperLogic.getHelperResourceLogicRandoop();
         java.util.List<org.apache.syncope.common.lib.to.ResourceTO> resourceTOList1 = resourceLogic0.list();
         java.util.List<org.apache.syncope.common.lib.to.ResourceTO> resourceTOList2 = resourceLogic0.list();
         java.util.List<org.apache.syncope.common.lib.to.ResourceTO> resourceTOList3 = resourceLogic0.list();
         java.util.List<org.apache.syncope.common.lib.to.ResourceTO> resourceTOList4 = resourceLogic0.list();
         java.lang.reflect.Method method5 = null;
-        org.apache.syncope.core.logic.ResourceLogic resourceLogic6 = org.apache.syncope.core.logic.RandoopHelper.getConfiguredResourceLogic();
+        org.apache.syncope.core.logic.ResourceLogic resourceLogic6 = org.apache.syncope.core.logic.RandoopHelperLogic.getHelperResourceLogicRandoop();
         java.util.List<org.apache.syncope.common.lib.to.ResourceTO> resourceTOList7 = resourceLogic6.list();
         java.util.List<org.apache.syncope.common.lib.to.ResourceTO> resourceTOList8 = resourceLogic6.list();
         java.util.List<org.apache.syncope.common.lib.to.ResourceTO> resourceTOList9 = resourceLogic6.list();
         java.util.List<org.apache.syncope.common.lib.to.ResourceTO> resourceTOList10 = resourceLogic6.list();
         java.lang.Class<?> wildcardClass11 = resourceLogic6.getClass();
-        org.apache.syncope.core.logic.ResourceLogic resourceLogic13 = org.apache.syncope.core.logic.RandoopHelper.getConfiguredResourceLogic();
+        org.apache.syncope.core.logic.ResourceLogic resourceLogic13 = org.apache.syncope.core.logic.RandoopHelperLogic.getHelperResourceLogicRandoop();
         java.util.List<org.apache.syncope.common.lib.to.ResourceTO> resourceTOList14 = resourceLogic13.list();
         java.util.List<org.apache.syncope.common.lib.to.ResourceTO> resourceTOList15 = resourceLogic13.list();
         java.util.List<org.apache.syncope.common.lib.to.ResourceTO> resourceTOList16 = resourceLogic13.list();
         java.util.List<org.apache.syncope.common.lib.to.ResourceTO> resourceTOList17 = resourceLogic13.list();
-        org.apache.syncope.core.logic.ResourceLogic resourceLogic19 = org.apache.syncope.core.logic.RandoopHelper.getConfiguredResourceLogic();
+        org.apache.syncope.core.logic.ResourceLogic resourceLogic19 = org.apache.syncope.core.logic.RandoopHelperLogic.getHelperResourceLogicRandoop();
         java.util.List<org.apache.syncope.common.lib.to.ResourceTO> resourceTOList20 = resourceLogic19.list();
         java.lang.Object[] objArray22 = new java.lang.Object[] { resourceLogic6, ' ', resourceLogic13, '#', resourceLogic19, (byte) 0 };
         // The following exception was thrown during execution in test generation
@@ -7236,7 +7236,7 @@ public class ResourceLogicRandoopTest {
     public void test306() throws Throwable {
         if (debug)
             System.out.format("%n%s%n", "RegressionTest0.test306");
-        org.apache.syncope.core.logic.ResourceLogic resourceLogic0 = org.apache.syncope.core.logic.RandoopHelper.getConfiguredResourceLogic();
+        org.apache.syncope.core.logic.ResourceLogic resourceLogic0 = org.apache.syncope.core.logic.RandoopHelperLogic.getHelperResourceLogicRandoop();
         java.util.List<org.apache.syncope.common.lib.to.ResourceTO> resourceTOList1 = resourceLogic0.list();
         java.util.List<org.apache.syncope.common.lib.to.ResourceTO> resourceTOList2 = resourceLogic0.list();
         java.util.List<org.apache.syncope.common.lib.to.ResourceTO> resourceTOList3 = resourceLogic0.list();
@@ -7263,7 +7263,7 @@ public class ResourceLogicRandoopTest {
     public void test307() throws Throwable {
         if (debug)
             System.out.format("%n%s%n", "RegressionTest0.test307");
-        org.apache.syncope.core.logic.ResourceLogic resourceLogic0 = org.apache.syncope.core.logic.RandoopHelper.getConfiguredResourceLogic();
+        org.apache.syncope.core.logic.ResourceLogic resourceLogic0 = org.apache.syncope.core.logic.RandoopHelperLogic.getHelperResourceLogicRandoop();
         java.util.List<org.apache.syncope.common.lib.to.ResourceTO> resourceTOList1 = resourceLogic0.list();
         java.util.List<org.apache.syncope.common.lib.to.ResourceTO> resourceTOList2 = resourceLogic0.list();
         java.util.List<org.apache.syncope.common.lib.to.ResourceTO> resourceTOList3 = resourceLogic0.list();
@@ -7292,7 +7292,7 @@ public class ResourceLogicRandoopTest {
     public void test308() throws Throwable {
         if (debug)
             System.out.format("%n%s%n", "RegressionTest0.test308");
-        org.apache.syncope.core.logic.ResourceLogic resourceLogic0 = org.apache.syncope.core.logic.RandoopHelper.getConfiguredResourceLogic();
+        org.apache.syncope.core.logic.ResourceLogic resourceLogic0 = org.apache.syncope.core.logic.RandoopHelperLogic.getHelperResourceLogicRandoop();
         java.util.List<org.apache.syncope.common.lib.to.ResourceTO> resourceTOList1 = resourceLogic0.list();
         java.util.List<org.apache.syncope.common.lib.to.ResourceTO> resourceTOList2 = resourceLogic0.list();
         java.util.List<org.apache.syncope.common.lib.to.ResourceTO> resourceTOList3 = resourceLogic0.list();
@@ -7300,16 +7300,16 @@ public class ResourceLogicRandoopTest {
         java.util.List<org.apache.syncope.common.lib.to.ResourceTO> resourceTOList5 = resourceLogic0.list();
         java.util.List<org.apache.syncope.common.lib.to.ResourceTO> resourceTOList6 = resourceLogic0.list();
         java.lang.reflect.Method method7 = null;
-        org.apache.syncope.core.logic.RandoopHelper randoopHelper8 = new org.apache.syncope.core.logic.RandoopHelper();
-        java.lang.Class<?> wildcardClass9 = randoopHelper8.getClass();
-        org.apache.syncope.core.logic.ResourceLogic resourceLogic10 = org.apache.syncope.core.logic.RandoopHelper.getConfiguredResourceLogic();
+        org.apache.syncope.core.logic.RandoopHelperLogic RandoopHelperLogic8 = new org.apache.syncope.core.logic.RandoopHelperLogic();
+        java.lang.Class<?> wildcardClass9 = RandoopHelperLogic8.getClass();
+        org.apache.syncope.core.logic.ResourceLogic resourceLogic10 = org.apache.syncope.core.logic.RandoopHelperLogic.getHelperResourceLogicRandoop();
         java.util.List<org.apache.syncope.common.lib.to.ResourceTO> resourceTOList11 = resourceLogic10.list();
         java.util.List<org.apache.syncope.common.lib.to.ResourceTO> resourceTOList12 = resourceLogic10.list();
         java.util.List<org.apache.syncope.common.lib.to.ResourceTO> resourceTOList13 = resourceLogic10.list();
         java.util.List<org.apache.syncope.common.lib.to.ResourceTO> resourceTOList14 = resourceLogic10.list();
         java.util.List<org.apache.syncope.common.lib.to.ResourceTO> resourceTOList15 = resourceLogic10.list();
         java.util.List<org.apache.syncope.common.lib.to.ResourceTO> resourceTOList16 = resourceLogic10.list();
-        java.lang.Object[] objArray20 = new java.lang.Object[] { randoopHelper8, resourceTOList16, (byte) 100, 0.0f, (short) 10 };
+        java.lang.Object[] objArray20 = new java.lang.Object[] { RandoopHelperLogic8, resourceTOList16, (byte) 100, 0.0f, (short) 10 };
         // The following exception was thrown during execution in test generation
         try {
             org.apache.syncope.common.lib.to.ResourceTO resourceTO21 = resourceLogic0.resolveBeanReference(method7, objArray20);
@@ -7339,7 +7339,7 @@ public class ResourceLogicRandoopTest {
     public void test309() throws Throwable {
         if (debug)
             System.out.format("%n%s%n", "RegressionTest0.test309");
-        org.apache.syncope.core.logic.ResourceLogic resourceLogic0 = org.apache.syncope.core.logic.RandoopHelper.getConfiguredResourceLogic();
+        org.apache.syncope.core.logic.ResourceLogic resourceLogic0 = org.apache.syncope.core.logic.RandoopHelperLogic.getHelperResourceLogicRandoop();
         java.util.List<org.apache.syncope.common.lib.to.ResourceTO> resourceTOList1 = resourceLogic0.list();
         java.util.List<org.apache.syncope.common.lib.to.ResourceTO> resourceTOList2 = resourceLogic0.list();
         java.util.List<org.apache.syncope.common.lib.to.ResourceTO> resourceTOList3 = resourceLogic0.list();
@@ -7366,7 +7366,7 @@ public class ResourceLogicRandoopTest {
     public void test310() throws Throwable {
         if (debug)
             System.out.format("%n%s%n", "RegressionTest0.test310");
-        org.apache.syncope.core.logic.ResourceLogic resourceLogic0 = org.apache.syncope.core.logic.RandoopHelper.getConfiguredResourceLogic();
+        org.apache.syncope.core.logic.ResourceLogic resourceLogic0 = org.apache.syncope.core.logic.RandoopHelperLogic.getHelperResourceLogicRandoop();
         java.util.List<org.apache.syncope.common.lib.to.ResourceTO> resourceTOList1 = resourceLogic0.list();
         java.util.List<org.apache.syncope.common.lib.to.ResourceTO> resourceTOList2 = resourceLogic0.list();
         java.util.List<org.apache.syncope.common.lib.to.ResourceTO> resourceTOList3 = resourceLogic0.list();
@@ -7391,9 +7391,9 @@ public class ResourceLogicRandoopTest {
     public void test311() throws Throwable {
         if (debug)
             System.out.format("%n%s%n", "RegressionTest0.test311");
-        org.apache.syncope.core.logic.ResourceLogic resourceLogic0 = org.apache.syncope.core.logic.RandoopHelper.getConfiguredResourceLogic();
+        org.apache.syncope.core.logic.ResourceLogic resourceLogic0 = org.apache.syncope.core.logic.RandoopHelperLogic.getHelperResourceLogicRandoop();
         java.lang.reflect.Method method1 = null;
-        org.apache.syncope.common.lib.to.ResourceTO resourceTO4 = org.apache.syncope.core.logic.RandoopHelper.getValidResourceTO();
+        org.apache.syncope.common.lib.to.ResourceTO resourceTO4 = org.apache.syncope.core.logic.RandoopHelperLogic.getValidResourceTO();
         org.apache.syncope.core.persistence.api.dao.ExternalResourceDAO externalResourceDAO5 = null;
         org.apache.syncope.core.persistence.api.dao.AnyTypeDAO anyTypeDAO6 = null;
         org.apache.syncope.core.persistence.api.dao.ConnInstanceDAO connInstanceDAO7 = null;
@@ -7423,7 +7423,7 @@ public class ResourceLogicRandoopTest {
     public void test312() throws Throwable {
         if (debug)
             System.out.format("%n%s%n", "RegressionTest0.test312");
-        org.apache.syncope.core.logic.ResourceLogic resourceLogic0 = org.apache.syncope.core.logic.RandoopHelper.getConfiguredResourceLogic();
+        org.apache.syncope.core.logic.ResourceLogic resourceLogic0 = org.apache.syncope.core.logic.RandoopHelperLogic.getHelperResourceLogicRandoop();
         java.util.List<org.apache.syncope.common.lib.to.ResourceTO> resourceTOList1 = resourceLogic0.list();
         java.util.List<org.apache.syncope.common.lib.to.ResourceTO> resourceTOList2 = resourceLogic0.list();
         java.util.List<org.apache.syncope.common.lib.to.ResourceTO> resourceTOList3 = resourceLogic0.list();
@@ -7431,7 +7431,7 @@ public class ResourceLogicRandoopTest {
         java.util.List<org.apache.syncope.common.lib.to.ResourceTO> resourceTOList5 = resourceLogic0.list();
         java.util.List<org.apache.syncope.common.lib.to.ResourceTO> resourceTOList6 = resourceLogic0.list();
         java.util.List<org.apache.syncope.common.lib.to.ResourceTO> resourceTOList7 = resourceLogic0.list();
-        org.apache.syncope.common.lib.to.ResourceTO resourceTO8 = org.apache.syncope.core.logic.RandoopHelper.getValidResourceTO();
+        org.apache.syncope.common.lib.to.ResourceTO resourceTO8 = org.apache.syncope.core.logic.RandoopHelperLogic.getValidResourceTO();
         // The following exception was thrown during execution in test generation
         try {
             resourceLogic0.check(resourceTO8);
@@ -7490,7 +7490,7 @@ public class ResourceLogicRandoopTest {
     public void test314() throws Throwable {
         if (debug)
             System.out.format("%n%s%n", "RegressionTest0.test314");
-        org.apache.syncope.core.logic.ResourceLogic resourceLogic0 = org.apache.syncope.core.logic.RandoopHelper.getConfiguredResourceLogic();
+        org.apache.syncope.core.logic.ResourceLogic resourceLogic0 = org.apache.syncope.core.logic.RandoopHelperLogic.getHelperResourceLogicRandoop();
         java.util.List<org.apache.syncope.common.lib.to.ResourceTO> resourceTOList1 = resourceLogic0.list();
         java.util.List<org.apache.syncope.common.lib.to.ResourceTO> resourceTOList2 = resourceLogic0.list();
         java.util.List<org.apache.syncope.common.lib.to.ResourceTO> resourceTOList3 = resourceLogic0.list();
@@ -7524,7 +7524,7 @@ public class ResourceLogicRandoopTest {
     public void test315() throws Throwable {
         if (debug)
             System.out.format("%n%s%n", "RegressionTest0.test315");
-        org.apache.syncope.core.logic.ResourceLogic resourceLogic0 = org.apache.syncope.core.logic.RandoopHelper.getConfiguredResourceLogic();
+        org.apache.syncope.core.logic.ResourceLogic resourceLogic0 = org.apache.syncope.core.logic.RandoopHelperLogic.getHelperResourceLogicRandoop();
         java.util.List<org.apache.syncope.common.lib.to.ResourceTO> resourceTOList1 = resourceLogic0.list();
         java.util.List<org.apache.syncope.common.lib.to.ResourceTO> resourceTOList2 = resourceLogic0.list();
         java.util.List<org.apache.syncope.common.lib.to.ResourceTO> resourceTOList3 = resourceLogic0.list();
@@ -7545,7 +7545,7 @@ public class ResourceLogicRandoopTest {
     public void test316() throws Throwable {
         if (debug)
             System.out.format("%n%s%n", "RegressionTest0.test316");
-        org.apache.syncope.core.logic.ResourceLogic resourceLogic0 = org.apache.syncope.core.logic.RandoopHelper.getConfiguredResourceLogic();
+        org.apache.syncope.core.logic.ResourceLogic resourceLogic0 = org.apache.syncope.core.logic.RandoopHelperLogic.getHelperResourceLogicRandoop();
         java.util.List<org.apache.syncope.common.lib.to.ResourceTO> resourceTOList1 = resourceLogic0.list();
         java.util.List<org.apache.syncope.common.lib.to.ResourceTO> resourceTOList2 = resourceLogic0.list();
         java.util.List<org.apache.syncope.common.lib.to.ResourceTO> resourceTOList3 = resourceLogic0.list();
@@ -7570,7 +7570,7 @@ public class ResourceLogicRandoopTest {
     public void test317() throws Throwable {
         if (debug)
             System.out.format("%n%s%n", "RegressionTest0.test317");
-        org.apache.syncope.core.logic.ResourceLogic resourceLogic0 = org.apache.syncope.core.logic.RandoopHelper.getConfiguredResourceLogic();
+        org.apache.syncope.core.logic.ResourceLogic resourceLogic0 = org.apache.syncope.core.logic.RandoopHelperLogic.getHelperResourceLogicRandoop();
         java.util.List<org.apache.syncope.common.lib.to.ResourceTO> resourceTOList1 = resourceLogic0.list();
         java.util.List<org.apache.syncope.common.lib.to.ResourceTO> resourceTOList2 = resourceLogic0.list();
         java.lang.reflect.Method method3 = null;
@@ -7591,7 +7591,7 @@ public class ResourceLogicRandoopTest {
     public void test318() throws Throwable {
         if (debug)
             System.out.format("%n%s%n", "RegressionTest0.test318");
-        org.apache.syncope.core.logic.ResourceLogic resourceLogic0 = org.apache.syncope.core.logic.RandoopHelper.getConfiguredResourceLogic();
+        org.apache.syncope.core.logic.ResourceLogic resourceLogic0 = org.apache.syncope.core.logic.RandoopHelperLogic.getHelperResourceLogicRandoop();
         java.util.List<org.apache.syncope.common.lib.to.ResourceTO> resourceTOList1 = resourceLogic0.list();
         java.util.List<org.apache.syncope.common.lib.to.ResourceTO> resourceTOList2 = resourceLogic0.list();
         java.util.List<org.apache.syncope.common.lib.to.ResourceTO> resourceTOList3 = resourceLogic0.list();
@@ -7616,7 +7616,7 @@ public class ResourceLogicRandoopTest {
     public void test319() throws Throwable {
         if (debug)
             System.out.format("%n%s%n", "RegressionTest0.test319");
-        org.apache.syncope.core.logic.ResourceLogic resourceLogic0 = org.apache.syncope.core.logic.RandoopHelper.getConfiguredResourceLogic();
+        org.apache.syncope.core.logic.ResourceLogic resourceLogic0 = org.apache.syncope.core.logic.RandoopHelperLogic.getHelperResourceLogicRandoop();
         java.util.List<org.apache.syncope.common.lib.to.ResourceTO> resourceTOList1 = resourceLogic0.list();
         java.util.List<org.apache.syncope.common.lib.to.ResourceTO> resourceTOList2 = resourceLogic0.list();
         java.util.List<org.apache.syncope.common.lib.to.ResourceTO> resourceTOList3 = resourceLogic0.list();
@@ -7634,7 +7634,7 @@ public class ResourceLogicRandoopTest {
     public void test320() throws Throwable {
         if (debug)
             System.out.format("%n%s%n", "RegressionTest0.test320");
-        org.apache.syncope.core.logic.ResourceLogic resourceLogic0 = org.apache.syncope.core.logic.RandoopHelper.getConfiguredResourceLogic();
+        org.apache.syncope.core.logic.ResourceLogic resourceLogic0 = org.apache.syncope.core.logic.RandoopHelperLogic.getHelperResourceLogicRandoop();
         java.util.List<org.apache.syncope.common.lib.to.ResourceTO> resourceTOList1 = resourceLogic0.list();
         java.util.List<org.apache.syncope.common.lib.to.ResourceTO> resourceTOList2 = resourceLogic0.list();
         java.util.List<org.apache.syncope.common.lib.to.ResourceTO> resourceTOList3 = resourceLogic0.list();
@@ -7643,7 +7643,7 @@ public class ResourceLogicRandoopTest {
         java.util.List<org.apache.syncope.common.lib.to.ResourceTO> resourceTOList6 = resourceLogic0.list();
         java.util.List<org.apache.syncope.common.lib.to.ResourceTO> resourceTOList7 = resourceLogic0.list();
         java.lang.reflect.Method method8 = null;
-        org.apache.syncope.core.logic.ResourceLogic resourceLogic9 = org.apache.syncope.core.logic.RandoopHelper.getConfiguredResourceLogic();
+        org.apache.syncope.core.logic.ResourceLogic resourceLogic9 = org.apache.syncope.core.logic.RandoopHelperLogic.getHelperResourceLogicRandoop();
         java.util.List<org.apache.syncope.common.lib.to.ResourceTO> resourceTOList10 = resourceLogic9.list();
         java.lang.Object[] objArray12 = new java.lang.Object[] { resourceLogic9, 100 };
         // The following exception was thrown during execution in test generation
@@ -7670,7 +7670,7 @@ public class ResourceLogicRandoopTest {
     public void test321() throws Throwable {
         if (debug)
             System.out.format("%n%s%n", "RegressionTest0.test321");
-        org.apache.syncope.core.logic.ResourceLogic resourceLogic0 = org.apache.syncope.core.logic.RandoopHelper.getConfiguredResourceLogic();
+        org.apache.syncope.core.logic.ResourceLogic resourceLogic0 = org.apache.syncope.core.logic.RandoopHelperLogic.getHelperResourceLogicRandoop();
         java.util.List<org.apache.syncope.common.lib.to.ResourceTO> resourceTOList1 = resourceLogic0.list();
         java.util.List<org.apache.syncope.common.lib.to.ResourceTO> resourceTOList2 = resourceLogic0.list();
         org.identityconnectors.framework.common.objects.filter.Filter filter3 = null;
@@ -7702,7 +7702,7 @@ public class ResourceLogicRandoopTest {
     public void test322() throws Throwable {
         if (debug)
             System.out.format("%n%s%n", "RegressionTest0.test322");
-        org.apache.syncope.core.logic.ResourceLogic resourceLogic0 = org.apache.syncope.core.logic.RandoopHelper.getConfiguredResourceLogic();
+        org.apache.syncope.core.logic.ResourceLogic resourceLogic0 = org.apache.syncope.core.logic.RandoopHelperLogic.getHelperResourceLogicRandoop();
         java.util.List<org.apache.syncope.common.lib.to.ResourceTO> resourceTOList1 = resourceLogic0.list();
         java.util.List<org.apache.syncope.common.lib.to.ResourceTO> resourceTOList2 = resourceLogic0.list();
         java.util.List<org.apache.syncope.common.lib.to.ResourceTO> resourceTOList3 = resourceLogic0.list();
@@ -7733,7 +7733,7 @@ public class ResourceLogicRandoopTest {
     public void test323() throws Throwable {
         if (debug)
             System.out.format("%n%s%n", "RegressionTest0.test323");
-        org.apache.syncope.core.logic.ResourceLogic resourceLogic0 = org.apache.syncope.core.logic.RandoopHelper.getConfiguredResourceLogic();
+        org.apache.syncope.core.logic.ResourceLogic resourceLogic0 = org.apache.syncope.core.logic.RandoopHelperLogic.getHelperResourceLogicRandoop();
         java.util.List<org.apache.syncope.common.lib.to.ResourceTO> resourceTOList1 = resourceLogic0.list();
         java.util.List<org.apache.syncope.common.lib.to.ResourceTO> resourceTOList2 = resourceLogic0.list();
         java.util.List<org.apache.syncope.common.lib.to.ResourceTO> resourceTOList3 = resourceLogic0.list();
@@ -7770,7 +7770,7 @@ public class ResourceLogicRandoopTest {
     public void test324() throws Throwable {
         if (debug)
             System.out.format("%n%s%n", "RegressionTest0.test324");
-        org.apache.syncope.core.logic.ResourceLogic resourceLogic0 = org.apache.syncope.core.logic.RandoopHelper.getConfiguredResourceLogic();
+        org.apache.syncope.core.logic.ResourceLogic resourceLogic0 = org.apache.syncope.core.logic.RandoopHelperLogic.getHelperResourceLogicRandoop();
         java.util.List<org.apache.syncope.common.lib.to.ResourceTO> resourceTOList1 = resourceLogic0.list();
         java.util.List<org.apache.syncope.common.lib.to.ResourceTO> resourceTOList2 = resourceLogic0.list();
         java.util.List<org.apache.syncope.common.lib.to.ResourceTO> resourceTOList3 = resourceLogic0.list();
@@ -7791,7 +7791,7 @@ public class ResourceLogicRandoopTest {
     public void test325() throws Throwable {
         if (debug)
             System.out.format("%n%s%n", "RegressionTest0.test325");
-        org.apache.syncope.core.logic.ResourceLogic resourceLogic0 = org.apache.syncope.core.logic.RandoopHelper.getConfiguredResourceLogic();
+        org.apache.syncope.core.logic.ResourceLogic resourceLogic0 = org.apache.syncope.core.logic.RandoopHelperLogic.getHelperResourceLogicRandoop();
         java.util.List<org.apache.syncope.common.lib.to.ResourceTO> resourceTOList1 = resourceLogic0.list();
         java.util.List<org.apache.syncope.common.lib.to.ResourceTO> resourceTOList2 = resourceLogic0.list();
         java.util.List<org.apache.syncope.common.lib.to.ResourceTO> resourceTOList3 = resourceLogic0.list();
@@ -7820,7 +7820,7 @@ public class ResourceLogicRandoopTest {
     public void test326() throws Throwable {
         if (debug)
             System.out.format("%n%s%n", "RegressionTest0.test326");
-        org.apache.syncope.core.logic.ResourceLogic resourceLogic0 = org.apache.syncope.core.logic.RandoopHelper.getConfiguredResourceLogic();
+        org.apache.syncope.core.logic.ResourceLogic resourceLogic0 = org.apache.syncope.core.logic.RandoopHelperLogic.getHelperResourceLogicRandoop();
         java.util.List<org.apache.syncope.common.lib.to.ResourceTO> resourceTOList1 = resourceLogic0.list();
         java.util.List<org.apache.syncope.common.lib.to.ResourceTO> resourceTOList2 = resourceLogic0.list();
         java.util.List<org.apache.syncope.common.lib.to.ResourceTO> resourceTOList3 = resourceLogic0.list();
@@ -7847,7 +7847,7 @@ public class ResourceLogicRandoopTest {
     public void test327() throws Throwable {
         if (debug)
             System.out.format("%n%s%n", "RegressionTest0.test327");
-        org.apache.syncope.core.logic.ResourceLogic resourceLogic0 = org.apache.syncope.core.logic.RandoopHelper.getConfiguredResourceLogic();
+        org.apache.syncope.core.logic.ResourceLogic resourceLogic0 = org.apache.syncope.core.logic.RandoopHelperLogic.getHelperResourceLogicRandoop();
         java.util.List<org.apache.syncope.common.lib.to.ResourceTO> resourceTOList1 = resourceLogic0.list();
         java.util.List<org.apache.syncope.common.lib.to.ResourceTO> resourceTOList2 = resourceLogic0.list();
         java.util.List<org.apache.syncope.common.lib.to.ResourceTO> resourceTOList3 = resourceLogic0.list();
@@ -7868,15 +7868,15 @@ public class ResourceLogicRandoopTest {
     public void test328() throws Throwable {
         if (debug)
             System.out.format("%n%s%n", "RegressionTest0.test328");
-        org.apache.syncope.core.logic.ResourceLogic resourceLogic0 = org.apache.syncope.core.logic.RandoopHelper.getConfiguredResourceLogic();
+        org.apache.syncope.core.logic.ResourceLogic resourceLogic0 = org.apache.syncope.core.logic.RandoopHelperLogic.getHelperResourceLogicRandoop();
         java.util.List<org.apache.syncope.common.lib.to.ResourceTO> resourceTOList1 = resourceLogic0.list();
         java.util.List<org.apache.syncope.common.lib.to.ResourceTO> resourceTOList2 = resourceLogic0.list();
         java.util.List<org.apache.syncope.common.lib.to.ResourceTO> resourceTOList3 = resourceLogic0.list();
         java.util.List<org.apache.syncope.common.lib.to.ResourceTO> resourceTOList4 = resourceLogic0.list();
         java.lang.reflect.Method method5 = null;
-        org.apache.syncope.core.logic.ResourceLogic resourceLogic6 = org.apache.syncope.core.logic.RandoopHelper.getConfiguredResourceLogic();
+        org.apache.syncope.core.logic.ResourceLogic resourceLogic6 = org.apache.syncope.core.logic.RandoopHelperLogic.getHelperResourceLogicRandoop();
         java.util.List<org.apache.syncope.common.lib.to.ResourceTO> resourceTOList7 = resourceLogic6.list();
-        org.apache.syncope.core.logic.ResourceLogic resourceLogic8 = org.apache.syncope.core.logic.RandoopHelper.getConfiguredResourceLogic();
+        org.apache.syncope.core.logic.ResourceLogic resourceLogic8 = org.apache.syncope.core.logic.RandoopHelperLogic.getHelperResourceLogicRandoop();
         java.util.List<org.apache.syncope.common.lib.to.ResourceTO> resourceTOList9 = resourceLogic8.list();
         java.util.List<org.apache.syncope.common.lib.to.ResourceTO> resourceTOList10 = resourceLogic8.list();
         java.util.List<org.apache.syncope.common.lib.to.ResourceTO> resourceTOList11 = resourceLogic8.list();
@@ -7885,7 +7885,7 @@ public class ResourceLogicRandoopTest {
         java.util.List<org.apache.syncope.common.lib.to.ResourceTO> resourceTOList14 = resourceLogic8.list();
         java.util.List<org.apache.syncope.common.lib.to.ResourceTO> resourceTOList15 = resourceLogic8.list();
         java.util.List<org.apache.syncope.common.lib.to.ResourceTO> resourceTOList16 = resourceLogic8.list();
-        org.apache.syncope.core.logic.ResourceLogic resourceLogic18 = org.apache.syncope.core.logic.RandoopHelper.getConfiguredResourceLogic();
+        org.apache.syncope.core.logic.ResourceLogic resourceLogic18 = org.apache.syncope.core.logic.RandoopHelperLogic.getHelperResourceLogicRandoop();
         java.util.List<org.apache.syncope.common.lib.to.ResourceTO> resourceTOList19 = resourceLogic18.list();
         java.util.List<org.apache.syncope.common.lib.to.ResourceTO> resourceTOList20 = resourceLogic18.list();
         java.util.List<org.apache.syncope.common.lib.to.ResourceTO> resourceTOList21 = resourceLogic18.list();
@@ -7930,7 +7930,7 @@ public class ResourceLogicRandoopTest {
     public void test329() throws Throwable {
         if (debug)
             System.out.format("%n%s%n", "RegressionTest0.test329");
-        org.apache.syncope.core.logic.ResourceLogic resourceLogic0 = org.apache.syncope.core.logic.RandoopHelper.getConfiguredResourceLogic();
+        org.apache.syncope.core.logic.ResourceLogic resourceLogic0 = org.apache.syncope.core.logic.RandoopHelperLogic.getHelperResourceLogicRandoop();
         java.util.List<org.apache.syncope.common.lib.to.ResourceTO> resourceTOList1 = resourceLogic0.list();
         java.util.List<org.apache.syncope.common.lib.to.ResourceTO> resourceTOList2 = resourceLogic0.list();
         java.util.List<org.apache.syncope.common.lib.to.ResourceTO> resourceTOList3 = resourceLogic0.list();
@@ -7953,7 +7953,7 @@ public class ResourceLogicRandoopTest {
     public void test330() throws Throwable {
         if (debug)
             System.out.format("%n%s%n", "RegressionTest0.test330");
-        org.apache.syncope.core.logic.ResourceLogic resourceLogic0 = org.apache.syncope.core.logic.RandoopHelper.getConfiguredResourceLogic();
+        org.apache.syncope.core.logic.ResourceLogic resourceLogic0 = org.apache.syncope.core.logic.RandoopHelperLogic.getHelperResourceLogicRandoop();
         java.util.List<org.apache.syncope.common.lib.to.ResourceTO> resourceTOList1 = resourceLogic0.list();
         java.util.List<org.apache.syncope.common.lib.to.ResourceTO> resourceTOList2 = resourceLogic0.list();
         java.util.List<org.apache.syncope.common.lib.to.ResourceTO> resourceTOList3 = resourceLogic0.list();
@@ -7986,7 +7986,7 @@ public class ResourceLogicRandoopTest {
     public void test331() throws Throwable {
         if (debug)
             System.out.format("%n%s%n", "RegressionTest0.test331");
-        org.apache.syncope.core.logic.ResourceLogic resourceLogic0 = org.apache.syncope.core.logic.RandoopHelper.getConfiguredResourceLogic();
+        org.apache.syncope.core.logic.ResourceLogic resourceLogic0 = org.apache.syncope.core.logic.RandoopHelperLogic.getHelperResourceLogicRandoop();
         java.util.List<org.apache.syncope.common.lib.to.ResourceTO> resourceTOList1 = resourceLogic0.list();
         java.util.List<org.apache.syncope.common.lib.to.ResourceTO> resourceTOList2 = resourceLogic0.list();
         java.util.List<org.apache.syncope.common.lib.to.ResourceTO> resourceTOList3 = resourceLogic0.list();
@@ -8020,7 +8020,7 @@ public class ResourceLogicRandoopTest {
     public void test332() throws Throwable {
         if (debug)
             System.out.format("%n%s%n", "RegressionTest0.test332");
-        org.apache.syncope.core.logic.ResourceLogic resourceLogic0 = org.apache.syncope.core.logic.RandoopHelper.getConfiguredResourceLogic();
+        org.apache.syncope.core.logic.ResourceLogic resourceLogic0 = org.apache.syncope.core.logic.RandoopHelperLogic.getHelperResourceLogicRandoop();
         java.util.List<org.apache.syncope.common.lib.to.ResourceTO> resourceTOList1 = resourceLogic0.list();
         java.util.List<org.apache.syncope.common.lib.to.ResourceTO> resourceTOList2 = resourceLogic0.list();
         java.util.List<org.apache.syncope.common.lib.to.ResourceTO> resourceTOList3 = resourceLogic0.list();
@@ -8045,7 +8045,7 @@ public class ResourceLogicRandoopTest {
     public void test333() throws Throwable {
         if (debug)
             System.out.format("%n%s%n", "RegressionTest0.test333");
-        org.apache.syncope.core.logic.ResourceLogic resourceLogic0 = org.apache.syncope.core.logic.RandoopHelper.getConfiguredResourceLogic();
+        org.apache.syncope.core.logic.ResourceLogic resourceLogic0 = org.apache.syncope.core.logic.RandoopHelperLogic.getHelperResourceLogicRandoop();
         java.util.List<org.apache.syncope.common.lib.to.ResourceTO> resourceTOList1 = resourceLogic0.list();
         java.util.List<org.apache.syncope.common.lib.to.ResourceTO> resourceTOList2 = resourceLogic0.list();
         java.util.List<org.apache.syncope.common.lib.to.ResourceTO> resourceTOList3 = resourceLogic0.list();
@@ -8083,10 +8083,10 @@ public class ResourceLogicRandoopTest {
     public void test334() throws Throwable {
         if (debug)
             System.out.format("%n%s%n", "RegressionTest0.test334");
-        org.apache.syncope.core.logic.ResourceLogic resourceLogic0 = org.apache.syncope.core.logic.RandoopHelper.getConfiguredResourceLogic();
+        org.apache.syncope.core.logic.ResourceLogic resourceLogic0 = org.apache.syncope.core.logic.RandoopHelperLogic.getHelperResourceLogicRandoop();
         java.util.List<org.apache.syncope.common.lib.to.ResourceTO> resourceTOList1 = resourceLogic0.list();
         java.util.List<org.apache.syncope.common.lib.to.ResourceTO> resourceTOList2 = resourceLogic0.list();
-        org.apache.syncope.common.lib.to.ResourceTO resourceTO3 = org.apache.syncope.core.logic.RandoopHelper.getValidResourceTO();
+        org.apache.syncope.common.lib.to.ResourceTO resourceTO3 = org.apache.syncope.core.logic.RandoopHelperLogic.getValidResourceTO();
         // The following exception was thrown during execution in test generation
         try {
             resourceLogic0.check(resourceTO3);
@@ -8104,7 +8104,7 @@ public class ResourceLogicRandoopTest {
     public void test335() throws Throwable {
         if (debug)
             System.out.format("%n%s%n", "RegressionTest0.test335");
-        org.apache.syncope.core.logic.ResourceLogic resourceLogic0 = org.apache.syncope.core.logic.RandoopHelper.getConfiguredResourceLogic();
+        org.apache.syncope.core.logic.ResourceLogic resourceLogic0 = org.apache.syncope.core.logic.RandoopHelperLogic.getHelperResourceLogicRandoop();
         java.util.List<org.apache.syncope.common.lib.to.ResourceTO> resourceTOList1 = resourceLogic0.list();
         java.util.List<org.apache.syncope.common.lib.to.ResourceTO> resourceTOList2 = resourceLogic0.list();
         java.util.List<org.apache.syncope.common.lib.to.ResourceTO> resourceTOList3 = resourceLogic0.list();
@@ -8125,7 +8125,7 @@ public class ResourceLogicRandoopTest {
     public void test336() throws Throwable {
         if (debug)
             System.out.format("%n%s%n", "RegressionTest0.test336");
-        org.apache.syncope.core.logic.ResourceLogic resourceLogic0 = org.apache.syncope.core.logic.RandoopHelper.getConfiguredResourceLogic();
+        org.apache.syncope.core.logic.ResourceLogic resourceLogic0 = org.apache.syncope.core.logic.RandoopHelperLogic.getHelperResourceLogicRandoop();
         java.util.List<org.apache.syncope.common.lib.to.ResourceTO> resourceTOList1 = resourceLogic0.list();
         java.util.List<org.apache.syncope.common.lib.to.ResourceTO> resourceTOList2 = resourceLogic0.list();
         java.util.List<org.apache.syncope.common.lib.to.ResourceTO> resourceTOList3 = resourceLogic0.list();
@@ -8154,7 +8154,7 @@ public class ResourceLogicRandoopTest {
     public void test337() throws Throwable {
         if (debug)
             System.out.format("%n%s%n", "RegressionTest0.test337");
-        org.apache.syncope.core.logic.ResourceLogic resourceLogic0 = org.apache.syncope.core.logic.RandoopHelper.getConfiguredResourceLogic();
+        org.apache.syncope.core.logic.ResourceLogic resourceLogic0 = org.apache.syncope.core.logic.RandoopHelperLogic.getHelperResourceLogicRandoop();
         java.util.List<org.apache.syncope.common.lib.to.ResourceTO> resourceTOList1 = resourceLogic0.list();
         org.identityconnectors.framework.common.objects.filter.Filter filter2 = null;
         java.lang.String[] strArray5 = new java.lang.String[] { "", "" };
@@ -8184,7 +8184,7 @@ public class ResourceLogicRandoopTest {
     public void test338() throws Throwable {
         if (debug)
             System.out.format("%n%s%n", "RegressionTest0.test338");
-        org.apache.syncope.core.logic.ResourceLogic resourceLogic0 = org.apache.syncope.core.logic.RandoopHelper.getConfiguredResourceLogic();
+        org.apache.syncope.core.logic.ResourceLogic resourceLogic0 = org.apache.syncope.core.logic.RandoopHelperLogic.getHelperResourceLogicRandoop();
         java.util.List<org.apache.syncope.common.lib.to.ResourceTO> resourceTOList1 = resourceLogic0.list();
         java.util.List<org.apache.syncope.common.lib.to.ResourceTO> resourceTOList2 = resourceLogic0.list();
         java.util.List<org.apache.syncope.common.lib.to.ResourceTO> resourceTOList3 = resourceLogic0.list();
@@ -8210,7 +8210,7 @@ public class ResourceLogicRandoopTest {
     public void test339() throws Throwable {
         if (debug)
             System.out.format("%n%s%n", "RegressionTest0.test339");
-        org.apache.syncope.core.logic.ResourceLogic resourceLogic0 = org.apache.syncope.core.logic.RandoopHelper.getConfiguredResourceLogic();
+        org.apache.syncope.core.logic.ResourceLogic resourceLogic0 = org.apache.syncope.core.logic.RandoopHelperLogic.getHelperResourceLogicRandoop();
         java.util.List<org.apache.syncope.common.lib.to.ResourceTO> resourceTOList1 = resourceLogic0.list();
         java.util.List<org.apache.syncope.common.lib.to.ResourceTO> resourceTOList2 = resourceLogic0.list();
         java.util.List<org.apache.syncope.common.lib.to.ResourceTO> resourceTOList3 = resourceLogic0.list();
@@ -8241,7 +8241,7 @@ public class ResourceLogicRandoopTest {
     public void test340() throws Throwable {
         if (debug)
             System.out.format("%n%s%n", "RegressionTest0.test340");
-        org.apache.syncope.core.logic.ResourceLogic resourceLogic0 = org.apache.syncope.core.logic.RandoopHelper.getConfiguredResourceLogic();
+        org.apache.syncope.core.logic.ResourceLogic resourceLogic0 = org.apache.syncope.core.logic.RandoopHelperLogic.getHelperResourceLogicRandoop();
         java.util.List<org.apache.syncope.common.lib.to.ResourceTO> resourceTOList1 = resourceLogic0.list();
         java.util.List<org.apache.syncope.common.lib.to.ResourceTO> resourceTOList2 = resourceLogic0.list();
         java.util.List<org.apache.syncope.common.lib.to.ResourceTO> resourceTOList3 = resourceLogic0.list();
@@ -8264,7 +8264,7 @@ public class ResourceLogicRandoopTest {
     public void test341() throws Throwable {
         if (debug)
             System.out.format("%n%s%n", "RegressionTest0.test341");
-        org.apache.syncope.core.logic.ResourceLogic resourceLogic0 = org.apache.syncope.core.logic.RandoopHelper.getConfiguredResourceLogic();
+        org.apache.syncope.core.logic.ResourceLogic resourceLogic0 = org.apache.syncope.core.logic.RandoopHelperLogic.getHelperResourceLogicRandoop();
         java.util.List<org.apache.syncope.common.lib.to.ResourceTO> resourceTOList1 = resourceLogic0.list();
         java.util.List<org.apache.syncope.common.lib.to.ResourceTO> resourceTOList2 = resourceLogic0.list();
         java.util.List<org.apache.syncope.common.lib.to.ResourceTO> resourceTOList3 = resourceLogic0.list();
@@ -8291,7 +8291,7 @@ public class ResourceLogicRandoopTest {
     public void test342() throws Throwable {
         if (debug)
             System.out.format("%n%s%n", "RegressionTest0.test342");
-        org.apache.syncope.core.logic.ResourceLogic resourceLogic0 = org.apache.syncope.core.logic.RandoopHelper.getConfiguredResourceLogic();
+        org.apache.syncope.core.logic.ResourceLogic resourceLogic0 = org.apache.syncope.core.logic.RandoopHelperLogic.getHelperResourceLogicRandoop();
         java.util.List<org.apache.syncope.common.lib.to.ResourceTO> resourceTOList1 = resourceLogic0.list();
         java.util.List<org.apache.syncope.common.lib.to.ResourceTO> resourceTOList2 = resourceLogic0.list();
         java.util.List<org.apache.syncope.common.lib.to.ResourceTO> resourceTOList3 = resourceLogic0.list();
@@ -8322,7 +8322,7 @@ public class ResourceLogicRandoopTest {
     public void test343() throws Throwable {
         if (debug)
             System.out.format("%n%s%n", "RegressionTest0.test343");
-        org.apache.syncope.core.logic.ResourceLogic resourceLogic0 = org.apache.syncope.core.logic.RandoopHelper.getConfiguredResourceLogic();
+        org.apache.syncope.core.logic.ResourceLogic resourceLogic0 = org.apache.syncope.core.logic.RandoopHelperLogic.getHelperResourceLogicRandoop();
         java.util.List<org.apache.syncope.common.lib.to.ResourceTO> resourceTOList1 = resourceLogic0.list();
         java.util.List<org.apache.syncope.common.lib.to.ResourceTO> resourceTOList2 = resourceLogic0.list();
         java.util.List<org.apache.syncope.common.lib.to.ResourceTO> resourceTOList3 = resourceLogic0.list();
@@ -8331,7 +8331,7 @@ public class ResourceLogicRandoopTest {
         java.util.List<org.apache.syncope.common.lib.to.ResourceTO> resourceTOList6 = resourceLogic0.list();
         java.util.List<org.apache.syncope.common.lib.to.ResourceTO> resourceTOList7 = resourceLogic0.list();
         java.util.List<org.apache.syncope.common.lib.to.ResourceTO> resourceTOList8 = resourceLogic0.list();
-        org.apache.syncope.common.lib.to.ResourceTO resourceTO9 = org.apache.syncope.core.logic.RandoopHelper.getValidResourceTO();
+        org.apache.syncope.common.lib.to.ResourceTO resourceTO9 = org.apache.syncope.core.logic.RandoopHelperLogic.getValidResourceTO();
         // The following exception was thrown during execution in test generation
         try {
             resourceLogic0.check(resourceTO9);
@@ -8355,7 +8355,7 @@ public class ResourceLogicRandoopTest {
     public void test344() throws Throwable {
         if (debug)
             System.out.format("%n%s%n", "RegressionTest0.test344");
-        org.apache.syncope.core.logic.ResourceLogic resourceLogic0 = org.apache.syncope.core.logic.RandoopHelper.getConfiguredResourceLogic();
+        org.apache.syncope.core.logic.ResourceLogic resourceLogic0 = org.apache.syncope.core.logic.RandoopHelperLogic.getHelperResourceLogicRandoop();
         java.util.List<org.apache.syncope.common.lib.to.ResourceTO> resourceTOList1 = resourceLogic0.list();
         java.util.List<org.apache.syncope.common.lib.to.ResourceTO> resourceTOList2 = resourceLogic0.list();
         java.util.List<org.apache.syncope.common.lib.to.ResourceTO> resourceTOList3 = resourceLogic0.list();
@@ -8377,7 +8377,7 @@ public class ResourceLogicRandoopTest {
     public void test345() throws Throwable {
         if (debug)
             System.out.format("%n%s%n", "RegressionTest0.test345");
-        org.apache.syncope.core.logic.ResourceLogic resourceLogic0 = org.apache.syncope.core.logic.RandoopHelper.getConfiguredResourceLogic();
+        org.apache.syncope.core.logic.ResourceLogic resourceLogic0 = org.apache.syncope.core.logic.RandoopHelperLogic.getHelperResourceLogicRandoop();
         // The following exception was thrown during execution in test generation
         try {
             org.apache.syncope.common.lib.to.ResourceTO resourceTO2 = resourceLogic0.delete("hi!");
@@ -8392,14 +8392,14 @@ public class ResourceLogicRandoopTest {
     public void test346() throws Throwable {
         if (debug)
             System.out.format("%n%s%n", "RegressionTest0.test346");
-        org.apache.syncope.core.logic.ResourceLogic resourceLogic0 = org.apache.syncope.core.logic.RandoopHelper.getConfiguredResourceLogic();
+        org.apache.syncope.core.logic.ResourceLogic resourceLogic0 = org.apache.syncope.core.logic.RandoopHelperLogic.getHelperResourceLogicRandoop();
         java.util.List<org.apache.syncope.common.lib.to.ResourceTO> resourceTOList1 = resourceLogic0.list();
         java.util.List<org.apache.syncope.common.lib.to.ResourceTO> resourceTOList2 = resourceLogic0.list();
         java.util.List<org.apache.syncope.common.lib.to.ResourceTO> resourceTOList3 = resourceLogic0.list();
         java.util.List<org.apache.syncope.common.lib.to.ResourceTO> resourceTOList4 = resourceLogic0.list();
         java.util.List<org.apache.syncope.common.lib.to.ResourceTO> resourceTOList5 = resourceLogic0.list();
         java.util.List<org.apache.syncope.common.lib.to.ResourceTO> resourceTOList6 = resourceLogic0.list();
-        org.apache.syncope.common.lib.to.ResourceTO resourceTO7 = org.apache.syncope.core.logic.RandoopHelper.getValidResourceTO();
+        org.apache.syncope.common.lib.to.ResourceTO resourceTO7 = org.apache.syncope.core.logic.RandoopHelperLogic.getValidResourceTO();
         // The following exception was thrown during execution in test generation
         try {
             org.apache.syncope.common.lib.to.ResourceTO resourceTO8 = resourceLogic0.update(resourceTO7);
@@ -8421,7 +8421,7 @@ public class ResourceLogicRandoopTest {
     public void test347() throws Throwable {
         if (debug)
             System.out.format("%n%s%n", "RegressionTest0.test347");
-        org.apache.syncope.core.logic.ResourceLogic resourceLogic0 = org.apache.syncope.core.logic.RandoopHelper.getConfiguredResourceLogic();
+        org.apache.syncope.core.logic.ResourceLogic resourceLogic0 = org.apache.syncope.core.logic.RandoopHelperLogic.getHelperResourceLogicRandoop();
         // The following exception was thrown during execution in test generation
         try {
             org.apache.syncope.common.lib.to.ConnObject connObject4 = resourceLogic0.readConnObjectByConnObjectKeyValue("hi!", "hi!", "hi!");
@@ -8436,7 +8436,7 @@ public class ResourceLogicRandoopTest {
     public void test348() throws Throwable {
         if (debug)
             System.out.format("%n%s%n", "RegressionTest0.test348");
-        org.apache.syncope.core.logic.ResourceLogic resourceLogic0 = org.apache.syncope.core.logic.RandoopHelper.getConfiguredResourceLogic();
+        org.apache.syncope.core.logic.ResourceLogic resourceLogic0 = org.apache.syncope.core.logic.RandoopHelperLogic.getHelperResourceLogicRandoop();
         java.util.List<org.apache.syncope.common.lib.to.ResourceTO> resourceTOList1 = resourceLogic0.list();
         java.util.List<org.apache.syncope.common.lib.to.ResourceTO> resourceTOList2 = resourceLogic0.list();
         java.util.List<org.apache.syncope.common.lib.to.ResourceTO> resourceTOList3 = resourceLogic0.list();
@@ -8463,7 +8463,7 @@ public class ResourceLogicRandoopTest {
     public void test349() throws Throwable {
         if (debug)
             System.out.format("%n%s%n", "RegressionTest0.test349");
-        org.apache.syncope.core.logic.ResourceLogic resourceLogic0 = org.apache.syncope.core.logic.RandoopHelper.getConfiguredResourceLogic();
+        org.apache.syncope.core.logic.ResourceLogic resourceLogic0 = org.apache.syncope.core.logic.RandoopHelperLogic.getHelperResourceLogicRandoop();
         java.util.List<org.apache.syncope.common.lib.to.ResourceTO> resourceTOList1 = resourceLogic0.list();
         java.util.List<org.apache.syncope.common.lib.to.ResourceTO> resourceTOList2 = resourceLogic0.list();
         java.util.List<org.apache.syncope.common.lib.to.ResourceTO> resourceTOList3 = resourceLogic0.list();
@@ -8499,7 +8499,7 @@ public class ResourceLogicRandoopTest {
     public void test350() throws Throwable {
         if (debug)
             System.out.format("%n%s%n", "RegressionTest0.test350");
-        org.apache.syncope.core.logic.ResourceLogic resourceLogic0 = org.apache.syncope.core.logic.RandoopHelper.getConfiguredResourceLogic();
+        org.apache.syncope.core.logic.ResourceLogic resourceLogic0 = org.apache.syncope.core.logic.RandoopHelperLogic.getHelperResourceLogicRandoop();
         java.util.List<org.apache.syncope.common.lib.to.ResourceTO> resourceTOList1 = resourceLogic0.list();
         java.util.List<org.apache.syncope.common.lib.to.ResourceTO> resourceTOList2 = resourceLogic0.list();
         java.util.List<org.apache.syncope.common.lib.to.ResourceTO> resourceTOList3 = resourceLogic0.list();
@@ -8509,7 +8509,7 @@ public class ResourceLogicRandoopTest {
         java.util.List<org.apache.syncope.common.lib.to.ResourceTO> resourceTOList7 = resourceLogic0.list();
         java.util.List<org.apache.syncope.common.lib.to.ResourceTO> resourceTOList8 = resourceLogic0.list();
         java.util.List<org.apache.syncope.common.lib.to.ResourceTO> resourceTOList9 = resourceLogic0.list();
-        org.apache.syncope.common.lib.to.ResourceTO resourceTO10 = org.apache.syncope.core.logic.RandoopHelper.getValidResourceTO();
+        org.apache.syncope.common.lib.to.ResourceTO resourceTO10 = org.apache.syncope.core.logic.RandoopHelperLogic.getValidResourceTO();
         // The following exception was thrown during execution in test generation
         try {
             org.apache.syncope.common.lib.to.ResourceTO resourceTO11 = resourceLogic0.update(resourceTO10);
@@ -8534,7 +8534,7 @@ public class ResourceLogicRandoopTest {
     public void test351() throws Throwable {
         if (debug)
             System.out.format("%n%s%n", "RegressionTest0.test351");
-        org.apache.syncope.core.logic.ResourceLogic resourceLogic0 = org.apache.syncope.core.logic.RandoopHelper.getConfiguredResourceLogic();
+        org.apache.syncope.core.logic.ResourceLogic resourceLogic0 = org.apache.syncope.core.logic.RandoopHelperLogic.getHelperResourceLogicRandoop();
         java.util.List<org.apache.syncope.common.lib.to.ResourceTO> resourceTOList1 = resourceLogic0.list();
         java.util.List<org.apache.syncope.common.lib.to.ResourceTO> resourceTOList2 = resourceLogic0.list();
         java.util.List<org.apache.syncope.common.lib.to.ResourceTO> resourceTOList3 = resourceLogic0.list();
@@ -8561,7 +8561,7 @@ public class ResourceLogicRandoopTest {
     public void test352() throws Throwable {
         if (debug)
             System.out.format("%n%s%n", "RegressionTest0.test352");
-        org.apache.syncope.core.logic.ResourceLogic resourceLogic0 = org.apache.syncope.core.logic.RandoopHelper.getConfiguredResourceLogic();
+        org.apache.syncope.core.logic.ResourceLogic resourceLogic0 = org.apache.syncope.core.logic.RandoopHelperLogic.getHelperResourceLogicRandoop();
         java.util.List<org.apache.syncope.common.lib.to.ResourceTO> resourceTOList1 = resourceLogic0.list();
         java.util.List<org.apache.syncope.common.lib.to.ResourceTO> resourceTOList2 = resourceLogic0.list();
         java.util.List<org.apache.syncope.common.lib.to.ResourceTO> resourceTOList3 = resourceLogic0.list();
@@ -8592,7 +8592,7 @@ public class ResourceLogicRandoopTest {
     public void test353() throws Throwable {
         if (debug)
             System.out.format("%n%s%n", "RegressionTest0.test353");
-        org.apache.syncope.core.logic.ResourceLogic resourceLogic0 = org.apache.syncope.core.logic.RandoopHelper.getConfiguredResourceLogic();
+        org.apache.syncope.core.logic.ResourceLogic resourceLogic0 = org.apache.syncope.core.logic.RandoopHelperLogic.getHelperResourceLogicRandoop();
         java.util.List<org.apache.syncope.common.lib.to.ResourceTO> resourceTOList1 = resourceLogic0.list();
         java.util.List<org.apache.syncope.common.lib.to.ResourceTO> resourceTOList2 = resourceLogic0.list();
         java.util.List<org.apache.syncope.common.lib.to.ResourceTO> resourceTOList3 = resourceLogic0.list();
@@ -8623,7 +8623,7 @@ public class ResourceLogicRandoopTest {
     public void test354() throws Throwable {
         if (debug)
             System.out.format("%n%s%n", "RegressionTest0.test354");
-        org.apache.syncope.core.logic.ResourceLogic resourceLogic0 = org.apache.syncope.core.logic.RandoopHelper.getConfiguredResourceLogic();
+        org.apache.syncope.core.logic.ResourceLogic resourceLogic0 = org.apache.syncope.core.logic.RandoopHelperLogic.getHelperResourceLogicRandoop();
         java.util.List<org.apache.syncope.common.lib.to.ResourceTO> resourceTOList1 = resourceLogic0.list();
         java.util.List<org.apache.syncope.common.lib.to.ResourceTO> resourceTOList2 = resourceLogic0.list();
         java.util.List<org.apache.syncope.common.lib.to.ResourceTO> resourceTOList3 = resourceLogic0.list();
@@ -8657,7 +8657,7 @@ public class ResourceLogicRandoopTest {
     public void test355() throws Throwable {
         if (debug)
             System.out.format("%n%s%n", "RegressionTest0.test355");
-        org.apache.syncope.core.logic.ResourceLogic resourceLogic0 = org.apache.syncope.core.logic.RandoopHelper.getConfiguredResourceLogic();
+        org.apache.syncope.core.logic.ResourceLogic resourceLogic0 = org.apache.syncope.core.logic.RandoopHelperLogic.getHelperResourceLogicRandoop();
         java.util.List<org.apache.syncope.common.lib.to.ResourceTO> resourceTOList1 = resourceLogic0.list();
         java.util.List<org.apache.syncope.common.lib.to.ResourceTO> resourceTOList2 = resourceLogic0.list();
         java.util.List<org.apache.syncope.common.lib.to.ResourceTO> resourceTOList3 = resourceLogic0.list();
@@ -8699,7 +8699,7 @@ public class ResourceLogicRandoopTest {
     public void test356() throws Throwable {
         if (debug)
             System.out.format("%n%s%n", "RegressionTest0.test356");
-        org.apache.syncope.core.logic.ResourceLogic resourceLogic0 = org.apache.syncope.core.logic.RandoopHelper.getConfiguredResourceLogic();
+        org.apache.syncope.core.logic.ResourceLogic resourceLogic0 = org.apache.syncope.core.logic.RandoopHelperLogic.getHelperResourceLogicRandoop();
         java.util.List<org.apache.syncope.common.lib.to.ResourceTO> resourceTOList1 = resourceLogic0.list();
         java.util.List<org.apache.syncope.common.lib.to.ResourceTO> resourceTOList2 = resourceLogic0.list();
         // The following exception was thrown during execution in test generation
@@ -8718,7 +8718,7 @@ public class ResourceLogicRandoopTest {
     public void test357() throws Throwable {
         if (debug)
             System.out.format("%n%s%n", "RegressionTest0.test357");
-        org.apache.syncope.core.logic.ResourceLogic resourceLogic0 = org.apache.syncope.core.logic.RandoopHelper.getConfiguredResourceLogic();
+        org.apache.syncope.core.logic.ResourceLogic resourceLogic0 = org.apache.syncope.core.logic.RandoopHelperLogic.getHelperResourceLogicRandoop();
         java.util.List<org.apache.syncope.common.lib.to.ResourceTO> resourceTOList1 = resourceLogic0.list();
         java.util.List<org.apache.syncope.common.lib.to.ResourceTO> resourceTOList2 = resourceLogic0.list();
         java.util.List<org.apache.syncope.common.lib.to.ResourceTO> resourceTOList3 = resourceLogic0.list();
@@ -8772,7 +8772,7 @@ public class ResourceLogicRandoopTest {
     public void test359() throws Throwable {
         if (debug)
             System.out.format("%n%s%n", "RegressionTest0.test359");
-        org.apache.syncope.core.logic.ResourceLogic resourceLogic0 = org.apache.syncope.core.logic.RandoopHelper.getConfiguredResourceLogic();
+        org.apache.syncope.core.logic.ResourceLogic resourceLogic0 = org.apache.syncope.core.logic.RandoopHelperLogic.getHelperResourceLogicRandoop();
         java.util.List<org.apache.syncope.common.lib.to.ResourceTO> resourceTOList1 = resourceLogic0.list();
         java.util.List<org.apache.syncope.common.lib.to.ResourceTO> resourceTOList2 = resourceLogic0.list();
         java.util.List<org.apache.syncope.common.lib.to.ResourceTO> resourceTOList3 = resourceLogic0.list();
@@ -8799,7 +8799,7 @@ public class ResourceLogicRandoopTest {
     public void test360() throws Throwable {
         if (debug)
             System.out.format("%n%s%n", "RegressionTest0.test360");
-        org.apache.syncope.core.logic.ResourceLogic resourceLogic0 = org.apache.syncope.core.logic.RandoopHelper.getConfiguredResourceLogic();
+        org.apache.syncope.core.logic.ResourceLogic resourceLogic0 = org.apache.syncope.core.logic.RandoopHelperLogic.getHelperResourceLogicRandoop();
         java.util.List<org.apache.syncope.common.lib.to.ResourceTO> resourceTOList1 = resourceLogic0.list();
         java.util.List<org.apache.syncope.common.lib.to.ResourceTO> resourceTOList2 = resourceLogic0.list();
         java.util.List<org.apache.syncope.common.lib.to.ResourceTO> resourceTOList3 = resourceLogic0.list();
@@ -8828,7 +8828,7 @@ public class ResourceLogicRandoopTest {
     public void test361() throws Throwable {
         if (debug)
             System.out.format("%n%s%n", "RegressionTest0.test361");
-        org.apache.syncope.core.logic.ResourceLogic resourceLogic0 = org.apache.syncope.core.logic.RandoopHelper.getConfiguredResourceLogic();
+        org.apache.syncope.core.logic.ResourceLogic resourceLogic0 = org.apache.syncope.core.logic.RandoopHelperLogic.getHelperResourceLogicRandoop();
         java.util.List<org.apache.syncope.common.lib.to.ResourceTO> resourceTOList1 = resourceLogic0.list();
         java.util.List<org.apache.syncope.common.lib.to.ResourceTO> resourceTOList2 = resourceLogic0.list();
         java.util.List<org.apache.syncope.common.lib.to.ResourceTO> resourceTOList3 = resourceLogic0.list();
@@ -8855,7 +8855,7 @@ public class ResourceLogicRandoopTest {
     public void test362() throws Throwable {
         if (debug)
             System.out.format("%n%s%n", "RegressionTest0.test362");
-        org.apache.syncope.core.logic.ResourceLogic resourceLogic0 = org.apache.syncope.core.logic.RandoopHelper.getConfiguredResourceLogic();
+        org.apache.syncope.core.logic.ResourceLogic resourceLogic0 = org.apache.syncope.core.logic.RandoopHelperLogic.getHelperResourceLogicRandoop();
         // The following exception was thrown during execution in test generation
         try {
             org.apache.syncope.common.lib.to.ResourceTO resourceTO2 = resourceLogic0.read("hi!");
@@ -8870,7 +8870,7 @@ public class ResourceLogicRandoopTest {
     public void test363() throws Throwable {
         if (debug)
             System.out.format("%n%s%n", "RegressionTest0.test363");
-        org.apache.syncope.core.logic.ResourceLogic resourceLogic0 = org.apache.syncope.core.logic.RandoopHelper.getConfiguredResourceLogic();
+        org.apache.syncope.core.logic.ResourceLogic resourceLogic0 = org.apache.syncope.core.logic.RandoopHelperLogic.getHelperResourceLogicRandoop();
         java.util.List<org.apache.syncope.common.lib.to.ResourceTO> resourceTOList1 = resourceLogic0.list();
         java.util.List<org.apache.syncope.common.lib.to.ResourceTO> resourceTOList2 = resourceLogic0.list();
         java.util.List<org.apache.syncope.common.lib.to.ResourceTO> resourceTOList3 = resourceLogic0.list();
@@ -8908,7 +8908,7 @@ public class ResourceLogicRandoopTest {
     public void test364() throws Throwable {
         if (debug)
             System.out.format("%n%s%n", "RegressionTest0.test364");
-        org.apache.syncope.core.logic.ResourceLogic resourceLogic0 = org.apache.syncope.core.logic.RandoopHelper.getConfiguredResourceLogic();
+        org.apache.syncope.core.logic.ResourceLogic resourceLogic0 = org.apache.syncope.core.logic.RandoopHelperLogic.getHelperResourceLogicRandoop();
         java.util.List<org.apache.syncope.common.lib.to.ResourceTO> resourceTOList1 = resourceLogic0.list();
         java.util.List<org.apache.syncope.common.lib.to.ResourceTO> resourceTOList2 = resourceLogic0.list();
         java.util.List<org.apache.syncope.common.lib.to.ResourceTO> resourceTOList3 = resourceLogic0.list();
@@ -8918,7 +8918,7 @@ public class ResourceLogicRandoopTest {
         java.util.List<org.apache.syncope.common.lib.to.ResourceTO> resourceTOList7 = resourceLogic0.list();
         java.util.List<org.apache.syncope.common.lib.to.ResourceTO> resourceTOList8 = resourceLogic0.list();
         java.util.List<org.apache.syncope.common.lib.to.ResourceTO> resourceTOList9 = resourceLogic0.list();
-        org.apache.syncope.common.lib.to.ResourceTO resourceTO10 = org.apache.syncope.core.logic.RandoopHelper.getValidResourceTO();
+        org.apache.syncope.common.lib.to.ResourceTO resourceTO10 = org.apache.syncope.core.logic.RandoopHelperLogic.getValidResourceTO();
         // The following exception was thrown during execution in test generation
         try {
             resourceLogic0.check(resourceTO10);
@@ -8943,7 +8943,7 @@ public class ResourceLogicRandoopTest {
     public void test365() throws Throwable {
         if (debug)
             System.out.format("%n%s%n", "RegressionTest0.test365");
-        org.apache.syncope.core.logic.ResourceLogic resourceLogic0 = org.apache.syncope.core.logic.RandoopHelper.getConfiguredResourceLogic();
+        org.apache.syncope.core.logic.ResourceLogic resourceLogic0 = org.apache.syncope.core.logic.RandoopHelperLogic.getHelperResourceLogicRandoop();
         java.util.List<org.apache.syncope.common.lib.to.ResourceTO> resourceTOList1 = resourceLogic0.list();
         java.util.List<org.apache.syncope.common.lib.to.ResourceTO> resourceTOList2 = resourceLogic0.list();
         java.util.List<org.apache.syncope.common.lib.to.ResourceTO> resourceTOList3 = resourceLogic0.list();
@@ -8968,7 +8968,7 @@ public class ResourceLogicRandoopTest {
     public void test366() throws Throwable {
         if (debug)
             System.out.format("%n%s%n", "RegressionTest0.test366");
-        org.apache.syncope.core.logic.ResourceLogic resourceLogic0 = org.apache.syncope.core.logic.RandoopHelper.getConfiguredResourceLogic();
+        org.apache.syncope.core.logic.ResourceLogic resourceLogic0 = org.apache.syncope.core.logic.RandoopHelperLogic.getHelperResourceLogicRandoop();
         java.util.List<org.apache.syncope.common.lib.to.ResourceTO> resourceTOList1 = resourceLogic0.list();
         java.util.List<org.apache.syncope.common.lib.to.ResourceTO> resourceTOList2 = resourceLogic0.list();
         java.util.List<org.apache.syncope.common.lib.to.ResourceTO> resourceTOList3 = resourceLogic0.list();
@@ -9001,7 +9001,7 @@ public class ResourceLogicRandoopTest {
     public void test367() throws Throwable {
         if (debug)
             System.out.format("%n%s%n", "RegressionTest0.test367");
-        org.apache.syncope.core.logic.ResourceLogic resourceLogic0 = org.apache.syncope.core.logic.RandoopHelper.getConfiguredResourceLogic();
+        org.apache.syncope.core.logic.ResourceLogic resourceLogic0 = org.apache.syncope.core.logic.RandoopHelperLogic.getHelperResourceLogicRandoop();
         java.util.List<org.apache.syncope.common.lib.to.ResourceTO> resourceTOList1 = resourceLogic0.list();
         java.util.List<org.apache.syncope.common.lib.to.ResourceTO> resourceTOList2 = resourceLogic0.list();
         java.util.List<org.apache.syncope.common.lib.to.ResourceTO> resourceTOList3 = resourceLogic0.list();
@@ -9012,7 +9012,7 @@ public class ResourceLogicRandoopTest {
         java.util.List<org.apache.syncope.common.lib.to.ResourceTO> resourceTOList8 = resourceLogic0.list();
         java.util.List<org.apache.syncope.common.lib.to.ResourceTO> resourceTOList9 = resourceLogic0.list();
         java.lang.reflect.Method method10 = null;
-        org.apache.syncope.core.logic.ResourceLogic resourceLogic11 = org.apache.syncope.core.logic.RandoopHelper.getConfiguredResourceLogic();
+        org.apache.syncope.core.logic.ResourceLogic resourceLogic11 = org.apache.syncope.core.logic.RandoopHelperLogic.getHelperResourceLogicRandoop();
         java.util.List<org.apache.syncope.common.lib.to.ResourceTO> resourceTOList12 = resourceLogic11.list();
         java.lang.Class<?> wildcardClass13 = resourceLogic11.getClass();
         java.lang.Object[] objArray17 = new java.lang.Object[] { resourceLogic11, '4', 100, "hi!" };
@@ -9043,7 +9043,7 @@ public class ResourceLogicRandoopTest {
     public void test368() throws Throwable {
         if (debug)
             System.out.format("%n%s%n", "RegressionTest0.test368");
-        org.apache.syncope.core.logic.ResourceLogic resourceLogic0 = org.apache.syncope.core.logic.RandoopHelper.getConfiguredResourceLogic();
+        org.apache.syncope.core.logic.ResourceLogic resourceLogic0 = org.apache.syncope.core.logic.RandoopHelperLogic.getHelperResourceLogicRandoop();
         java.util.List<org.apache.syncope.common.lib.to.ResourceTO> resourceTOList1 = resourceLogic0.list();
         java.util.List<org.apache.syncope.common.lib.to.ResourceTO> resourceTOList2 = resourceLogic0.list();
         java.util.List<org.apache.syncope.common.lib.to.ResourceTO> resourceTOList3 = resourceLogic0.list();
@@ -9066,7 +9066,7 @@ public class ResourceLogicRandoopTest {
     public void test369() throws Throwable {
         if (debug)
             System.out.format("%n%s%n", "RegressionTest0.test369");
-        org.apache.syncope.core.logic.ResourceLogic resourceLogic0 = org.apache.syncope.core.logic.RandoopHelper.getConfiguredResourceLogic();
+        org.apache.syncope.core.logic.ResourceLogic resourceLogic0 = org.apache.syncope.core.logic.RandoopHelperLogic.getHelperResourceLogicRandoop();
         java.util.List<org.apache.syncope.common.lib.to.ResourceTO> resourceTOList1 = resourceLogic0.list();
         java.util.List<org.apache.syncope.common.lib.to.ResourceTO> resourceTOList2 = resourceLogic0.list();
         org.identityconnectors.framework.common.objects.filter.Filter filter3 = null;
@@ -9134,7 +9134,7 @@ public class ResourceLogicRandoopTest {
     public void test371() throws Throwable {
         if (debug)
             System.out.format("%n%s%n", "RegressionTest0.test371");
-        org.apache.syncope.core.logic.ResourceLogic resourceLogic0 = org.apache.syncope.core.logic.RandoopHelper.getConfiguredResourceLogic();
+        org.apache.syncope.core.logic.ResourceLogic resourceLogic0 = org.apache.syncope.core.logic.RandoopHelperLogic.getHelperResourceLogicRandoop();
         java.util.List<org.apache.syncope.common.lib.to.ResourceTO> resourceTOList1 = resourceLogic0.list();
         org.identityconnectors.framework.common.objects.filter.Filter filter2 = null;
         java.lang.String[] strArray4 = new java.lang.String[] { "hi!" };
@@ -9164,7 +9164,7 @@ public class ResourceLogicRandoopTest {
     public void test372() throws Throwable {
         if (debug)
             System.out.format("%n%s%n", "RegressionTest0.test372");
-        org.apache.syncope.core.logic.ResourceLogic resourceLogic0 = org.apache.syncope.core.logic.RandoopHelper.getConfiguredResourceLogic();
+        org.apache.syncope.core.logic.ResourceLogic resourceLogic0 = org.apache.syncope.core.logic.RandoopHelperLogic.getHelperResourceLogicRandoop();
         java.util.List<org.apache.syncope.common.lib.to.ResourceTO> resourceTOList1 = resourceLogic0.list();
         java.util.List<org.apache.syncope.common.lib.to.ResourceTO> resourceTOList2 = resourceLogic0.list();
         java.util.List<org.apache.syncope.common.lib.to.ResourceTO> resourceTOList3 = resourceLogic0.list();
@@ -9193,7 +9193,7 @@ public class ResourceLogicRandoopTest {
     public void test373() throws Throwable {
         if (debug)
             System.out.format("%n%s%n", "RegressionTest0.test373");
-        org.apache.syncope.core.logic.ResourceLogic resourceLogic0 = org.apache.syncope.core.logic.RandoopHelper.getConfiguredResourceLogic();
+        org.apache.syncope.core.logic.ResourceLogic resourceLogic0 = org.apache.syncope.core.logic.RandoopHelperLogic.getHelperResourceLogicRandoop();
         java.util.List<org.apache.syncope.common.lib.to.ResourceTO> resourceTOList1 = resourceLogic0.list();
         java.util.List<org.apache.syncope.common.lib.to.ResourceTO> resourceTOList2 = resourceLogic0.list();
         java.util.List<org.apache.syncope.common.lib.to.ResourceTO> resourceTOList3 = resourceLogic0.list();
@@ -9216,7 +9216,7 @@ public class ResourceLogicRandoopTest {
     public void test374() throws Throwable {
         if (debug)
             System.out.format("%n%s%n", "RegressionTest0.test374");
-        org.apache.syncope.core.logic.ResourceLogic resourceLogic0 = org.apache.syncope.core.logic.RandoopHelper.getConfiguredResourceLogic();
+        org.apache.syncope.core.logic.ResourceLogic resourceLogic0 = org.apache.syncope.core.logic.RandoopHelperLogic.getHelperResourceLogicRandoop();
         java.util.List<org.apache.syncope.common.lib.to.ResourceTO> resourceTOList1 = resourceLogic0.list();
         java.util.List<org.apache.syncope.common.lib.to.ResourceTO> resourceTOList2 = resourceLogic0.list();
         java.util.List<org.apache.syncope.common.lib.to.ResourceTO> resourceTOList3 = resourceLogic0.list();
@@ -9252,7 +9252,7 @@ public class ResourceLogicRandoopTest {
     public void test375() throws Throwable {
         if (debug)
             System.out.format("%n%s%n", "RegressionTest0.test375");
-        org.apache.syncope.core.logic.ResourceLogic resourceLogic0 = org.apache.syncope.core.logic.RandoopHelper.getConfiguredResourceLogic();
+        org.apache.syncope.core.logic.ResourceLogic resourceLogic0 = org.apache.syncope.core.logic.RandoopHelperLogic.getHelperResourceLogicRandoop();
         java.util.List<org.apache.syncope.common.lib.to.ResourceTO> resourceTOList1 = resourceLogic0.list();
         java.util.List<org.apache.syncope.common.lib.to.ResourceTO> resourceTOList2 = resourceLogic0.list();
         java.util.List<org.apache.syncope.common.lib.to.ResourceTO> resourceTOList3 = resourceLogic0.list();
@@ -9285,17 +9285,17 @@ public class ResourceLogicRandoopTest {
     public void test376() throws Throwable {
         if (debug)
             System.out.format("%n%s%n", "RegressionTest0.test376");
-        org.apache.syncope.core.logic.ResourceLogic resourceLogic0 = org.apache.syncope.core.logic.RandoopHelper.getConfiguredResourceLogic();
+        org.apache.syncope.core.logic.ResourceLogic resourceLogic0 = org.apache.syncope.core.logic.RandoopHelperLogic.getHelperResourceLogicRandoop();
         java.lang.reflect.Method method1 = null;
         java.lang.Object obj2 = new java.lang.Object();
-        org.apache.syncope.core.logic.ResourceLogic resourceLogic3 = org.apache.syncope.core.logic.RandoopHelper.getConfiguredResourceLogic();
+        org.apache.syncope.core.logic.ResourceLogic resourceLogic3 = org.apache.syncope.core.logic.RandoopHelperLogic.getHelperResourceLogicRandoop();
         java.util.List<org.apache.syncope.common.lib.to.ResourceTO> resourceTOList4 = resourceLogic3.list();
         java.util.List<org.apache.syncope.common.lib.to.ResourceTO> resourceTOList5 = resourceLogic3.list();
         java.util.List<org.apache.syncope.common.lib.to.ResourceTO> resourceTOList6 = resourceLogic3.list();
         java.util.List<org.apache.syncope.common.lib.to.ResourceTO> resourceTOList7 = resourceLogic3.list();
         java.util.List<org.apache.syncope.common.lib.to.ResourceTO> resourceTOList8 = resourceLogic3.list();
         java.util.List<org.apache.syncope.common.lib.to.ResourceTO> resourceTOList9 = resourceLogic3.list();
-        org.apache.syncope.core.logic.ResourceLogic resourceLogic10 = org.apache.syncope.core.logic.RandoopHelper.getConfiguredResourceLogic();
+        org.apache.syncope.core.logic.ResourceLogic resourceLogic10 = org.apache.syncope.core.logic.RandoopHelperLogic.getHelperResourceLogicRandoop();
         java.util.List<org.apache.syncope.common.lib.to.ResourceTO> resourceTOList11 = resourceLogic10.list();
         java.util.List<org.apache.syncope.common.lib.to.ResourceTO> resourceTOList12 = resourceLogic10.list();
         java.util.List<org.apache.syncope.common.lib.to.ResourceTO> resourceTOList13 = resourceLogic10.list();
@@ -9328,7 +9328,7 @@ public class ResourceLogicRandoopTest {
     public void test377() throws Throwable {
         if (debug)
             System.out.format("%n%s%n", "RegressionTest0.test377");
-        org.apache.syncope.core.logic.ResourceLogic resourceLogic0 = org.apache.syncope.core.logic.RandoopHelper.getConfiguredResourceLogic();
+        org.apache.syncope.core.logic.ResourceLogic resourceLogic0 = org.apache.syncope.core.logic.RandoopHelperLogic.getHelperResourceLogicRandoop();
         java.util.List<org.apache.syncope.common.lib.to.ResourceTO> resourceTOList1 = resourceLogic0.list();
         java.util.List<org.apache.syncope.common.lib.to.ResourceTO> resourceTOList2 = resourceLogic0.list();
         java.util.List<org.apache.syncope.common.lib.to.ResourceTO> resourceTOList3 = resourceLogic0.list();
@@ -9359,7 +9359,7 @@ public class ResourceLogicRandoopTest {
     public void test378() throws Throwable {
         if (debug)
             System.out.format("%n%s%n", "RegressionTest0.test378");
-        org.apache.syncope.core.logic.ResourceLogic resourceLogic0 = org.apache.syncope.core.logic.RandoopHelper.getConfiguredResourceLogic();
+        org.apache.syncope.core.logic.ResourceLogic resourceLogic0 = org.apache.syncope.core.logic.RandoopHelperLogic.getHelperResourceLogicRandoop();
         java.util.List<org.apache.syncope.common.lib.to.ResourceTO> resourceTOList1 = resourceLogic0.list();
         // The following exception was thrown during execution in test generation
         try {
@@ -9376,7 +9376,7 @@ public class ResourceLogicRandoopTest {
     public void test379() throws Throwable {
         if (debug)
             System.out.format("%n%s%n", "RegressionTest0.test379");
-        org.apache.syncope.core.logic.ResourceLogic resourceLogic0 = org.apache.syncope.core.logic.RandoopHelper.getConfiguredResourceLogic();
+        org.apache.syncope.core.logic.ResourceLogic resourceLogic0 = org.apache.syncope.core.logic.RandoopHelperLogic.getHelperResourceLogicRandoop();
         java.util.List<org.apache.syncope.common.lib.to.ResourceTO> resourceTOList1 = resourceLogic0.list();
         java.util.List<org.apache.syncope.common.lib.to.ResourceTO> resourceTOList2 = resourceLogic0.list();
         java.util.List<org.apache.syncope.common.lib.to.ResourceTO> resourceTOList3 = resourceLogic0.list();
@@ -9409,7 +9409,7 @@ public class ResourceLogicRandoopTest {
     public void test380() throws Throwable {
         if (debug)
             System.out.format("%n%s%n", "RegressionTest0.test380");
-        org.apache.syncope.core.logic.ResourceLogic resourceLogic0 = org.apache.syncope.core.logic.RandoopHelper.getConfiguredResourceLogic();
+        org.apache.syncope.core.logic.ResourceLogic resourceLogic0 = org.apache.syncope.core.logic.RandoopHelperLogic.getHelperResourceLogicRandoop();
         java.util.List<org.apache.syncope.common.lib.to.ResourceTO> resourceTOList1 = resourceLogic0.list();
         java.util.List<org.apache.syncope.common.lib.to.ResourceTO> resourceTOList2 = resourceLogic0.list();
         java.util.List<org.apache.syncope.common.lib.to.ResourceTO> resourceTOList3 = resourceLogic0.list();
@@ -9436,7 +9436,7 @@ public class ResourceLogicRandoopTest {
     public void test381() throws Throwable {
         if (debug)
             System.out.format("%n%s%n", "RegressionTest0.test381");
-        org.apache.syncope.core.logic.ResourceLogic resourceLogic0 = org.apache.syncope.core.logic.RandoopHelper.getConfiguredResourceLogic();
+        org.apache.syncope.core.logic.ResourceLogic resourceLogic0 = org.apache.syncope.core.logic.RandoopHelperLogic.getHelperResourceLogicRandoop();
         java.util.List<org.apache.syncope.common.lib.to.ResourceTO> resourceTOList1 = resourceLogic0.list();
         java.util.List<org.apache.syncope.common.lib.to.ResourceTO> resourceTOList2 = resourceLogic0.list();
         java.util.List<org.apache.syncope.common.lib.to.ResourceTO> resourceTOList3 = resourceLogic0.list();
@@ -9461,7 +9461,7 @@ public class ResourceLogicRandoopTest {
     public void test382() throws Throwable {
         if (debug)
             System.out.format("%n%s%n", "RegressionTest0.test382");
-        org.apache.syncope.core.logic.ResourceLogic resourceLogic0 = org.apache.syncope.core.logic.RandoopHelper.getConfiguredResourceLogic();
+        org.apache.syncope.core.logic.ResourceLogic resourceLogic0 = org.apache.syncope.core.logic.RandoopHelperLogic.getHelperResourceLogicRandoop();
         java.util.List<org.apache.syncope.common.lib.to.ResourceTO> resourceTOList1 = resourceLogic0.list();
         java.util.List<org.apache.syncope.common.lib.to.ResourceTO> resourceTOList2 = resourceLogic0.list();
         java.util.List<org.apache.syncope.common.lib.to.ResourceTO> resourceTOList3 = resourceLogic0.list();
@@ -9484,7 +9484,7 @@ public class ResourceLogicRandoopTest {
     public void test383() throws Throwable {
         if (debug)
             System.out.format("%n%s%n", "RegressionTest0.test383");
-        org.apache.syncope.core.logic.ResourceLogic resourceLogic0 = org.apache.syncope.core.logic.RandoopHelper.getConfiguredResourceLogic();
+        org.apache.syncope.core.logic.ResourceLogic resourceLogic0 = org.apache.syncope.core.logic.RandoopHelperLogic.getHelperResourceLogicRandoop();
         java.util.List<org.apache.syncope.common.lib.to.ResourceTO> resourceTOList1 = resourceLogic0.list();
         java.util.List<org.apache.syncope.common.lib.to.ResourceTO> resourceTOList2 = resourceLogic0.list();
         java.util.List<org.apache.syncope.common.lib.to.ResourceTO> resourceTOList3 = resourceLogic0.list();
@@ -9523,7 +9523,7 @@ public class ResourceLogicRandoopTest {
     public void test384() throws Throwable {
         if (debug)
             System.out.format("%n%s%n", "RegressionTest0.test384");
-        org.apache.syncope.core.logic.ResourceLogic resourceLogic0 = org.apache.syncope.core.logic.RandoopHelper.getConfiguredResourceLogic();
+        org.apache.syncope.core.logic.ResourceLogic resourceLogic0 = org.apache.syncope.core.logic.RandoopHelperLogic.getHelperResourceLogicRandoop();
         java.util.List<org.apache.syncope.common.lib.to.ResourceTO> resourceTOList1 = resourceLogic0.list();
         java.util.List<org.apache.syncope.common.lib.to.ResourceTO> resourceTOList2 = resourceLogic0.list();
         java.util.List<org.apache.syncope.common.lib.to.ResourceTO> resourceTOList3 = resourceLogic0.list();
@@ -9561,7 +9561,7 @@ public class ResourceLogicRandoopTest {
     public void test385() throws Throwable {
         if (debug)
             System.out.format("%n%s%n", "RegressionTest0.test385");
-        org.apache.syncope.core.logic.ResourceLogic resourceLogic0 = org.apache.syncope.core.logic.RandoopHelper.getConfiguredResourceLogic();
+        org.apache.syncope.core.logic.ResourceLogic resourceLogic0 = org.apache.syncope.core.logic.RandoopHelperLogic.getHelperResourceLogicRandoop();
         java.util.List<org.apache.syncope.common.lib.to.ResourceTO> resourceTOList1 = resourceLogic0.list();
         java.util.List<org.apache.syncope.common.lib.to.ResourceTO> resourceTOList2 = resourceLogic0.list();
         java.util.List<org.apache.syncope.common.lib.to.ResourceTO> resourceTOList3 = resourceLogic0.list();
@@ -9594,7 +9594,7 @@ public class ResourceLogicRandoopTest {
     public void test386() throws Throwable {
         if (debug)
             System.out.format("%n%s%n", "RegressionTest0.test386");
-        org.apache.syncope.core.logic.ResourceLogic resourceLogic0 = org.apache.syncope.core.logic.RandoopHelper.getConfiguredResourceLogic();
+        org.apache.syncope.core.logic.ResourceLogic resourceLogic0 = org.apache.syncope.core.logic.RandoopHelperLogic.getHelperResourceLogicRandoop();
         java.util.List<org.apache.syncope.common.lib.to.ResourceTO> resourceTOList1 = resourceLogic0.list();
         java.util.List<org.apache.syncope.common.lib.to.ResourceTO> resourceTOList2 = resourceLogic0.list();
         org.identityconnectors.framework.common.objects.filter.Filter filter3 = null;
@@ -9626,7 +9626,7 @@ public class ResourceLogicRandoopTest {
     public void test387() throws Throwable {
         if (debug)
             System.out.format("%n%s%n", "RegressionTest0.test387");
-        org.apache.syncope.core.logic.ResourceLogic resourceLogic0 = org.apache.syncope.core.logic.RandoopHelper.getConfiguredResourceLogic();
+        org.apache.syncope.core.logic.ResourceLogic resourceLogic0 = org.apache.syncope.core.logic.RandoopHelperLogic.getHelperResourceLogicRandoop();
         java.util.List<org.apache.syncope.common.lib.to.ResourceTO> resourceTOList1 = resourceLogic0.list();
         java.util.List<org.apache.syncope.common.lib.to.ResourceTO> resourceTOList2 = resourceLogic0.list();
         org.identityconnectors.framework.common.objects.filter.Filter filter3 = null;
@@ -9658,10 +9658,10 @@ public class ResourceLogicRandoopTest {
     public void test388() throws Throwable {
         if (debug)
             System.out.format("%n%s%n", "RegressionTest0.test388");
-        org.apache.syncope.core.logic.ResourceLogic resourceLogic0 = org.apache.syncope.core.logic.RandoopHelper.getConfiguredResourceLogic();
+        org.apache.syncope.core.logic.ResourceLogic resourceLogic0 = org.apache.syncope.core.logic.RandoopHelperLogic.getHelperResourceLogicRandoop();
         java.util.List<org.apache.syncope.common.lib.to.ResourceTO> resourceTOList1 = resourceLogic0.list();
         java.lang.reflect.Method method2 = null;
-        org.apache.syncope.core.logic.ResourceLogic resourceLogic3 = org.apache.syncope.core.logic.RandoopHelper.getConfiguredResourceLogic();
+        org.apache.syncope.core.logic.ResourceLogic resourceLogic3 = org.apache.syncope.core.logic.RandoopHelperLogic.getHelperResourceLogicRandoop();
         java.util.List<org.apache.syncope.common.lib.to.ResourceTO> resourceTOList4 = resourceLogic3.list();
         java.util.List<org.apache.syncope.common.lib.to.ResourceTO> resourceTOList5 = resourceLogic3.list();
         java.util.List<org.apache.syncope.common.lib.to.ResourceTO> resourceTOList6 = resourceLogic3.list();
@@ -9686,12 +9686,12 @@ public class ResourceLogicRandoopTest {
     public void test389() throws Throwable {
         if (debug)
             System.out.format("%n%s%n", "RegressionTest0.test389");
-        org.apache.syncope.core.logic.ResourceLogic resourceLogic0 = org.apache.syncope.core.logic.RandoopHelper.getConfiguredResourceLogic();
+        org.apache.syncope.core.logic.ResourceLogic resourceLogic0 = org.apache.syncope.core.logic.RandoopHelperLogic.getHelperResourceLogicRandoop();
         java.util.List<org.apache.syncope.common.lib.to.ResourceTO> resourceTOList1 = resourceLogic0.list();
         java.util.List<org.apache.syncope.common.lib.to.ResourceTO> resourceTOList2 = resourceLogic0.list();
         java.util.List<org.apache.syncope.common.lib.to.ResourceTO> resourceTOList3 = resourceLogic0.list();
         java.lang.reflect.Method method4 = null;
-        org.apache.syncope.core.logic.ResourceLogic resourceLogic7 = org.apache.syncope.core.logic.RandoopHelper.getConfiguredResourceLogic();
+        org.apache.syncope.core.logic.ResourceLogic resourceLogic7 = org.apache.syncope.core.logic.RandoopHelperLogic.getHelperResourceLogicRandoop();
         java.util.List<org.apache.syncope.common.lib.to.ResourceTO> resourceTOList8 = resourceLogic7.list();
         java.util.List<org.apache.syncope.common.lib.to.ResourceTO> resourceTOList9 = resourceLogic7.list();
         java.util.List<org.apache.syncope.common.lib.to.ResourceTO> resourceTOList10 = resourceLogic7.list();
@@ -9699,7 +9699,7 @@ public class ResourceLogicRandoopTest {
         java.util.List<org.apache.syncope.common.lib.to.ResourceTO> resourceTOList12 = resourceLogic7.list();
         java.util.List<org.apache.syncope.common.lib.to.ResourceTO> resourceTOList13 = resourceLogic7.list();
         java.util.List<org.apache.syncope.common.lib.to.ResourceTO> resourceTOList14 = resourceLogic7.list();
-        org.apache.syncope.common.lib.to.ResourceTO resourceTO15 = org.apache.syncope.core.logic.RandoopHelper.getValidResourceTO();
+        org.apache.syncope.common.lib.to.ResourceTO resourceTO15 = org.apache.syncope.core.logic.RandoopHelperLogic.getValidResourceTO();
         java.lang.Class<?> wildcardClass16 = resourceTO15.getClass();
         java.lang.Object[] objArray18 = new java.lang.Object[] { 0, false, resourceTOList14, wildcardClass16, 1.0f };
         // The following exception was thrown during execution in test generation
@@ -9732,7 +9732,7 @@ public class ResourceLogicRandoopTest {
     public void test390() throws Throwable {
         if (debug)
             System.out.format("%n%s%n", "RegressionTest0.test390");
-        org.apache.syncope.core.logic.ResourceLogic resourceLogic0 = org.apache.syncope.core.logic.RandoopHelper.getConfiguredResourceLogic();
+        org.apache.syncope.core.logic.ResourceLogic resourceLogic0 = org.apache.syncope.core.logic.RandoopHelperLogic.getHelperResourceLogicRandoop();
         java.util.List<org.apache.syncope.common.lib.to.ResourceTO> resourceTOList1 = resourceLogic0.list();
         java.util.List<org.apache.syncope.common.lib.to.ResourceTO> resourceTOList2 = resourceLogic0.list();
         // The following exception was thrown during execution in test generation
@@ -9751,7 +9751,7 @@ public class ResourceLogicRandoopTest {
     public void test391() throws Throwable {
         if (debug)
             System.out.format("%n%s%n", "RegressionTest0.test391");
-        org.apache.syncope.core.logic.ResourceLogic resourceLogic0 = org.apache.syncope.core.logic.RandoopHelper.getConfiguredResourceLogic();
+        org.apache.syncope.core.logic.ResourceLogic resourceLogic0 = org.apache.syncope.core.logic.RandoopHelperLogic.getHelperResourceLogicRandoop();
         java.util.List<org.apache.syncope.common.lib.to.ResourceTO> resourceTOList1 = resourceLogic0.list();
         java.util.List<org.apache.syncope.common.lib.to.ResourceTO> resourceTOList2 = resourceLogic0.list();
         java.util.List<org.apache.syncope.common.lib.to.ResourceTO> resourceTOList3 = resourceLogic0.list();
@@ -9791,7 +9791,7 @@ public class ResourceLogicRandoopTest {
     public void test392() throws Throwable {
         if (debug)
             System.out.format("%n%s%n", "RegressionTest0.test392");
-        org.apache.syncope.core.logic.ResourceLogic resourceLogic0 = org.apache.syncope.core.logic.RandoopHelper.getConfiguredResourceLogic();
+        org.apache.syncope.core.logic.ResourceLogic resourceLogic0 = org.apache.syncope.core.logic.RandoopHelperLogic.getHelperResourceLogicRandoop();
         java.util.List<org.apache.syncope.common.lib.to.ResourceTO> resourceTOList1 = resourceLogic0.list();
         java.util.List<org.apache.syncope.common.lib.to.ResourceTO> resourceTOList2 = resourceLogic0.list();
         java.util.List<org.apache.syncope.common.lib.to.ResourceTO> resourceTOList3 = resourceLogic0.list();
@@ -9813,7 +9813,7 @@ public class ResourceLogicRandoopTest {
     public void test393() throws Throwable {
         if (debug)
             System.out.format("%n%s%n", "RegressionTest0.test393");
-        org.apache.syncope.core.logic.ResourceLogic resourceLogic0 = org.apache.syncope.core.logic.RandoopHelper.getConfiguredResourceLogic();
+        org.apache.syncope.core.logic.ResourceLogic resourceLogic0 = org.apache.syncope.core.logic.RandoopHelperLogic.getHelperResourceLogicRandoop();
         java.util.List<org.apache.syncope.common.lib.to.ResourceTO> resourceTOList1 = resourceLogic0.list();
         java.util.List<org.apache.syncope.common.lib.to.ResourceTO> resourceTOList2 = resourceLogic0.list();
         java.util.List<org.apache.syncope.common.lib.to.ResourceTO> resourceTOList3 = resourceLogic0.list();
@@ -9846,7 +9846,7 @@ public class ResourceLogicRandoopTest {
     public void test394() throws Throwable {
         if (debug)
             System.out.format("%n%s%n", "RegressionTest0.test394");
-        org.apache.syncope.core.logic.ResourceLogic resourceLogic0 = org.apache.syncope.core.logic.RandoopHelper.getConfiguredResourceLogic();
+        org.apache.syncope.core.logic.ResourceLogic resourceLogic0 = org.apache.syncope.core.logic.RandoopHelperLogic.getHelperResourceLogicRandoop();
         java.util.List<org.apache.syncope.common.lib.to.ResourceTO> resourceTOList1 = resourceLogic0.list();
         java.util.List<org.apache.syncope.common.lib.to.ResourceTO> resourceTOList2 = resourceLogic0.list();
         java.util.List<org.apache.syncope.common.lib.to.ResourceTO> resourceTOList3 = resourceLogic0.list();
@@ -9867,7 +9867,7 @@ public class ResourceLogicRandoopTest {
     public void test395() throws Throwable {
         if (debug)
             System.out.format("%n%s%n", "RegressionTest0.test395");
-        org.apache.syncope.core.logic.ResourceLogic resourceLogic0 = org.apache.syncope.core.logic.RandoopHelper.getConfiguredResourceLogic();
+        org.apache.syncope.core.logic.ResourceLogic resourceLogic0 = org.apache.syncope.core.logic.RandoopHelperLogic.getHelperResourceLogicRandoop();
         java.util.List<org.apache.syncope.common.lib.to.ResourceTO> resourceTOList1 = resourceLogic0.list();
         java.util.List<org.apache.syncope.common.lib.to.ResourceTO> resourceTOList2 = resourceLogic0.list();
         java.util.List<org.apache.syncope.common.lib.to.ResourceTO> resourceTOList3 = resourceLogic0.list();
@@ -9888,7 +9888,7 @@ public class ResourceLogicRandoopTest {
     public void test396() throws Throwable {
         if (debug)
             System.out.format("%n%s%n", "RegressionTest0.test396");
-        org.apache.syncope.core.logic.ResourceLogic resourceLogic0 = org.apache.syncope.core.logic.RandoopHelper.getConfiguredResourceLogic();
+        org.apache.syncope.core.logic.ResourceLogic resourceLogic0 = org.apache.syncope.core.logic.RandoopHelperLogic.getHelperResourceLogicRandoop();
         java.util.List<org.apache.syncope.common.lib.to.ResourceTO> resourceTOList1 = resourceLogic0.list();
         java.util.List<org.apache.syncope.common.lib.to.ResourceTO> resourceTOList2 = resourceLogic0.list();
         java.util.List<org.apache.syncope.common.lib.to.ResourceTO> resourceTOList3 = resourceLogic0.list();
@@ -9943,7 +9943,7 @@ public class ResourceLogicRandoopTest {
         org.apache.syncope.core.persistence.api.entity.AnyUtilsFactory anyUtilsFactory19 = null;
         org.apache.syncope.core.logic.ResourceLogic resourceLogic20 = new org.apache.syncope.core.logic.ResourceLogic(externalResourceDAO11, anyTypeDAO12, connInstanceDAO13, resourceDataBinder14, connInstanceDataBinder15, outboundMatcher16, mappingManager17, connectorManager18, anyUtilsFactory19);
         java.lang.Class<?> wildcardClass21 = resourceLogic20.getClass();
-        org.apache.syncope.core.logic.ResourceLogic resourceLogic22 = org.apache.syncope.core.logic.RandoopHelper.getConfiguredResourceLogic();
+        org.apache.syncope.core.logic.ResourceLogic resourceLogic22 = org.apache.syncope.core.logic.RandoopHelperLogic.getHelperResourceLogicRandoop();
         java.util.List<org.apache.syncope.common.lib.to.ResourceTO> resourceTOList23 = resourceLogic22.list();
         java.util.List<org.apache.syncope.common.lib.to.ResourceTO> resourceTOList24 = resourceLogic22.list();
         java.util.List<org.apache.syncope.common.lib.to.ResourceTO> resourceTOList25 = resourceLogic22.list();
@@ -9951,7 +9951,7 @@ public class ResourceLogicRandoopTest {
         java.util.List<org.apache.syncope.common.lib.to.ResourceTO> resourceTOList27 = resourceLogic22.list();
         java.util.List<org.apache.syncope.common.lib.to.ResourceTO> resourceTOList28 = resourceLogic22.list();
         java.util.List<org.apache.syncope.common.lib.to.ResourceTO> resourceTOList29 = resourceLogic22.list();
-        org.apache.syncope.core.logic.ResourceLogic resourceLogic30 = org.apache.syncope.core.logic.RandoopHelper.getConfiguredResourceLogic();
+        org.apache.syncope.core.logic.ResourceLogic resourceLogic30 = org.apache.syncope.core.logic.RandoopHelperLogic.getHelperResourceLogicRandoop();
         java.util.List<org.apache.syncope.common.lib.to.ResourceTO> resourceTOList31 = resourceLogic30.list();
         java.util.List<org.apache.syncope.common.lib.to.ResourceTO> resourceTOList32 = resourceLogic30.list();
         java.util.List<org.apache.syncope.common.lib.to.ResourceTO> resourceTOList33 = resourceLogic30.list();
@@ -9995,7 +9995,7 @@ public class ResourceLogicRandoopTest {
     public void test398() throws Throwable {
         if (debug)
             System.out.format("%n%s%n", "RegressionTest0.test398");
-        org.apache.syncope.core.logic.ResourceLogic resourceLogic0 = org.apache.syncope.core.logic.RandoopHelper.getConfiguredResourceLogic();
+        org.apache.syncope.core.logic.ResourceLogic resourceLogic0 = org.apache.syncope.core.logic.RandoopHelperLogic.getHelperResourceLogicRandoop();
         java.util.List<org.apache.syncope.common.lib.to.ResourceTO> resourceTOList1 = resourceLogic0.list();
         java.util.List<org.apache.syncope.common.lib.to.ResourceTO> resourceTOList2 = resourceLogic0.list();
         java.util.List<org.apache.syncope.common.lib.to.ResourceTO> resourceTOList3 = resourceLogic0.list();
@@ -10029,7 +10029,7 @@ public class ResourceLogicRandoopTest {
     public void test399() throws Throwable {
         if (debug)
             System.out.format("%n%s%n", "RegressionTest0.test399");
-        org.apache.syncope.core.logic.ResourceLogic resourceLogic0 = org.apache.syncope.core.logic.RandoopHelper.getConfiguredResourceLogic();
+        org.apache.syncope.core.logic.ResourceLogic resourceLogic0 = org.apache.syncope.core.logic.RandoopHelperLogic.getHelperResourceLogicRandoop();
         java.util.List<org.apache.syncope.common.lib.to.ResourceTO> resourceTOList1 = resourceLogic0.list();
         java.util.List<org.apache.syncope.common.lib.to.ResourceTO> resourceTOList2 = resourceLogic0.list();
         java.util.List<org.apache.syncope.common.lib.to.ResourceTO> resourceTOList3 = resourceLogic0.list();
@@ -10056,7 +10056,7 @@ public class ResourceLogicRandoopTest {
     public void test400() throws Throwable {
         if (debug)
             System.out.format("%n%s%n", "RegressionTest0.test400");
-        org.apache.syncope.core.logic.ResourceLogic resourceLogic0 = org.apache.syncope.core.logic.RandoopHelper.getConfiguredResourceLogic();
+        org.apache.syncope.core.logic.ResourceLogic resourceLogic0 = org.apache.syncope.core.logic.RandoopHelperLogic.getHelperResourceLogicRandoop();
         java.util.List<org.apache.syncope.common.lib.to.ResourceTO> resourceTOList1 = resourceLogic0.list();
         java.util.List<org.apache.syncope.common.lib.to.ResourceTO> resourceTOList2 = resourceLogic0.list();
         java.util.List<org.apache.syncope.common.lib.to.ResourceTO> resourceTOList3 = resourceLogic0.list();
@@ -10089,7 +10089,7 @@ public class ResourceLogicRandoopTest {
     public void test401() throws Throwable {
         if (debug)
             System.out.format("%n%s%n", "RegressionTest0.test401");
-        org.apache.syncope.core.logic.ResourceLogic resourceLogic0 = org.apache.syncope.core.logic.RandoopHelper.getConfiguredResourceLogic();
+        org.apache.syncope.core.logic.ResourceLogic resourceLogic0 = org.apache.syncope.core.logic.RandoopHelperLogic.getHelperResourceLogicRandoop();
         // The following exception was thrown during execution in test generation
         try {
             resourceLogic0.setLatestSyncToken("hi!", "hi!");
@@ -10104,7 +10104,7 @@ public class ResourceLogicRandoopTest {
     public void test402() throws Throwable {
         if (debug)
             System.out.format("%n%s%n", "RegressionTest0.test402");
-        org.apache.syncope.core.logic.ResourceLogic resourceLogic0 = org.apache.syncope.core.logic.RandoopHelper.getConfiguredResourceLogic();
+        org.apache.syncope.core.logic.ResourceLogic resourceLogic0 = org.apache.syncope.core.logic.RandoopHelperLogic.getHelperResourceLogicRandoop();
         java.util.List<org.apache.syncope.common.lib.to.ResourceTO> resourceTOList1 = resourceLogic0.list();
         org.identityconnectors.framework.common.objects.filter.Filter filter2 = null;
         java.lang.String[] strArray5 = new java.lang.String[] { "", "hi!" };
@@ -10134,14 +10134,14 @@ public class ResourceLogicRandoopTest {
     public void test403() throws Throwable {
         if (debug)
             System.out.format("%n%s%n", "RegressionTest0.test403");
-        org.apache.syncope.core.logic.ResourceLogic resourceLogic0 = org.apache.syncope.core.logic.RandoopHelper.getConfiguredResourceLogic();
+        org.apache.syncope.core.logic.ResourceLogic resourceLogic0 = org.apache.syncope.core.logic.RandoopHelperLogic.getHelperResourceLogicRandoop();
         java.util.List<org.apache.syncope.common.lib.to.ResourceTO> resourceTOList1 = resourceLogic0.list();
         java.util.List<org.apache.syncope.common.lib.to.ResourceTO> resourceTOList2 = resourceLogic0.list();
         java.util.List<org.apache.syncope.common.lib.to.ResourceTO> resourceTOList3 = resourceLogic0.list();
         java.util.List<org.apache.syncope.common.lib.to.ResourceTO> resourceTOList4 = resourceLogic0.list();
         java.lang.reflect.Method method5 = null;
-        org.apache.syncope.core.logic.RandoopHelper randoopHelper7 = new org.apache.syncope.core.logic.RandoopHelper();
-        java.lang.Object[] objArray10 = new java.lang.Object[] { (byte) -1, randoopHelper7, 100L, 1.0d };
+        org.apache.syncope.core.logic.RandoopHelperLogic RandoopHelperLogic7 = new org.apache.syncope.core.logic.RandoopHelperLogic();
+        java.lang.Object[] objArray10 = new java.lang.Object[] { (byte) -1, RandoopHelperLogic7, 100L, 1.0d };
         // The following exception was thrown during execution in test generation
         try {
             org.apache.syncope.common.lib.to.ResourceTO resourceTO11 = resourceLogic0.resolveBeanReference(method5, objArray10);
@@ -10161,7 +10161,7 @@ public class ResourceLogicRandoopTest {
     public void test404() throws Throwable {
         if (debug)
             System.out.format("%n%s%n", "RegressionTest0.test404");
-        org.apache.syncope.core.logic.ResourceLogic resourceLogic0 = org.apache.syncope.core.logic.RandoopHelper.getConfiguredResourceLogic();
+        org.apache.syncope.core.logic.ResourceLogic resourceLogic0 = org.apache.syncope.core.logic.RandoopHelperLogic.getHelperResourceLogicRandoop();
         java.util.List<org.apache.syncope.common.lib.to.ResourceTO> resourceTOList1 = resourceLogic0.list();
         java.util.List<org.apache.syncope.common.lib.to.ResourceTO> resourceTOList2 = resourceLogic0.list();
         java.util.List<org.apache.syncope.common.lib.to.ResourceTO> resourceTOList3 = resourceLogic0.list();
@@ -10190,7 +10190,7 @@ public class ResourceLogicRandoopTest {
     public void test405() throws Throwable {
         if (debug)
             System.out.format("%n%s%n", "RegressionTest0.test405");
-        org.apache.syncope.core.logic.ResourceLogic resourceLogic0 = org.apache.syncope.core.logic.RandoopHelper.getConfiguredResourceLogic();
+        org.apache.syncope.core.logic.ResourceLogic resourceLogic0 = org.apache.syncope.core.logic.RandoopHelperLogic.getHelperResourceLogicRandoop();
         org.identityconnectors.framework.common.objects.filter.Filter filter1 = null;
         java.lang.String[] strArray3 = new java.lang.String[] { "hi!" };
         java.util.LinkedHashSet<java.lang.String> strSet4 = new java.util.LinkedHashSet<java.lang.String>();
@@ -10218,7 +10218,7 @@ public class ResourceLogicRandoopTest {
     public void test406() throws Throwable {
         if (debug)
             System.out.format("%n%s%n", "RegressionTest0.test406");
-        org.apache.syncope.core.logic.ResourceLogic resourceLogic0 = org.apache.syncope.core.logic.RandoopHelper.getConfiguredResourceLogic();
+        org.apache.syncope.core.logic.ResourceLogic resourceLogic0 = org.apache.syncope.core.logic.RandoopHelperLogic.getHelperResourceLogicRandoop();
         java.util.List<org.apache.syncope.common.lib.to.ResourceTO> resourceTOList1 = resourceLogic0.list();
         java.util.List<org.apache.syncope.common.lib.to.ResourceTO> resourceTOList2 = resourceLogic0.list();
         java.util.List<org.apache.syncope.common.lib.to.ResourceTO> resourceTOList3 = resourceLogic0.list();
@@ -10251,7 +10251,7 @@ public class ResourceLogicRandoopTest {
     public void test407() throws Throwable {
         if (debug)
             System.out.format("%n%s%n", "RegressionTest0.test407");
-        org.apache.syncope.core.logic.ResourceLogic resourceLogic0 = org.apache.syncope.core.logic.RandoopHelper.getConfiguredResourceLogic();
+        org.apache.syncope.core.logic.ResourceLogic resourceLogic0 = org.apache.syncope.core.logic.RandoopHelperLogic.getHelperResourceLogicRandoop();
         java.util.List<org.apache.syncope.common.lib.to.ResourceTO> resourceTOList1 = resourceLogic0.list();
         java.util.List<org.apache.syncope.common.lib.to.ResourceTO> resourceTOList2 = resourceLogic0.list();
         java.util.List<org.apache.syncope.common.lib.to.ResourceTO> resourceTOList3 = resourceLogic0.list();
@@ -10282,7 +10282,7 @@ public class ResourceLogicRandoopTest {
     public void test408() throws Throwable {
         if (debug)
             System.out.format("%n%s%n", "RegressionTest0.test408");
-        org.apache.syncope.core.logic.ResourceLogic resourceLogic0 = org.apache.syncope.core.logic.RandoopHelper.getConfiguredResourceLogic();
+        org.apache.syncope.core.logic.ResourceLogic resourceLogic0 = org.apache.syncope.core.logic.RandoopHelperLogic.getHelperResourceLogicRandoop();
         java.util.List<org.apache.syncope.common.lib.to.ResourceTO> resourceTOList1 = resourceLogic0.list();
         java.util.List<org.apache.syncope.common.lib.to.ResourceTO> resourceTOList2 = resourceLogic0.list();
         java.util.List<org.apache.syncope.common.lib.to.ResourceTO> resourceTOList3 = resourceLogic0.list();
@@ -10315,7 +10315,7 @@ public class ResourceLogicRandoopTest {
     public void test409() throws Throwable {
         if (debug)
             System.out.format("%n%s%n", "RegressionTest0.test409");
-        org.apache.syncope.core.logic.ResourceLogic resourceLogic0 = org.apache.syncope.core.logic.RandoopHelper.getConfiguredResourceLogic();
+        org.apache.syncope.core.logic.ResourceLogic resourceLogic0 = org.apache.syncope.core.logic.RandoopHelperLogic.getHelperResourceLogicRandoop();
         java.util.List<org.apache.syncope.common.lib.to.ResourceTO> resourceTOList1 = resourceLogic0.list();
         java.util.List<org.apache.syncope.common.lib.to.ResourceTO> resourceTOList2 = resourceLogic0.list();
         java.util.List<org.apache.syncope.common.lib.to.ResourceTO> resourceTOList3 = resourceLogic0.list();
@@ -10341,7 +10341,7 @@ public class ResourceLogicRandoopTest {
         org.apache.syncope.core.provisioning.api.ConnectorManager connectorManager23 = null;
         org.apache.syncope.core.persistence.api.entity.AnyUtilsFactory anyUtilsFactory24 = null;
         org.apache.syncope.core.logic.ResourceLogic resourceLogic25 = new org.apache.syncope.core.logic.ResourceLogic(externalResourceDAO16, anyTypeDAO17, connInstanceDAO18, resourceDataBinder19, connInstanceDataBinder20, outboundMatcher21, mappingManager22, connectorManager23, anyUtilsFactory24);
-        org.apache.syncope.core.logic.ResourceLogic resourceLogic27 = org.apache.syncope.core.logic.RandoopHelper.getConfiguredResourceLogic();
+        org.apache.syncope.core.logic.ResourceLogic resourceLogic27 = org.apache.syncope.core.logic.RandoopHelperLogic.getHelperResourceLogicRandoop();
         java.util.List<org.apache.syncope.common.lib.to.ResourceTO> resourceTOList28 = resourceLogic27.list();
         java.util.List<org.apache.syncope.common.lib.to.ResourceTO> resourceTOList29 = resourceLogic27.list();
         java.util.List<org.apache.syncope.common.lib.to.ResourceTO> resourceTOList30 = resourceLogic27.list();
@@ -10386,7 +10386,7 @@ public class ResourceLogicRandoopTest {
         org.apache.syncope.core.persistence.api.entity.AnyUtilsFactory anyUtilsFactory8 = null;
         org.apache.syncope.core.logic.ResourceLogic resourceLogic9 = new org.apache.syncope.core.logic.ResourceLogic(externalResourceDAO0, anyTypeDAO1, connInstanceDAO2, resourceDataBinder3, connInstanceDataBinder4, outboundMatcher5, mappingManager6, connectorManager7, anyUtilsFactory8);
         java.lang.reflect.Method method10 = null;
-        org.apache.syncope.core.logic.ResourceLogic resourceLogic11 = org.apache.syncope.core.logic.RandoopHelper.getConfiguredResourceLogic();
+        org.apache.syncope.core.logic.ResourceLogic resourceLogic11 = org.apache.syncope.core.logic.RandoopHelperLogic.getHelperResourceLogicRandoop();
         java.util.List<org.apache.syncope.common.lib.to.ResourceTO> resourceTOList12 = resourceLogic11.list();
         java.util.List<org.apache.syncope.common.lib.to.ResourceTO> resourceTOList13 = resourceLogic11.list();
         java.util.List<org.apache.syncope.common.lib.to.ResourceTO> resourceTOList14 = resourceLogic11.list();
@@ -10396,7 +10396,7 @@ public class ResourceLogicRandoopTest {
         java.util.List<org.apache.syncope.common.lib.to.ResourceTO> resourceTOList18 = resourceLogic11.list();
         java.util.List<org.apache.syncope.common.lib.to.ResourceTO> resourceTOList19 = resourceLogic11.list();
         java.util.List<org.apache.syncope.common.lib.to.ResourceTO> resourceTOList20 = resourceLogic11.list();
-        org.apache.syncope.core.logic.ResourceLogic resourceLogic23 = org.apache.syncope.core.logic.RandoopHelper.getConfiguredResourceLogic();
+        org.apache.syncope.core.logic.ResourceLogic resourceLogic23 = org.apache.syncope.core.logic.RandoopHelperLogic.getHelperResourceLogicRandoop();
         java.util.List<org.apache.syncope.common.lib.to.ResourceTO> resourceTOList24 = resourceLogic23.list();
         java.util.List<org.apache.syncope.common.lib.to.ResourceTO> resourceTOList25 = resourceLogic23.list();
         java.util.List<org.apache.syncope.common.lib.to.ResourceTO> resourceTOList26 = resourceLogic23.list();
@@ -10437,15 +10437,15 @@ public class ResourceLogicRandoopTest {
     public void test411() throws Throwable {
         if (debug)
             System.out.format("%n%s%n", "RegressionTest0.test411");
-        org.apache.syncope.core.logic.ResourceLogic resourceLogic0 = org.apache.syncope.core.logic.RandoopHelper.getConfiguredResourceLogic();
+        org.apache.syncope.core.logic.ResourceLogic resourceLogic0 = org.apache.syncope.core.logic.RandoopHelperLogic.getHelperResourceLogicRandoop();
         java.util.List<org.apache.syncope.common.lib.to.ResourceTO> resourceTOList1 = resourceLogic0.list();
         java.lang.reflect.Method method2 = null;
-        org.apache.syncope.core.logic.ResourceLogic resourceLogic3 = org.apache.syncope.core.logic.RandoopHelper.getConfiguredResourceLogic();
+        org.apache.syncope.core.logic.ResourceLogic resourceLogic3 = org.apache.syncope.core.logic.RandoopHelperLogic.getHelperResourceLogicRandoop();
         java.util.List<org.apache.syncope.common.lib.to.ResourceTO> resourceTOList4 = resourceLogic3.list();
         java.lang.Class<?> wildcardClass5 = resourceTOList4.getClass();
-        org.apache.syncope.core.logic.ResourceLogic resourceLogic7 = org.apache.syncope.core.logic.RandoopHelper.getConfiguredResourceLogic();
+        org.apache.syncope.core.logic.ResourceLogic resourceLogic7 = org.apache.syncope.core.logic.RandoopHelperLogic.getHelperResourceLogicRandoop();
         java.lang.Class<?> wildcardClass8 = resourceLogic7.getClass();
-        org.apache.syncope.core.logic.ResourceLogic resourceLogic9 = org.apache.syncope.core.logic.RandoopHelper.getConfiguredResourceLogic();
+        org.apache.syncope.core.logic.ResourceLogic resourceLogic9 = org.apache.syncope.core.logic.RandoopHelperLogic.getHelperResourceLogicRandoop();
         java.util.List<org.apache.syncope.common.lib.to.ResourceTO> resourceTOList10 = resourceLogic9.list();
         java.util.List<org.apache.syncope.common.lib.to.ResourceTO> resourceTOList11 = resourceLogic9.list();
         java.lang.Object[] objArray14 = new java.lang.Object[] { resourceTOList4, (-1L), resourceLogic7, resourceLogic9, 10L, 'a' };
@@ -10473,7 +10473,7 @@ public class ResourceLogicRandoopTest {
     public void test412() throws Throwable {
         if (debug)
             System.out.format("%n%s%n", "RegressionTest0.test412");
-        org.apache.syncope.core.logic.ResourceLogic resourceLogic0 = org.apache.syncope.core.logic.RandoopHelper.getConfiguredResourceLogic();
+        org.apache.syncope.core.logic.ResourceLogic resourceLogic0 = org.apache.syncope.core.logic.RandoopHelperLogic.getHelperResourceLogicRandoop();
         java.util.List<org.apache.syncope.common.lib.to.ResourceTO> resourceTOList1 = resourceLogic0.list();
         java.util.List<org.apache.syncope.common.lib.to.ResourceTO> resourceTOList2 = resourceLogic0.list();
         java.util.List<org.apache.syncope.common.lib.to.ResourceTO> resourceTOList3 = resourceLogic0.list();
@@ -10504,7 +10504,7 @@ public class ResourceLogicRandoopTest {
     public void test413() throws Throwable {
         if (debug)
             System.out.format("%n%s%n", "RegressionTest0.test413");
-        org.apache.syncope.core.logic.ResourceLogic resourceLogic0 = org.apache.syncope.core.logic.RandoopHelper.getConfiguredResourceLogic();
+        org.apache.syncope.core.logic.ResourceLogic resourceLogic0 = org.apache.syncope.core.logic.RandoopHelperLogic.getHelperResourceLogicRandoop();
         java.util.List<org.apache.syncope.common.lib.to.ResourceTO> resourceTOList1 = resourceLogic0.list();
         java.util.List<org.apache.syncope.common.lib.to.ResourceTO> resourceTOList2 = resourceLogic0.list();
         java.util.List<org.apache.syncope.common.lib.to.ResourceTO> resourceTOList3 = resourceLogic0.list();
@@ -10531,12 +10531,12 @@ public class ResourceLogicRandoopTest {
     public void test414() throws Throwable {
         if (debug)
             System.out.format("%n%s%n", "RegressionTest0.test414");
-        org.apache.syncope.core.logic.ResourceLogic resourceLogic0 = org.apache.syncope.core.logic.RandoopHelper.getConfiguredResourceLogic();
+        org.apache.syncope.core.logic.ResourceLogic resourceLogic0 = org.apache.syncope.core.logic.RandoopHelperLogic.getHelperResourceLogicRandoop();
         java.util.List<org.apache.syncope.common.lib.to.ResourceTO> resourceTOList1 = resourceLogic0.list();
         java.util.List<org.apache.syncope.common.lib.to.ResourceTO> resourceTOList2 = resourceLogic0.list();
         java.util.List<org.apache.syncope.common.lib.to.ResourceTO> resourceTOList3 = resourceLogic0.list();
         java.lang.reflect.Method method4 = null;
-        org.apache.syncope.core.logic.ResourceLogic resourceLogic7 = org.apache.syncope.core.logic.RandoopHelper.getConfiguredResourceLogic();
+        org.apache.syncope.core.logic.ResourceLogic resourceLogic7 = org.apache.syncope.core.logic.RandoopHelperLogic.getHelperResourceLogicRandoop();
         java.util.List<org.apache.syncope.common.lib.to.ResourceTO> resourceTOList8 = resourceLogic7.list();
         java.util.List<org.apache.syncope.common.lib.to.ResourceTO> resourceTOList9 = resourceLogic7.list();
         java.util.List<org.apache.syncope.common.lib.to.ResourceTO> resourceTOList10 = resourceLogic7.list();
@@ -10571,7 +10571,7 @@ public class ResourceLogicRandoopTest {
     public void test415() throws Throwable {
         if (debug)
             System.out.format("%n%s%n", "RegressionTest0.test415");
-        org.apache.syncope.core.logic.ResourceLogic resourceLogic0 = org.apache.syncope.core.logic.RandoopHelper.getConfiguredResourceLogic();
+        org.apache.syncope.core.logic.ResourceLogic resourceLogic0 = org.apache.syncope.core.logic.RandoopHelperLogic.getHelperResourceLogicRandoop();
         java.util.List<org.apache.syncope.common.lib.to.ResourceTO> resourceTOList1 = resourceLogic0.list();
         java.util.List<org.apache.syncope.common.lib.to.ResourceTO> resourceTOList2 = resourceLogic0.list();
         java.util.List<org.apache.syncope.common.lib.to.ResourceTO> resourceTOList3 = resourceLogic0.list();
@@ -10595,7 +10595,7 @@ public class ResourceLogicRandoopTest {
     public void test416() throws Throwable {
         if (debug)
             System.out.format("%n%s%n", "RegressionTest0.test416");
-        org.apache.syncope.core.logic.ResourceLogic resourceLogic0 = org.apache.syncope.core.logic.RandoopHelper.getConfiguredResourceLogic();
+        org.apache.syncope.core.logic.ResourceLogic resourceLogic0 = org.apache.syncope.core.logic.RandoopHelperLogic.getHelperResourceLogicRandoop();
         java.util.List<org.apache.syncope.common.lib.to.ResourceTO> resourceTOList1 = resourceLogic0.list();
         java.util.List<org.apache.syncope.common.lib.to.ResourceTO> resourceTOList2 = resourceLogic0.list();
         java.util.List<org.apache.syncope.common.lib.to.ResourceTO> resourceTOList3 = resourceLogic0.list();
@@ -10606,7 +10606,7 @@ public class ResourceLogicRandoopTest {
         java.util.List<org.apache.syncope.common.lib.to.ResourceTO> resourceTOList8 = resourceLogic0.list();
         java.util.List<org.apache.syncope.common.lib.to.ResourceTO> resourceTOList9 = resourceLogic0.list();
         java.lang.reflect.Method method10 = null;
-        org.apache.syncope.core.logic.ResourceLogic resourceLogic11 = org.apache.syncope.core.logic.RandoopHelper.getConfiguredResourceLogic();
+        org.apache.syncope.core.logic.ResourceLogic resourceLogic11 = org.apache.syncope.core.logic.RandoopHelperLogic.getHelperResourceLogicRandoop();
         java.util.List<org.apache.syncope.common.lib.to.ResourceTO> resourceTOList12 = resourceLogic11.list();
         java.util.List<org.apache.syncope.common.lib.to.ResourceTO> resourceTOList13 = resourceLogic11.list();
         java.util.List<org.apache.syncope.common.lib.to.ResourceTO> resourceTOList14 = resourceLogic11.list();
@@ -10656,7 +10656,7 @@ public class ResourceLogicRandoopTest {
     public void test417() throws Throwable {
         if (debug)
             System.out.format("%n%s%n", "RegressionTest0.test417");
-        org.apache.syncope.core.logic.ResourceLogic resourceLogic0 = org.apache.syncope.core.logic.RandoopHelper.getConfiguredResourceLogic();
+        org.apache.syncope.core.logic.ResourceLogic resourceLogic0 = org.apache.syncope.core.logic.RandoopHelperLogic.getHelperResourceLogicRandoop();
         java.util.List<org.apache.syncope.common.lib.to.ResourceTO> resourceTOList1 = resourceLogic0.list();
         java.util.List<org.apache.syncope.common.lib.to.ResourceTO> resourceTOList2 = resourceLogic0.list();
         java.util.List<org.apache.syncope.common.lib.to.ResourceTO> resourceTOList3 = resourceLogic0.list();
@@ -10691,7 +10691,7 @@ public class ResourceLogicRandoopTest {
     public void test418() throws Throwable {
         if (debug)
             System.out.format("%n%s%n", "RegressionTest0.test418");
-        org.apache.syncope.core.logic.ResourceLogic resourceLogic0 = org.apache.syncope.core.logic.RandoopHelper.getConfiguredResourceLogic();
+        org.apache.syncope.core.logic.ResourceLogic resourceLogic0 = org.apache.syncope.core.logic.RandoopHelperLogic.getHelperResourceLogicRandoop();
         java.util.List<org.apache.syncope.common.lib.to.ResourceTO> resourceTOList1 = resourceLogic0.list();
         java.util.List<org.apache.syncope.common.lib.to.ResourceTO> resourceTOList2 = resourceLogic0.list();
         java.util.List<org.apache.syncope.common.lib.to.ResourceTO> resourceTOList3 = resourceLogic0.list();
@@ -10722,7 +10722,7 @@ public class ResourceLogicRandoopTest {
     public void test419() throws Throwable {
         if (debug)
             System.out.format("%n%s%n", "RegressionTest0.test419");
-        org.apache.syncope.core.logic.ResourceLogic resourceLogic0 = org.apache.syncope.core.logic.RandoopHelper.getConfiguredResourceLogic();
+        org.apache.syncope.core.logic.ResourceLogic resourceLogic0 = org.apache.syncope.core.logic.RandoopHelperLogic.getHelperResourceLogicRandoop();
         java.util.List<org.apache.syncope.common.lib.to.ResourceTO> resourceTOList1 = resourceLogic0.list();
         java.util.List<org.apache.syncope.common.lib.to.ResourceTO> resourceTOList2 = resourceLogic0.list();
         java.util.List<org.apache.syncope.common.lib.to.ResourceTO> resourceTOList3 = resourceLogic0.list();
@@ -10767,7 +10767,7 @@ public class ResourceLogicRandoopTest {
     public void test421() throws Throwable {
         if (debug)
             System.out.format("%n%s%n", "RegressionTest0.test421");
-        org.apache.syncope.core.logic.ResourceLogic resourceLogic0 = org.apache.syncope.core.logic.RandoopHelper.getConfiguredResourceLogic();
+        org.apache.syncope.core.logic.ResourceLogic resourceLogic0 = org.apache.syncope.core.logic.RandoopHelperLogic.getHelperResourceLogicRandoop();
         java.util.List<org.apache.syncope.common.lib.to.ResourceTO> resourceTOList1 = resourceLogic0.list();
         java.util.List<org.apache.syncope.common.lib.to.ResourceTO> resourceTOList2 = resourceLogic0.list();
         java.util.List<org.apache.syncope.common.lib.to.ResourceTO> resourceTOList3 = resourceLogic0.list();
@@ -10778,7 +10778,7 @@ public class ResourceLogicRandoopTest {
         java.util.List<org.apache.syncope.common.lib.to.ResourceTO> resourceTOList8 = resourceLogic0.list();
         java.util.List<org.apache.syncope.common.lib.to.ResourceTO> resourceTOList9 = resourceLogic0.list();
         java.lang.reflect.Method method10 = null;
-        org.apache.syncope.core.logic.ResourceLogic resourceLogic11 = org.apache.syncope.core.logic.RandoopHelper.getConfiguredResourceLogic();
+        org.apache.syncope.core.logic.ResourceLogic resourceLogic11 = org.apache.syncope.core.logic.RandoopHelperLogic.getHelperResourceLogicRandoop();
         java.util.List<org.apache.syncope.common.lib.to.ResourceTO> resourceTOList12 = resourceLogic11.list();
         java.util.List<org.apache.syncope.common.lib.to.ResourceTO> resourceTOList13 = resourceLogic11.list();
         java.util.List<org.apache.syncope.common.lib.to.ResourceTO> resourceTOList14 = resourceLogic11.list();
@@ -10823,7 +10823,7 @@ public class ResourceLogicRandoopTest {
     public void test422() throws Throwable {
         if (debug)
             System.out.format("%n%s%n", "RegressionTest0.test422");
-        org.apache.syncope.core.logic.ResourceLogic resourceLogic0 = org.apache.syncope.core.logic.RandoopHelper.getConfiguredResourceLogic();
+        org.apache.syncope.core.logic.ResourceLogic resourceLogic0 = org.apache.syncope.core.logic.RandoopHelperLogic.getHelperResourceLogicRandoop();
         java.util.List<org.apache.syncope.common.lib.to.ResourceTO> resourceTOList1 = resourceLogic0.list();
         java.util.List<org.apache.syncope.common.lib.to.ResourceTO> resourceTOList2 = resourceLogic0.list();
         java.util.List<org.apache.syncope.common.lib.to.ResourceTO> resourceTOList3 = resourceLogic0.list();
@@ -10859,7 +10859,7 @@ public class ResourceLogicRandoopTest {
     public void test423() throws Throwable {
         if (debug)
             System.out.format("%n%s%n", "RegressionTest0.test423");
-        org.apache.syncope.core.logic.ResourceLogic resourceLogic0 = org.apache.syncope.core.logic.RandoopHelper.getConfiguredResourceLogic();
+        org.apache.syncope.core.logic.ResourceLogic resourceLogic0 = org.apache.syncope.core.logic.RandoopHelperLogic.getHelperResourceLogicRandoop();
         java.util.List<org.apache.syncope.common.lib.to.ResourceTO> resourceTOList1 = resourceLogic0.list();
         java.util.List<org.apache.syncope.common.lib.to.ResourceTO> resourceTOList2 = resourceLogic0.list();
         java.util.List<org.apache.syncope.common.lib.to.ResourceTO> resourceTOList3 = resourceLogic0.list();
@@ -10879,7 +10879,7 @@ public class ResourceLogicRandoopTest {
     public void test424() throws Throwable {
         if (debug)
             System.out.format("%n%s%n", "RegressionTest0.test424");
-        org.apache.syncope.core.logic.ResourceLogic resourceLogic0 = org.apache.syncope.core.logic.RandoopHelper.getConfiguredResourceLogic();
+        org.apache.syncope.core.logic.ResourceLogic resourceLogic0 = org.apache.syncope.core.logic.RandoopHelperLogic.getHelperResourceLogicRandoop();
         java.util.List<org.apache.syncope.common.lib.to.ResourceTO> resourceTOList1 = resourceLogic0.list();
         java.util.List<org.apache.syncope.common.lib.to.ResourceTO> resourceTOList2 = resourceLogic0.list();
         java.util.List<org.apache.syncope.common.lib.to.ResourceTO> resourceTOList3 = resourceLogic0.list();
@@ -10906,7 +10906,7 @@ public class ResourceLogicRandoopTest {
     public void test425() throws Throwable {
         if (debug)
             System.out.format("%n%s%n", "RegressionTest0.test425");
-        org.apache.syncope.core.logic.ResourceLogic resourceLogic0 = org.apache.syncope.core.logic.RandoopHelper.getConfiguredResourceLogic();
+        org.apache.syncope.core.logic.ResourceLogic resourceLogic0 = org.apache.syncope.core.logic.RandoopHelperLogic.getHelperResourceLogicRandoop();
         java.util.List<org.apache.syncope.common.lib.to.ResourceTO> resourceTOList1 = resourceLogic0.list();
         java.util.List<org.apache.syncope.common.lib.to.ResourceTO> resourceTOList2 = resourceLogic0.list();
         // The following exception was thrown during execution in test generation
@@ -10925,7 +10925,7 @@ public class ResourceLogicRandoopTest {
     public void test426() throws Throwable {
         if (debug)
             System.out.format("%n%s%n", "RegressionTest0.test426");
-        org.apache.syncope.core.logic.ResourceLogic resourceLogic0 = org.apache.syncope.core.logic.RandoopHelper.getConfiguredResourceLogic();
+        org.apache.syncope.core.logic.ResourceLogic resourceLogic0 = org.apache.syncope.core.logic.RandoopHelperLogic.getHelperResourceLogicRandoop();
         java.util.List<org.apache.syncope.common.lib.to.ResourceTO> resourceTOList1 = resourceLogic0.list();
         java.util.List<org.apache.syncope.common.lib.to.ResourceTO> resourceTOList2 = resourceLogic0.list();
         java.util.List<org.apache.syncope.common.lib.to.ResourceTO> resourceTOList3 = resourceLogic0.list();
@@ -10953,7 +10953,7 @@ public class ResourceLogicRandoopTest {
     public void test427() throws Throwable {
         if (debug)
             System.out.format("%n%s%n", "RegressionTest0.test427");
-        org.apache.syncope.core.logic.ResourceLogic resourceLogic0 = org.apache.syncope.core.logic.RandoopHelper.getConfiguredResourceLogic();
+        org.apache.syncope.core.logic.ResourceLogic resourceLogic0 = org.apache.syncope.core.logic.RandoopHelperLogic.getHelperResourceLogicRandoop();
         java.util.List<org.apache.syncope.common.lib.to.ResourceTO> resourceTOList1 = resourceLogic0.list();
         java.util.List<org.apache.syncope.common.lib.to.ResourceTO> resourceTOList2 = resourceLogic0.list();
         java.util.List<org.apache.syncope.common.lib.to.ResourceTO> resourceTOList3 = resourceLogic0.list();
@@ -10995,7 +10995,7 @@ public class ResourceLogicRandoopTest {
     public void test428() throws Throwable {
         if (debug)
             System.out.format("%n%s%n", "RegressionTest0.test428");
-        org.apache.syncope.core.logic.ResourceLogic resourceLogic0 = org.apache.syncope.core.logic.RandoopHelper.getConfiguredResourceLogic();
+        org.apache.syncope.core.logic.ResourceLogic resourceLogic0 = org.apache.syncope.core.logic.RandoopHelperLogic.getHelperResourceLogicRandoop();
         // The following exception was thrown during execution in test generation
         try {
             org.apache.syncope.common.lib.to.ConnObject connObject4 = resourceLogic0.readConnObjectByConnObjectKeyValue("", "", "hi!");
@@ -11010,7 +11010,7 @@ public class ResourceLogicRandoopTest {
     public void test429() throws Throwable {
         if (debug)
             System.out.format("%n%s%n", "RegressionTest0.test429");
-        org.apache.syncope.core.logic.ResourceLogic resourceLogic0 = org.apache.syncope.core.logic.RandoopHelper.getConfiguredResourceLogic();
+        org.apache.syncope.core.logic.ResourceLogic resourceLogic0 = org.apache.syncope.core.logic.RandoopHelperLogic.getHelperResourceLogicRandoop();
         java.util.List<org.apache.syncope.common.lib.to.ResourceTO> resourceTOList1 = resourceLogic0.list();
         java.util.List<org.apache.syncope.common.lib.to.ResourceTO> resourceTOList2 = resourceLogic0.list();
         java.util.List<org.apache.syncope.common.lib.to.ResourceTO> resourceTOList3 = resourceLogic0.list();
@@ -11037,16 +11037,16 @@ public class ResourceLogicRandoopTest {
     public void test430() throws Throwable {
         if (debug)
             System.out.format("%n%s%n", "RegressionTest0.test430");
-        org.apache.syncope.core.logic.ResourceLogic resourceLogic0 = org.apache.syncope.core.logic.RandoopHelper.getConfiguredResourceLogic();
+        org.apache.syncope.core.logic.ResourceLogic resourceLogic0 = org.apache.syncope.core.logic.RandoopHelperLogic.getHelperResourceLogicRandoop();
         java.util.List<org.apache.syncope.common.lib.to.ResourceTO> resourceTOList1 = resourceLogic0.list();
         java.util.List<org.apache.syncope.common.lib.to.ResourceTO> resourceTOList2 = resourceLogic0.list();
         java.util.List<org.apache.syncope.common.lib.to.ResourceTO> resourceTOList3 = resourceLogic0.list();
         java.util.List<org.apache.syncope.common.lib.to.ResourceTO> resourceTOList4 = resourceLogic0.list();
         java.util.List<org.apache.syncope.common.lib.to.ResourceTO> resourceTOList5 = resourceLogic0.list();
         java.lang.reflect.Method method6 = null;
-        org.apache.syncope.core.logic.ResourceLogic resourceLogic7 = org.apache.syncope.core.logic.RandoopHelper.getConfiguredResourceLogic();
+        org.apache.syncope.core.logic.ResourceLogic resourceLogic7 = org.apache.syncope.core.logic.RandoopHelperLogic.getHelperResourceLogicRandoop();
         java.util.List<org.apache.syncope.common.lib.to.ResourceTO> resourceTOList8 = resourceLogic7.list();
-        org.apache.syncope.core.logic.ResourceLogic resourceLogic9 = org.apache.syncope.core.logic.RandoopHelper.getConfiguredResourceLogic();
+        org.apache.syncope.core.logic.ResourceLogic resourceLogic9 = org.apache.syncope.core.logic.RandoopHelperLogic.getHelperResourceLogicRandoop();
         java.util.List<org.apache.syncope.common.lib.to.ResourceTO> resourceTOList10 = resourceLogic9.list();
         java.util.List<org.apache.syncope.common.lib.to.ResourceTO> resourceTOList11 = resourceLogic9.list();
         java.util.List<org.apache.syncope.common.lib.to.ResourceTO> resourceTOList12 = resourceLogic9.list();
@@ -11056,7 +11056,7 @@ public class ResourceLogicRandoopTest {
         java.util.List<org.apache.syncope.common.lib.to.ResourceTO> resourceTOList16 = resourceLogic9.list();
         java.util.List<org.apache.syncope.common.lib.to.ResourceTO> resourceTOList17 = resourceLogic9.list();
         java.util.List<org.apache.syncope.common.lib.to.ResourceTO> resourceTOList18 = resourceLogic9.list();
-        org.apache.syncope.core.logic.ResourceLogic resourceLogic20 = org.apache.syncope.core.logic.RandoopHelper.getConfiguredResourceLogic();
+        org.apache.syncope.core.logic.ResourceLogic resourceLogic20 = org.apache.syncope.core.logic.RandoopHelperLogic.getHelperResourceLogicRandoop();
         java.util.List<org.apache.syncope.common.lib.to.ResourceTO> resourceTOList21 = resourceLogic20.list();
         java.util.List<org.apache.syncope.common.lib.to.ResourceTO> resourceTOList22 = resourceLogic20.list();
         java.util.List<org.apache.syncope.common.lib.to.ResourceTO> resourceTOList23 = resourceLogic20.list();
@@ -11109,7 +11109,7 @@ public class ResourceLogicRandoopTest {
     public void test431() throws Throwable {
         if (debug)
             System.out.format("%n%s%n", "RegressionTest0.test431");
-        org.apache.syncope.core.logic.ResourceLogic resourceLogic0 = org.apache.syncope.core.logic.RandoopHelper.getConfiguredResourceLogic();
+        org.apache.syncope.core.logic.ResourceLogic resourceLogic0 = org.apache.syncope.core.logic.RandoopHelperLogic.getHelperResourceLogicRandoop();
         java.util.List<org.apache.syncope.common.lib.to.ResourceTO> resourceTOList1 = resourceLogic0.list();
         java.util.List<org.apache.syncope.common.lib.to.ResourceTO> resourceTOList2 = resourceLogic0.list();
         java.util.List<org.apache.syncope.common.lib.to.ResourceTO> resourceTOList3 = resourceLogic0.list();
@@ -11119,7 +11119,7 @@ public class ResourceLogicRandoopTest {
         java.util.List<org.apache.syncope.common.lib.to.ResourceTO> resourceTOList7 = resourceLogic0.list();
         java.util.List<org.apache.syncope.common.lib.to.ResourceTO> resourceTOList8 = resourceLogic0.list();
         java.lang.reflect.Method method9 = null;
-        org.apache.syncope.core.logic.ResourceLogic resourceLogic13 = org.apache.syncope.core.logic.RandoopHelper.getConfiguredResourceLogic();
+        org.apache.syncope.core.logic.ResourceLogic resourceLogic13 = org.apache.syncope.core.logic.RandoopHelperLogic.getHelperResourceLogicRandoop();
         java.util.List<org.apache.syncope.common.lib.to.ResourceTO> resourceTOList14 = resourceLogic13.list();
         java.util.List<org.apache.syncope.common.lib.to.ResourceTO> resourceTOList15 = resourceLogic13.list();
         java.util.List<org.apache.syncope.common.lib.to.ResourceTO> resourceTOList16 = resourceLogic13.list();
@@ -11159,7 +11159,7 @@ public class ResourceLogicRandoopTest {
     public void test432() throws Throwable {
         if (debug)
             System.out.format("%n%s%n", "RegressionTest0.test432");
-        org.apache.syncope.core.logic.ResourceLogic resourceLogic0 = org.apache.syncope.core.logic.RandoopHelper.getConfiguredResourceLogic();
+        org.apache.syncope.core.logic.ResourceLogic resourceLogic0 = org.apache.syncope.core.logic.RandoopHelperLogic.getHelperResourceLogicRandoop();
         java.util.List<org.apache.syncope.common.lib.to.ResourceTO> resourceTOList1 = resourceLogic0.list();
         java.util.List<org.apache.syncope.common.lib.to.ResourceTO> resourceTOList2 = resourceLogic0.list();
         java.util.List<org.apache.syncope.common.lib.to.ResourceTO> resourceTOList3 = resourceLogic0.list();
@@ -11199,7 +11199,7 @@ public class ResourceLogicRandoopTest {
     public void test433() throws Throwable {
         if (debug)
             System.out.format("%n%s%n", "RegressionTest0.test433");
-        org.apache.syncope.core.logic.ResourceLogic resourceLogic0 = org.apache.syncope.core.logic.RandoopHelper.getConfiguredResourceLogic();
+        org.apache.syncope.core.logic.ResourceLogic resourceLogic0 = org.apache.syncope.core.logic.RandoopHelperLogic.getHelperResourceLogicRandoop();
         java.util.List<org.apache.syncope.common.lib.to.ResourceTO> resourceTOList1 = resourceLogic0.list();
         java.util.List<org.apache.syncope.common.lib.to.ResourceTO> resourceTOList2 = resourceLogic0.list();
         java.util.List<org.apache.syncope.common.lib.to.ResourceTO> resourceTOList3 = resourceLogic0.list();
@@ -11208,14 +11208,14 @@ public class ResourceLogicRandoopTest {
         java.util.List<org.apache.syncope.common.lib.to.ResourceTO> resourceTOList6 = resourceLogic0.list();
         java.util.List<org.apache.syncope.common.lib.to.ResourceTO> resourceTOList7 = resourceLogic0.list();
         java.lang.reflect.Method method8 = null;
-        org.apache.syncope.core.logic.RandoopHelper randoopHelper9 = new org.apache.syncope.core.logic.RandoopHelper();
-        org.apache.syncope.core.logic.ResourceLogic resourceLogic10 = org.apache.syncope.core.logic.RandoopHelper.getConfiguredResourceLogic();
+        org.apache.syncope.core.logic.RandoopHelperLogic RandoopHelperLogic9 = new org.apache.syncope.core.logic.RandoopHelperLogic();
+        org.apache.syncope.core.logic.ResourceLogic resourceLogic10 = org.apache.syncope.core.logic.RandoopHelperLogic.getHelperResourceLogicRandoop();
         java.util.List<org.apache.syncope.common.lib.to.ResourceTO> resourceTOList11 = resourceLogic10.list();
         java.util.List<org.apache.syncope.common.lib.to.ResourceTO> resourceTOList12 = resourceLogic10.list();
         java.util.List<org.apache.syncope.common.lib.to.ResourceTO> resourceTOList13 = resourceLogic10.list();
         java.lang.Class<?> wildcardClass14 = resourceTOList13.getClass();
         java.lang.Object obj15 = new java.lang.Object();
-        org.apache.syncope.core.logic.ResourceLogic resourceLogic16 = org.apache.syncope.core.logic.RandoopHelper.getConfiguredResourceLogic();
+        org.apache.syncope.core.logic.ResourceLogic resourceLogic16 = org.apache.syncope.core.logic.RandoopHelperLogic.getHelperResourceLogicRandoop();
         java.util.List<org.apache.syncope.common.lib.to.ResourceTO> resourceTOList17 = resourceLogic16.list();
         java.util.List<org.apache.syncope.common.lib.to.ResourceTO> resourceTOList18 = resourceLogic16.list();
         java.util.List<org.apache.syncope.common.lib.to.ResourceTO> resourceTOList19 = resourceLogic16.list();
@@ -11223,7 +11223,7 @@ public class ResourceLogicRandoopTest {
         java.util.List<org.apache.syncope.common.lib.to.ResourceTO> resourceTOList21 = resourceLogic16.list();
         java.util.List<org.apache.syncope.common.lib.to.ResourceTO> resourceTOList22 = resourceLogic16.list();
         java.util.List<org.apache.syncope.common.lib.to.ResourceTO> resourceTOList23 = resourceLogic16.list();
-        java.lang.Object[] objArray24 = new java.lang.Object[] { randoopHelper9, wildcardClass14, obj15, resourceTOList23 };
+        java.lang.Object[] objArray24 = new java.lang.Object[] { RandoopHelperLogic9, wildcardClass14, obj15, resourceTOList23 };
         // The following exception was thrown during execution in test generation
         try {
             org.apache.syncope.common.lib.to.ResourceTO resourceTO25 = resourceLogic0.resolveBeanReference(method8, objArray24);
@@ -11259,7 +11259,7 @@ public class ResourceLogicRandoopTest {
     public void test434() throws Throwable {
         if (debug)
             System.out.format("%n%s%n", "RegressionTest0.test434");
-        org.apache.syncope.core.logic.ResourceLogic resourceLogic0 = org.apache.syncope.core.logic.RandoopHelper.getConfiguredResourceLogic();
+        org.apache.syncope.core.logic.ResourceLogic resourceLogic0 = org.apache.syncope.core.logic.RandoopHelperLogic.getHelperResourceLogicRandoop();
         java.util.List<org.apache.syncope.common.lib.to.ResourceTO> resourceTOList1 = resourceLogic0.list();
         java.util.List<org.apache.syncope.common.lib.to.ResourceTO> resourceTOList2 = resourceLogic0.list();
         java.util.List<org.apache.syncope.common.lib.to.ResourceTO> resourceTOList3 = resourceLogic0.list();
@@ -11290,7 +11290,7 @@ public class ResourceLogicRandoopTest {
     public void test435() throws Throwable {
         if (debug)
             System.out.format("%n%s%n", "RegressionTest0.test435");
-        org.apache.syncope.core.logic.ResourceLogic resourceLogic0 = org.apache.syncope.core.logic.RandoopHelper.getConfiguredResourceLogic();
+        org.apache.syncope.core.logic.ResourceLogic resourceLogic0 = org.apache.syncope.core.logic.RandoopHelperLogic.getHelperResourceLogicRandoop();
         java.util.List<org.apache.syncope.common.lib.to.ResourceTO> resourceTOList1 = resourceLogic0.list();
         java.util.List<org.apache.syncope.common.lib.to.ResourceTO> resourceTOList2 = resourceLogic0.list();
         java.util.List<org.apache.syncope.common.lib.to.ResourceTO> resourceTOList3 = resourceLogic0.list();

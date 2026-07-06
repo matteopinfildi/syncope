@@ -10,9 +10,9 @@ import org.apache.syncope.core.provisioning.api.data.ResourceDataBinder;
 import org.apache.syncope.core.provisioning.java.pushpull.OutboundMatcher;
 import org.mockito.Mockito;
 
-public class RandoopHelper {
+public class RandoopHelperLogic {
 
-    public static ResourceLogic getConfiguredResourceLogic() {
+    public static ResourceLogic getHelperResourceLogicRandoop() {
         ExternalResourceDAO resourceDAO = Mockito.mock(ExternalResourceDAO.class);
         AnyTypeDAO anyTypeDAO = Mockito.mock(AnyTypeDAO.class);
         ConnInstanceDAO connInstanceDAO = Mockito.mock(ConnInstanceDAO.class);

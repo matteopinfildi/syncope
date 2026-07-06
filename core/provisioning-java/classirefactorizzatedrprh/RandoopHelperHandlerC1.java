@@ -1,5 +1,4 @@
 package org.apache.syncope.core.provisioning.java.pushpull;
-
 import java.lang.reflect.Field;
 import java.util.ArrayList;
 
@@ -23,7 +22,7 @@ import org.mockito.Mockito;
 
 public class RandoopHelperHandler {
 
-    public static DefaultRealmPullResultHandler getGodModeHandler() {
+    public static DefaultRealmPullResultHandler getHelperHandlerRandoop() {
         // 1. Mock delle dipendenze del costruttore
         InboundMatcher inboundMatcher = Mockito.mock(InboundMatcher.class);
         ConnObjectUtils connObjectUtils = Mockito.mock(ConnObjectUtils.class);
@@ -79,20 +78,20 @@ public class RandoopHelperHandler {
         return handler;
     }
 
-    public static SyncDelta getGodModeDelta() {
+    public static SyncDelta getHelperDeltaRandoop() {
         SyncDelta delta = Mockito.mock(SyncDelta.class);
         ConnectorObject obj = Mockito.mock(ConnectorObject.class);
 
         Mockito.when(delta.getDeltaType()).thenReturn(SyncDeltaType.CREATE);
-        Mockito.when(delta.getUid()).thenReturn(new Uid("ext-id-123"));
+        Mockito.when(delta.getUid()).thenReturn(new Uid("-id-123"));
         Mockito.when(delta.getObject()).thenReturn(obj);
 
-        Mockito.when(obj.getObjectClass()).thenReturn(new ObjectClass("testClass"));
-        Mockito.when(obj.getUid()).thenReturn(new Uid("ext-id-123"));
+        Mockito.when(obj.getObjectClass()).thenReturn(new ObjectClass("Class"));
+        Mockito.when(obj.getUid()).thenReturn(new Uid("id-123"));
 
         // Aggiunto per evitare NPE nel blocco catch (IgnoreProvisionException) su obj.getName().getNameValue()
         Name mockName = Mockito.mock(Name.class);
-        Mockito.when(mockName.getNameValue()).thenReturn("testName");
+        Mockito.when(mockName.getNameValue()).thenReturn("Name");
         Mockito.when(obj.getName()).thenReturn(mockName);
 
         return delta;

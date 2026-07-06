@@ -16,7 +16,7 @@ import org.mockito.Mockito;
 
 public class RandoopHelperHandler {
 
-    public static DefaultRealmPullResultHandler getGodModeHandler() {
+    public static DefaultRealmPullResultHandler getHelperHandlerRandoop() {
         DefaultRealmPullResultHandler handler = new DefaultRealmPullResultHandler();
 
         try {
@@ -48,16 +48,16 @@ public class RandoopHelperHandler {
         return handler;
     }
 
-    public static SyncDelta getGodModeDelta() {
+    public static SyncDelta getHelperDeltaRandoop() {
         SyncDelta delta = Mockito.mock(SyncDelta.class);
         ConnectorObject obj = Mockito.mock(ConnectorObject.class);
 
         Mockito.when(delta.getDeltaType()).thenReturn(SyncDeltaType.CREATE);
-        Mockito.when(delta.getUid()).thenReturn(new Uid("ext-id-123"));
+        Mockito.when(delta.getUid()).thenReturn(new Uid("id-123"));
         Mockito.when(delta.getObject()).thenReturn(obj);
 
-        Mockito.when(obj.getObjectClass()).thenReturn(new ObjectClass("testClass"));
-        Mockito.when(obj.getUid()).thenReturn(new Uid("ext-id-123"));
+        Mockito.when(obj.getObjectClass()).thenReturn(new ObjectClass("Class"));
+        Mockito.when(obj.getUid()).thenReturn(new Uid("id-123"));
 
         return delta;
     }
