@@ -42,9 +42,9 @@ public class DefaultRealmPullResultHandlerPITTest {
     @Test
     public void testHandle_TC09() throws Exception {
         /*
-        Obiettivo: Uccidere il mutante alla Riga 110.
+        Obiettivo: Uccidere il mutante alla Riga 110
 
-        Oracolo: con esito di doHandle = FAILURE, il metodo deve ritornare false.
+        Oracolo: con esito di doHandle = FAILURE, il metodo deve ritornare false
          */
 
         SyncDelta mockSyncDelta = mock(SyncDelta.class);
@@ -68,9 +68,9 @@ public class DefaultRealmPullResultHandlerPITTest {
     @Test
     public void testProvision_TC08() throws Exception {
         /*
-        Obiettivo: Uccidere il mutante alla Riga 197.
+        Obiettivo: Uccidere il mutante alla Riga 197
 
-        Oracolo: con isPerformCreate = false, il metodo deve ritornare SUCCESS e invocare correttamente il metodo 'end'.
+        Oracolo: con isPerformCreate = false, il metodo deve ritornare SUCCESS e INVOCARE CORRETTAMENTE IL METODO END
         */
 
         SyncDelta mockSyncDelta = mock(SyncDelta.class);
@@ -90,9 +90,9 @@ public class DefaultRealmPullResultHandlerPITTest {
     @Test
     public void testProvision_TC09() throws Exception {
         /*
-        Obiettivo: Uccidere il mutante alla Riga 212.
+        Obiettivo: Uccidere il mutante alla Riga 212
 
-        Oracolo: il RealmTO deve ricostruire correttamente il fullPath concatenando "Padre/Figlio".
+        Oracolo: il RealmTO deve ricostruire correttamente il fullPath concatenando "Padre/Figlio"
          */
 
         SyncDelta mockSyncDelta = mock(SyncDelta.class);

@@ -107,7 +107,7 @@ public class DefaultRealmPullResultHandlerCFTest {
     @Test
     public void testHandle_TC05() {
         /*
-        Oracolo: impostando l'OrgUnit nullo, il metodo deve terminare l'esecuzione restituendo false.
+        Oracolo: impostando l'OrgUnit nullo, il metodo deve terminare l'esecuzione restituendo false
          */
 
         SyncDelta delta = createMockDeltaWithPayload(SyncDeltaType.CREATE);
@@ -121,7 +121,7 @@ public class DefaultRealmPullResultHandlerCFTest {
     @Test
     public void testHandle_TC06() throws Exception {
         /*
-        Oracolo: il flag stopRequested è impostato a true, il metodo deve interrompere il flusso restituendo false.
+        Oracolo: il flag stopRequested è impostato a true, il metodo deve terminare l'esecuzione restituendo false
         */
 
         SyncDelta delta = createMockDeltaWithPayload(SyncDeltaType.CREATE);
@@ -135,7 +135,7 @@ public class DefaultRealmPullResultHandlerCFTest {
     @Test
     public void testHandle_TC07() {
         /*
-        Oracolo: in modalità di pull INCREMENTAL, il metodo deve completare l'elaborazione con successo ritornando true.
+        Oracolo: in modalità di pull INCREMENTAL, il metodo deve completare l'elaborazione con successo ritornando true
          */
 
         SyncDelta delta = createMockDeltaWithPayload(SyncDeltaType.CREATE);
@@ -152,7 +152,7 @@ public class DefaultRealmPullResultHandlerCFTest {
     @Test
     public void testHandle_TC08() {
         /*
-       Oracolo: con UnmatchingRule.IGNORE, il metodo deve ritornare true.
+       Oracolo: con UnmatchingRule.IGNORE, il metodo deve ritornare true
        */
 
         SyncDelta delta = createMockDeltaWithPayload(SyncDeltaType.CREATE);
@@ -169,7 +169,7 @@ public class DefaultRealmPullResultHandlerCFTest {
     @Test
     public void testProvision_TC05() throws JobExecutionException {
         /*
-        Oracolo: con isPerformCreate impostato a false, il metodo deve ritronare SUCCESS senza eseguire alcuna operazione.
+        Oracolo: con isPerformCreate impostato a false, il metodo deve ritronare SUCCESS senza eseguire alcuna operazione
          */
 
         SyncDelta delta = createMockDeltaWithPayload(SyncDeltaType.CREATE);
@@ -184,7 +184,7 @@ public class DefaultRealmPullResultHandlerCFTest {
     public void testProvision_TC06() throws JobExecutionException {
         /*
         Oracolo: con fullPath e parent del RealmTO null,
-        l'handler deve calcolare il path basandosi sul parent del destinationRealm e aggiornare il RealmTO.
+        l'handler deve calcolare il path basandosi sul parent del destinationRealm e aggiornare il RealmTO
          */
 
         SyncDelta delta = createMockDeltaWithPayload(SyncDeltaType.CREATE);
@@ -210,7 +210,7 @@ public class DefaultRealmPullResultHandlerCFTest {
     @Test
     public void testProvision_TC07() throws JobExecutionException {
         /*
-       Oracolo: in modalità Dry Run, il metodo deve ritornare SUCCESS.
+       Oracolo: in modalità Dry Run, il metodo deve ritornare SUCCESS
          */
 
         SyncDelta delta = createMockDeltaWithPayload(SyncDeltaType.CREATE);

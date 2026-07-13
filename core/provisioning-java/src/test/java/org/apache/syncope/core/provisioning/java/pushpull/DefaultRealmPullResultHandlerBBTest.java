@@ -103,7 +103,7 @@ public class DefaultRealmPullResultHandlerBBTest {
     }
 
 
-    // Metodo di supporto per creare un finto syncDelta da passare ai test
+    // Metodo di supporto per creare syncDelta da passare ai test
     private SyncDelta createMockDelta(SyncDeltaType type, boolean withPayload) {
         SyncDelta delta = mock(SyncDelta.class);
         lenient().when(delta.getDeltaType()).thenReturn(type);
@@ -124,12 +124,9 @@ public class DefaultRealmPullResultHandlerBBTest {
         /*
         TC01 - Processamento evento CREATE
 
-        Category partition:
-        A1 = Delta valido
-        B1 = operazione CREATE
-        C1 = Payload presente
+        Category partition: delta valido, operazione CREATE, payload presente
 
-        Oracolo: L'handler deve processare con successo l'evento.
+        Oracolo: L'handler deve processare con successo l'evento di CREATE
          */
 
         SyncDelta delta = createMockDelta(SyncDeltaType.CREATE, true);
@@ -144,12 +141,9 @@ public class DefaultRealmPullResultHandlerBBTest {
         /*
         TC02 - Processamento evento DELETE
 
-        Category partition:
-        A1 = Delta valido
-        B2 = operazione DELETE
-        C1 = Payload presente
+        Category partition: delta valido, operazione DELETE, payload presente
 
-        Oracolo: L'handler deve processare con successo l'evento di cancellazione.
+        Oracolo: L'handler deve processare con successo l'evento di DELETE
          */
 
         SyncDelta delta = createMockDelta(SyncDeltaType.DELETE, true);
@@ -167,10 +161,7 @@ public class DefaultRealmPullResultHandlerBBTest {
         /*
         TC03 - Update malformato
 
-        Category partition:
-        A1 = Delta valido
-        B3 = operazione CREATE
-        C2 = Payload null
+        Category partition: delta valido, operazione UPDATE, payload null
 
         Oracolo: NullPointerException
          */
@@ -185,10 +176,9 @@ public class DefaultRealmPullResultHandlerBBTest {
         /*
         TC04 - Input nullo
 
-        Category partition:
-        A2 = Delta nullo
+        Category partition: delta nullo
 
-        Oracolo: L'handler lancia NullPointerException.
+        Oracolo: NullPointerException
          */
 
         handler.handle(null);
@@ -201,13 +191,9 @@ public class DefaultRealmPullResultHandlerBBTest {
         /*
         TC01 - Provisioning valido
 
-        Category partition:
-        A1 = Delta valido
-        B1 = OrgUnit valida
-        C1 = Payload presente
-        D1 = stato dipendenze SUCCESSO
+        Category partition: delta valido, OrgUnit valida, payload presente, esito persistenza SUCCESSO
 
-        Oracolo: Esito non nullo.
+        Oracolo: Esito non nullo
          */
 
         SyncDelta delta = createMockDelta(SyncDeltaType.CREATE, true);
@@ -223,19 +209,17 @@ public class DefaultRealmPullResultHandlerBBTest {
         lenient().when(binder.getRealmTO(any(), anyBoolean())).thenReturn(mockRealmTO);
 
         OpEvent.Outcome result = handler.provision(delta, mockOrgUnit);
-        Assert.assertNotNull(result);
+        Assert.assertEquals(OpEvent.Outcome.SUCCESS, result);
     }
 
     @Test(expected = NullPointerException.class)
     public void testProvision_TC02() throws JobExecutionException {
         /*
-        TC02 - Delta nullo in provision
+        TC02 - Delta nullo
 
-        Category partition:
-        A2 = Delta nullo
-        B1 = OrgUnit valida
+        Category partition: delta nullo, OrgUnit valida
 
-        Oracolo: NullPointerException.
+        Oracolo: NullPointerException
          */
 
         handler.provision(null, mockOrgUnit);
@@ -244,15 +228,11 @@ public class DefaultRealmPullResultHandlerBBTest {
     @Test(expected = NullPointerException.class)
     public void testProvision_TC03() throws JobExecutionException {
         /*
-        TC03 - OrgUnit nullo in provision
+        TC03 - OrgUnit nullo
 
-        Category partition:
-        A1 = Delta valido
-        B2 = OrgUnit nullo
-        C1 = Payload presente
-        D1 = stato dipendenze SUCCESSO
+        Category partition: delta valido, OrgUnit nullo, payload presente, esito persistenza SUCCESSO
 
-        Oracolo: NullPointerException.
+        Oracolo: NullPointerException
          */
 
         SyncDelta delta = createMockDelta(SyncDeltaType.CREATE, true);
@@ -262,15 +242,11 @@ public class DefaultRealmPullResultHandlerBBTest {
     @Test(expected = NullPointerException.class)
     public void testProvision_TC04() throws JobExecutionException {
         /*
-        TC04 - Delta senza payload in provision
+        TC04 - Delta senza payload
 
-        Category partition:
-        A1 = Delta valido
-        B1 = OrgUnit valida
-        C2 = Payload null
-        D1 = stato dipendenze SUCCESSO
+        Category partition: delta valido, OrgUnit valida, payload null, esito persistenza SUCCESSO
 
-        Oracolo: NullPointerException.
+        Oracolo: NullPointerException
          */
 
         SyncDelta invalidDelta = createMockDelta(SyncDeltaType.CREATE, false);
@@ -280,15 +256,11 @@ public class DefaultRealmPullResultHandlerBBTest {
     @Test(expected = RuntimeException.class)
     public void testProvision_TC05() throws JobExecutionException {
         /*
-        TC05 - Errore infrastrutturale
+        TC05 - Errore persitenza
 
-        Category partition:
-        A1 = Delta valido
-        B1 = OrgUnit valida
-        C1 = Payload presente
-        D2 = stato dipendenze ECCEZIONE
+        Category partition: delta valido, OrgUnit valida, payload presente, esito persistenza ECCEZIONE
 
-        Oracolo: RuntimeException lanciata.
+        Oracolo: RuntimeException
          */
 
         SyncDelta delta = createMockDelta(SyncDeltaType.CREATE, true);
