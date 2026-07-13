@@ -21,10 +21,10 @@ public class ResourceLogicITTest {
     @Test
     public void testRead_IT() {
         /*
-         Obiettivo: verificare l'integrazione tra ResourceLogic e l'implementazione reale di ResourceDataBinderImpl.
+         Obiettivo: verificare l'integrazione tra ResourceLogic e ResourceDataBinderImpl
 
          Oracolo: Il metodo read deve invocare correttamente il binder reale;
-         l'oggetto ResourceTO di output deve contenere la chiave e il connettore corretti.
+         l'oggetto ResourceTO di output deve contenere la chiave e il connettore corretti
         */
 
         AnyTypeDAO mockAnyTypeDAO = mock(AnyTypeDAO.class);

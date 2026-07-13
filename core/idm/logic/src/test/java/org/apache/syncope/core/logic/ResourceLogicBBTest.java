@@ -69,7 +69,7 @@ public class ResourceLogicBBTest {
         };
     }
 
-    // Metodo di supporto per creare un finto ConnInstance da passare ai test
+    // Metodo per creare un ConnInstance da passare ai test
     private ConnInstance createMockConnInstance() {
         ConnInstance mockConn = mock(ConnInstance.class);
         Realm mockRealm = mock(Realm.class);
@@ -107,10 +107,7 @@ public class ResourceLogicBBTest {
         /*
         TC01 - Creazione risorsa valida
 
-        Category partition:
-        A1 = ResourceTo con dati validi
-        B1 = Key valida e non presente nel DB
-        C1 = Connector esistente
+        Category partition: ResourceTo valido, key valida e non presente nel DB, connettore esistente
 
         Oracolo: Il metodo crea la risorsa correttamente e restituisce l'oggetto creato
          */
@@ -138,8 +135,7 @@ public class ResourceLogicBBTest {
         /*
         TC02 - Creazione con input null
 
-        Category partition:
-        A2 = ResourceTo nullo
+        Category partition: ResourceTo nullo
 
         Oracolo: Il metodo solleva un NPE per gestire l'oggetto null
          */
@@ -152,12 +148,9 @@ public class ResourceLogicBBTest {
         /*
         TC03 - Creazione con key vuota
 
-        Category partition:
-        A1 = ResourceTo valido
-        B2 = Key vuota
-        C1 = Connector esistente
+        Category partition: ResourceTo valido, key vuota, connettore esistente
 
-        Oracolo: Il metodo solleva un SyncopeClientException per gestire la key vuota
+        Oracolo: Il metodo solleva un SyncopeClientException
          */
 
         ResourceTO resourceTO = new ResourceTO();
@@ -175,12 +168,9 @@ public class ResourceLogicBBTest {
          /*
         TC04 - Creazione con key nulla
 
-        Category partition:
-        A1 = ResourceTo valido
-        B3 = Key null
-        C1 = Connector esistente
+        Category partition: ResourceTo valido, key null, connettore esistente
 
-        Oracolo: Il metodo solleva un SyncopeClientException per gestire la key null
+        Oracolo: Il metodo solleva un SyncopeClientException
          */
 
         ResourceTO resourceTO = new ResourceTO();
@@ -198,12 +188,9 @@ public class ResourceLogicBBTest {
         /*
         TC05 - Creazione con connettore inesistente
 
-        Category partition:
-        A1 = ResourceTo valido
-        B1 = Key valida
-        C2 = Connettore non trovato
+        Category partition: ResourceTo valido, key valida, connettore non trovato
 
-        Oracolo: Il metodo solleva SyncopeClientException.
+        Oracolo: Il metodo solleva SyncopeClientException
          */
 
         ResourceTO resourceTO = new ResourceTO();
@@ -220,12 +207,9 @@ public class ResourceLogicBBTest {
         /*
         TC06 - Creazione con connettore null
 
-        Category partition:
-        A1 = ResourceTo valido
-        B1 = Key valida
-        C3 = Connettore null
+        Category partition: ResourceTo valido, key valida, connettore null
 
-        Oracolo: Il metodo solleva SyncopeClientException.
+        Oracolo: Il metodo solleva SyncopeClientException
          */
 
         ResourceTO resourceTO = new ResourceTO();
@@ -240,11 +224,9 @@ public class ResourceLogicBBTest {
         /*
         TC07 - Creazione risorsa duplicata
 
-        Category partition:
-        A1 = ResourceTo valido
-        B2 = Key valida ma già esistente nel DB
+        Category partition: ResourceTo valido, key valida ma già esistente nel DB, connettore esistente
 
-        Oracolo: Il metodo solleva DuplicateException.
+        Oracolo: Il metodo solleva DuplicateException
          */
         ResourceTO resourceTO = new ResourceTO();
         resourceTO.setKey("Resource_DB_Duplicato");
@@ -272,12 +254,9 @@ public class ResourceLogicBBTest {
         /*
         TC01 - Ricerca valida
 
-        Category partition:
-        A1 = Key valida
-        B1 = AnyType esistente e mappato
-        C1 = size valido
+        Category partition: key valida, anyType esistente e mappato, size valida
 
-        Oracolo: Ricerca riuscita, risultato non nullo.
+        Oracolo: Ricerca riuscita, risultato non nullo
          */
 
         setupValidSystemStateForSearch();
@@ -294,10 +273,7 @@ public class ResourceLogicBBTest {
          /*
         TC02 - Risorsa non trovata
 
-        Category partition:
-        A2 = Key invalida
-        B1 = AnyType esistente e mappato
-        C1 = size valido
+        Category partition: key invalida, anyType esistente e mappato, size valida
 
         Oracolo: NotFoundException
          */
@@ -313,10 +289,7 @@ public class ResourceLogicBBTest {
         /*
         TC03 - AnyType non mappato sulla risorsa
 
-        Category partition:
-        A1 = Key valida
-        B2 = AnyType esistente ma NON mappato
-        C1 = size valido
+        Category partition: key valida, anyType esistente ma NON mappato, size valida
 
         Oracolo: NotFoundException
          */
@@ -337,14 +310,11 @@ public class ResourceLogicBBTest {
     @Test
     public void testSearchConn_TC04() {
         /*
-        TC04 - Pagina dimensione negativa
+        TC04 - Size negativa
 
-        Category partition:
-        A1 = Key valida
-        B1 = AnyType esistente e mappato
-        C2 = size negativo
+        Category partition: key valida, anyType esistente e mappato, size negativa
 
-        Oracolo: Restituisce lista vuota senza errore.
+        Oracolo: Restituisce lista vuota senza errore
          */
 
         setupValidSystemStateForSearch();
@@ -358,12 +328,9 @@ public class ResourceLogicBBTest {
     @Test(expected = NotFoundException.class)
     public void testSearchConn_TC05() {
         /*
-        TC05 - Nome risorsa vuoto
+        TC05 - Key vuota
 
-        Category partition:
-        A3 = Key vuota ("")
-        B1 = AnyType esistente e mappato
-        C1 = size valido
+        Category partition: key vuota, anyType esistente e mappato, size valida
 
         Oracolo: NotFoundException
          */
@@ -378,12 +345,9 @@ public class ResourceLogicBBTest {
     @Test(expected = NotFoundException.class)
     public void testSearchConn_TC06() {
         /*
-        TC06 - Nome risorsa nullo
+        TC06 - Key null
 
-        Category partition:
-        A4 = Key null
-        B1 = AnyType esistente e mappato
-        C1 = size valido
+        Category partition: key null, anyType esistente e mappato, size valida
 
         Oracolo: NotFoundException
          */
@@ -396,14 +360,11 @@ public class ResourceLogicBBTest {
     @Test
     public void testSearchConn_TC07() {
         /*
-        TC07 - Size della pagina a 0
+        TC07 - Size pari a 0
 
-        Category partition:
-        A1 = Key valida
-        B1 = AnyType esistente e mappato
-        C3 = size pari a 0
+        Category partition: key valida, anyType esistente e mappato, size pari a 0
 
-        Oracolo: Ricerca riuscita.
+        Oracolo: Ricerca riuscita
          */
 
         setupValidSystemStateForSearch();
@@ -419,10 +380,7 @@ public class ResourceLogicBBTest {
         /*
         TC08 - AnyTypeKey vuota
 
-        Category partition:
-        A1 = Key valida
-        B3 = AnyTypeKey stringa vuota
-        C1 = size valido
+        Category partition: key valida, anyTypeKey stringa vuota, size valida
 
         Oracolo: NotFoundException
          */
@@ -438,10 +396,7 @@ public class ResourceLogicBBTest {
         /*
         TC09 - AnyTypeKey nulla
 
-        Category partition:
-        A1 = Key valida
-        B4 = AnyTypeKey null
-        C1 = size valido
+        Category partition: key valida, anyTypeKey null, size valida
 
         Oracolo: NotFoundException
          */

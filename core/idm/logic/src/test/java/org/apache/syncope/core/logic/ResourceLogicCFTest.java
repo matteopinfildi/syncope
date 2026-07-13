@@ -1,6 +1,5 @@
 package org.apache.syncope.core.logic;
 
-
 import org.apache.syncope.common.lib.SyncopeConstants;
 import org.apache.syncope.common.lib.to.ResourceTO;
 import org.apache.syncope.core.persistence.api.dao.*;
@@ -66,9 +65,9 @@ public class ResourceLogicCFTest {
     // searchConnObjects
 
     @Test(expected = NotFoundException.class)
-    public void testSearchConn_TC010() {
+    public void testSearchConn_TC10() {
         /*
-        Oracolo: impostando l'OrgUnit nullo, deve essere lanciata una NotFoundException.
+        Oracolo: con anyTypeKey = REALM_ANYTYPE e impostando l'OrgUnit null, deve essere lanciata una NotFoundException
         */
 
         String realmAnyType = SyncopeConstants.REALM_ANYTYPE;
@@ -83,7 +82,7 @@ public class ResourceLogicCFTest {
     @Test
     public void testRead_TC01() {
         /*
-         Oracolo: se la risorsa viene trovata, il metodo deve restituire l'oggetto ResourceTO.
+         Oracolo: se la risorsa viene trovata, il metodo deve restituire l'oggetto ResourceTO
          */
 
         ExternalResource mockResource = mock(ExternalResource.class);

@@ -19,14 +19,14 @@ public class ResourceLogicPITTest {
     private ExternalResourceDAO resourceDAO;
 
     @InjectMocks
-    private ResourceLogic logic;
+    private ResourceLogic resourceLogic;
 
     @Test(expected = NotFoundException.class)
     public void testSearchConnObjects_TC11() {
         /*
-        Obiettivo: Uccidere il mutante alla riga 378.
+        Obiettivo: Uccidere il mutante alla riga 378
 
-        Oracolo: Passando una chiave inesistente, deve essere lanciata una NotFoundException.
+        Oracolo: Passando una key inesistente, con anyTypeKey = REALM_ANYTYPE, deve essere lanciata una NotFoundException
       */
 
         String anyTypeKey = SyncopeConstants.REALM_ANYTYPE;
@@ -34,6 +34,6 @@ public class ResourceLogicPITTest {
 
         when(resourceDAO.findById(key)).thenReturn(Optional.empty());
 
-        logic.searchConnObjects(null, null, key, anyTypeKey, 0, null, null);
+        resourceLogic.searchConnObjects(null, null, key, anyTypeKey, 0, null, null);
     }
 }
