@@ -22,7 +22,7 @@ under the License.
 
 Questo repository è un fork del progetto originale Apache Syncope, utilizzato per l'ambiente di lavoro isolato dedicato alle sperimentazioni di testing. Per garantire il corretto funzionamento, è stato implementato un ambiente di Continuous Integration su GitHub Actions isolato tramite un file personalizzato `maven.yml`.
 
- **[Clicca qui per scaricare e leggere il Report completo del Progetto (Report_Pinfildi_ISW2.pdf)](#)**
+**[Clicca qui per scaricare e leggere il Report completo del Progetto (Report_Pinfildi_ISW2.pdf)](Report_Pinfildi_ISW2.pdf)**
 
 ## Obiettivi e Contenuto del Progetto
 L'obiettivo principale di questo lavoro è stato l'applicazione di tecniche di verifica e validazione su due classi del framework: `ResourceLogic` e `DefaultRealmPullResultHandler`.
