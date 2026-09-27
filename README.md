@@ -19,7 +19,7 @@ under the License.
 
 # Progetto di Software Testing: Apache Syncope
 
-Progetto di Software Testing (ISW2). Progetto accademico realizzato per il corso di Laurea Magistrale in Cybersecurity presso l'Università di Roma Tor Vergata.
+Progetto di Software Testing (ISW2). Progetto accademico realizzato per il corso di Laurea Magistrale in Ingegneria Informatica, indirizzo Cybersecurity, presso l'Università di Roma Tor Vergata.
 
 Questo repository è un fork del progetto originale Apache Syncope, utilizzato per l'ambiente di lavoro isolato dedicato alle sperimentazioni di testing. Per garantire il corretto funzionamento, è stato implementato un ambiente di Continuous Integration su GitHub Actions isolato tramite un file personalizzato `maven.yml`.
 
